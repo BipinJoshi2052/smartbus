@@ -1,0 +1,87 @@
+<?php
+
+namespace common\models\generated;
+
+use Yii;
+
+/**
+ * This is the model class for table "{{%blog_categories}}".
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $remark
+ * @property string $created_on
+ * @property int $created_by
+ * @property string $updated_on
+ * @property int $updated_by
+ *
+ * @property Blog[] $blogs
+ * @property User $createdBy
+ * @property User $updatedBy
+ */
+class BlogCategories extends \yii\db\ActiveRecord
+{
+    /**
+     * {@inheritdoc}
+     */
+    public static function tableName()
+    {
+        return '{{%blog_categories}}';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function rules()
+    {
+        return [
+            [['name', 'remark', 'created_by'], 'required'],
+            [['remark'], 'string'],
+            [['created_on', 'updated_on'], 'safe'],
+            [['created_by', 'updated_by'], 'integer'],
+            [['name'], 'string', 'max' => 255],
+            [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
+            [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Name',
+            'remark' => 'Remark',
+            'created_on' => 'Created On',
+            'created_by' => 'Created By',
+            'updated_on' => 'Updated On',
+            'updated_by' => 'Updated By',
+        ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBlogs()
+    {
+        return $this->hasMany(Blog::className(), ['category_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCreatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUpdatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'updated_by']);
+    }
+}

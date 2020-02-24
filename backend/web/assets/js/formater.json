@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Facebook",
+    "icon": "fa-facebook",
+    "url": "https:/www.facebook.com/"
+  },
+  {
+    "title": "Twitter",
+    "icon": "fa-twitter",
+    "url": "https:/twitter.com/"
+  },
+  {
+    "title": "Google Plus",
+    "icon": "fa-google-plus",
+    "url": "https:/plus.google.com/"
+  },
+  {
+    "title": "Linkedin",
+    "icon": "fa-linkedin",
+    "url": "https:/www.linkedin.com/"
+  }
+]

@@ -1,0 +1,47 @@
+section {
+    min-height: 100vh;
+    display: table;
+    width: 100%;
+}
+
+.site-login {
+    display: table-cell;
+    vertical-align: middle;
+    background-repeat: repeat;
+    background-color: #5f5f5f;;
+
+}
+
+.login-wrapper {
+    margin: auto;
+    width: 80%;
+    max-width: 320px;
+
+}
+
+.login-wrapper .form-wrapper {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+
+}
+
+.login-wrapper .login-form {
+
+}
+
+.login-wrapper .page-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-wrapper .form-actions {
+    margin-top: 30px;
+}
+
+.page-info {
+    text-align: center;
+    color: #FFC107;
+    margin-bottom: 60px;
+}
