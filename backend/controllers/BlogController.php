@@ -180,5 +180,22 @@ class BlogController extends Controller {
                 'editable' => $post,
         ]);
     }
+    public function actionStatus()
+    {
+        $post= Yii::$app->request->post();
+        if(isset($post['active'] )) {
+            $change  = HelperBlog::Status($post['blog']);
+            $change['is_active'] = 0;
+            HelperBlog::setStatus($change);
+        }
+        else {
+            $change  = HelperBlog::Status($post['blog']);
+            $change['is_active'] = 1;
+            HelperBlog::setStatus($change);
+        }
+
+        $page = 'blog';
+        $this->redirect(Yii::$app->request->baseUrl . '/blog/');
+    }
 
 }

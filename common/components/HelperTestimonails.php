@@ -49,4 +49,9 @@
             Misc::setFlash('danger', 'Data not uploaded. Please Try again');
             return FALSE;
         }
+
+        public static function getTestimonial() {
+            $testimonial = Testimonials::find()->orderBy(['id'=>SORT_DESC])->asArray()->all();
+            return $testimonial;
+        }
     }

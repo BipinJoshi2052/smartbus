@@ -80,15 +80,21 @@ class LocationsController extends Controller {
         return $this->render('index', [
                 'all'      => Helper::getAll('Locations'),
                 'editable' => Helper::getOne('Locations', $id),
-//                'is_authorized'=> in_array('update', $this->permissions)
+                //                'is_authorized'=> in_array('update', $this->permissions)
         ]);
     }
 
     public function actionUpdate() {
         if (isset($_POST['post'])) {
             $updated = Helper::setModel('locations', $_POST['post']);
+
             if ($updated != false) {
-                Misc::setFlash('success', 'Location Updated.');
+                if($updated['id'] = $_POST['post']['id']) {
+                    Misc::setFlash('success', 'Location Updated.');
+                }
+                else {
+                    Misc::setFlash('success', 'Location Added successfully.');
+                }
             }
         }
         return $this->redirect(Yii::$app->request->baseUrl . '/locations/');

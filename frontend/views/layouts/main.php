@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this \yii\web\View */
 
 /* @var $content string */
@@ -23,8 +22,6 @@ AppAsset::register($this);
    <link rel = "shortcut icon" href = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/images/uploads/fav.png"/>
    <!-- General CSS -->
    <link href = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/css/general.css" rel = 'stylesheet' type = 'text/css'/>
-
-  
 
 
    <!-- Fonts CSS -->
@@ -106,17 +103,17 @@ AppAsset::register($this);
    <header id = "sticker" class = "sticky-navigation site-header header-01">
 
 
-<nav class="navbar navbar-expand-lg navbar-light ">
-   <div class="container" >
-       <a href = "<?php echo Yii::$app->request->baseUrl; ?>/" class = "navbar-brand">
+      <nav class = "navbar navbar-expand-lg navbar-light ">
+         <div class = "container">
+            <a href = "<?php echo Yii::$app->request->baseUrl; ?>/" class = "navbar-brand">
                <img class = "site_logo" alt = "Site Logo" width = "190" height = "86" src = "<?php echo Yii::$app->request->baseUrl . Yii::$app->params['image_path']['uploads']; ?>logo.png"/>
             </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarSupportedContent" aria-controls = "navbarSupportedContent" aria-expanded = "false" aria-label = "Toggle navigation">
+               <span class = "navbar-toggler-icon"></span>
+            </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class = "navbar-nav ml-auto">
+            <div class = "collapse navbar-collapse" id = "navbarSupportedContent">
+               <ul class = "navbar-nav ml-auto">
                   <li class = "nav-item">
                      <a href = "<?= Yii::$app->request->baseUrl; ?>/">Home</a>
                   </li>
@@ -133,16 +130,18 @@ AppAsset::register($this);
                   <li class = "nav-item">
                      <a href = "<?= Yii::$app->request->baseUrl; ?>/site/careers">Careers</a>
                   </li>
-                  <li id="bookID"  class = "nav-item">
-                    <a class="dropdown-toggle" onclick="openSearch()"  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Book Ticket
-  </a>
+
+                  <li class = "nav-item">
+                     <a href = "<?= Yii::$app->request->baseUrl; ?>/site/contact">Contact</a>
                   </li>
-                 
+                  <li id = "bookID" class = "nav-item">
+                     <a class = "dropdown-toggle" onclick = "openSearch()" data-toggle = "collapse" href = "#collapseExample" role = "button" aria-expanded = "false" aria-controls = "collapseExample">
+                        Book Ticket
+                     </a>
+                  </li>
 
-                
 
-                <!--   <li class = "nav-item dropdown">
+                  <!--   <li class = "nav-item dropdown">
                      <a class = "nav-link dropdown-toggle   pt-0 pb-0" href = "#" id = "navbarMoreDropdown" role = "button" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false">
                         My Tickets
                         <span class = "caret"></span>
@@ -157,94 +156,84 @@ AppAsset::register($this);
                      </div>
                   </li> -->
                </ul>
-                <div class = "navbar-right justify-content-stretch" style="padding-left: 10px;">
-               <ul class = "navbar-nav ml-auto mg-0" >
-                   <?php if ((Yii::$app->user->isGuest)): ?>
-                      <li class = "nav-item">
-                         <a href = "javascript:void(0);" class = "highlighted" data-toggle = "modal" data-target = "#login-modal">Login/SignUp</a>
-                      </li>
-                   <?php else: ?>
-                      <li class = "nav-item dropdown">
-                         <a class = "nav-link dropdown-toggle  pv-0" href = "#" id = "navbarMoreDropdown" role = "button" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false">
-                             <?php echo Yii::$app->user->identity->name; ?>
-                            <span class = "caret"></span>
-                         </a>
-                         <div class = "dropdown-menu" aria-labelledby = "navbarMoreDropdown">
-                            <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/applet/">Dashboard</a>
-                            <div class = "dropdown-divider"></div>
-                            <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/site/logout/">
-                               <i class = "fa fa-power"></i>
-                               Logout
+               <div class = "navbar-right justify-content-stretch" style = "padding-left: 10px;">
+                  <ul class = "navbar-nav ml-auto mg-0">
+                      <?php if ((Yii::$app->user->isGuest)): ?>
+                         <li class = "nav-item">
+                            <a href = "javascript:void(0);" class = "highlighted" data-toggle = "modal" data-target = "#login-modal">Login/SignUp</a>
+                         </li>
+                      <?php else: ?>
+                         <li class = "nav-item dropdown">
+                            <a class = "nav-link dropdown-toggle  pv-0" href = "#" id = "navbarMoreDropdown" role = "button" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false">
+                                <?php echo Yii::$app->user->identity->name; ?>
+                               <span class = "caret"></span>
                             </a>
-                         </div>
-                      </li>
+                            <div class = "dropdown-menu" aria-labelledby = "navbarMoreDropdown">
+                               <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/applet/">Dashboard</a>
+                               <div class = "dropdown-divider"></div>
+                               <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/site/logout/">
+                                  <i class = "fa fa-power"></i>
+                                  Logout
+                               </a>
+                            </div>
+                         </li>
 
-                   <?php endif; ?>
+                      <?php endif; ?>
 
-               </ul>
-      
-   </div>
-   
-  </div>
-  
-  
-</nav>
+                  </ul>
 
+               </div>
 
-
-
-
-
-
-    
-    
-      <div class="collapse" id="collapseExample">
-        
-  <div id="SearchBox" class="card card-body cd-01">
- <!-- <button type="button" class="close" data-dismiss="card" aria-label="Close">
-               <span aria-hidden="true">×</span>
-            </button> -->
- <section  class="search-sec"  role="search-sec" >
-
-  <button type="button" onclick="closeSearch()"class="close cls" data-dismiss="search-sec" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-    <div class="container">
-
-        <form action="#" method="post" novalidate="novalidate">
-
-            <div class="row">
-               <h4 class="book-you-ticket" >Book You Ticket</h4>
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-5 col-sm-12 p-0">
-                            <input type="text" class="form-control search-slt ticket-search-02" placeholder="Enter Pickup City">
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-12 p-0">
-                            <input type="text" class="form-control search-slt" placeholder="Enter Drop City">
-                        </div>
-                      
-                        <div class="col-lg-2 col-md-2 col-sm-12 p-0">
-                            <button type="button" class="btn btn-warning wrn-btn">Search</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </form>
-    </div>
-</section>
-  </div>
-</div>
+
+
+      </nav>
+
+
+      <div class = "collapse" id = "collapseExample">
+
+         <div id = "SearchBox" class = "card card-body cd-01">
+            <!-- <button type="button" class="close" data-dismiss="card" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                       </button> -->
+            <section class = "search-sec" role = "search-sec">
+
+               <button type = "button" onclick = "closeSearch()" class = "close cls" data-dismiss = "search-sec" aria-label = "Close">
+                  <span aria-hidden = "true">&times;</span>
+               </button>
+               <div class = "container">
+
+                  <form action = "#" method = "post" novalidate = "novalidate">
+
+                     <div class = "row">
+                        <h4 class = "book-you-ticket">Book You Ticket</h4>
+                        <div class = "col-lg-12">
+                           <div class = "row">
+                              <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
+                                 <input type = "text" class = "form-control search-slt ticket-search-02" placeholder = "Enter Pickup City">
+                              </div>
+                              <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
+                                 <input type = "text" class = "form-control search-slt" placeholder = "Enter Drop City">
+                              </div>
+
+                              <div class = "col-lg-2 col-md-2 col-sm-12 p-0">
+                                 <button type = "button" class = "btn btn-warning wrn-btn">Search</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+            </section>
+         </div>
+      </div>
    </header>
 
 
-<!-- new-header -->
-   
-
-<!-- new-header -->
+   <!-- new-header -->
 
 
-
+   <!-- new-header -->
 
 
    <div class = "floating-social-media">
@@ -264,10 +253,10 @@ AppAsset::register($this);
          <a href = "#">
             <i class = "fa fa-linkedin" style = "color: #007bb5"></i>
          </a>
-        <!--  <a class="chat-live"  href = "#">
-            <i class="fa fa-comments-o" aria-hidden="true" style = "color: #007bb5"> </i>
-             <span class="badge bd-01">3</span>
-         </a> -->
+         <!--  <a class="chat-live"  href = "#">
+             <i class="fa fa-comments-o" aria-hidden="true" style = "color: #007bb5"> </i>
+              <span class="badge bd-01">3</span>
+          </a> -->
 
       </div>
 
@@ -275,11 +264,7 @@ AppAsset::register($this);
    </div><!-- Sticky Navbar --><?php echo $content; ?>
 
 
-<!-- chat-box -->
-
-
-
-
+   <!-- chat-box -->
 
 
    <section class = "page-section no-pad bg-color">
@@ -297,7 +282,6 @@ AppAsset::register($this);
    </section>
 
 
-
    <footer class = "footer">
       <div class = "footer-widget">
          <div class = "container">
@@ -309,24 +293,24 @@ AppAsset::register($this);
                   </div>
                   <!-- Text -->
                   <p>We like to provide great site with complete features what you want to impletement in your business. We like to provide great site with complete features what you want to impletement in your business!</p>
-                 
-               <!--    <p>
-                     <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
-                     <br>Chakrapath, Kathmandu, Nepal.
-                  </p>
-                
-                  <p>
-                     <strong>Call Us:</strong> +977 (1) 456-78-90 or <br>+977 (1) 456-78-90
-                  </p> -->
-                 
-                 
+
+                  <!--    <p>
+                        <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
+                        <br>Chakrapath, Kathmandu, Nepal.
+                     </p>
+
+                     <p>
+                        <strong>Call Us:</strong> +977 (1) 456-78-90 or <br>+977 (1) 456-78-90
+                     </p> -->
+
+
                </div>
                <div class = "col-xs-12 col-sm-6 col-md-4 widget">
                   <div class = "widget-title">
                      <!-- Title -->
                      <h3 class = "title">Contact</h3>
                   </div>
-                   <p>
+                  <p>
                      <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
                      <br>Chakrapath, Kathmandu, Nepal.
                   </p>
@@ -336,27 +320,27 @@ AppAsset::register($this);
                   </p>
                   <!-- Social Links -->
 
-                 <!--  <nav>
-                     <ul class = "footer-blog">
-                      
-                        <li>
-                           <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                        </li>
-                        <li>
-                           <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                        </li>
-                        <li>
-                           <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                        </li>
-                     </ul>
-                  </nav> -->
+                  <!--  <nav>
+                      <ul class = "footer-blog">
+
+                         <li>
+                            <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                         </li>
+                         <li>
+                            <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                         </li>
+                         <li>
+                            <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                         </li>
+                      </ul>
+                   </nav> -->
                </div>
                <div class = "col-xs-12 col-sm-12 col-md-4 widget">
                   <div class = "widget-title">
                      <!-- Title -->
                      <h3 class = "title">Fallows Us</h3>
                   </div>
-                   <div class = "social-icon margin-top-20 gray-bg icons-circle i-3x">
+                  <div class = "social-icon margin-top-20 gray-bg icons-circle i-3x">
                      <a href = "#">
                         <i class = "fa fa-facebook"></i>
                      </a>
@@ -417,7 +401,7 @@ AppAsset::register($this);
                <!-- Copyrights -->
                <div class = "col-sm-8 col-md-8 col-xs-10 ">
                   <div class = "site-disclaimer">© 2015. We can have a one line disclaimer over here to say something that we need to . Book Your Bus.</div>
-                <!--   <ul class = "footer-menu">
+                  <!--   <ul class = "footer-menu">
                      <li>
                         <a href = "<?php echo Yii::$app->request->baseUrl; ?>/blog">Blog</a>
                      </li>
@@ -450,7 +434,7 @@ AppAsset::register($this);
       <!-- footer-bottom -->
    </footer>
 </div>
- <!--   <button class="open-button" onclick="openForm()">Chat</button> -->
+<!--   <button class="open-button" onclick="openForm()">Chat</button> -->
 
 <!-- <div class="chat-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
@@ -523,141 +507,140 @@ AppAsset::register($this);
     <button type="submit" class="btn">Send</button> 
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form> -->
-<div id="live-chat">
-      
-      <header class="clearfix">
-         
-         <a href="#" class="chat-close">x</a>
+<div id = "live-chat">
 
-         <h4>Mehmet Mert</h4>
+   <header class = "clearfix">
 
-         <span class="chat-message-counter">3</span>
+      <a href = "#" class = "chat-close">x</a>
 
-      </header>
+      <h4>Mehmet Mert</h4>
 
-      <div class="chat">
-         
-         <div class="chat-history">
-            
-            <div class="chat-message clearfix">
-               
-               <img src="/smartbus/assets/images/sections/blog/1.jpg" alt="" width="32" height="32">
+      <span class = "chat-message-counter">3</span>
 
-               <div class="chat-message-content clearfix">
-                  
-                  <span class="chat-time">13:35</span>
+   </header>
 
-                  <h5>John Doe</h5>
+   <div class = "chat">
 
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
+      <div class = "chat-history">
 
-               </div> <!-- end chat-message-content-->
+         <div class = "chat-message clearfix">
 
-            </div> <!-- end chat-message -->
+            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
 
-            <hr>
+            <div class = "chat-message-content clearfix">
 
-            <div class="chat-message clearfix">
-               
-               <img src="/smartbus/assets/images/sections/blog/1.jpg" alt="" width="32" height="32">
+               <span class = "chat-time">13:35</span>
 
-               <div class="chat-message-content clearfix">
-                  
-                  <span class="chat-time">13:37</span>
+               <h5>John Doe</h5>
 
-                  <h5>Marco Biedermann</h5>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
 
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
+            </div> <!-- end chat-message-content-->
 
-               </div> <!-- end chat-message-content -->
+         </div> <!-- end chat-message -->
 
-            </div> <!-- end chat-message -->
+         <hr>
 
-            <hr>
+         <div class = "chat-message clearfix">
 
-            <div class="chat-message clearfix">
-               
-               <img src="/smartbus/assets/images/sections/blog/1.jpg" alt="" width="32" height="32">
+            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
 
-               <div class="chat-message-content clearfix">
-                  
-                  <span class="chat-time">13:38</span>
+            <div class = "chat-message-content clearfix">
 
-                  <h5>John Doe</h5>
+               <span class = "chat-time">13:37</span>
 
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+               <h5>Marco Biedermann</h5>
 
-               </div> <!-- end chat-message-content -->
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
 
-            </div> <!-- end chat-message -->
+            </div> <!-- end chat-message-content -->
 
-            <hr>
+         </div> <!-- end chat-message -->
 
-         </div> <!-- end chat-history -->
+         <hr>
 
-       
+         <div class = "chat-message clearfix">
 
-         <form action="#" method="post">
+            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
 
-           <div class="panel-footer">
-                    <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-sm chat_input" placeholder="Write your message here...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-primary btn-sm" id="btn-chat">Send</button>
+            <div class = "chat-message-content clearfix">
+
+               <span class = "chat-time">13:38</span>
+
+               <h5>John Doe</h5>
+
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+
+            </div> <!-- end chat-message-content -->
+
+         </div> <!-- end chat-message -->
+
+         <hr>
+
+      </div> <!-- end chat-history -->
+
+
+      <form action = "#" method = "post">
+
+         <div class = "panel-footer">
+            <div class = "input-group">
+               <input id = "btn-input" type = "text" class = "form-control input-sm chat_input" placeholder = "Write your message here...">
+               <span class = "input-group-btn">
+                        <button class = "btn btn-primary btn-sm" id = "btn-chat">Send</button>
                         </span>
-                    </div>
-                </div>
+            </div>
+         </div>
 
-         </form>
+      </form>
 
-      </div> <!-- end chat --> 
+   </div> <!-- end chat -->
 
-   </div>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-   
+</div>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
-<script type="text/javascript">
-   (function() {
 
-   $('#live-chat header').on('click', function() {
+<script type = "text/javascript">
+   (function () {
 
-      $('.chat').slideToggle(300, 'swing');
-      $('.chat-message-counter').fadeToggle(300, 'swing');
+      $('#live-chat header').on('click', function () {
 
-   });
+         $('.chat').slideToggle(300, 'swing');
+         $('.chat-message-counter').fadeToggle(300, 'swing');
 
-   $('.chat-close').on('click', function(e) {
+      });
 
-      e.preventDefault();
-      $('#live-chat').fadeOut(300);
+      $('.chat-close').on('click', function (e) {
 
-   });
+         e.preventDefault();
+         $('#live-chat').fadeOut(300);
 
-}) ();
+      });
+
+   })();
 </script>
 
 
 </div>
 
-<script type="text/javascript">
-   
-   function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+<script type = "text/javascript">
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+   function openForm() {
+      document.getElementById("myForm").style.display = "block";
+   }
+
+   function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+   }
 </script>
-<script type="text/javascript">
-   
-     function openSearch()  {
-  document.getElementById("SearchBox").style.display = "block";
-}
-   
-function closeSearch() {
-  document.getElementById("SearchBox").style.display = "none";
-}
+<script type = "text/javascript">
+
+   function openSearch() {
+      document.getElementById("SearchBox").style.display = "block";
+   }
+
+   function closeSearch() {
+      document.getElementById("SearchBox").style.display = "none";
+   }
 </script>
 
 
@@ -738,11 +721,11 @@ function closeSearch() {
                      <button class = "btn full btn-black" id = "submit">Register Now</button>
                   </div>
                   <hr>
-                  <div class="login-footer" >
+                  <div class = "login-footer">
                      <h4>Are You a <span> Bus Woner</span></h4>
 
-                     <a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login-modal">Register Your Vechical</a>
-                     
+                     <a href = "#" class = "btn btn-primary btn-lg" data-toggle = "modal" data-target = "#login-modal">Register Your Vechical</a>
+
                   </div>
                </form>
 
@@ -795,8 +778,6 @@ if (Yii::$app->session->hasFlash('flash')): ?>
 
 <!-- Bootstrap Validation -->
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/js/bootstrapValidator.min.js"></script>
-
-
 
 
 <!-- Jquery Validation -->

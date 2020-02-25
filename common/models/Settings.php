@@ -9,7 +9,7 @@ class Settings extends \common\models\generated\Settings {
         ]);
     }
     public static function getSettings(){
-        return parent::find()->asArray()->all();
+        return parent::find()->asArray()->orderBy(['id'=>SORT_DESC])->all();
     }
 
 }

@@ -42,7 +42,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Locations';
             <div class="card-body">
                <form method="post" action="<?= Yii::$app->request->baseUrl; ?>/locations/update/" enctype="multipart/form-data">
                   <input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>"/>
-                  <input type="hidden" name="post[id]" value="<?= (isset($editable['id']) ? $editable['id'] : 0) ?>">
+                  <input type="hidden" name="post[id]" value="<?= (isset($editable['id']) ? $editable['id'] : '') ?>">
                    <?php $counter = 0; ?>
                   <div class="form-group">
                       <?php $counter++; ?>
@@ -120,9 +120,9 @@ $this->title = Yii::$app->params['system_name'] . ' | Locations';
                                    <?php endif; ?>
                                    <?= ucwords(Yii::$app->params['verification_status'][$eVstatus]) ?>
                                </div>
-                                <?php if ($is_authorized) : ?>
-                                   <span class="pull-right hover label label-success">Verify / Reject</span>
-                                <?php endif; ?>
+
+                               <span class="pull-right hover label label-success">Verify / Reject</span>
+
 
                             </div>
                          </a>
@@ -141,9 +141,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Locations';
                          <label for="<?= $counter; ?>" class="control-label">Status</label>
                          <div class="form-control d-block <?= ($estatus > 0) ? 'success' : 'danger' ?> ">
                              <?= ($estatus > 0) ? 'Active' : 'Inactive' ?>
-                             <?php if ($is_authorized == 1 && $eVstatus > 0) : ?>
-                                <a href="javascript:void(0);" class="pull-right label label-success toggle-status" data-a="<?= Misc::encrypt($editable['id']) ?>" data-b="<?= Misc::encrypt(Misc::getClass($editable)) ?>"><?= ($editable['is_active'] == 1) ? 'Deactivate' : 'Activate' ?></a>
-                             <?php endif; ?>
+
                          </div>
                       </div>
                        <?php if ($editable['created_on'] != '') : ?>
@@ -170,7 +168,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Locations';
                   <div class="form-group m-t-40 m-b-0 text-right">
                      <button class="btn btn-primary" type="submit">
                         <i class="mdi mdi-check"></i>
-<!--                         --><?//= ($is_authorized) ? 'Verify & ' : '' ?><!-- -->
+                        <!--                         --><?//= ($is_authorized) ? 'Verify & ' : '' ?><!-- -->
                         Save
                      </button>
                   </div>
@@ -215,7 +213,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Locations';
                                <td>
                                    <?php if ($vstatus > 0) : ?>
                                       <span class="label label-success"> <?= Yii::$app->params['verification_status'][$vstatus] ?></span>
-<!--                                      <a href="javascript:void(0);" class="label --><?//= ($status) ? 'label-success' : 'label-danger' ?><!--  --><?//= ($is_authorized) ? 'toggle-status' : 'disabled' ?><!-- " --><?//= ($is_authorized) ? 'data-a="' . Misc::encrypt($a['id']) . '" data-b="' . Misc::encrypt(Misc::getClass($a)) . '"' : '' ?><!-->--><?//= ($status) ? 'Active' : 'Inactive' ?><!--</a>-->
+                                      <!--                                      <a href="javascript:void(0);" class="label --><?//= ($status) ? 'label-success' : 'label-danger' ?><!--  --><?//= ($is_authorized) ? 'toggle-status' : 'disabled' ?><!-- " --><?//= ($is_authorized) ? 'data-a="' . Misc::encrypt($a['id']) . '" data-b="' . Misc::encrypt(Misc::getClass($a)) . '"' : '' ?><!----><?//= ($status) ? 'Active' : 'Inactive' ?><!--</a>-->
                                    <?php elseif ($vstatus == 0): ?>
                                       <span class="label label-danger"><?= ucwords(Yii::$app->params['verification_status'][$vstatus]) ?></span>
                                    <?php elseif ($vstatus < 0): ?>

@@ -55,7 +55,7 @@ class NewsController extends Controller {
         if ($action->id == 'error') {
             $this->layout = 'error';
         }
-//        $this->permissions = Helper::checkAuthority(Yii::$app->controller->id, Yii::$app->controller->action->id);
+        //        $this->permissions = Helper::checkAuthority(Yii::$app->controller->id, Yii::$app->controller->action->id);
 
 
         return parent::beforeAction($action);
@@ -83,6 +83,7 @@ class NewsController extends Controller {
                 //                'page' => Yii::$app->params['pages'][$page],
         ]);
     }
+
     public function actionView() {
         return $this->render('View');
     }
@@ -102,17 +103,18 @@ class NewsController extends Controller {
             $post = HelperNews::getSingleNews($id);
         }
         return $this->render('form', [
-                'categories' =>HelperNews::getCategories(),
-                'editable' => $post,
+                'categories' => HelperNews::getCategories(),
+                'editable'   => $post,
         ]);
     }
+
     public function actionUpdate() {
         $data = Yii::$app->request->post();
         HelperNews::set($data, (isset($_FILES['image']) && !empty($_FILES['image'])) ? $_FILES['image'] : '');
         $this->redirect(Yii::$app->request->baseUrl . '/news/');
     }
-    public function actionDelete()
-    {
+
+    public function actionDelete() {
         if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
             return HelperNews::deleteNews($_POST['id']);
         }
@@ -120,42 +122,58 @@ class NewsController extends Controller {
     }
 
     //News category section
-    public function  actionCategories()
-    {
-        return $this->render('category/viewCat',array(
-                'newsCat'=> HelperNews::getNewsCat(),
-        ));
+    public function actionCategories() {
+        return $this->render('category/viewCat', [
+                'newsCat' => HelperNews::getNewsCat(),
+        ]);
     }
-    public function actionDeleteNewsCategory()
-    {
+
+    public function actionDeleteNewsCategory() {
         if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
             return HelperNews::deleteNewsCategory($_POST['id']);
         }
 
     }
-    public function  actionList()
-    {
+
+    public function actionList() {
         return $this->render('category/category');
     }
-    public function actionUp()
-    {
+
+    public function actionUp() {
         $data = Yii::$app->request->post();
         HelperNews::setCat($data);
         $this->redirect(Yii::$app->request->baseUrl . '/news/categories');
 
     }
+
     public function actionEditCategory($id = '') {
 
-            $post = [];
-            if ($id != '') {
-                $id = Misc::decrypt($id);
-                $post = HelperNews::getSingleCat($id);
-            }
-            return $this->render('category/category', [
+        $post = [];
+        if ($id != '') {
+            $id = Misc::decrypt($id);
+            $post = HelperNews::getSingleCat($id);
+        }
+        return $this->render('category/category', [
 
-                    'editable' => $post,
-            ]);
+                'editable' => $post,
+        ]);
+    }
+
+    public function actionStatus() {
+        $post = Yii::$app->request->post();
+        if (isset($post['active'])) {
+            $change = HelperNews::Status($post['news']);
+            $change['is_active'] = 0;
+            HelperNews::setStatus($change);
+
+        }
+        else {
+            $change = HelperNews::Status($post['news']);
+            $change['is_active'] = 1;
+            HelperNews::setStatus($change);
         }
 
+        $this->redirect(Yii::$app->request->baseUrl . '/news/');
 
+    }
 }

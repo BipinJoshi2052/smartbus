@@ -78,8 +78,9 @@ class SettingsController extends Controller {
      */
     public function actionIndex($id = '') {
         $id = Misc::decrypt($id);
+        $settings = Settings::getSettings();
         return $this->render('index', [
-                'settings' => Settings::getSettings(),
+                'settings' => $settings,
                 'editable' => ($id > 0) ? Settings::findOne($id) : false,
         ]);
     }
@@ -97,6 +98,6 @@ class SettingsController extends Controller {
             }
         }
 
-        return $this->redirect(Yii::$app->request->baseUrl . '/settings/');
+        return $this->redirect(Yii::$app->request->baseUrl . '/settings/edit/'.Misc::encrypt($updated));
     }
 }

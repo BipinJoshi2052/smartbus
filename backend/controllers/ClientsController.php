@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use app\models\ClientPageContents;
 use common\components\Helper;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -80,6 +81,27 @@ class ClientsController extends Controller {
         return $this->render('index', [
                 'clients'  => Clients::find()
                                      ->all(),
+                'editable' => ($id > 0) ? Clients::findOne($id) : false,
+        ]);
+    }
+    public function actionManagement($id = '') {
+        $id = Misc::decrypt($id);
+
+        return $this->render('management', [
+                'clients'  => Clients::find()
+                                     ->all(),
+                //                'single' => HelperClients::getOtherclients($not),
+                'editable' => ($id > 0) ? Clients::findOne($id) : false,
+        ]);
+    }
+    public function actionUp($id = '')
+    {
+        $post=Yii::$app->request->post();
+        HelperClients::setManagement($post);
+        return $this->render('management', [
+                'clients'  => Clients::find()
+                                     ->all(),
+                //                'single' => \common\models\ClientPageContents::find()->all(),
                 'editable' => ($id > 0) ? Clients::findOne($id) : false,
         ]);
     }

@@ -233,6 +233,14 @@ AppAsset::register($this);
                <!--                     <span class="hide-menu">Sales Counter</span></a>-->
                <!--               </li>-->
                <!--               <li class="nav-divider"></li>-->
+               <li class = "nav-small-cap">Messages Management</li>
+               <li>
+                  <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/messages/" aria-expanded = "false">
+                     <i class = "mdi mdi-wallet-giftcard"></i>
+                     <span class = "hide-menu">View Messages </span>
+                  </a>
+               </li>
+               <li class = "nav-divider"></li>
                <li class = "nav-small-cap">Advertisement Management</li>
                <li>
                   <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/advertisement/" aria-expanded = "false">
@@ -420,9 +428,19 @@ AppAsset::register($this);
                            <span class = "hide-menu">Slider</span>
                         </a>
                      </li>
+                     <li class = "<?php echo (Yii::$app->controller->id == 'explore' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
+                        <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/explore/" aria-expanded = "false">
+                           <span class = "hide-menu">Explore</span>
+                        </a>
+                     </li>
                      <li class = "<?php echo (Yii::$app->controller->id == 'clients' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
                         <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/clients/" aria-expanded = "false">
                            <span class = "hide-menu">Clients</span>
+                        </a>
+                     </li>
+                     <li class = "<?php echo (Yii::$app->controller->id == 'clients' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
+                        <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/clients/management" aria-expanded = "false">
+                           <span class = "hide-menu">Clients Page Management</span>
                         </a>
                      </li>
                      <li class = "<?php echo (Yii::$app->controller->id == 'testimonials' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">

@@ -21,16 +21,16 @@
             $model = new Messages;
             $model->attributes = $message;
             if ($model->save()) {
-                $subject = 'New Message Received';
-                $title = 'Message Received at ' . date('l jS M Y h:i:s A');
-                $msgBody = '<ul style="text-align:left; list-style-type: none; padding:0;">' .
-                    '<li style="padding:0; margin:0; font-family: lato; font-size: 13px;"><strong>Name:</strong> ' . $message['name'] . '</li>' .
-                    '<li style="padding:0; margin:0; font-family: lato; font-size: 13px;"><strong>Subject:</strong> ' . $message['subject'] . '</li>' .
-                    '<li style="padding:0; margin:0; font-family: lato; font-size: 13px;"><strong>Email:</strong> ' . $message['email'] . '</li>' .
-                    '</ul>' .
-                    '<p style="padding:30px 0; text-align: justify; text-justify: inter-word; font-family: lato; font-size: 13px;">' . $message['message'] . '</p>';
-                $msg = Email::template($title, $msgBody);
-                Email::sendTo(Yii::$app->params['contact']['receive_email'], Yii::$app->params['contact']['receive_name'], $subject, $msg);
+//                $subject = 'New Message Received';
+//                $title = 'Message Received at ' . date('l jS M Y h:i:s A');
+//                $msgBody = '<ul style="text-align:left; list-style-type: none; padding:0;">' .
+//                    '<li style="padding:0; margin:0; font-family: lato; font-size: 13px;"><strong>Name:</strong> ' . $message['name'] . '</li>' .
+//                    '<li style="padding:0; margin:0; font-family: lato; font-size: 13px;"><strong>Phone:</strong> ' . $message['phone'] . '</li>' .
+//                    '<li style="padding:0; margin:0; font-family: lato; font-size: 13px;"><strong>Email:</strong> ' . $message['email'] . '</li>' .
+//                    '</ul>' .
+//                    '<p style="padding:30px 0; text-align: justify; text-justify: inter-word; font-family: lato; font-size: 13px;">' . $message['message'] . '</p>';
+//                $msg = Email::template($title, $msgBody);
+//                Email::sendTo(Yii::$app->params['contact']['receive_email'], Yii::$app->params['contact']['receive_name'], $subject, $msg);
                 return Yii::$app->session->set('alert', json_encode(array(
                     'title' => 'Success',
                     'type' => 'success',

@@ -3,7 +3,10 @@
 namespace frontend\controllers;
 
 use common\components\HelperBlog;
+use common\components\HelperMessages;
 use common\components\HelperNews;
+use common\components\HelperTestimonails;
+use common\components\Misc;
 use common\models\LoginForm;
 use common\models\Sections;
 use frontend\models\ContactForm;
@@ -75,7 +78,11 @@ class SiteController extends Controller {
         $page = 'home';
 
 
-        return $this->render('index',['blog' => HelperBlog::getSiteBlog(),'news'=>HelperNews::getSiteNews()]);
+        return $this->render('index', [
+                'blog'        => HelperBlog::getSiteBlog(),
+                'testimonial' => HelperTestimonails::getTestimonial(),
+                'news'=>HelperNews::getSiteNews()
+        ]);
     }
 
     public function actionAbout() {
@@ -109,11 +116,21 @@ class SiteController extends Controller {
         return $this->render('careers');
     }
 
+    public function actionContact() {
+        $page = 'contact';
+        return $this->render('contact');
+    }
 
-    public function actionSendMessage() {
-        print_r($_POST['message']);
-        die;
-        return;
+
+    public function actionMessage() {
+        $post = $_POST['post'];
+        $message = HelperMessages::update($post);
+        if($message != false) {
+            Misc::setFlash('success', 'Your Message has been sent.');
+        }else{
+            Misc::setFlash('success', 'An Error Occured while sending message.');
+        }
+        return $this->redirect(Yii::$app->request->baseUrl . '/site/contact/');
     }
 
     public function actionRegisterVendor() {
@@ -155,27 +172,27 @@ class SiteController extends Controller {
      * Displays contact page.
      * @return mixed
      */
-    public function actionContact() {
-        $page = 'contact';
-
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
-            }
-            else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
-            }
-
-            return $this->refresh();
-        }
-        else {
-            return $this->render('contact', ['model' => $model, 'content' => Sections::find()
-                                                                                     ->where(['=', 'page', $page])
-                                                                                     ->orderBy(['section_order' => SORT_ASC, 'created_on' => SORT_ASC])
-                                                                                     ->all(), 'page' => Yii::$app->params['pages'][$page],]);
-        }
-    }
+//    public function actionContact() {
+//        $page = 'contact';
+//
+//        $model = new ContactForm();
+//        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+//            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+//                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+//            }
+//            else {
+//                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+//            }
+//
+//            return $this->refresh();
+//        }
+//        else {
+//            return $this->render('contact', ['model' => $model, 'content' => Sections::find()
+//                                                                                     ->where(['=', 'page', $page])
+//                                                                                     ->orderBy(['section_order' => SORT_ASC, 'created_on' => SORT_ASC])
+//                                                                                     ->all(), 'page' => Yii::$app->params['pages'][$page],]);
+//        }
+//    }
 
 
     /**

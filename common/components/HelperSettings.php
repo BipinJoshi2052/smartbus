@@ -35,4 +35,14 @@
             }
             return Misc::exists($settings, FALSE);
         }
+        public static function set($post) {
+            $id = Misc::decrypt($post['id']);
+            $model = Settings::find()->where('id = '.$id)->one();
+            $model->content = $post['content'];
+            $model->caption = $post['caption'];
+            if(!$model->save()) {
+                return false;
+            }
+            return $model->id;
+        }
     }

@@ -241,4 +241,35 @@ class HelperBlog extends Component {
         $blog = Blog::find()->limit(3)->orderBy(['id' => SORT_DESC])->all();
         return $blog;
     }
+    public static function Status($id)
+    {
+        $newStat = Blog::find()->where('id ='. $id)->asArray()->one();
+        return $newStat;
+    }
+    public static function setStatus($post) {
+
+        $id = $post['id'];
+        $model = Blog::findOne($id);
+        //category
+        $model->category_id = $post['category_id'];
+        //slug
+        $title = str_replace(' ', '-', strtolower($post['title']));
+        $model->slug = $title;
+        //title
+        $model->title = $post['title'];
+        //subtitle
+        $model->subtitle = $post['subtitle'];
+        //post_content
+        $model->post_content = $post['post_content'];
+        //is_active
+        $model->is_active = $post['is_active'];
+        //updated_on
+        $model->updated_on = date('Y-m-d H:i:s');
+        //updated_by
+        $model->updated_by = Yii::$app->user->identity->id;
+        if($model->save())
+        {
+                return true;
+        }
+    }
 }

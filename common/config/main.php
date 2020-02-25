@@ -23,6 +23,8 @@ return [
                             '<controller:\w+>/<action:\w+>/<id:\d+>'            => '<controller>/<action>',
                             '<controller:\w+>/<action:\w+>'                     => '<controller>/<action>',
 
+//                            'site/message/' => 'site/message/',
+                            'explore/edit/<id:[a-zA-Z0-9-]+>/'      => 'explore/',
                             //News
                             'news/post/<id:[a-zA-Z0-9-]+>/' => 'news/post',
                             'news/edit-category/<id:[a-zA-Z0-9-]+>/' => 'news/edit-category',

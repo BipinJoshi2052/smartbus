@@ -436,7 +436,47 @@ $(document).ready(function ($) {
       });
    });
 
+   if ($('.delete-message').length) {
+      $('.delete-message').on("click", function () {
+         var cid = $(this).data("id");
+         swal({
+                  title: "Delete Message ?",
+                  text: "Are you sure, you want to delete this Message.",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Yes, delete it",
+                  cancelButtonText: "Cancel",
+                  closeOnConfirm: false,
+                  closeOnCancel: true
+               },
+               function (isConfirm) {
+                  if (isConfirm) {
+                     var $this = $(this);
+                     var $id = $(this).attr("data-id");
+                     $.ajax({
+                        url: baseUrl + "/messages/delete",
+                        type: 'post',
+                        data: {
+                           id: cid,
+                        },
+                        success: function (data) {
+                           if (data === 'false') {
+                              typeAlert('Error', 'Sorry, Could not delete Message', 'error');
+                           } else {
+                              typeAlert('Success', 'Message Deleted.', 'success');
+                              location.reload();
+                           }
+                        },
+                        error: function () {
+                           typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+                        }
+                     });
+                  }
+               });
 
+      });
+   }
    if ($('.delete-item').length) {
       $('.delete-item').on("click", function () {
          var cid = $(this).data("id");
@@ -464,9 +504,9 @@ $(document).ready(function ($) {
                         },
                         success: function (data) {
                            if (data === 'false') {
-                              typeAlert('Error', 'Sorry, Could not delete Album', 'error');
+                              typeAlert('Error', 'Sorry, Could not delete Message', 'error');
                            } else {
-                              typeAlert('Success', 'Album Deleted.', 'success');
+                              typeAlert('Success', 'Message Deleted.', 'success');
                               location.reload();
                            }
                         },
@@ -807,6 +847,34 @@ $(document).ready(function ($) {
       $('[data-plugin="select2"]').select2();
    }
 
+   $(function(){
+      $('.show-message').on("click", function () {
+         var cid = $(this).data("id");
+         console.log(cid);
+         $.ajax({
+            url: baseUrl + "/messages/read-message",
+            type: 'post',
+            data: {
+                  id : cid
+            },
+            success: function (data) {
+               console.log(data);
+               if (data === '') {
+                  typeAlert('Error', 'Sorry, Could not delete Advertisement', 'error');
+
+               } else {
+
+                  $('.modal').modal('show');
+                  $('.modal-dialog').html(data);
+               }
+            },
+            error: function () {
+               typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+            }
+         });
+
+      });
+   });
    // Datepicker
    $(function () {
       if ($('[data-plugin="datepicker"]').length) {

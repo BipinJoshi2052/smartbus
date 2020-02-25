@@ -154,11 +154,9 @@ class HelperNews extends Component {
             $model->created_by = Yii::$app->user->identity->id;
             $model->updated_by = Yii::$app->user->identity->id;
             if ($model->save()) {
-
+                return true;
             }
         }
-
-
     }
 
     public static function deleteNewsCategory($id) {
@@ -167,8 +165,32 @@ class HelperNews extends Component {
     }
     public static function getSiteNews()
     {
-        $news = News::find()->limit(3)->orderBy(['id'=>SORT_DESC])->all();
+        $news = News::find()->limit(3)->orderBy(['id'=>SORT_DESC])->asArray()->all();
         return $news;
     }
+    public static function Status($id)
+    {
+        $newStat = News::find()->where('id ='. $id)->asArray()->one();
+        return $newStat;
+    }
+    public static function setStatus($post) {
+
+
+        $id = $post['id'];
+        $model = News::findOne($id);
+        $slug = str_replace(' ', '-', strtolower($post['title']));
+        $model->title = $post['title'];
+        $model->slug = $slug;
+        $model->post_content = $post['post_content'];
+        $model->subtitle = $post['subtitle'];
+        $model->category_id = $post['category_id'];
+        $model->is_active = $post['is_active'];
+        $model->created_by = Yii::$app->user->identity->id;
+        $model->updated_by = Yii::$app->user->identity->id;
+        if ($model->save()) {
+
+        }
+    }
+
 }
 

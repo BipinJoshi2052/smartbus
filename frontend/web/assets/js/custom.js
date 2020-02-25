@@ -34,7 +34,9 @@ $(document).ready(function ($) {
    });
 
 
+   $(function(){
 
+   });
    // Select 2
 
    $(function () {

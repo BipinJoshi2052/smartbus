@@ -319,55 +319,108 @@ class Helper extends Component {
     }
 
     public static function setModel($table, $data, $image = [], $seats = []) {
-        $id = Misc::decrypt($data['id']);
 
-        $model = self::requestModel($table, $id);
+        if ($data['id'] != '') {
 
-        if ($model && !empty($model)) {
-            $model->attributes = $data;
-            //            $model->load($data);
-            if ($model->hasAttribute('image') && isset($image['name']) && $image['name'] != '') {
-                $model = self::setFeaturedImage($model, $image);
-            }
+            $model = self::requestModel($table, $data['id']);
 
-            if ($table == 'vehicles') {
-                if ($data['registration_date'] != '') {
-                    $data['registration_date'] = Misc::Ymd($data['registration_date']);
-                    $model->registration_date = ($data['registration_date'] != '') ? Misc::Ymd($data['registration_date']) : '';
+            if ($model && !empty($model)) {
+                $model->attributes = $data;
+                //            $model->load($data);
+                if ($model->hasAttribute('image') && isset($image['name']) && $image['name'] != '') {
+                    $model = self::setFeaturedImage($model, $image);
                 }
 
-                if (!empty($seats)) {
-                    $model = self::setSeats($model, $seats);
+                if ($table == 'vehicles') {
+                    if ($data['registration_date'] != '') {
+                        $data['registration_date'] = Misc::Ymd($data['registration_date']);
+                        $model->registration_date = ($data['registration_date'] != '') ? Misc::Ymd($data['registration_date']) : '';
+                    }
+
+                    if (!empty($seats)) {
+                        $model = self::setSeats($model, $seats);
+                    }
+                    if (!empty($data['amenities'])) {
+                        $model->amenities = Misc::json_encode($data['amenities']);
+                    }
                 }
-                if (!empty($data['amenities'])) {
-                    $model->amenities = Misc::json_encode($data['amenities']);
+
+                if ($table == 'schedules') {
+                    $vehicle = Vehicles::findOne($data['vehicle_id']);
+                    $model->departure = Misc::Ymd($data['departure']);
+                    $model->arrival = Misc::Ymd($data['arrival']);
+                    $model->user_id = $vehicle->user_id;
+                    $model->seats = $vehicle->seats;
+                    $model->location_from = $data['location_from'];
+                    $model->location_to = $data['location_to'];
+                    $model->prices = (isset($data['prices']) && !empty($data['prices'])) ? Misc::json_encode($data['prices']) : '';
+
+                    $model->duration = (isset($data['duration']) && $data['duration'] != '') ? $data['duration'] : '';
+                }
+                if (!$model->validate()) {
+                    Misc::setFlash('danger', json_encode($model->getErrors()));
+                    return false;
+                }
+
+                if (!($model->save() == false)) {
+                    return $var=[
+                            'id' => $model['id']
+                    ];
                 }
             }
+            Misc::setFlash('danger', ucwords(str_replace(['_'], ' ', $table)) . ' not updated. Please Try again');
 
-            if ($table == 'schedules') {
-                $vehicle = Vehicles::findOne($data['vehicle_id']);
-                $model->departure = Misc::Ymd($data['departure']);
-                $model->arrival = Misc::Ymd($data['arrival']);
-                $model->user_id = $vehicle->user_id;
-                $model->seats = $vehicle->seats;
-                $model->location_from = $data['location_from'];
-                $model->location_to = $data['location_to'];
-                $model->prices = (isset($data['prices']) && !empty($data['prices'])) ? Misc::json_encode($data['prices']) : '';
-
-                $model->duration = (isset($data['duration']) && $data['duration'] != '') ? $data['duration'] : '';
-            }
-            if (!$model->validate()) {
-                Misc::setFlash('danger', json_encode($model->getErrors()));
-                return false;
-            }
-
-            if (!($model->save() == false)) {
-                return $model;
-            }
+            return false;
         }
-        Misc::setFlash('danger', ucwords(str_replace(['_'], ' ', $table)) . ' not updated. Please Try again');
+        else{
+            $id= '';
+            $model = self::requestModel($table, $id);
+            if ($model && !empty($model)) {
+                $model->attributes = $data;
+                //            $model->load($data);
+                if ($model->hasAttribute('image') && isset($image['name']) && $image['name'] != '') {
+                    $model = self::setFeaturedImage($model, $image);
+                }
 
-        return false;
+                if ($table == 'vehicles') {
+                    if ($data['registration_date'] != '') {
+                        $data['registration_date'] = Misc::Ymd($data['registration_date']);
+                        $model->registration_date = ($data['registration_date'] != '') ? Misc::Ymd($data['registration_date']) : '';
+                    }
+
+                    if (!empty($seats)) {
+                        $model = self::setSeats($model, $seats);
+                    }
+                    if (!empty($data['amenities'])) {
+                        $model->amenities = Misc::json_encode($data['amenities']);
+                    }
+                }
+
+                if ($table == 'schedules') {
+                    $vehicle = Vehicles::findOne($data['vehicle_id']);
+                    $model->departure = Misc::Ymd($data['departure']);
+                    $model->arrival = Misc::Ymd($data['arrival']);
+                    $model->user_id = $vehicle->user_id;
+                    $model->seats = $vehicle->seats;
+                    $model->location_from = $data['location_from'];
+                    $model->location_to = $data['location_to'];
+                    $model->prices = (isset($data['prices']) && !empty($data['prices'])) ? Misc::json_encode($data['prices']) : '';
+
+                    $model->duration = (isset($data['duration']) && $data['duration'] != '') ? $data['duration'] : '';
+                }
+                if (!$model->validate()) {
+                    Misc::setFlash('danger', json_encode($model->getErrors()));
+                    return false;
+                }
+
+                if (!($model->save() == false)) {
+                    return $model;
+                }
+            }
+            Misc::setFlash('danger', ucwords(str_replace(['_'], ' ', $table)) . ' not updated. Please Try again');
+
+            return false;
+        }
     }
 
     public static function setRoute($schedule, $route) {
