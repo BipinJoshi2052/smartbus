@@ -1,0 +1,90 @@
+Backend
+        Dashboard = Not Touched
+
+        View Messages
+                    •	View
+                    •	Edit
+
+        Advertisements
+                    •	Add New Advertisement
+                    •	Edit
+                    •	Delete
+                    •	Change of visibility when clicked on icon of Visibility//
+
+        Verify Action
+                    •	View
+                    •	Edit Verification with verification comment
+                    •	If action is from admin then it is already verified
+                    •	Change in verification affects the verification status of corresponding id of the table
+
+        Verify Comments
+                    •	View
+                    •	Edit Verification with verification comment
+                    •	If comment is from admin then it is already verified
+
+        Amenities
+                    •	Add
+                    •	Edit
+                    •	If added by admin then it is already verified
+                    •	Adding here populates verification action with table_name and table_id
+
+        Location
+                    •	Add
+                    •	Edit
+                    •	If action is from admin then it is already verified
+                    •	Adding here populates verification action with table_name and table_id
+
+        Vehicle Types = Not Touched
+
+        Blog CRUD
+                    •	CRUD
+                    •	Change of visibility when clicked on icon of Visibility
+
+        Blog Category
+                    •	CRUD
+
+        News CRUD
+                    •	CRUD
+                    •	Change of visibility when clicked on icon of Visibility
+
+        News Category
+                    •	CRUD
+
+        Testimonials Category
+                    •	CRUD
+
+        Booking, Schedule, Vehicle, User, Accounts = Not Touched
+
+        Content > Clients
+                    •	CRUD
+
+        Content > Clients Page Management
+                    •	CRUD
+
+        Settings
+                    •	Add ?
+                    •	Delete ?
+                    •	Edit
+
+Frontend
+        Home
+                    •	Explore More
+                    •	News Update
+                    •	Blog Update
+                    •	Testimonial
+
+        About
+                    •	Dyanmic Value From settings//
+        Blog
+                    •	View All
+                    •	View Single
+                    •	Comment by user or non-user
+                    •	Pagination
+
+        News
+                    •	View All
+                    •	View Single
+                    •	Pagination
+
+        Contact
+                     •	Send Message

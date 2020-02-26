@@ -24,6 +24,7 @@ return [
                             '<controller:\w+>/<action:\w+>'                     => '<controller>/<action>',
 
 //                            'site/message/' => 'site/message/',
+                            'clients/post/<id:[a-zA-Z0-9-]+>/'      => 'clients/post',
                             'explore/edit/<id:[a-zA-Z0-9-]+>/'      => 'explore/',
                             //News
                             'news/post/<id:[a-zA-Z0-9-]+>/' => 'news/post',

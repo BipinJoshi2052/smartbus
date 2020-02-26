@@ -356,11 +356,11 @@ AppAsset::register($this);
                      <li class = "nav-divider"></li>
                   </ul>
                </li>
-               <li class = "nav-divider"></li>
-               <li class = "nav-small-cap">Miscellaneous</li>
-               <li><a href = "<?php echo Yii::$app->request->baseUrl; ?>/amenities"> <i class = "mdi mdi-arrange-send-backward"></i><span class = "hide-menu">Amenities</span></a></li>
-               <li><a href = "<?php echo Yii::$app->request->baseUrl; ?>/vehicles/types"> <i class = "mdi mdi-arrange-send-backward"></i><span class = "hide-menu">Vehicle Types</span></a></li>
-               <li><a href = "<?php echo Yii::$app->request->baseUrl; ?>/locations"> <i class = "mdi mdi-map-marker"></i><span class = "hide-menu">Locations</span></a></li>
+<!--               <li class = "nav-divider"></li>-->
+<!--               <li class = "nav-small-cap">Miscellaneous</li>-->
+<!--               <li><a href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/amenities"> <i class = "mdi mdi-arrange-send-backward"></i><span class = "hide-menu">Amenities</span></a></li>-->
+<!--               <li><a href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/vehicles/types"> <i class = "mdi mdi-arrange-send-backward"></i><span class = "hide-menu">Vehicle Types</span></a></li>-->
+<!--               <li><a href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/locations"> <i class = "mdi mdi-map-marker"></i><span class = "hide-menu">Locations</span></a></li>-->
 
 
                <li class = "nav-divider"></li>
@@ -443,11 +443,11 @@ AppAsset::register($this);
                            <span class = "hide-menu">Clients Page Management</span>
                         </a>
                      </li>
-                     <li class = "<?php echo (Yii::$app->controller->id == 'testimonials' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
-                        <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/testimonials/" aria-expanded = "false">
-                           <span class = "hide-menu">Testimonials</span>
-                        </a>
-                     </li>
+<!--                     <li class = "--><?php //echo (Yii::$app->controller->id == 'testimonials' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?><!--">-->
+<!--                        <a class = "waves-effect waves-dark" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/testimonials/" aria-expanded = "false">-->
+<!--                           <span class = "hide-menu">Testimonials</span>-->
+<!--                        </a>-->
+<!--                     </li>-->
                      <li class = "<?php echo (Yii::$app->controller->id == 'faq' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
                         <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/faq/" aria-expanded = "false">
                            <span class = "hide-menu">FAQ</span>
@@ -458,16 +458,16 @@ AppAsset::register($this);
                            <span class = "hide-menu">Terms & Conditions</span>
                         </a>
                      </li>
-                     <li class = "<?php echo (Yii::$app->controller->id == 'blog' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
-                        <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/blog/" aria-expanded = "false">
-                           <span class = "hide-menu">Blog</span>
-                        </a>
-                     </li>
-                     <li class = "<?php echo (Yii::$app->controller->id == 'blog' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
-                        <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/News/" aria-expanded = "false">
-                           <span class = "hide-menu">News</span>
-                        </a>
-                     </li>
+<!--                     <li class = "--><?php //echo (Yii::$app->controller->id == 'blog' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?><!--">-->
+<!--                        <a class = "waves-effect waves-dark" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/blog/" aria-expanded = "false">-->
+<!--                           <span class = "hide-menu">Blog</span>-->
+<!--                        </a>-->
+<!--                     </li>-->
+<!--                     <li class = "--><?php //echo (Yii::$app->controller->id == 'blog' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?><!--">-->
+<!--                        <a class = "waves-effect waves-dark" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/News/" aria-expanded = "false">-->
+<!--                           <span class = "hide-menu">News</span>-->
+<!--                        </a>-->
+<!--                     </li>-->
                   </ul>
                </li>
                <li>

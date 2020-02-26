@@ -37,7 +37,8 @@ class HelperNews extends Component {
         $singleNews = News::find()->
         where('id =' . $id)->
         asArray()->
-        WITH('author')->
+        with('category')->
+        with('author')->
         one();
         return $singleNews;
     }

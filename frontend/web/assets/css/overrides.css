@@ -1991,9 +1991,9 @@ header .navbar {
     width: 100% ! important;
     height: auto ! important;
 }
-.post-image img{
-    height: 255px;
-}
+/*.post-image img{*/
+/*    height: 255px;*/
+/*}*/
 /*.navbar-light .navbar-nav .nav-link{
     color: white ;
 }

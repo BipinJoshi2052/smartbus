@@ -1,5 +1,4 @@
 <?php
-
 Yii::$app->session->getFlash('success');
 /* @var $this yii\web\View */
 $this->title = 'Single Post';
@@ -56,29 +55,29 @@ $this->title = 'Single Post';
       <hr>
       <div class = "row">
          <div class = "col-md-12 top-pad-20">
+
+             <?php if (!empty($single['blogComments']) && count($single['blogComments']) > 0):?>
             <div class = "blg-comment">
                <h4>Blog Comments</h4>
             </div>
-
-             <?php if (!empty($post) && count($post) > 0):
-                 foreach ($single['blogComments'] as $c => $comment):?>
+                 <?php foreach ($single['blogComments'] as $c => $comment):?>
                     <div class = "comment-item">
 
-                       <div class = "pull-left author-img"><img class = "img-circle" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $comment['user']['image'] ?>" width = "80" height = "80" alt = "" title = ""></div>
+                       <div class = "pull-left author-img">
+
+                          <img class = "img-circle" src = "<?php if(isset($comment['user']) && $comment['user']!=''){echo Yii::$app->request->baseUrl .'/common/assets/images/uploads/'.$comment['user']['image'];}else{echo Yii::$app->request->baseUrl . '/common/assets/images/uploads/no-image.png';} ?>" width = "80" height = "80" alt = "" title = "">
+                       </div>
                        <p><?php echo $comment['comment'] ?></p>
                        <div class = "post-meta">
-                          <!-- Author  -->
-                          <span class = "author"><i class = "fa fa-user"></i><?php echo $comment['name'] ?></span>
-                          <!-- Meta Date -->
+                          <span class = "author"><i class = "fa fa-user"></i><?php if(isset($comment['user'])&&$comment['user']!=''){ echo $comment['user']['name'];}else{echo $comment['name'] ;}?></span>
                           <span class = "time"><i class = "fa fa-calendar"></i><?php echo $comment['created_on'] ?></span>
-                          <!-- Category -->
-<!--                          <span class = "blogComments pull-right"><i class = "fa fa-blogComments"></i> <a href = "#">reply</a></span>-->
                        </div>
                     </div>
-                 <?php
-                 endforeach; ?>
+                 <?php endforeach; ?>
              <?php else: ?>
-                <h3>Sorry, No Blogs Found</h3>
+                <div class = "blg-comment">
+                <h4>Sorry, No Comments Found</h4>
+             </div>
              <?php endif; ?>
          </div>
       </div>
@@ -86,7 +85,9 @@ $this->title = 'Single Post';
       <form role = "form" enctype = "multipart/form-data" method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/blog/update/">
          <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
           <?php
-          foreach ($post as $b => $p): ?>
+          foreach ($post
+
+          as $b => $p): ?>
          <input type = "hidden" name = "post[blog_id]" value = "<?php echo (isset($p['id'])) ? $p['id'] : '' ?>"/>
          <div class = "row">
             <input type = "hidden" name = "post[user_id]" value = "<?php if (isset(Yii::$app->user->identity->id)) {
@@ -97,39 +98,31 @@ $this->title = 'Single Post';
 
 
              <?php endforeach; ?>
-            <div class = "row">
-               <!-- Field 1 -->
+            <!-- Field 1 -->
+            <?php if(!isset(Yii::$app->user->identity->id)) :?>
                <div class = "col-md-6">
                   <div class = "input-text form-group">
                      <input type = "text" name = "post[name]" class = "input-name form-control" placeholder = "Full Name"/>
                   </div>
-
                </div>
                <div class = "col-md-6">
-                  <!-- Field 2 -->
                   <div class = "input-email form-group">
                      <input type = "email" name = "post[email]" class = "input-email form-control" placeholder = "Email"/>
                   </div>
-
                </div>
                <div class = "col-md-6">
                   <div class = "input-text form-group">
-
                      <input type = "number" name = "post[phone]" class = "input-name form-control" placeholder = "Phone"/>
                   </div>
                </div>
 
-               <div class = "col-md-6">
-                  <!-- Field 4 -->
-                  <div class = "textarea-message form-group">
-                     <textarea name = "post[comment]" class = "textarea-message form-control" placeholder = "Message" rows = "4"></textarea>
-                  </div>
-                  <!-- Button -->
-                  <button class = "btn btn-default" type = "submit">Send Now <i class = "icon-paper-plane"></i></button>
+            <?php endif; ?>
+            <div class = "col-md-6">
+               <div class = "textarea-message form-group">
+                  <textarea name = "post[comment]" class = "textarea-message form-control" placeholder = "Comment" rows = "4"></textarea>
                </div>
+               <button class = "btn btn-default" type = "submit">Send Now <i class = "icon-paper-plane"></i></button>
             </div>
       </form>
-   </div>
-   </div>
    </div>
 </section>

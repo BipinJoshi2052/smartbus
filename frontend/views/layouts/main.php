@@ -274,7 +274,7 @@ AppAsset::register($this);
                <h3 class = "text-capitalize inline-block tb-margin-20 black animated fadeInUp visible" data-animation = "fadeInUp">More queries?
                   <span class = "white">How can we help ?</span></h3>
                <div class = "inline-block lr-pad-20">
-                  <a href = "#" class = "btn btn-transparent-white btn-lg animated fadeInDown visible" data-animation = "fadeInDown">Contact Us</a>
+                  <a href = "<?= Yii::$app->request->baseUrl; ?>/site/contact"" class = "btn btn-transparent-white btn-lg animated fadeInDown visible" data-animation = "fadeInDown">Contact Us</a>
                </div>
             </div>
          </div>
@@ -519,7 +519,7 @@ AppAsset::register($this);
 
    </header>
 
-   <div class = "chat">
+   <div class = "chat" style="display: none;">
 
       <div class = "chat-history">
 

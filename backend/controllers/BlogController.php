@@ -113,10 +113,6 @@ class BlogController extends Controller {
         if (isset($_POST['post'])) {
             $comment =  HelperBlog::setBlogComments($_POST['post']);
             if ($comment != false) {
-//                echo '<pre>';
-//                print_r($comment);
-//                echo '</pre>';
-//                die;
                 if($comment['role']!=1) {
                     Misc::setFlash('success', 'Your Comment has been sent for verification.');
                 }else{

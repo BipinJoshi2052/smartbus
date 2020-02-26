@@ -84,27 +84,6 @@ class ClientsController extends Controller {
                 'editable' => ($id > 0) ? Clients::findOne($id) : false,
         ]);
     }
-    public function actionManagement($id = '') {
-        $id = Misc::decrypt($id);
-
-        return $this->render('management', [
-                'clients'  => Clients::find()
-                                     ->all(),
-                //                'single' => HelperClients::getOtherclients($not),
-                'editable' => ($id > 0) ? Clients::findOne($id) : false,
-        ]);
-    }
-    public function actionUp($id = '')
-    {
-        $post=Yii::$app->request->post();
-        HelperClients::setManagement($post);
-        return $this->render('management', [
-                'clients'  => Clients::find()
-                                     ->all(),
-                //                'single' => \common\models\ClientPageContents::find()->all(),
-                'editable' => ($id > 0) ? Clients::findOne($id) : false,
-        ]);
-    }
 
     public function actionUpdate() {
         $image = (isset($_FILES['image'])) ? $_FILES['image'] : [];
@@ -117,5 +96,57 @@ class ClientsController extends Controller {
         }
 
         return $this->redirect(Yii::$app->request->baseUrl . '/clients/');
+    }
+
+    ///// Clients-page-Management controller section
+    public function actionManagement() {
+
+        return $this->render('client-management/management', [
+                'page'    => HelperClients::getAllClientsManagement(),
+                'clients' => HelperClients::getClients(),
+
+        ]);
+    }
+
+    public function actionPost($id = '') {
+        $existing_client_id = HelperClients::getOtherclients();
+        $post = [];
+        if ($id != '') {
+            $id = Misc::decrypt($id);
+            $post = HelperClients::getSingleClientsPage($id);
+        }
+        $existing_clients = HelperClients::getAllClientsManagement();
+        return $this->render('client-management/form', [
+                'clients'           => HelperClients::getClients(),
+                'editable'          => $post,
+                'existing_client_id' => $existing_client_id
+        ]);
+    }
+
+    public function actionUp($id = '') {
+        $post = Yii::$app->request->post();
+        $result = HelperClients::setManagement($post);
+        if ($result != false) {
+            $this->redirect(Yii::$app->request->baseUrl . '/clients/post/' . Misc::encrypt($result));
+        }
+
+    }
+
+    public function actionList() {
+        $this->render('client-management/list');
+    }
+
+    public function actionDelete() {
+        if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
+            return HelperClients::deleteClients($_POST['id']);
+        }
+
+    }
+
+    public function actionDeleteClients() {
+        if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
+            return HelperClients::deleteClientsPage($_POST['id']);
+        }
+
     }
 }

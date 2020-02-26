@@ -586,7 +586,7 @@ li.search-dropdown a {
 }
 
 .navbar-nav > li > a {
-    line-height: 40px;
+    line-height: 20px;
     /* line-height: 25px;*/
     font-size: 15px;
     font-weight: 700;

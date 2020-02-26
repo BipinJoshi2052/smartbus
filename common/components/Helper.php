@@ -9,6 +9,7 @@ namespace common\components;
 
 use common\models\Amenities;
 use common\models\generated\UserRoles;
+use common\models\Locations;
 use common\models\Pages;
 use common\models\Permissions;
 use common\models\ScheduleRoutes;
@@ -408,12 +409,25 @@ class Helper extends Component {
 
                     $model->duration = (isset($data['duration']) && $data['duration'] != '') ? $data['duration'] : '';
                 }
+
                 if (!$model->validate()) {
                     Misc::setFlash('danger', json_encode($model->getErrors()));
                     return false;
                 }
 
                 if (!($model->save() == false)) {
+                    $table_id = $model->verification_id;
+                    $model2 = VerificationActions::find()->where('id='.$table_id)->one();
+                    $model2->table_id = $model->id;
+                    $requested_user_id = $model2->requested_by;
+                    $requested_user = User::find()->where('id='.$requested_user_id)->one();
+                    if($requested_user['role']==1) {
+                        $model2->edited_status = 1;
+                    }
+                    if(!$model2->save()) {
+                    return false;
+                    }
+
                     return $model;
                 }
             }

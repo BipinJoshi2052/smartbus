@@ -156,22 +156,37 @@ class HelperBlog extends Component {
                     $model->edited_status = 1;
                     $admin = 1;
                 }
-                        $model->blog_id = $post['blog_id'];
-                        $model->comment = $post['comment'];
-                        $model->name = $post['name'];
-                        $model->email = $post['email'];
-                        $model->phone = $post['phone'];
-                        $model->customer_id = $post['user_id'];
-                        if ($model->save()) {
-                            return $var = [
-                                    'blog_id' => $post['blog_id'],
-                                    'role'    => $admin
-                            ];
-                        }
-                    }
+                $model->blog_id = $post['blog_id'];
+                $model->comment = $post['comment'];
+                $model->customer_id = isset($post['user_id']) ? $post['user_id'] : '';
+                $model->name = isset($post['name']) ? $post['name'] : '';
+                $model->email = isset($post['email']) ? $post['email'] : '';
+                $model->phone = isset($post['phone']) ? $post['phone'] : '';
+                if ($model->save()) {
+                    return $var = [
+                            'blog_id' => $post['blog_id'],
+                            'role'    => $admin
+                    ];
                 }
-                return false;
             }
+            else {
+                $model->blog_id = $post['blog_id'];
+                $model->comment = $post['comment'];
+                $model->customer_id = isset($post['user_id']) ? $post['user_id'] : '';
+                $model->name = isset($post['name']) ? $post['name'] : '';
+                $model->email = isset($post['email']) ? $post['email'] : '';
+                $model->phone = isset($post['phone']) ? $post['phone'] : '';
+                if ($model->save()) {
+                    return $var = [
+                            'blog_id' => $post['blog_id'],
+                            'role'    => $admin
+                    ];
+                }
+
+            }
+        }
+        return false;
+    }
 
     //Blog Categories
 
@@ -241,11 +256,12 @@ class HelperBlog extends Component {
         $blog = Blog::find()->limit(3)->orderBy(['id' => SORT_DESC])->all();
         return $blog;
     }
-    public static function Status($id)
-    {
-        $newStat = Blog::find()->where('id ='. $id)->asArray()->one();
+
+    public static function Status($id) {
+        $newStat = Blog::find()->where('id =' . $id)->asArray()->one();
         return $newStat;
     }
+
     public static function setStatus($post) {
 
         $id = $post['id'];
@@ -267,9 +283,8 @@ class HelperBlog extends Component {
         $model->updated_on = date('Y-m-d H:i:s');
         //updated_by
         $model->updated_by = Yii::$app->user->identity->id;
-        if($model->save())
-        {
-                return true;
+        if ($model->save()) {
+            return true;
         }
     }
 }

@@ -10,12 +10,12 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
             Messages
          </h3>
       </div>
-      <div class = "col-md-6 align-self-center text-right">
-         <a href = "<?php echo Yii::$app->request->baseUrl; ?>/blog/post" class = "btn btn-primary">
-            <i class = "mdi mdi-plus m-r-5"></i>
-            Add New Post
-         </a>
-      </div>
+<!--      <div class = "col-md-6 align-self-center text-right">-->
+<!--         <a href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/blog/post" class = "btn btn-primary">-->
+<!--            <i class = "mdi mdi-plus m-r-5"></i>-->
+<!--            Add New Post-->
+<!--         </a>-->
+<!--      </div>-->
    </div>
    <div class = "card extended blog-post-wrapper">
       <div class = "card-header">
