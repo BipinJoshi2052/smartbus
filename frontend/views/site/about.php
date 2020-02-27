@@ -156,7 +156,9 @@ $this->title = 'About';
                      $json = $s['content'];
                      $obj = json_decode($json);
                      print '<p>'.$obj->{'what_we_do'}.'</p>';
-                 }}?>
+                 }
+             }
+             ?>
          </div>
       </div>
    </div>

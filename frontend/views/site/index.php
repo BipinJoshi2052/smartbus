@@ -358,8 +358,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 </section>
 
 
-
-
 <section id = "testimonials" class = "page-section light-bg">
    <div class = "section-title" data-animation = "fadeInUp">
       <!-- Heading -->
@@ -370,14 +368,14 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
          <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
             <div class = "item">
                <div class = "explore-nepal">
-                  <img  src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal2.jpg" alt = ""/>
+                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal2.jpg" alt = ""/>
 
                </div>
 
             </div>
             <div class = "item">
                <div class = "explore-nepal">
-                  <img  src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal3.jpg" alt = ""/>
+                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal3.jpg" alt = ""/>
 
                </div>
 
@@ -464,46 +462,46 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
          </div>
       </div>
       <div class = "row" data-animation = "fadeInUp">
-          <?php if (!empty($news) && count($news) > 0):
-              foreach ($news as $n)
+          <?php if (!empty($news) && count($news) > 0) {
+              foreach ($news as $n) {
                   ?>
-                 <div class = "col-sm-12 col-md-4 col-lg-4" >
-                 <div class = "post-slide8" >
-                 <div class = "post-img">
-                 <img src="<?php echo (isset($n['image']) && $n['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $n['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "" title = "">
-             <div class = "post-date">
+                 <div class = "col-sm-12 col-md-4 col-lg-4">
+                    <div class = "post-slide8">
+                       <div class = "post-img">
+                          <img src = "<?php echo (isset($n['image']) && $n['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $n['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "" title = "">
 
-                 <?php
-                 $date =$n['created_on'];
-                 $splitTimeStamp = explode(" ",$date);
-                 $date = $splitTimeStamp[0];
-                 $time = $splitTimeStamp[1];
+                          <div class = "post-date">
+                              <?php
+                              $date = $n['created_on'];
+                              $splitTimeStamp = explode(" ", $date);
+                              $date = $splitTimeStamp[0];
+                              $time = $splitTimeStamp[1];
 
-                 $splitDate = explode("-",$date);
-                 $year = $splitDate[0];
-                 $month=$splitDate[1];
-                 $day = $splitDate[2];
+                              $splitDate = explode("-", $date);
+                              $year = $splitDate[0];
+                              $month = $splitDate[1];
+                              $day = $splitDate[2];
 
-                 $dateObj   = DateTime::createFromFormat('!m', $month);
-                 $monthName = $dateObj->format('M');
-                 $dayName = $dateObj->format('1');
-                 ?>
-                <span class="date"><?php echo $day ?></span>
-                <span class="month"><?php echo $monthName  ?></span>
-             </div>
-             </div>
-             <div class = "blog-content">
-                <div class = "blog-title">
-                   <h4><a href = "<?php echo Yii::$app->request->baseUrl; ?>/news/post/<?php echo \common\components\Misc::encrypt($n['id']); ?>"><?php echo $n['title'] ?></a></h4>
-                </div>
-             </div>
-
-
-             </div>
-             </div>
-          <?php else : ?>
+                              $dateObj = DateTime::createFromFormat('!m', $month);
+                              $monthName = $dateObj->format('M');
+                              $dayName = $dateObj->format('1');
+                              ?>
+                             <span class = "date"><?php echo $day ?></span>
+                             <span class = "month"><?php echo $monthName ?></span>
+                          </div>
+                       </div>
+                       <div class = "blog-content">
+                          <div class = "blog-title">
+                             <h4><a href = "<?php echo Yii::$app->request->baseUrl; ?>/news/post/<?php echo \common\components\Misc::encrypt($n['id']); ?>"><?php echo $n['title'] ?></a></h4>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              <?php }
+          }
+          else { ?>
              <h3>No News Found</h3>
-          <?php endif; ?>
+          <?php } ?>
       </div>
    </div>
 
@@ -524,20 +522,18 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 
 
          <div class = "row" data-animation = "fadeInUp">
-             <?php if (!empty($blog) && count($blog) > 0):
-                 foreach ($blog as $b)
+             <?php if (!empty($blog) && count($blog) > 0){
+                 foreach ($blog as $b){
                      ?>
                     <div class = "col-lg-4 col-md-6">
-                    <!-- Single Blog -->
-                    <div class = "single-blog">
-                    <div class = "blog-img">
+                        <div class = "single-blog">
+                        <div class = "blog-img">
                     <img src="<?php echo (isset($b['image']) && $b['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $b['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>"  alt = "" title = "">
-                <!--  <img src="http://infinityflamesoft.com/html/abal-preview/assets/img/blog/blog1.jpg" alt=""> -->
                 <div class = "post-category">
                    <a href = "#"><?php echo (isset($b['category']['name'])) ? $b['category']['name'] : '' ?></a>
                 </div>
                 </div>
-                <div class = "blog-content">
+                        <div class = "blog-content">
                    <div class = "blog-title">
                       <h4><a href = " <?php echo Yii::$app->request->baseUrl; ?>/blog/view/<?php echo \common\components\Misc::encrypt($b['id']); ?>"><?php echo $b['title'] ?></a></h4>
                       <div class = "meta">
@@ -551,14 +547,12 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                          </ul>
                       </div>
                    </div>
-                   <!--   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque.</p>
-                     <a href="#" class="box_btn">read more</a> -->
                 </div>
-                </div>
-                </div>
-             <?php else : ?>
+                     </div>
+                     </div>
+             <?php }}else { ?>
                 <h3>No Blogs Found</h3>
-             <?php endif; ?>
+             <?php } ?>
 
          </div>
 
@@ -568,7 +562,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 
 
 <?= $this->render('../snippets/user_signup') ?>
-
 
 
 <section id = "testimonials" class = "page-section light-bg">
@@ -592,7 +585,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                        </div>
                        <div class = "client-details text-center">
                           <div class = "client-image">
-                             <img style="height: 80px;" class = "img-circle" src = "<?php echo (isset($t['image']) && $t['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $t['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "80" height = "80" alt = "">
+                             <img style = "height: 80px;" class = "img-circle" src = "<?php echo (isset($t['image']) && $t['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $t['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "80" height = "80" alt = "">
                           </div>
                           <div class = "client-details">
                              <!-- Name -->

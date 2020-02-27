@@ -292,7 +292,12 @@ AppAsset::register($this);
                      <h3 class = "title">About Us</h3>
                   </div>
                   <!-- Text -->
-                  <p>We like to provide great site with complete features what you want to impletement in your business. We like to provide great site with complete features what you want to impletement in your business!</p>
+                  <p>
+                     <?php
+                     $about = json_decode(Yii::$app->params['settings']['about_us']);
+                     print $about->{'about_us'};
+                     ?>
+                  </p>
 
                   <!--    <p>
                         <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
@@ -311,49 +316,46 @@ AppAsset::register($this);
                      <h3 class = "title">Contact</h3>
                   </div>
                   <p>
-                     <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
-                     <br>Chakrapath, Kathmandu, Nepal.
+
+                     <strong>Office:</strong>
+                      <?php
+                      $contact = json_decode(Yii::$app->params['settings']['contact']);
+                      print $contact[0]->{'office'};
+                      ?>
                   </p>
                   <!-- Phone -->
                   <p>
-                     <strong>Call Us:</strong> +977 (1) 456-78-90 or <br>+977 (1) 456-78-90
+                     <strong>Call Us:</strong>
+                      <?php
+                      $contact = json_decode(Yii::$app->params['settings']['contact']);
+                      print $contact[0]->{'call_us'};
+                      ?>
                   </p>
-                  <!-- Social Links -->
-
-                  <!--  <nav>
-                      <ul class = "footer-blog">
-
-                         <li>
-                            <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                         </li>
-                         <li>
-                            <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                         </li>
-                         <li>
-                            <a href = "#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-                         </li>
-                      </ul>
-                   </nav> -->
                </div>
                <div class = "col-xs-12 col-sm-12 col-md-4 widget">
                   <div class = "widget-title">
                      <!-- Title -->
-                     <h3 class = "title">Fallows Us</h3>
+                     <h3 class = "title">Follow Us</h3>
                   </div>
                   <div class = "social-icon margin-top-20 gray-bg icons-circle i-3x">
-                     <a href = "#">
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'facebook'})){echo $contact[0]->{'facebook'};} ?>">
                         <i class = "fa fa-facebook"></i>
                      </a>
-                     <a href = "#">
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'twitter'})){echo $contact[0]->{'twitter'};} ?>">
                         <i class = "fa fa-twitter"></i>
                      </a>
-                     <a href = "#">
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'pinterest'})){echo $contact[0]->{'pinterest'};} ?>">
                         <i class = "fa fa-pinterest"></i>
                      </a>
-                     <a href = "#">
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'google'})){echo $contact[0]->{'google'};} ?>">
                         <i class = "fa fa-google"></i>
                      </a>
-                     <a href = "#">
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'linkedin'})){echo $contact[0]->{'linkedin'};} ?>">
                         <i class = "fa fa-linkedin"></i>
                      </a>
                   </div>
