@@ -101,7 +101,7 @@ class AdvertisementController extends Controller {
         if (isset($_POST['post'])) {
             $update = HelperAdd::setAdd($_POST['post'], $image);
             return $this->redirect(Yii::$app->request->baseUrl . '/advertisement/post/'.Misc::encrypt($update));
-            }
+        }
 
         return $this->redirect(Yii::$app->request->baseUrl . '/advertisement/');
     }
@@ -112,6 +112,23 @@ class AdvertisementController extends Controller {
             return HelperAdd::deleteAdd($_POST['id']);
         }
 
+    }
+    public function actionStatus()
+    {
+        $post= Yii::$app->request->post();
+        if(isset($post['active'] )) {
+            $change  = HelperAdd::Status($post['add']);
+            $change['is_active'] = 0;
+            HelperAdd::setStatus($change);
+        }
+        else {
+            $change  =  HelperAdd::Status($post['add']);
+            $change['is_active'] = 1;
+            HelperAdd::setStatus($change);
+        }
+
+        $page = 'blog';
+        $this->redirect(Yii::$app->request->baseUrl . '/advertisement/');
     }
 
 }

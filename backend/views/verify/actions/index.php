@@ -41,15 +41,15 @@
                          <td><?php echo (isset($action['requested_on'])) ? $action['requested_on'] : '' ?></td>
 
                          <td>
-                            <?php
-                            if($action['edited_status']==0) {
-                                echo 'Pending..';
-                            }elseif($action['verification_status'] == 1 ){
-                                echo '<span class="green">Verified</span>';
-                            }else{
-                               echo '<span class="red">Rejected</span>';
-                            }
-                               ?>
+                             <?php
+                             if($action['edited_status']==0) {
+                                 echo '<span class="label label-light-danger">Pending..</span>';
+                             }elseif($action['verification_status'] == 1 ){
+                                 echo '<span class="label label-success">Verified</span>';
+                             }else{
+                                 echo '<span class="label label-danger">Rejected</span>';
+                             }
+                             ?>
                          </td>
 
 

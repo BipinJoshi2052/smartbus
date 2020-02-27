@@ -10,6 +10,7 @@ use common\components\Misc;
 use common\models\LoginForm;
 use common\models\Messages;
 use common\models\Sections;
+use common\models\Settings;
 use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -89,7 +90,10 @@ class SiteController extends Controller {
 
     public function actionAbout() {
         $page = 'about';
-        return $this->render('about');
+        $settings = Settings::getSettings();
+        return $this->render('about',[
+                'settings' =>$settings,
+        ]);
     }
 
     public function actionServices() {

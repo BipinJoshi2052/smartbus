@@ -65,7 +65,7 @@ $this->title = Yii::$app->params['system_name'] . ' | News';
                             </form>
                          </td>
                          <td class = "text-right">
-                            <a class = "btn btn-primary btn-sm" href = "<?php echo Yii::$app->request->baseUrl; ?>/news/view/<?php echo \common\components\Misc::encrypt($post['id']); ?>">View</a>
+<!--                            <a class = "btn btn-primary btn-sm" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/news/view/--><?php //echo \common\components\Misc::encrypt($post['id']); ?><!--">View</a>-->
                             <a class = "btn btn-primary btn-sm" href = "<?php echo Yii::$app->request->baseUrl; ?>/news/post/<?php echo \common\components\Misc::encrypt($post['id']); ?>">Edit</a>
                             <a class = "btn btn-default btn-sm delete-news" href = "javascript:void(0);" data-id = "<?php echo $post['id'] ?>" data-tab = "News">Delete</a>
                          </td>

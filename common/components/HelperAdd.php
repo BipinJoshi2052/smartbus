@@ -29,16 +29,16 @@ class HelperAdd extends Component {
         return $add;
     }
 
-//    public static function getBlogComments($id) {
-//        $blog_comments = Query::queryAll($sql);
-//        return $blog_comments;
-//    }
+    //    public static function getBlogComments($id) {
+    //        $blog_comments = Query::queryAll($sql);
+    //        return $blog_comments;
+    //    }
 
     public static function getSingleAdd($id) {
         $singleBlog= Advertisement::find()->
-                where('id ='.$id)->
-                asArray()->
-                one();
+        where('id ='.$id)->
+        asArray()->
+        one();
         return $singleBlog;
 
     }
@@ -77,7 +77,7 @@ class HelperAdd extends Component {
 
 
             if ($model->save()) {
-                 $id = $model->id;
+                $id = $model->id;
                 if (isset($image['name']) && strlen(trim($image['name'])) > 0) {
                     $file = $image;
                     if ($id > 0) {
@@ -178,6 +178,60 @@ class HelperAdd extends Component {
             return json_encode(true);
         }
         return json_encode(false);
+    }
+    public static function Status($id) {
+        $newStat = Advertisement::find()->where('id =' . $id)->asArray()->one();
+        return $newStat;
+    }
+
+    public static function setStatus($post) {
+
+        $id = $post['id'];
+        $model = Advertisement::findOne($id);
+        $model->name = $post['name'];
+        //alt_text
+        $model->alt_text = $post['alt_text'];
+        //title
+        $model->title = $post['title'];
+        //price
+        $model->price = $post['price'];
+        //post_content
+        $model->content = $post['content'];
+        //company
+        $model->company = $post['company'];
+        //contact person
+        $model->contact_person = $post['contact_person'];
+        //address
+        $model->address = $post['address'];
+        //phone
+        $model->phone = $post['phone'];
+        //phone
+        $model->email = $post['email'];
+        //is_active
+        $model->is_active = $post['is_active'];
+        //created_by
+        $model->created_by = Yii::$app->user->identity->id;
+        //created_on
+        $model->created_on = date('Y-m-d H:i:s');
+        //expiring_on
+        $model->expiring_on = $post['expiring_on'];
+        if ($model->save()) {
+            if (isset($image['name']) && strlen(trim($image['name'])) > 0) {
+                $file = $image;
+                if ($id > 0) {
+                    $model = Advertisement::findOne($id);
+                    // Upload New file
+                    $up = Upload::upload($file);
+
+                    if ($up) {
+                        $model->image = $up;
+                        $model->save(false);
+                    }
+
+                }
+            }
+            return $id;
+        }
     }
 
 

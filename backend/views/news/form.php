@@ -48,7 +48,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Sections';
                      <div class = "form-group">
                          <?php $counter++; ?>
                         <label for = "<?php echo $counter; ?>" class = "control-label ">Content</label>
-                        <textarea id = "<?php echo $counter; ?>" name = "post[post_content]" class = "summernote"><?php echo (isset($editable['post_content'])) ? $editable['post_content'] : '' ?></textarea>
+                        <textarea rows="5" id = "<?php echo $counter; ?>" name = "post[post_content]" class = "summernote"><?php echo (isset($editable['post_content'])) ? $editable['post_content'] : '' ?></textarea>
                      </div>
                      <div class = "form-group">
                          <?php $counter++; ?>

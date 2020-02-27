@@ -45,15 +45,15 @@
                          <td><?php echo (isset($action['created_on'])) ? $action['created_on'] : '' ?></td>
 
                          <td>
-                            <?php
-                            if($action['edited_status']==0) {
-                                echo 'Pending..';
-                            }elseif($action['is_verified'] == 1 ){
-                                echo '<span class="green">Verified</span>';
-                            }else{
-                               echo '<span class="red">Rejected</span>';
-                            }
-                               ?>
+                             <?php
+                             if($action['edited_status']==0) {
+                                 echo '<span class="label label-light-danger">Pending..</span>';
+                             }elseif($action['is_verified'] == 1 ){
+                                 echo '<span class="label label-success">Verified</span>';
+                             }else{
+                                 echo '<span class="label label-danger">Rejected</span>';
+                             }
+                             ?>
                          </td>
 
 

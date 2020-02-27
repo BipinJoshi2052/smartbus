@@ -1,5 +1,4 @@
 <?php
-
 $this->title = Yii::$app->params['system_name'] . ' | Website Settings';
 if (isset($editable['type']) && $editable['type'] == 'json') {
     $this->registerJsFile(Yii::$app->request->baseUrl . '/assets/plugins/ace-editor/src/ace.js');
@@ -7,10 +6,6 @@ if (isset($editable['type']) && $editable['type'] == 'json') {
 }
 $new = ($editable == false) ? 1 : 0; ?>
 <div class = "container-fluid">
-   <!-- Nav tabs -->
-
-   <!-- Tab panes -->
-
    <div class = "row page-titles p-0">
       <div class = "col-md-6 align-self-center p-0">
          <ul class = "nav nav-tabs customtab page-tabs" role = "tablist">
@@ -23,7 +18,6 @@ $new = ($editable == false) ? 1 : 0; ?>
                   <span class = ""><i class = "mdi mdi-pencil"></i></span> <span class = "hidden-xs-down">Fonts</span>
                </a></li>
          </ul>
-         <!--         <h3 class="text-themecolor m-b-0 m-t-0">Settings</h3>-->
       </div>
    </div>
    <div class = "tab-content">
@@ -67,23 +61,23 @@ $new = ($editable == false) ? 1 : 0; ?>
                            </select>
                         </div>
                          <?php if (!empty($editable)) : ?>
-                        <div class = "form-group setting-content">
-                            <?php $counter++; ?>
-                           <label for = "<?php echo $counter; ?>" class = "control-label">Content</label>
+                            <div class = "form-group setting-content">
+                                <?php $counter++; ?>
+                               <label for = "<?php echo $counter; ?>" class = "control-label">Content</label>
                                 <?php if ($editable['type'] === 'textarea'): ?>
-                                  <textarea <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
+                                   <textarea <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
                                 <?php elseif ($editable['type'] === 'json'): ?>
-                                  <textarea <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
+                                   <textarea <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
                                 <?php elseif ($editable['type'] === 'boolean'): ?>
-                                  <select <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required">
-                                     <option <?php echo (isset($editable['content']) && $editable['content'] == '0') ? 'selected = "selected"' : '' ?> value = "0">False</option>
-                                     <option <?php echo (isset($editable['content']) && $editable['content'] == '1') ? 'selected = "selected"' : '' ?> value = "1">True</option>
-                                  </select>
+                                   <select <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required">
+                                      <option <?php echo (isset($editable['content']) && $editable['content'] == '0') ? 'selected = "selected"' : '' ?> value = "0">False</option>
+                                      <option <?php echo (isset($editable['content']) && $editable['content'] == '1') ? 'selected = "selected"' : '' ?> value = "1">True</option>
+                                   </select>
                                 <?php else: ?>
-                                  <input <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" value = "<?php echo(isset($editable['content']) ? $editable['content'] : '') ?>" type = "text" class = "form-control required">
+                                   <input <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" value = "<?php echo(isset($editable['content']) ? $editable['content'] : '') ?>" type = "text" class = "form-control required">
                                 <?php endif; ?>
 
-                        </div>
+                            </div>
 
                          <?php endif; ?>
                         <div class = "form-group">
@@ -109,7 +103,7 @@ $new = ($editable == false) ? 1 : 0; ?>
                            <h5 class = "card-title">Settings</h5>
                         </div>
                         <div class = "col-md-6 col-sm-12 text-right">
-<!--                           <a class = "btn btn-primary btn-sm" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/settings"><i class = "mdi mdi-plus"></i>Add New Setting</a>-->
+                           <!--                           <a class = "btn btn-primary btn-sm" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/settings"><i class = "mdi mdi-plus"></i>Add New Setting</a>-->
                         </div>
                      </div>
 
@@ -122,7 +116,7 @@ $new = ($editable == false) ? 1 : 0; ?>
                                <tr>
                                   <th>Slug</th>
                                   <th>Content</th>
-                                  <th></th>
+                                  <th>Action</th>
                                </tr>
                                </thead>
                                <tbody>
@@ -143,7 +137,7 @@ $new = ($editable == false) ? 1 : 0; ?>
                                          </td>
                                          <td class = "text-right">
                                             <a class = "m-r-10" href = "<?php echo Yii::$app->request->baseUrl; ?>/settings/edit/<?php echo \common\components\Misc::encrypt($setting['id']) ?>">Edit</a>
-                                            <a class = "delete-item" data-table = "setting" data-identity = "<?php echo \common\components\Misc::encrypt($setting['id']); ?>" href = "javascript:void();">Delete</a>
+                                            <!--                                            <a class = "delete-item" data-table = "setting" data-identity = "--><?php //echo \common\components\Misc::encrypt($setting['id']); ?><!--" href = "javascript:void();">Delete</a>-->
                                          </td>
                                       </tr>
                                    <?php endif;
@@ -246,7 +240,7 @@ $new = ($editable == false) ? 1 : 0; ?>
                                <tr>
                                   <th>Slug</th>
                                   <th>Content</th>
-                                  <th></th>
+                                  <th>Action</th>
                                </tr>
                                </thead>
                                <tbody>
@@ -283,7 +277,9 @@ $new = ($editable == false) ? 1 : 0; ?>
             </div>
          </div>
       </div>
+
    </div>
+</div>
 
 
 </div>

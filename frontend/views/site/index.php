@@ -370,14 +370,14 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
          <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
             <div class = "item">
                <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal2.jpg" alt = ""/>
+                  <img  src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal2.jpg" alt = ""/>
 
                </div>
 
             </div>
             <div class = "item">
                <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal3.jpg" alt = ""/>
+                  <img  src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal3.jpg" alt = ""/>
 
                </div>
 
@@ -592,7 +592,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                        </div>
                        <div class = "client-details text-center">
                           <div class = "client-image">
-                             <img class = "img-circle" src = "<?php echo (isset($t['image']) && $t['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $t['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "80" height = "80" alt = "">
+                             <img style="height: 80px;" class = "img-circle" src = "<?php echo (isset($t['image']) && $t['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $t['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "80" height = "80" alt = "">
                           </div>
                           <div class = "client-details">
                              <!-- Name -->

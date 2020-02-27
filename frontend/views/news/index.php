@@ -40,7 +40,7 @@ use yii\widgets\LinkPager;
                     </h2>
                     <div class = "post-content ">
                        <p>
-                           <?php echo (isset($post['post_content'])) ? substr($post['post_content'], 0, 100) . '...' : '' ?>
+                           <?php echo (isset($post['post_content'])) ? substr($post['post_content'], 0, 1000) . '...' : '' ?>
                        </p>
                     </div>
                     <div class = "post-meta">
