@@ -10,6 +10,7 @@ namespace common\components;
 use common\models\Amenities;
 use common\models\generated\UserRoles;
 use common\models\Locations;
+use common\models\Messages;
 use common\models\Pages;
 use common\models\Permissions;
 use common\models\ScheduleRoutes;
@@ -28,6 +29,8 @@ class Helper extends Component {
     public function init() {
         self::getPages();
         self::getSettings();
+        self::getCount();
+        self::getMessages();
         self::getRoles();
         self::setParamPermissions();
         parent::init();
@@ -71,6 +74,22 @@ class Helper extends Component {
         }
 
 
+    }
+
+    public static function getMessages() {
+        $s = Messages::find()
+                     ->where('is_new = 1')
+                     ->orderBy(['id' => SORT_DESC])
+                     ->asArray()
+                     ->limit('4')
+                     ->all();
+
+        Yii::$app->params['messages'] = $s;
+    }
+
+    public static function getCount() {
+        $count = HelperMessages::getCount();
+        Yii::$app->params['count_messages'] = $count;
     }
 
     public static function getSettings() {
@@ -281,18 +300,18 @@ class Helper extends Component {
                 $model2->created_by = Yii::$app->user->identity->id;
                 if ($model2->save()) {
                     $model->table_id = $model2->id;
-                    if($model->save()) {
-                        return $var =[
+                    if ($model->save()) {
+                        return $var = [
                                 'verification_status' => 0,
-                                'response' => true
+                                'response'            => true
                         ];
                     }
                 }
             }
             else {
-                return $var =[
+                return $var = [
                         'verification_status' => 0,
-                        'response' => false
+                        'response'            => false
                 ];
             }
         }
@@ -304,15 +323,15 @@ class Helper extends Component {
             $model->updated_by = Yii::$app->user->identity->id;
             $model->updated_on = date('Y-m-d H:i:s');
             if ($model->save()) {
-                return $var =[
+                return $var = [
                         'verification_status' => $model->is_verified,
-                        'response' => true
+                        'response'            => true
                 ];
             }
-            else{
-                return $var =[
+            else {
+                return $var = [
                         'verification_status' => 0,
-                        'response' => false
+                        'response'            => false
                 ];
             }
 
@@ -364,7 +383,7 @@ class Helper extends Component {
                 }
 
                 if (!($model->save() == false)) {
-                    return $var=[
+                    return $var = [
                             'id' => $model['id']
                     ];
                 }
@@ -373,8 +392,8 @@ class Helper extends Component {
 
             return false;
         }
-        else{
-            $id= '';
+        else {
+            $id = '';
             $model = self::requestModel($table, $id);
             if ($model && !empty($model)) {
                 $model->attributes = $data;
@@ -417,15 +436,15 @@ class Helper extends Component {
 
                 if (!($model->save() == false)) {
                     $table_id = $model->verification_id;
-                    $model2 = VerificationActions::find()->where('id='.$table_id)->one();
+                    $model2 = VerificationActions::find()->where('id=' . $table_id)->one();
                     $model2->table_id = $model->id;
                     $requested_user_id = $model2->requested_by;
-                    $requested_user = User::find()->where('id='.$requested_user_id)->one();
-                    if($requested_user['role']==1) {
+                    $requested_user = User::find()->where('id=' . $requested_user_id)->one();
+                    if ($requested_user['role'] == 1) {
                         $model2->edited_status = 1;
                     }
-                    if(!$model2->save()) {
-                    return false;
+                    if (!$model2->save()) {
+                        return false;
                     }
 
                     return $model;

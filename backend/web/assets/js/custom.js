@@ -897,6 +897,42 @@ $(document).ready(function ($) {
 
    });
    $(function () {
+      $('.noti-mess').on("click", function () {
+         var cid = $('.new-mess').data("id");
+         var unseen = cid-1;
+         console.log(unseen);
+         // $.ajax({
+         //    url: baseUrl + "/messages/read-message",
+         //    type: 'post',
+         //    data: {
+         //       id: cid
+         //    },
+         //    success: function (data) {
+         //       console.log(data);
+         //       if (data === '') {
+         //          typeAlert('Error', 'Sorry, Could not open Message', 'error');
+         //       } else {
+         //          var a = JSON.parse(data);
+         //
+         //          if ($('[data-for="new"]')) {
+         //             $('[data-id="id' + a['id'] + '"]').html('<span data-for="seen" class="label label-danger">Seen</span>');
+         //          } else {
+         //             $('[data-id="id' + a['id'] + '"]').html('<span data-for="new" class="label label-danger">New</span>');
+         //
+         //          }
+         //          $('.modal').modal('show');
+         //          $('.modal-dialog').html(a['result']);
+         //          $('.refresh').removeClass('hidden')
+         //       }
+         //    },
+         //    error: function () {
+         //       typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+         //    }
+         // });
+
+      });
+   });
+   $(function () {
       $('.show-message').on("click", function () {
          var cid = $(this).data("id");
          $.ajax({

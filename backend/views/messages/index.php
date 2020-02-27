@@ -110,43 +110,5 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
 </div>
 <div class = "modal" tabindex = "-1" role = "dialog" id = "message-box">
    <div class = "modal-dialog" role = "document">
-      <!--      <div class = "modal-content">-->
-      <!--         <div class = "modal-header">-->
-      <!--            <h5 class = "modal-title"><span id = "message-title">Message from <span id = "message-name"></span></span></h5>-->
-      <!--            <button type = "button" class = "close" data-dismiss = "modal" aria-label = "Close">-->
-      <!--               <span aria-hidden = "true">&times;</span>-->
-      <!--            </button>-->
-      <!--         </div>-->
-      <!--         <div class = "modal-body">-->
-      <!--            <div class = "message-header">-->
-      <!--               <div class = "row">-->
-      <!--                  <div class = "col-md-6 col-sm-12">-->
-      <!--                     <div class = "message-header-group">-->
-      <!--                        <div class = "header-title"><span class = "strong">From:</span></div>-->
-      <!--                        <div class = "header-value"><span class = "strong">Name:</span><span class = "message-name"></span></div>-->
-      <!--                        <div class = "header-value"><span class = "strong">Email:</span><span class = "message-email"></span></div>-->
-      <!--                     </div>-->
-      <!---->
-      <!--                  </div>-->
-      <!--                  <div class = "col-md-6 col-sm-12">-->
-      <!--                     <div class = "message-header-group">-->
-      <!--                        <div class = "message-header-group">-->
-      <!--                           <div class = "header-title"><span class = "strong">Other Information:</span></div>-->
-      <!--                           <div class = "header-value"><span class = "strong">Phone Number:</span> <span class = "message-phone"></span></div>-->
-      <!--                           <div class = "header-value"><span class = "strong">Website:</span> <span class = "message-url"></span></div>-->
-      <!--                        </div>-->
-      <!--                     </div>-->
-      <!--                  </div>-->
-      <!--               </div>-->
-      <!--            </div>-->
-      <!--            <div class = "message-body">-->
-      <!--               <h4>Message : </h4>-->
-      <!--               <div class = "message-content"></div>-->
-      <!--            </div>-->
-      <!--         </div>-->
-      <!--         <div class = "modal-footer">-->
-      <!--            <button type = "button" class = "btn btn-secondary" data-dismiss = "modal">Close</button>-->
-      <!--         </div>-->
-      <!--      </div>-->
    </div>
 </div>

@@ -154,29 +154,52 @@ AppAsset::register($this);
 
                <li class = "nav-item dropdown message-bar">
                   <a class = "nav-link dropdown-toggle text-muted waves-effect waves-dark" href = "javascript:void(0);" id = "2" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false"> <i class = "mdi mdi-email"></i>
-                     <div class = "new-notify"><span>2</span></div>
+                     <div class = "new-notify"><span>
+                           <?php
+                              echo Yii::$app->params['count_messages']['count_unseen'];
+                           ?>
+                        </span></div>
                   </a>
                   <div class = "dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby = "2">
                      <ul>
                         <li>
-                           <div class = "drop-title">You have 4 new messages</div>
+                           <div class = "drop-title new-mess" data-id="<?php echo Yii::$app->params['count_messages']['count_unseen']; ?>">You have <?php echo Yii::$app->params['count_messages']['count_unseen']; ?> new messages</div>
                         </li>
                         <li>
                            <div class = "message-center">
                               <!-- Message -->
-                               <?php for ($i = 0; $i < 4; $i++) : ?>
-                                  <a href = "#">
-                                     <div class = "mail-content">
-                                        <h5>Pavan kumar</h5>
-                                        <div class = "mail-desc">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</div>
-                                        <div class = "time text-sm text-muted text-right"><i class = "mdi mdi-clock-outline"></i> Friday, 10 March, 2019 at 9:30 AM</div>
+                               <?php foreach(Yii::$app->params['messages'] as $c => $messages) : ?>
+                                  <a href = "javascript:void(0);" data-id = "<?php echo $messages['id'] ?>" class = "noti-mess show-message">
+                                     <div class = "mail-content view-message">
+                                        <h5>
+                                                <?php echo $messages['name']; ?>
+                                        </h5>
+                                        <div class = "mail-desc"><?php echo substr($messages['message'],'0','90') ?>...</div>
+                                        <div class = "time text-sm text-muted text-right"><i class = "mdi mdi-clock-outline"></i>
+                                           <?php
+                                           $date = $messages['created_on'];
+                                           $splitTimeStamp = explode(" ", $date);
+                                           $date = $splitTimeStamp[0];
+                                           $time = $splitTimeStamp[1];
+
+                                           $splitDate = explode("-", $date);
+                                           $year = $splitDate[0];
+                                           $month = $splitDate[1];
+                                           $day = $splitDate[2];
+
+                                           $dateObj = DateTime::createFromFormat('!m', $month);
+                                           $monthName = $dateObj->format('M');
+
+                                           echo $day.' '.$monthName.' '.$year.' at '.$time;
+                                           ?>
+                                        </div>
                                      </div>
                                   </a>
-                               <?php endfor; ?>
+                               <?php endforeach; ?>
                            </div>
                         </li>
                         <li>
-                           <a class = "nav-link text-center" href = "javascript:void(0);"> <strong>See all Messages</strong> <i class = "fa fa-angle-right"></i> </a>
+                           <a class = "nav-link text-center" href = "<?php echo Yii::$app->request->baseUrl; ?>/messages/"> <strong>See all Messages</strong> <i class = "fa fa-angle-right"></i> </a>
                         </li>
                      </ul>
                   </div>
@@ -514,7 +537,10 @@ AppAsset::register($this);
       <!-- ============================================================== -->
    </div>
 </div>
-
+<div class = "modal" tabindex = "-1" role = "dialog" id = "message-box">
+   <div class = "modal-dialog" role = "document">
+   </div>
+</div>
 <!-- CSRF TOKEN -->
 <script>
    $.ajaxSetup({

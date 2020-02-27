@@ -159,6 +159,9 @@ return [
                         'name'       => 'Location',
                         'moderation' => 'VerificationActions'
                 ],
+                'count_messages' => [
+                        'model' => 'Messages',
+                ],
                 'messages'                  => [
                         'model' => 'Messages',
                 ],

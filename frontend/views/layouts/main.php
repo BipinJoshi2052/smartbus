@@ -2,7 +2,9 @@
 /* @var $this \yii\web\View */
 
 /* @var $content string */
-
+echo '<pre>';
+print_r(Yii::$app->params['settings']['about_us']);
+echo '</pre>';
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 
