@@ -65,9 +65,9 @@ $new = ($editable == false) ? 1 : 0; ?>
                                 <?php $counter++; ?>
                                <label for = "<?php echo $counter; ?>" class = "control-label">Content</label>
                                 <?php if ($editable['type'] === 'textarea'): ?>
-                                   <textarea <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
+                                   <textarea rows="7" <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
                                 <?php elseif ($editable['type'] === 'json'): ?>
-                                   <textarea <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
+                                   <textarea rows="7" <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> required = "required" id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
                                 <?php elseif ($editable['type'] === 'boolean'): ?>
                                    <select <?= ($editable['is_editable'] == 0) ? ' disabled="disabled" ' : '' ?> id = "<?php echo $counter; ?>" name = "setting[content]" class = "form-control required">
                                       <option <?php echo (isset($editable['content']) && $editable['content'] == '0') ? 'selected = "selected"' : '' ?> value = "0">False</option>

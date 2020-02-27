@@ -1,4 +1,6 @@
+
 <?php
+
     use common\components\Misc;
 
     if (Yii::$app->user->identity->role != Yii::$app->params['role_assoc']['admin']) {

@@ -77,16 +77,17 @@ class MessagesController extends Controller {
         return $this->render('index', [
                 'messages' => Messages::find()
                                       ->asArray()
+                                      ->orderBy('created_on DESC')
                                       ->all(),
                 'count'    => Messages::find()
                                       ->where(['=', 'is_new', '1'])
                                       ->count(),
+
         ]);
     }
 
     public function actionReadMessage() {
-        echo 'a';
-//        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        //        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         if (\Yii::$app->request->isAjax && $_POST['id']) {
             $id = $_POST['id'];
             if ($id > 0) {
@@ -101,7 +102,7 @@ class MessagesController extends Controller {
 
                     if ($model->save() == true) {
 
-                       return $result = "
+                        $result = "
 
                         <div class = \"modal-content\">
                             <div class = \"modal-header\">
@@ -137,6 +138,10 @@ class MessagesController extends Controller {
                             </div>
                         </div>
                         ";
+                        return json_encode($data = [
+                                'result' => $result,
+                                'id'     => $model->id
+                        ]);
                     }
                 }
             }
@@ -144,12 +149,13 @@ class MessagesController extends Controller {
         }
         return false;
     }
-    public function actionDelete()
-    {
+
+    public function actionDelete() {
         echo $_POST['id'];
         if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
             return HelperMessages::deleteMessage($_POST['id']);
-        }else{
+        }
+        else {
             echo 'Not Working';
         }
 
