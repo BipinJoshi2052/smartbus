@@ -8,6 +8,7 @@ use common\components\HelperNews;
 use common\components\HelperTestimonails;
 use common\components\Misc;
 use common\models\LoginForm;
+use common\models\Messages;
 use common\models\Sections;
 use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
@@ -36,6 +37,7 @@ class SiteController extends Controller {
      * {@inheritdoc}
      */
     public function beforeAction($action) {
+        $this->enableCsrfValidation = false;
         return parent::beforeAction($action);
     }
 
@@ -123,14 +125,28 @@ class SiteController extends Controller {
 
 
     public function actionMessage() {
-        $post = $_POST['post'];
-        $message = HelperMessages::update($post);
-        if($message != false) {
-            Misc::setFlash('success', 'Your Message has been sent.');
-        }else{
-            Misc::setFlash('success', 'An Error Occured while sending message.');
-        }
-        return $this->redirect(Yii::$app->request->baseUrl . '/site/contact/');
+//        $post = $_POST['post'];
+//        $message = HelperMessages::update($post);
+//        if($message != false) {
+//            Misc::setFlash('success', 'Your Message has been sent.');
+//        }else{
+//            Misc::setFlash('success', 'An Error Occured while sending message.');
+//        }
+//        return $this->redirect(Yii::$app->request->baseUrl . '/site/contact/');
+        Yii::$app->controller->enableCsrfValidation = false;
+            if (Yii::$app->request->isAjax) {
+                $post = Yii::$app->request->post('contact');
+
+                $message = new Messages();
+                $message->attributes = $post;
+                if ($message->save()) {
+                    echo json_encode(true);
+                }
+                else {
+                    echo '<pre>';
+                    print_r($message);
+                }
+            }
     }
 
     public function actionRegisterVendor() {

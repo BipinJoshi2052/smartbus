@@ -1991,6 +1991,23 @@ header .navbar {
     width: 100% ! important;
     height: auto ! important;
 }
+.response{
+    padding: 10px 0 10px 0;
+    text-align: center;
+    background-color: #58c9ee;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.response h5{
+    margin: 0;
+    color:#fff;
+}
+.submit-contact{
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
 /*.post-image img{*/
 /*    height: 255px;*/
 /*}*/

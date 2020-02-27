@@ -48,30 +48,36 @@ Yii::$app->session->getFlash('success');
                     <p class = "form-message" style = "display: none;"></p>
                     <div class = "contact-form">
                         <!-- Form Begins -->
-                        <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/site/message">
-                            <!-- Field 1 -->
+<!--                       action = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/site/message"-->
 
+                        <form id="contact-form" name="contact-form" method = "post">
+                            <!-- Field 1 -->
+<!--                           <input type = "hidden" name = "--><?php //echo Yii::$app->request->csrfParam; ?><!--" value = "--><?php //echo Yii::$app->request->csrfToken; ?><!--"/>-->
+                           <div class="response hidden">
+                              <h5>Message Sent</h5>
+                           </div>
                             <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
 
                             <div class = "input-text form-group">
-                                <input required type = "text" name = "post[name]" class = "input-name form-control" placeholder = "Full Name"/>
+                                <input required type = "text" name = "name" class = "input-name form-control" placeholder = "Full Name"/>
                             </div>
                             <!-- Field 2 -->
                             <div class = "input-email form-group">
-                                <input required type = "email" name = "post[email]" class = "input-email form-control" placeholder = "Email"/>
+                                <input required type = "email" name = "email" class = "input-email form-control" placeholder = "Email"/>
                             </div>
                             <!-- Field 3 -->
                             <div class = "input-email form-group">
-                                <input required type = "text" name = "post[phone]" class = "input-phone form-control" placeholder = "Phone"/>
+                                <input required type = "text" name = "phone" class = "input-phone form-control" placeholder = "Phone"/>
                             </div>
                             <!-- Field 4 -->
                             <div class = "textarea-message form-group">
-                                <textarea required name = "post[message]" class = "textarea-message hight-82 form-control" placeholder = "Message" rows = "2"></textarea>
+                                <textarea required name = "message" class = "textarea-message hight-82 form-control" placeholder = "Message" rows = "2"></textarea>
                             </div>
                             <!-- Button -->
-                            <button class = "btn btn-default btn-block" type = "submit">Send Now
-                                <i class = "icon-paper-plane"></i>
-                            </button>
+                           <a class="btn btn-default btn-block submit-contact">Send Now <i class = "icon-paper-plane"></i></a>
+<!--                            <button class = "btn btn-default btn-block submit-contact" type = "submit">Send Now-->
+<!--                                <i class = "icon-paper-plane"></i>-->
+<!--                            </button>-->
                         </form>
                         <!-- Form Ends -->
                     </div>

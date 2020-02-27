@@ -808,7 +808,7 @@ if (Yii::$app->session->hasFlash('flash')): ?>
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!--    <script type = "text/javascript" src = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/assets/plugins/typeahead/dist/bloodhound.min.js"></script>-->
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Owl Carousel Slider -->
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/js/owl.carousel.min.js"></script><!-- Pretty Photo Popup -->
