@@ -680,7 +680,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                   </div>
                   <div id = "item1" class = "panel-collapse collapse in">
                      <div class = "panel-body">
-                        <!-- Tab Content-->
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi recusandae optio earum sequi accusantium culpa vitae iste sit commodi eaque voluptatem officia quam.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi.</p>
                      </div>

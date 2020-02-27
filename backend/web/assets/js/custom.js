@@ -890,7 +890,12 @@ $(document).ready(function ($) {
    if ($('[data-plugin="select2"]').length) {
       $('[data-plugin="select2"]').select2();
    }
+   $(function (){
+      $('.refresh').on("click", function () {
+         location.reload();
+      })
 
+   });
    $(function () {
       $('.show-message').on("click", function () {
          var cid = $(this).data("id");
@@ -911,10 +916,11 @@ $(document).ready(function ($) {
                      $('[data-id="id' + a['id'] + '"]').html('<span data-for="seen" class="label label-danger">Seen</span>');
                   } else {
                      $('[data-id="id' + a['id'] + '"]').html('<span data-for="new" class="label label-danger">New</span>');
+
                   }
-                  // $('.status').html('<span class="label danger">Seen</span>');
                   $('.modal').modal('show');
                   $('.modal-dialog').html(a['result']);
+                  $('.refresh').removeClass('hidden')
                }
             },
             error: function () {
