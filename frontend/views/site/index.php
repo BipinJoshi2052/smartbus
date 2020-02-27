@@ -651,13 +651,13 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                   <div class = "panel-heading">
                      <div class = "panel-title">
                         <!-- Tab -->
-                        <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item1">
+                        <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item<?php echo $f['id'] ?>">
                            <i class = "icon-mobile9"></i>
                             <?php echo (isset($f['title'])) ? $f['title'] : '' ?>
                         </a>
                      </div>
                   </div>
-                  <div id = "item1" class = "panel-collapse collapse in">
+                  <div id = "item<?php echo $f['id'] ?>" class = "panel-collapse collapse in">
                      <div class = "panel-body">
                         <!-- Tab Content-->
                         <p><?php echo (isset($f['content'])) ? $f['content'] : '' ?></p>
