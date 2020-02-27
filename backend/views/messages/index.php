@@ -18,9 +18,22 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
       <!--      </div>-->
    </div>
    <div class = "card extended blog-post-wrapper">
-      <div class = "card-header">
+      <div class = "card-header" style="display: -webkit-inline-flex;" >
          <h5 class = "card-title">Messages</h5>
       </div>
+
+
+<p style="padding: 15px; font-size: larger">
+         <?php if($count) {
+            echo '<span class="label label-light-success" style="margin-right: 15px;padding: 10px;">'.count($messages). ' Total Messages</span>';
+            echo '<span class="label label-success" style="margin-right: 15px;padding: 10px;">'.$count['count_unseen']. ' New Messages</span>';
+            echo '<span class="label label-danger" style="margin-right: 15px;padding: 10px;">'.$count['count_seen']. ' Seen messages</span>';
+         } ?>
+          <span id="refresh" class="label label-primary refresh hidden" style=""><i class="mdi mdi-refresh"></i>&nbsp;Refresh</span>
+</p>
+
+
+
       <div class = "card-body">
           <?php if (count($messages) > 0):$c = 0; ?>
              <div class = "table-responsive">
