@@ -74,8 +74,8 @@ class HelperFaq extends Component {
         }
     }
 
-    public static function getSiteExplore() {
-        $faq = Faq::find()->where(['id' => 1])->all();
+    public static function getSiteFaq() {
+        $faq = Faq::find()->limit(3)->where(['is_active' => 1])->orderBy(['id' => SORT_DESC])->all();
         return $faq;
     }
 
