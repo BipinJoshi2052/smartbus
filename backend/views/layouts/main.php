@@ -256,6 +256,20 @@ AppAsset::register($this);
                <!--                     <span class="hide-menu">Sales Counter</span></a>-->
                <!--               </li>-->
                <!--               <li class="nav-divider"></li>-->
+               <li class = "nav-small-cap">Career Management</li>
+               <li>
+                  <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/messages/" aria-expanded = "false">
+                     <i class = "mdi mdi-file-document"></i>
+                     <span class = "hide-menu">View Applications </span>
+                  </a>
+               </li>
+               <li>
+                  <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/messages/" aria-expanded = "false">
+                     <i class = "mdi mdi-wallet-giftcard"></i>
+                     <span class = "hide-menu">Vacancies </span>
+                  </a>
+               </li>
+               <li class = "nav-divider"></li>
                <li class = "nav-small-cap">Messages Management</li>
                <li>
                   <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/messages/" aria-expanded = "false">
