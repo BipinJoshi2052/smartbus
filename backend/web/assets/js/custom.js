@@ -891,25 +891,30 @@ $(document).ready(function ($) {
       $('[data-plugin="select2"]').select2();
    }
 
-   $(function(){
+   $(function () {
       $('.show-message').on("click", function () {
          var cid = $(this).data("id");
-         console.log(cid);
          $.ajax({
             url: baseUrl + "/messages/read-message",
             type: 'post',
             data: {
-                  id : cid
+               id: cid
             },
             success: function (data) {
                console.log(data);
                if (data === '') {
-                  typeAlert('Error', 'Sorry, Could not delete Advertisement', 'error');
-
+                  typeAlert('Error', 'Sorry, Could not open Message', 'error');
                } else {
+                  var a = JSON.parse(data);
 
+                  if ($('[data-for="new"]')) {
+                     $('[data-id="id' + a['id'] + '"]').html('<span data-for="seen" class="label label-danger">Seen</span>');
+                  } else {
+                     $('[data-id="id' + a['id'] + '"]').html('<span data-for="new" class="label label-danger">New</span>');
+                  }
+                  // $('.status').html('<span class="label danger">Seen</span>');
                   $('.modal').modal('show');
-                  $('.modal-dialog').html(data);
+                  $('.modal-dialog').html(a['result']);
                }
             },
             error: function () {
