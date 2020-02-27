@@ -11430,3 +11430,12 @@ a.link:hover, a.link:focus {
 .header{
     margin-top:10px;
 }
+.hidden{
+    display: none!important;
+}
+.refresh{
+    float:right;
+    margin-right: 15px;
+    padding: 10px;
+    cursor: pointer;
+}

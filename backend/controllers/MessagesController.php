@@ -79,9 +79,7 @@ class MessagesController extends Controller {
                                       ->asArray()
                                       ->orderBy('created_on DESC')
                                       ->all(),
-                'count'    => Messages::find()
-                                      ->where(['=', 'is_new', '1'])
-                                      ->count(),
+                'count'    => HelperMessages::getCount(),
 
         ]);
     }
