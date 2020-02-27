@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2020 at 07:07 PM
+-- Generation Time: Feb 27, 2020 at 08:08 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -159,7 +159,7 @@ CREATE TABLE `advertisement` (
 INSERT INTO `advertisement` (`id`, `name`, `type`, `alt_text`, `title`, `content`, `image`, `price`, `company`, `contact_person`, `phone`, `email`, `address`, `display_on`, `display_order`, `created_by`, `created_on`, `expiring_on`, `is_active`) VALUES
 (1, 'rosalyn livingstonasdfa', 0, 'Atque nemo aut elit', 'Dolorem commodi anim', 'Fuga Aute velit dol', '15822720966.jpg', 257, 'Valdez and Colon Trading', 'Eum officia velit b', '+1 (544) 815-7185', 'mytymonof@mailinator.com', 'Qui facere saepe eli', '', 0, 1, '2020-02-22 10:00:16', '2020-04-17', 1),
 (2, 'kathleen decker', 0, 'Nostrum aut eum opti', 'Et maiores incididun', 'Sint explicabo Nes', '15822738232.jpg', 383, 'Kirk Abbott Plc', 'Sapiente voluptas re', '+1 (401) 325-1968', 'dosyre@mailinator.net', 'Ea incididunt id vit', '', 0, 1, '2020-02-21 14:15:23', '1993-06-17', 0),
-(3, 'octavius byers', 0, 'Quis commodo volupta', 'Velit aut eum soluta', 'Accusamus consequunt', '1582381010.webp', 737, 'Conner Rios LLC', 'Totam ex exercitatio', '+1 (507) 193-2607', 'nuri@mailinator.com', 'Sed excepturi qui a ', '', 0, 1, '2020-02-22 20:01:50', '1985-11-12', 0);
+(3, 'octavius byers', 0, 'Quis commodo volupta', 'Velit aut eum soluta', 'Accusamus consequunt', '1582381010.webp', 737, 'Conner Rios LLC', 'Totam ex exercitatio', '+1 (507) 193-2607', 'nuri@mailinator.com', 'Sed excepturi qui a ', '', 0, 1, '2020-02-27 10:33:48', '2020-09-12', 1);
 
 -- --------------------------------------------------------
 
@@ -189,14 +189,19 @@ CREATE TABLE `amenities` (
 INSERT INTO `amenities` (`id`, `name`, `display_name`, `icon`, `verification_id`, `is_active`, `is_verified`, `description`, `created _on`, `created_by`, `updated_on`, `updated_by`) VALUES
 (8, 'ac', 'AC', 'fa-align-center', 168, 1, 1, NULL, '2020-02-22 20:29:03', 1, NULL, NULL),
 (9, 'tv2', 'Tv2', 'fa-align-center', 169, 1, 1, NULL, '2020-02-22 20:59:14', 1, '2020-02-22 23:16:19', 1),
-(10, 'seat3', 'Seat3', 'fa-align-center', 170, 1, 1, NULL, '2020-02-22 21:02:16', 1, '2020-02-22 23:16:40', 1),
+(10, 'seat3a', 'Seat3a', 'fa-align-center', 170, 1, 1, NULL, '2020-02-22 21:02:16', 1, '2020-02-23 09:30:43', 1),
 (11, 'test4', 'Test4', 'fa-adjust', 173, 1, 0, NULL, '2020-02-22 21:26:54', 1, NULL, NULL),
 (12, 'test5', 'Test5', 'fa-align-center', 174, 1, 0, NULL, '2020-02-22 21:30:14', 1, NULL, NULL),
 (13, 'test6', 'Test6', 'fa-adjust', 175, 1, 0, NULL, '2020-02-22 21:31:01', 1, NULL, NULL),
 (14, 'asdf', 'Asdf', 'fa-adjust', 176, 1, 0, NULL, '2020-02-22 21:31:50', 1, NULL, NULL),
 (15, 'asdfasdf', 'Asdfasdf', 'fa-adjust', 177, 1, 0, NULL, '2020-02-22 21:33:07', 1, '2020-02-22 23:11:46', 1),
 (16, 'qwer', 'Qwer', 'fa-align-left', 178, 1, 0, NULL, '2020-02-22 22:31:47', 1, '2020-02-22 22:33:13', 1),
-(17, '1234', '1234', 'fa-align-center', 179, 1, 0, NULL, '2020-02-22 23:05:37', 1, '2020-02-22 23:16:09', 1);
+(17, '1234', '1234', 'fa-align-center', 179, 1, 0, NULL, '2020-02-22 23:05:37', 1, '2020-02-22 23:16:09', 1),
+(18, 'aserasdf', 'Aserasdf', 'fa-adjust', 180, 1, 0, NULL, '2020-02-23 09:30:29', 1, '2020-02-23 09:30:50', 1),
+(19, 'hello world', 'Hello WOrld', 'fa-adjust', 181, 1, 0, NULL, '2020-02-23 09:42:02', 1, NULL, NULL),
+(20, 'testing', 'Testing', 'fa-adjust', 182, 1, 0, NULL, '2020-02-23 16:53:30', 1, NULL, NULL),
+(21, '1234', '1234', 'fa-adjust', 183, 1, 1, NULL, '2020-02-24 21:55:34', 1, NULL, NULL),
+(22, 'galvin hahn', 'Galvin Hahn', 'fa-comment', 198, 1, 0, NULL, '2020-02-25 19:55:25', 1, '2020-02-25 21:12:51', 1);
 
 -- --------------------------------------------------------
 
@@ -237,11 +242,10 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `category_id`, `slug`, `title`, `subtitle`, `post_content`, `image`, `is_active`, `created_by`, `created_on`, `updated_on`, `updated_by`) VALUES
-(16, 8, 'dolore-possimus-dol', 'Dolore possimus dol', 'Delectus a iusto su', 'Doloribus autem sit', '15820079070.jpg', 1, 1, '2020-02-18 12:23:27', '2020-02-21 15:22:34', 1),
-(17, 7, 'check-blog', 'Check Blog', 'Subtitle', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '1582271378.webp', 1, 1, '2020-02-21 13:34:38', '2020-02-21 13:34:38', 1),
-(18, 8, 'doloribus-amet-dolo', 'Doloribus amet dolo', 'Cupidatat enim volup', 'Ipsam repellendus E', '15822714122.jpg', 0, 1, '2020-02-21 13:35:11', '2020-02-21 13:35:11', 1),
-(19, 8, 'aspernatur-nisi-iste', 'Aspernatur nisi iste', 'Neque nisi illo duis', 'Dolor fuga Dolores ', '15822714246.jpg', 0, 1, '2020-02-21 13:35:24', '2020-02-21 13:35:24', 1),
-(20, 7, 'voluptates-aut-labor', 'Voluptates aut labor', 'Fuga Quae vero enim', 'Ab sint numquam ali', '15822714375.jpg', 0, 1, '2020-02-21 13:35:37', '2020-02-21 13:35:37', 1);
+(17, 7, 'check-blog', 'Check Blog', 'Subtitle', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '1582271378.webp', 1, 1, '2020-02-21 13:34:38', '2020-02-26 12:56:43', 1),
+(19, 8, 'aspernatur-nisi-iste', 'Aspernatur nisi iste', 'Neque nisi illo duis', 'Dolor fuga Dolores ', '15822714246.jpg', 1, 1, '2020-02-21 13:35:24', '2020-02-25 16:15:02', 1),
+(20, 7, 'voluptates-aut-labor', 'Voluptates aut labor', 'Fuga Quae vero enim', 'Ab sint numquam ali', '15822714375.jpg', 1, 1, '2020-02-21 13:35:37', '2020-02-25 16:15:04', 1),
+(23, 7, 'blog', 'Blog', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '1582559787.webp', 1, 13, '2020-02-24 21:41:26', '2020-02-24 21:41:26', 13);
 
 -- --------------------------------------------------------
 
@@ -276,7 +280,7 @@ INSERT INTO `blog_categories` (`id`, `name`, `remark`, `created_on`, `created_by
 CREATE TABLE `blog_comments` (
   `id` bigint(20) NOT NULL,
   `blog_id` bigint(20) NOT NULL,
-  `customer_id` bigint(20) NOT NULL DEFAULT 0,
+  `customer_id` bigint(20) DEFAULT 0,
   `is_active` int(11) NOT NULL DEFAULT 1,
   `is_verified` tinyint(4) NOT NULL DEFAULT 0,
   `edited_status` tinyint(4) NOT NULL DEFAULT 0,
@@ -295,21 +299,13 @@ CREATE TABLE `blog_comments` (
 --
 
 INSERT INTO `blog_comments` (`id`, `blog_id`, `customer_id`, `is_active`, `is_verified`, `edited_status`, `verification_comment`, `verified_by`, `verified_on`, `name`, `email`, `phone`, `comment`, `created_on`) VALUES
-(4, 16, 5, 1, 1, 0, NULL, NULL, '2020-02-21 17:17:43', 'Yoel', 'jnerd48@gmail.com', '9818454474', 'Hello this is my Comment, i am fine thank you', '2020-02-19 09:30:25'),
-(5, 16, 8, 1, 1, 0, NULL, NULL, '2020-02-21 17:17:43', 'Yoel', 'jnerd48@gmail.com', '9818454474', 'Hello this is my second Comment, i am fine thank you', '2020-02-19 09:30:25'),
-(6, 16, 1, 1, 0, 0, NULL, NULL, '2020-02-21 17:17:43', 'Test', 'denazu@mailinator.net', '12341234', 'qwerqwerqwer', '2020-02-21 15:19:52'),
-(7, 16, 1, 1, 0, 0, NULL, NULL, '2020-02-21 17:17:43', 'Caleb Mcpherson', 'cirif@mailinator.net', '81', 'Duis sed rerum labor', '2020-02-21 17:14:49'),
-(8, 16, 13, 1, 0, 0, NULL, NULL, '2020-02-21 17:18:46', 'Whoopi Clemons', 'cofisore@mailinator.com', '60', 'Velit veniam commod', '2020-02-21 17:18:46'),
-(9, 16, 13, 1, 1, 1, 'q', 1, '2020-02-22 13:50:26', 'Giacomo Henderson', 'vadarodop@mailinator.com', '28', 'Laborum Voluptas ne', '2020-02-21 17:19:57'),
-(10, 16, 1, 1, 1, 0, NULL, NULL, '2020-02-21 17:37:18', 'Hayfa Compton', 'tobik@mailinator.net', '10', 'Modi aut anim magnam', '2020-02-21 17:37:18'),
-(11, 16, 1, 1, 1, 0, NULL, NULL, '2020-02-21 18:24:04', 'Jael Calhoun', 'nabobyhoki@mailinator.com', '74', 'Officia ad labore ha', '2020-02-21 18:24:04'),
-(12, 16, 1, 1, 1, 0, NULL, NULL, '2020-02-21 18:24:29', 'Virginia Mcdonald', 'lacepew@mailinator.com', '40', 'check', '2020-02-21 18:24:29'),
-(13, 16, 13, 1, 0, 0, NULL, NULL, '2020-02-21 18:24:42', 'Hilel Oneal', 'pivy@mailinator.com', '29', 'Cehck 2', '2020-02-21 18:24:42'),
-(14, 16, 1, 1, 1, 0, NULL, NULL, '2020-02-21 18:31:51', 'Gay Fitzgerald', 'ryribovi@mailinator.net', '10', 'Est neque mollit nes', '2020-02-21 18:31:51'),
-(15, 16, 13, 1, 0, 1, 'qwer', 1, '2020-02-22 10:00:38', 'Hyacinth Reynolds', 'wyvago@mailinator.com', '86', 'Aut non voluptatem', '2020-02-21 18:34:32'),
-(16, 16, 13, 1, 0, 1, 'q', 1, '2020-02-21 22:09:06', 'Hyacinth Reynolds', 'wyvago@mailinator.com', '86', 'Aut non voluptatem', '2020-02-21 18:35:03'),
-(17, 16, 13, 1, 1, 1, 'qwerty', 1, '2020-02-21 22:08:10', 'Grace Hale', 'cidewesa@mailinator.net', '74', 'Voluptatem et cum si', '2020-02-21 18:35:09'),
-(18, 16, 1, 1, 1, 1, '1', 1, '2020-02-22 13:44:20', 'Hedy Cantu', 'husevoweko@mailinator.net', '10', 'Culpa id nostrud dol', '2020-02-21 18:35:16');
+(39, 17, 1, 1, 1, 1, NULL, NULL, '2020-02-24 21:53:52', 'Cruz Hooper', 'kunivi@mailinator.com', '93', 'Dolores dolor labore', '2020-02-24 21:53:52'),
+(40, 17, 13, 1, 1, 1, 'asdf', 1, '2020-02-24 21:54:25', 'Murphy Valenzuela', 'sigaxolaf@mailinator.net', '47', 'Voluptatem sit esse', '2020-02-24 21:54:05'),
+(41, 17, 1, 1, 1, 1, NULL, NULL, '2020-02-24 21:54:58', 'Cedric Foley', 'vitiw@mailinator.com', '79', 'Accusamus necessitat', '2020-02-24 21:54:58'),
+(42, 17, 13, 1, 0, 0, NULL, NULL, '2020-02-24 21:55:13', 'Vance Burton', 'pyxekyhecu@mailinator.com', '7', 'Elit quia rerum vol', '2020-02-24 21:55:13'),
+(43, 19, 1, 1, 1, 1, NULL, NULL, '2020-02-25 20:53:21', 'Jason Ortega', 'mejaboxuf@mailinator.com', '93', 'Harum qui aut dicta', '2020-02-25 20:53:21'),
+(44, 19, NULL, 1, 1, 1, NULL, NULL, '2020-02-26 11:30:24', 'yoel', '', '', 'Voluptas aut adipisc', '2020-02-26 11:30:24'),
+(45, 19, NULL, 1, 1, 1, 'asd', 1, '2020-02-26 12:12:51', 'Bipin', 'xacyn@mailinator.net', '91', 'Test comment', '2020-02-26 12:12:19');
 
 -- --------------------------------------------------------
 
@@ -378,16 +374,17 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `image`, `name`, `info`, `link`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
-(1, '1550469093o.jpg', 'kodiak travel, south africa 123', 'casdasd', '', '2019-02-18 11:36:33', NULL, '2020-02-21 17:35:17', 1),
-(2, '15504691241.png', 'mice24, tyrol, germany, austria, switzerland', NULL, 'https://mssag.ch/en/jobs.php', '2019-02-18 11:37:04', NULL, NULL, NULL),
-(3, '1550469152o.png', 'true japan tours, japan', NULL, 'https://truejapantours.com/', '2019-02-18 11:37:32', NULL, NULL, NULL),
-(4, '15504691861.png', 't.i.m.e. international travel management solutions, portugal', NULL, 'https://time-itms.com/wp/#home_section', '2019-02-18 11:38:06', NULL, NULL, NULL),
-(5, '1550469213o.png', 'ulisse tour operator, sicily', NULL, 'http://www.ulissetouroperator.com/en/about-us/', '2019-02-18 11:38:33', NULL, NULL, NULL),
-(6, '1550469238o.jpg', 'balkan-adriatic dmc', NULL, 'https://www.facebook.com/balkanadriatic/?tn-str=k*f', '2019-02-18 11:38:58', NULL, NULL, NULL),
-(7, '1550469609e.png', 'silver tray', NULL, 'http://www.silver-tray.com', '2019-02-18 11:45:09', NULL, NULL, NULL),
-(8, '1550469651o.png', 'american guests usa, partner and sales office', NULL, 'http://www.americanguestusa.com/en/', '2019-02-18 11:45:51', NULL, NULL, NULL),
-(9, NULL, 'Yoel Limbu', '', '', '2020-02-18 11:09:56', 1, NULL, NULL),
-(10, '15820035644.jpg', 'Bree Alston', 'Et dolores ut possim', '', '2020-02-18 11:11:04', 1, NULL, NULL);
+(1, '1550469093o.jpg', 'a', 'casdasd', '', '2019-02-18 11:36:33', NULL, '2020-02-21 17:35:17', 1),
+(2, '15504691241.png', 'b', NULL, 'https://mssag.ch/en/jobs.php', '2019-02-18 11:37:04', NULL, NULL, NULL),
+(3, '1550469152o.png', 'c', NULL, 'https://truejapantours.com/', '2019-02-18 11:37:32', NULL, NULL, NULL),
+(4, '15504691861.png', 'd', NULL, 'https://time-itms.com/wp/#home_section', '2019-02-18 11:38:06', NULL, NULL, NULL),
+(5, '1550469213o.png', 'e', NULL, 'http://www.ulissetouroperator.com/en/about-us/', '2019-02-18 11:38:33', NULL, NULL, NULL),
+(6, '1550469238o.jpg', 'f', NULL, 'https://www.facebook.com/balkanadriatic/?tn-str=k*f', '2019-02-18 11:38:58', NULL, NULL, NULL),
+(7, '1550469609e.png', 'g', NULL, 'http://www.silver-tray.com', '2019-02-18 11:45:09', NULL, NULL, NULL),
+(8, '1550469651o.png', 'h', NULL, 'http://www.americanguestusa.com/en/', '2019-02-18 11:45:51', NULL, NULL, NULL),
+(9, NULL, 'i', '', '', '2020-02-18 11:09:56', 1, NULL, NULL),
+(10, '15820035644.jpg', 'j', 'Et dolores ut possim', '', '2020-02-18 11:11:04', 1, NULL, NULL),
+(11, '1582627242.webp', 'k', 'Deleniti numquam lab', 'https://www.youtube.com', '2020-02-25 16:25:27', 1, '2020-02-25 16:25:42', 1);
 
 -- --------------------------------------------------------
 
@@ -407,6 +404,49 @@ CREATE TABLE `client_page_contents` (
   `updated_on` timestamp NULL DEFAULT NULL,
   `updated_by` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+
+--
+-- Dumping data for table `client_page_contents`
+--
+
+INSERT INTO `client_page_contents` (`id`, `client_id`, `title`, `remark`, `extra_notes`, `content`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
+(2, 6, 'Aut commodo aliquip ', 'Duis culpa exercita', 'Quia blanditiis occa', 'Tenetur tempore vit', '2020-02-25 15:45:48', 1, '2020-02-25 15:45:48', 1),
+(4, 11, 'Nostrum dolores ut e', 'At officia tempora m', 'Non asperiores aut a', 'Reprehenderit in nu', '2020-02-26 04:13:19', 1, '2020-02-26 04:13:19', 1),
+(5, 10, 'Eveniet recusandae', 'Excepteur accusamus ', 'Eveniet voluptatem', 'Nostrud libero numqu', '2020-02-26 04:15:55', 1, '2020-02-26 04:15:55', 1),
+(6, 4, 'Consequuntur quia es', 'Cumque hic et non su', 'Maxime vitae possimu', 'Anim fugiat ducimus', '2020-02-26 04:19:04', 1, '2020-02-26 04:19:04', 1),
+(9, 3, 'Cupiditate deserunt ', 'Fugiat adipisicing e', 'Qui vitae eiusmod el', 'Quisquam autem omnis', '2020-02-26 04:22:33', 1, '2020-02-26 04:22:33', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `explore`
+--
+
+CREATE TABLE `explore` (
+  `id` bigint(20) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `image` varchar(200) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT 0,
+  `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_by` bigint(20) NOT NULL,
+  `updated_on` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_by` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `explore`
+--
+
+INSERT INTO `explore` (`id`, `title`, `image`, `is_active`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
+(1, 'title', '', 0, '2020-02-25 06:08:56', 1, '2020-02-25 06:08:56', 1),
+(2, 'asdf', NULL, 0, '2020-02-25 07:46:11', 1, '2020-02-25 07:46:11', 1),
+(3, 'a', NULL, 0, '2020-02-25 07:47:14', 1, '2020-02-25 07:47:14', 1),
+(4, 'a', NULL, 0, '2020-02-25 07:47:24', 1, '2020-02-25 07:47:24', 1),
+(5, 'this is title', '1582617495_.jpg', 0, '2020-02-25 07:50:26', 1, '2020-02-25 07:58:15', 1),
+(6, 'this is title', '1582617507L.jpg', 0, '2020-02-25 07:58:27', 1, '2020-02-25 07:58:27', 1),
+(8, 'this is title', '15826245174.jpg', 1, '2020-02-25 09:55:17', 1, '2020-02-25 09:55:17', 1),
+(9, 'this is title', '15826265978.jpg', 1, '2020-02-25 10:29:57', 1, '2020-02-25 10:29:57', 1),
+(10, 'Francesca Justicewet', '15826295142.jpg', 1, '2020-02-25 11:12:03', 1, '2020-02-25 11:18:34', 1);
 
 -- --------------------------------------------------------
 
@@ -450,7 +490,27 @@ INSERT INTO `locations` (`id`, `name`, `street`, `city`, `district`, `zone`, `st
 (9, 'kalanki', NULL, 'kathmandu', 'kathmandu', 'Bagmait', '4', NULL, NULL, 'outside the bus park', 1, 1, NULL, 1, NULL, NULL, '2019-03-14 10:40:06'),
 (10, 'chabahil', NULL, 'Kathmandu', 'kathmandu', 'Bagmait', '3', NULL, NULL, 'chowk', 1, 1, NULL, 1, NULL, NULL, '2019-03-14 10:40:06'),
 (11, 'Dhumbarahi', 'dhumbarahi', 'kathmandu', 'kathmandu', 'Bagmait', '3', 4563453, 456456, 'Hello Testing', 1, 1, 42, 1, NULL, NULL, '2019-06-09 16:33:32'),
-(12, 'bagar', NULL, 'pokhara', 'Kaski', 'Gandaki', '5', NULL, NULL, 'in nepal', 1, 1, 44, 1, NULL, NULL, '2019-06-10 11:21:18');
+(12, 'bagar', NULL, 'pokhara', 'Kaski', 'Gandaki', '5', NULL, NULL, 'in nepal', 1, 1, 44, 1, NULL, NULL, '2019-06-10 11:21:18'),
+(13, 'taylor goff', 'Est laborum Vel vol', 'Rerum tempor facere ', 'Doloribus est magna', NULL, '6', 123, 123, 'Sint reprehenderit r', 1, 1, 185, 1, NULL, NULL, '2020-02-25 16:35:03'),
+(14, '1234', '1234', '1234', '1234', NULL, '0', 1234, 1234, '1234', 1, 1, 186, 1, 1, '2020-02-25 16:38:48', '2020-02-25 16:35:16'),
+(15, 'qwer', 'qwer', 'qwer', 'qwer', NULL, '0', 123, 123, 'qwerqwer', 1, 1, 187, 1, NULL, NULL, '2020-02-25 19:26:16'),
+(16, 'iris craig', 'Id fugiat ea sit co', 'Est ipsum voluptate', 'Ea sequi sunt dolore', NULL, '1', 123, 1231, 'Unde unde excepteur ', 1, 0, 188, 1, NULL, NULL, '2020-02-25 19:27:16'),
+(17, 'allen woodard', 'Voluptas laborum ea ', 'Omnis ut dolor dolor', 'Reiciendis ad sint i', NULL, '5', 123, 123, 'Perferendis similiqu', 1, 1, 191, 1, NULL, NULL, '2020-02-25 19:44:24'),
+(18, 'allen woodard', 'Voluptas laborum ea ', 'Omnis ut dolor dolor', 'Reiciendis ad sint i', NULL, '5', 123, 123, 'Perferendis similiqu', 1, 1, 192, 1, NULL, NULL, '2020-02-25 19:45:57'),
+(19, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 193, 1, NULL, NULL, '2020-02-25 19:48:36'),
+(20, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 194, 1, NULL, NULL, '2020-02-25 19:49:26'),
+(21, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 195, 1, NULL, NULL, '2020-02-25 19:50:57'),
+(22, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 196, 1, NULL, NULL, '2020-02-25 19:51:59'),
+(23, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 197, 1, NULL, NULL, '2020-02-25 19:53:25'),
+(24, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 199, 1, NULL, NULL, '2020-02-25 19:56:41'),
+(25, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 200, 1, NULL, NULL, '2020-02-25 19:56:53'),
+(26, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 201, 1, NULL, NULL, '2020-02-25 19:57:26'),
+(27, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 202, 1, NULL, NULL, '2020-02-25 19:58:18'),
+(28, 'jescie wilcox', 'Eu sequi eu saepe fa', 'Quisquam ea non vel ', 'Dolor repellendus E', NULL, '3', 123, 123, 'Minim placeat illum', 1, 1, 203, 1, NULL, NULL, '2020-02-25 19:59:24'),
+(29, 'lesley orr', 'Ut ab eu commodi est', 'Deleniti odit molest', 'Sit eum veritatis si', NULL, '1', 123, 123, 'Aliqua Quam molliti', 1, 1, 204, 1, NULL, NULL, '2020-02-25 20:00:58'),
+(30, 'samson mosley', 'Duis blanditiis dele', 'Cupiditate quisquam ', 'Et veniam ratione c', NULL, '4', 345, 345, 'Itaque voluptatem q', 1, 0, 205, 1, NULL, NULL, '2020-02-25 20:08:10'),
+(31, 'zenia peterson', 'Nostrum porro cillum', 'Sint elit debitis f', 'Natus ut ex quisquam', NULL, '3', 4, 4, 'Omnis eiusmod adipis', 1, 1, 206, 1, NULL, NULL, '2020-02-25 20:21:52'),
+(32, 'astra sharpe', 'Quia dicta aliquid v', 'Rerum nihil officia ', 'Impedit enim harum ', NULL, '6', 5, 5, 'Dolorem iusto minim ', 1, 1, 207, 1, 1, '2020-02-26 12:51:55', '2020-02-25 20:23:47');
 
 -- --------------------------------------------------------
 
@@ -462,11 +522,35 @@ CREATE TABLE `messages` (
   `id` bigint(20) NOT NULL,
   `name` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
-  `subject` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
+  `phone` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
   `message` longtext COLLATE utf8_swedish_ci NOT NULL,
   `is_new` tinyint(4) NOT NULL DEFAULT 1,
   `created_on` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `email`, `phone`, `message`, `is_new`, `created_on`) VALUES
+(26, 'Sebastian Morris', 'xifarycuj@mailinator.com', '+1 (368) 427-9579', 'Dolores maxime corpo', 1, '2020-02-27 01:01:14'),
+(27, 'Carlos Cunningham', 'vugomype@mailinator.net', '+1 (512) 893-4138', 'Impedit consequatur', 1, '2020-02-27 01:01:59'),
+(28, 'Tanisha Whitehead', 'labekuju@mailinator.com', '+1 (483) 472-5603', 'Doloremque incidunt', 1, '2020-02-27 01:02:18'),
+(29, 'Yvette Rodriguez', 'fubexafopi@mailinator.com', '+1 (865) 458-9271', 'Quam fuga Adipisci', 1, '2020-02-27 01:05:58'),
+(30, 'Jenna Cain', 'rosotig@mailinator.com', '+1 (444) 291-5207', 'Commodo facere ipsum', 1, '2020-02-27 01:06:18'),
+(31, 'Quinn Sykes', 'ciby@mailinator.net', '+1 (593) 414-6685', 'Rerum obcaecati enim', 1, '2020-02-27 01:06:35'),
+(32, 'Kathleen Mathis', 'keryvycota@mailinator.com', '+1 (134) 591-1624', 'Non iure quia odit v', 1, '2020-02-27 01:07:08'),
+(33, 'Nyssa Sweet', 'kugyjo@mailinator.net', '+1 (949) 529-3514', 'Sunt dolor lorem in', 1, '2020-02-27 01:07:31'),
+(34, 'Desiree White', 'fupehego@mailinator.com', '+1 (527) 205-7851', 'Pariatur Perspiciat', 1, '2020-02-27 01:08:15'),
+(35, 'Vladimir Fulton', 'pyzajevizo@mailinator.com', '+1 (643) 202-2217', 'Amet veritatis irur', 1, '2020-02-27 01:09:05'),
+(36, 'Katell Harrell', 'kagydacazy@mailinator.net', '+1 (739) 477-8426', 'In maiores quae volu', 1, '2020-02-27 01:09:20'),
+(37, 'Nomlanga Whitney', 'dutuxamija@mailinator.net', '+1 (688) 921-3774', 'Porro voluptas repre', 1, '2020-02-27 01:09:40'),
+(38, 'Nadine Bradshaw', 'kiquvehuta@mailinator.com', '+1 (589) 926-9001', 'Cum sunt ipsum aut c', 1, '2020-02-27 01:10:06'),
+(39, 'Kiara Salazar', 'vigudu@mailinator.net', '+1 (716) 756-5299', 'Pariatur Aut sit N', 1, '2020-02-27 01:11:54'),
+(40, 'Dominic Mejia', 'kusenyb@mailinator.net', '+1 (635) 952-3822', 'Magna dolor eligendi', 1, '2020-02-27 09:44:16'),
+(41, 'Kai Dawson', 'hefelovupu@mailinator.net', '+1 (806) 975-9163', 'Blanditiis et qui au', 1, '2020-02-27 09:44:44'),
+(42, 'Ariel Kirkland', 'sijyn@mailinator.com', '+1 (402) 157-1709', 'Consequatur Rerum d', 1, '2020-02-27 10:16:37'),
+(43, 'Ivor Hawkins', 'goxufyh@mailinator.net', '+1 (801) 596-6612', 'Sapiente eiusmod mol', 1, '2020-02-27 11:01:21');
 
 -- --------------------------------------------------------
 
@@ -513,7 +597,10 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `category_id`, `slug`, `title`, `subtitle`, `post_content`, `is_active`, `image`, `created_by`, `created_on`, `updated_on`, `updated_by`) VALUES
-(7, 12, 'rerum-unde-architect', 'Rerum unde architect', 'Ullam omnis dolores', 'Quod nulla sint reru', 1, '', 1, '2020-02-22 18:49:23', NULL, 1);
+(7, 12, 'rerum-unde-architect', 'Rerum unde architect', 'Ullam omnis dolores', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '15825338645.jpg', 1, '2020-02-22 18:49:23', NULL, 1),
+(8, 5, 'explicabo-excepturi', 'Explicabo Excepturi', 'Molestiae laboris ut', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '15825338512.jpg', 1, '2020-02-24 14:29:11', NULL, 1),
+(9, 10, 'libero-sunt-repellen', 'Libero sunt repellen', 'Aut sunt ea blanditi', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '15825338746.jpg', 1, '2020-02-24 14:29:34', NULL, 1),
+(10, 9, 'nulla-qui-dolores-su', 'Nulla qui dolores su', 'Qui eligendi eius qu', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '1582533886.webp', 1, '2020-02-24 14:29:46', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -948,8 +1035,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `slug`, `type`, `caption`, `is_editable`, `content`) VALUES
-(1, 'address', 'json', 'Address(es) used in the contact page', 0, '[{\"title\":\"We\'re here in Denmark\",\"subtitle\":\"Looking for us ?\",\"email\":\"info@gateway-scandinavia.com\",\"phone\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\"address\":\"Ravnsborg Tv\\u00e6rgade 2, 1,\\r\\nDK-2200 Copenhagen N\"},{\"title\":\"And America too\",\"subtitle\":\"See u soon !\",\"email\":\"sales@gateway-scandinavia.com\",\"phone\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\"address\":\"330 Seventh Avenue, Suite 1001 , New York, NY 10001\"}]'),
-(2, 'social_media', 'json', 'Social Media icon(s) on the footer of the site', 0, ''),
+(2, 'social_media', 'json', 'Social Media icon(s) on the footer of the site', 1, ''),
 (3, 'video', 'text', 'Link to video on the about us page', 1, ''),
 (4, 'show_blog', 'boolean', 'Show / Hide the blog', 1, '0'),
 (5, 'blog_count', 'boolean', 'Maximum number of blog posts in the homepage', 1, '6'),
@@ -957,7 +1043,7 @@ INSERT INTO `settings` (`id`, `slug`, `type`, `caption`, `is_editable`, `content
 (8, 'fonts', 'json', 'Fonts that will be used throughout the website', 0, '{\"main\":{\"name\":\"Poppins\",\"size\":\"18\",\"weight\":\"300\",\"type\":\"sherif\"}}'),
 (9, 'search_departure_days', 'text', 'Maximum Departure Date from today', 1, '30'),
 (10, 'search_return_days', 'text', 'Maximum Return Date from the date of departure', 1, '60'),
-(11, 'seat_info_change_disclaimer', '', 'seat info change disclaimer', 1, 'Please leave blank for walking column. Once set, Layout cannot be changed later.'),
+(11, 'seat_info_change_disclaimer', 'text', 'seat info change disclaimer', 1, 'Please leave blank for walking column. Once set, Layout cannot be changed later.'),
 (12, 'min_vehicle_seats', 'text', 'Minimum seats in a vehicle', 1, '0'),
 (13, 'max_vehicle_seats', 'text', 'Minimum seats in a vehicle', 1, '30'),
 (14, 'can_verify_vendors', 'json', 'Users who can verify vendors', 1, '[0,1]'),
@@ -965,7 +1051,9 @@ INSERT INTO `settings` (`id`, `slug`, `type`, `caption`, `is_editable`, `content
 (16, 'can_verify_customers', 'json', 'Users who can verify customers', 1, '[0,1]'),
 (18, 'can_verify_operators', 'json', 'Users who can verify Operators', 1, '[3]'),
 (19, 'seat_hold_interval', 'text', 'Maximum minutes to hold a seat before booking', 1, '15'),
-(20, 'max_booking_seats', 'text', 'Maximum number of seats allowed per booking', 1, '5');
+(20, 'max_booking_seats', 'text', 'Maximum number of seats allowed per bookings', 1, '54'),
+(21, 'contact', 'json', 'Contact(es) used in the contact page', 1, '[{\r\n\"office\":\"ecosanjal.com,No. 12, Ribon Building,Chakrapath,Kathmandu, Nepal. \",\r\n\"call_us\":\"+977 (1) 456-78-90 or +977 (1) 456-78-90\",\r\n\"email\":\"info@gateway-scandinavia.com\",\r\n\"phone\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\r\n\"facebook\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\r\n\"twitter\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\r\n\"linkedin\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\r\n\"google\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\r\n\"pinterest\":\"+45 61 80 01 14 \",\"on_footer\":\"0\",\r\n\"google\":\"+45 61 80 01 14 \",\"on_footer\":\"0\"\r\n}]'),
+(22, 'about_us', 'json', 'about us contains details of about us page.', 1, '{\"about_us\":\" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.\",\"who_we_are\":\"yoel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.?\",\"why_choose_us\":\"yoel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.\",\"mission_statement\":\"yoel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.\",\"what_we_do\":\"yoel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur cumque quas ea doloribus deleniti</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.</br>Quibusdam commodi laboriosam error temporibus iste ipsa soluta distinctio maiores ad totam beatae incidunt veritatis enim? Reiciendis voluptate assumenda quidem eos explicabo rerum.\"}');
 
 -- --------------------------------------------------------
 
@@ -990,7 +1078,8 @@ CREATE TABLE `testimonials` (
 INSERT INTO `testimonials` (`id`, `image`, `name`, `info`, `position`, `content`, `created_on`) VALUES
 (3, '15504744593.jpg', 'maritza beatty', NULL, 'Seo Expert', 'Hi ipsum dolor sit amet, est vel, id fllentesque tortor pede risus nullam hiden over the teamwe happy for your service', '2019-02-18 13:05:59'),
 (4, '15504745024.jpg', 'rufus washington', NULL, 'CEO', 'Hi ipsum dolor sit amet, est vel, id fllentesque tortor pede risus nullam hiden over the teamwe happy for your service', '2019-02-18 13:06:42'),
-(7, '15823080822.jpg', 'Oren Fisher', 'Laudantium voluptat', 'Distinctio Quis nos', 'Irure dolor soluta a', '2020-02-21 23:46:22');
+(7, '15823080822.jpg', 'Oren Fisher', 'Laudantium voluptat', 'Distinctio Quis nos', 'Irure dolor soluta a', '2020-02-21 23:46:22'),
+(8, '1582609728.webp', 'Howard Byers', 'Dolorem libero venia', 'Id quaerat ab non co', 'Assumenda at quasi v', '2020-02-25 11:33:48');
 
 -- --------------------------------------------------------
 
@@ -1330,6 +1419,7 @@ CREATE TABLE `vendor_comments` (
 CREATE TABLE `verification_actions` (
   `id` bigint(20) NOT NULL,
   `table_name` varchar(64) COLLATE utf8_swedish_ci NOT NULL,
+  `table_id` bigint(20) NOT NULL,
   `comment` longtext COLLATE utf8_swedish_ci DEFAULT NULL,
   `verification_comment` longtext COLLATE utf8_swedish_ci DEFAULT NULL,
   `verification_status` tinyint(4) NOT NULL DEFAULT 0,
@@ -1344,186 +1434,214 @@ CREATE TABLE `verification_actions` (
 -- Dumping data for table `verification_actions`
 --
 
-INSERT INTO `verification_actions` (`id`, `table_name`, `comment`, `verification_comment`, `verification_status`, `edited_status`, `verified_by`, `verified_on`, `requested_on`, `requested_by`) VALUES
-(1, 'vehicle_types', 'Vehicle Type', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1, 1, '2020-02-21 15:13:01', '2019-06-07 08:24:24', 1),
-(2, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-14 07:13:44', '2019-06-07 08:24:50', 1),
-(3, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 09:17:12', '2019-06-08 03:32:12', 1),
-(4, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 13:38:16', '2019-06-08 07:53:16', 1),
-(5, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 13:38:48', '2019-06-08 07:53:48', 1),
-(6, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:14:29', '2019-06-08 14:29:29', 1),
-(7, 'locations', 'Location', NULL, 1, 0, 1, '2019-06-11 11:44:12', '2019-06-08 14:46:26', 1),
-(8, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:40:09', '2019-06-08 14:55:09', 1),
-(9, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:40:27', '2019-06-08 14:55:27', 1),
-(10, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:43:15', '2019-06-08 14:58:15', 1),
-(11, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:43:56', '2019-06-08 14:58:56', 1),
-(12, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:45:57', '2019-06-08 15:00:57', 1),
-(13, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:23:50', '2019-06-08 15:38:50', 1),
-(14, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:24:59', '2019-06-08 15:39:59', 1),
-(15, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:26:30', '2019-06-08 15:41:30', 1),
-(16, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:26:46', '2019-06-08 15:41:46', 1),
-(17, 'vehicle_types', 'Vehicle Type', 'qwe', 1, 1, 1, '2020-02-21 22:06:59', '2019-06-08 15:47:30', 1),
-(18, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:32', '2019-06-08 15:47:32', 1),
-(19, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:33', '2019-06-08 15:47:33', 1),
-(20, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:35', '2019-06-08 15:47:35', 1),
-(21, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:37', '2019-06-08 15:47:37', 1),
-(22, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:11:24', '2019-06-09 02:26:24', 1),
-(23, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:11:49', '2019-06-09 02:26:49', 1),
-(24, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:11:54', '2019-06-09 02:26:54', 1),
-(25, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:13:41', '2019-06-09 02:28:41', 1),
-(26, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:17:22', '2019-06-09 02:32:22', 1),
-(27, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:30:57', '2019-06-09 02:45:57', 1),
-(28, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:31:53', '2019-06-09 02:46:53', 1),
-(29, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:32:06', '2019-06-09 02:47:06', 1),
-(30, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:32:18', '2019-06-09 02:47:18', 1),
-(31, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:32:40', '2019-06-09 02:47:40', 1),
-(32, 'locations', 'Location', NULL, 1, 0, 1, '2019-06-23 17:14:04', '2019-06-09 02:47:55', 1),
-(33, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:03', '2019-06-09 03:00:03', 1),
-(34, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:19', '2019-06-09 03:00:19', 1),
-(35, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:22', '2019-06-09 03:00:22', 1),
-(36, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:26', '2019-06-09 03:00:26', 1),
-(37, 'vehicle_types', 'Vehicle Type', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', -1, 0, 1, '2019-06-09 08:47:24', '2019-06-09 03:02:24', 1),
-(38, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:47:26', '2019-06-09 03:02:26', 1),
-(39, 'vehicle_types', 'Vehicle Type', NULL, 0, 0, 1, '2019-06-09 08:48:12', '2019-06-09 03:03:12', 1),
-(40, 'locations', 'Location', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 1, 0, 1, '2019-06-13 14:17:45', '2019-06-09 10:36:03', 1),
-(41, 'locations', 'Location', NULL, 1, 0, 1, '2019-06-09 16:21:35', '2019-06-09 10:36:35', 1),
-(42, 'locations', 'Location', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', -1, 0, 1, '2019-06-09 16:33:32', '2019-06-09 10:48:32', 1),
-(43, 'locations', 'Location', NULL, 1, 0, 1, '2019-06-13 14:17:32', '2019-06-10 03:24:19', 1),
-(44, 'locations', 'Location', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 1, 0, 1, '2019-06-10 11:21:18', '2019-06-10 05:36:18', 1),
-(45, 'vehicle_types', 'Vehicle Type', NULL, 1, 0, 1, '2019-06-11 11:05:59', '2019-06-11 05:20:59', 1),
-(46, 'locations', 'Location', NULL, 1, 0, 1, '2019-06-15 07:08:20', '2019-06-15 01:23:20', 1),
-(47, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:19:36', '2019-06-15 02:34:36', 1),
-(48, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:22:46', '2019-06-15 02:37:46', 1),
-(49, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:29:32', '2019-06-15 02:44:32', 1),
-(50, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:31:17', '2019-06-15 02:46:17', 1),
-(51, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:33:35', '2019-06-15 02:48:35', 1),
-(52, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:34:05', '2019-06-15 02:49:05', 1),
-(53, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:37:18', '2019-06-15 02:52:18', 1),
-(54, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:37:25', '2019-06-15 02:52:25', 1),
-(55, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:39:35', '2019-06-15 02:54:35', 1),
-(56, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:40:17', '2019-06-15 02:55:17', 1),
-(57, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:42:07', '2019-06-15 02:57:07', 1),
-(58, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:45:55', '2019-06-15 03:00:55', 1),
-(59, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:46:32', '2019-06-15 03:01:32', 1),
-(60, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:49:36', '2019-06-15 03:04:36', 1),
-(61, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:49:53', '2019-06-15 03:04:53', 1),
-(62, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:50:26', '2019-06-15 03:05:26', 1),
-(63, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:50:56', '2019-06-15 03:05:56', 1),
-(64, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:51:50', '2019-06-15 03:06:50', 1),
-(65, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:53:29', '2019-06-15 03:08:29', 1),
-(66, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:53:45', '2019-06-15 03:08:45', 1),
-(67, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:53:57', '2019-06-15 03:08:57', 1),
-(68, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:54:28', '2019-06-15 03:09:28', 1),
-(69, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:55:09', '2019-06-15 03:10:09', 1),
-(70, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:56:43', '2019-06-15 03:11:43', 1),
-(71, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:56:54', '2019-06-15 03:11:54', 1),
-(72, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:57:08', '2019-06-15 03:12:08', 1),
-(73, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:57:21', '2019-06-15 03:12:21', 1),
-(74, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:57:50', '2019-06-15 03:12:50', 1),
-(75, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:12', '2019-06-15 03:13:12', 1),
-(76, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:19', '2019-06-15 03:13:19', 1),
-(77, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:52', '2019-06-15 03:13:52', 1),
-(78, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:59', '2019-06-15 03:13:59', 1),
-(79, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:59:13', '2019-06-15 03:14:13', 1),
-(80, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:00:31', '2019-06-15 03:15:31', 1),
-(81, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:03:01', '2019-06-15 03:18:01', 1),
-(82, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:03:25', '2019-06-15 03:18:25', 1),
-(83, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:04:14', '2019-06-15 03:19:14', 1),
-(84, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:06:36', '2019-06-15 03:21:36', 1),
-(85, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:06:57', '2019-06-15 03:21:57', 1),
-(86, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:07:24', '2019-06-15 03:22:24', 1),
-(87, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:07:40', '2019-06-15 03:22:40', 1),
-(88, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:08:22', '2019-06-15 03:23:22', 1),
-(89, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:08:49', '2019-06-15 03:23:49', 1),
-(90, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:09:46', '2019-06-15 03:24:46', 1),
-(91, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:09:58', '2019-06-15 03:24:58', 1),
-(92, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:10:06', '2019-06-15 03:25:06', 1),
-(93, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:12:34', '2019-06-15 03:27:34', 1),
-(94, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:13:14', '2019-06-15 03:28:14', 1),
-(95, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:13:59', '2019-06-15 03:28:59', 1),
-(96, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:18:19', '2019-06-15 03:33:19', 1),
-(97, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:20:55', '2019-06-15 03:35:55', 1),
-(98, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:23:28', '2019-06-15 03:38:28', 1),
-(99, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-07-16 11:05:44', '2019-06-15 03:39:58', 1),
-(100, 'vehicles', 'Vehicle', NULL, 1, 0, 1, '2019-08-08 16:39:56', '2019-06-16 07:02:01', 1),
-(101, 'locations', 'Location', NULL, 1, 0, 1, '2019-06-23 09:31:16', '2019-06-23 03:46:16', 1),
-(102, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:46:29', '2019-06-23 09:01:29', 1),
-(103, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:47:25', '2019-06-23 09:02:25', 1),
-(104, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:48:17', '2019-06-23 09:03:17', 1),
-(105, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:50:48', '2019-06-23 09:05:48', 1),
-(106, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:51:56', '2019-06-23 09:06:56', 1),
-(107, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:55:31', '2019-06-23 09:10:31', 1),
-(108, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:09:40', '2019-06-23 09:24:40', 1),
-(109, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:09:54', '2019-06-23 09:24:54', 1),
-(110, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:10:21', '2019-06-23 09:25:21', 1),
-(111, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:11:35', '2019-06-23 09:26:35', 1),
-(112, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:11:59', '2019-06-23 09:26:59', 1),
-(113, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:11', '2019-06-23 09:28:11', 1),
-(114, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:32', '2019-06-23 09:28:32', 1),
-(115, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:44', '2019-06-23 09:28:44', 1),
-(116, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:54', '2019-06-23 09:28:54', 1),
-(117, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:14:17', '2019-06-23 09:29:17', 1),
-(118, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:14:40', '2019-06-23 09:29:40', 1),
-(119, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:16:32', '2019-06-23 09:31:32', 1),
-(120, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:17:13', '2019-06-23 09:32:13', 1),
-(121, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:18:25', '2019-06-23 09:33:25', 1),
-(122, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:18:52', '2019-06-23 09:33:52', 1),
-(123, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:21:42', '2019-06-23 09:36:42', 1),
-(124, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:21:53', '2019-06-23 09:36:53', 1),
-(125, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:22:04', '2019-06-23 09:37:04', 1),
-(126, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:24:04', '2019-06-23 09:39:04', 1),
-(127, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:24:22', '2019-06-23 09:39:22', 1),
-(128, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:24:41', '2019-06-23 09:39:41', 1),
-(129, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:17', '2019-06-23 09:40:17', 1),
-(130, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:29', '2019-06-23 09:40:29', 1),
-(131, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:37', '2019-06-23 09:40:37', 1),
-(132, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:45', '2019-06-23 09:40:45', 1),
-(133, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:26:10', '2019-06-23 09:41:10', 1),
-(134, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:28:23', '2019-06-23 09:43:23', 1),
-(135, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:28:51', '2019-06-23 09:43:51', 1),
-(136, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:29:33', '2019-06-23 09:44:33', 1),
-(137, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:29:43', '2019-06-23 09:44:43', 1),
-(138, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:30:52', '2019-06-23 09:45:52', 1),
-(139, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:32:53', '2019-06-23 09:47:53', 1),
-(140, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:33:29', '2019-06-23 09:48:29', 1),
-(141, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:33:59', '2019-06-23 09:48:59', 1),
-(142, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:35:22', '2019-06-23 09:50:22', 1),
-(143, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:35:42', '2019-06-23 09:50:42', 1),
-(144, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:36:06', '2019-06-23 09:51:06', 1),
-(145, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:36:40', '2019-06-23 09:51:40', 1),
-(146, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:36:47', '2019-06-23 09:51:47', 1),
-(147, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:37:34', '2019-06-23 09:52:34', 1),
-(148, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:38:00', '2019-06-23 09:53:00', 1),
-(149, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:38:20', '2019-06-23 09:53:20', 1),
-(150, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:39:54', '2019-06-23 09:54:54', 1),
-(151, 'schedules', 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:40:16', '2019-06-23 09:55:16', 1),
-(152, 'schedules', 'Schedule', 'jhkl', 0, 1, 1, '2020-02-22 13:48:53', '2019-06-23 09:55:41', 1),
-(153, 'schedules', 'Schedule', '1234', 1, 1, 1, '2020-02-22 13:48:43', '2019-06-23 09:56:22', 1),
-(154, 'schedules', 'Schedule', 'qwerqwerqwer', 1, 1, 1, '2020-02-21 20:04:13', '2019-06-23 09:57:00', 1),
-(155, 'schedules', 'Schedule', 'qq', 1, 1, 1, '2020-02-21 19:50:17', '2019-06-23 09:57:09', 1),
-(156, 'schedules', 'Schedule', 'asdasdasd', 1, 1, 1, '2020-02-21 15:14:52', '2019-06-23 09:57:26', 1),
-(157, 'schedules', 'Schedule', 'sfsdf', 1, 1, 1, '2020-02-21 15:14:02', '2019-06-23 09:58:12', 1),
-(158, 'schedules', 'Schedule', 'Lorem Ipsum is simply dum ublishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1, 1, '2020-02-21 15:13:16', '2019-06-23 11:49:11', 1),
-(159, 'schedules', 'Schedule', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1, 1, '2020-02-21 15:11:52', '2019-06-26 07:02:17', 1),
-(160, 'vehicles', 'Vehicle', 'qwer', 1, 1, 1, '2020-02-21 19:50:00', '2019-07-14 10:41:57', 1),
-(161, 'vehicles', 'Vehicle', 'qwerty', 1, 1, 1, '2020-02-21 19:49:49', '2019-07-14 10:42:55', 1),
-(162, 'locations', 'Location', NULL, 1, 0, 1, '2020-02-22 20:23:27', '2020-02-22 14:38:27', 1),
-(163, 'locations', 'Location', NULL, 1, 0, 1, '2020-02-22 20:23:48', '2020-02-22 14:38:48', 1),
-(164, 'locations', 'Location', NULL, 1, 0, 1, '2020-02-22 20:24:42', '2020-02-22 14:39:42', 1),
-(165, 'amenities', 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:25:48', '2020-02-22 14:40:48', 1),
-(166, 'amenities', 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:26:09', '2020-02-22 14:41:09', 1),
-(167, 'amenities', 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:28:27', '2020-02-22 14:43:27', 1),
-(168, 'amenities', 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:29:03', '2020-02-22 14:44:03', 1),
-(169, 'amenities', 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:59:14', '2020-02-22 15:14:14', 1),
-(170, 'amenities', 'Amenity', NULL, 1, 0, 1, '2020-02-22 21:02:16', '2020-02-22 15:17:16', 1),
-(171, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:36:45', 1),
-(172, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:41:47', 1),
-(173, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:41:54', 1),
-(174, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:45:14', 1),
-(175, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:46:01', 1),
-(176, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:46:50', 1),
-(177, 'amenities', 'Amenities', 'test', 1, 1, 1, '2020-02-22 21:33:32', '2020-02-22 15:48:06', 1),
-(178, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 16:46:47', 1),
-(179, 'amenities', 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 17:20:37', 1);
+INSERT INTO `verification_actions` (`id`, `table_name`, `table_id`, `comment`, `verification_comment`, `verification_status`, `edited_status`, `verified_by`, `verified_on`, `requested_on`, `requested_by`) VALUES
+(1, 'vehicle_types', 0, 'Vehicle Type', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1, 1, '2020-02-21 15:13:01', '2019-06-07 08:24:24', 1),
+(2, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-14 07:13:44', '2019-06-07 08:24:50', 1),
+(3, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 09:17:12', '2019-06-08 03:32:12', 1),
+(4, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 13:38:16', '2019-06-08 07:53:16', 1),
+(5, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 13:38:48', '2019-06-08 07:53:48', 1),
+(6, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:14:29', '2019-06-08 14:29:29', 1),
+(7, 'locations', 0, 'Location', NULL, 1, 0, 1, '2019-06-11 11:44:12', '2019-06-08 14:46:26', 1),
+(8, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:40:09', '2019-06-08 14:55:09', 1),
+(9, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:40:27', '2019-06-08 14:55:27', 1),
+(10, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:43:15', '2019-06-08 14:58:15', 1),
+(11, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:43:56', '2019-06-08 14:58:56', 1),
+(12, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 20:45:57', '2019-06-08 15:00:57', 1),
+(13, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:23:50', '2019-06-08 15:38:50', 1),
+(14, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:24:59', '2019-06-08 15:39:59', 1),
+(15, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:26:30', '2019-06-08 15:41:30', 1),
+(16, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:26:46', '2019-06-08 15:41:46', 1),
+(17, 'vehicle_types', 0, 'Vehicle Type', 'qwe', 1, 1, 1, '2020-02-21 22:06:59', '2019-06-08 15:47:30', 1),
+(18, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:32', '2019-06-08 15:47:32', 1),
+(19, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:33', '2019-06-08 15:47:33', 1),
+(20, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:35', '2019-06-08 15:47:35', 1),
+(21, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-08 21:32:37', '2019-06-08 15:47:37', 1),
+(22, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:11:24', '2019-06-09 02:26:24', 1),
+(23, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:11:49', '2019-06-09 02:26:49', 1),
+(24, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:11:54', '2019-06-09 02:26:54', 1),
+(25, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:13:41', '2019-06-09 02:28:41', 1),
+(26, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:17:22', '2019-06-09 02:32:22', 1),
+(27, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:30:57', '2019-06-09 02:45:57', 1),
+(28, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:31:53', '2019-06-09 02:46:53', 1),
+(29, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:32:06', '2019-06-09 02:47:06', 1),
+(30, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:32:18', '2019-06-09 02:47:18', 1),
+(31, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:32:40', '2019-06-09 02:47:40', 1),
+(32, 'locations', 0, 'Location', NULL, 1, 0, 1, '2019-06-23 17:14:04', '2019-06-09 02:47:55', 1),
+(33, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:03', '2019-06-09 03:00:03', 1),
+(34, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:19', '2019-06-09 03:00:19', 1),
+(35, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:22', '2019-06-09 03:00:22', 1),
+(36, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:45:26', '2019-06-09 03:00:26', 1),
+(37, 'vehicle_types', 0, 'Vehicle Type', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', -1, 0, 1, '2019-06-09 08:47:24', '2019-06-09 03:02:24', 1),
+(38, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-09 08:47:26', '2019-06-09 03:02:26', 1),
+(39, 'vehicle_types', 0, 'Vehicle Type', NULL, 0, 0, 1, '2019-06-09 08:48:12', '2019-06-09 03:03:12', 1),
+(40, 'locations', 0, 'Location', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 1, 0, 1, '2019-06-13 14:17:45', '2019-06-09 10:36:03', 1),
+(41, 'locations', 0, 'Location', NULL, 1, 0, 1, '2019-06-09 16:21:35', '2019-06-09 10:36:35', 1),
+(42, 'locations', 0, 'Location', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', -1, 0, 1, '2019-06-09 16:33:32', '2019-06-09 10:48:32', 1),
+(43, 'locations', 0, 'Location', NULL, 1, 0, 1, '2019-06-13 14:17:32', '2019-06-10 03:24:19', 1),
+(44, 'locations', 0, 'Location', 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 1, 0, 1, '2019-06-10 11:21:18', '2019-06-10 05:36:18', 1),
+(45, 'vehicle_types', 0, 'Vehicle Type', NULL, 1, 0, 1, '2019-06-11 11:05:59', '2019-06-11 05:20:59', 1),
+(46, 'locations', 0, 'Location', NULL, 1, 0, 1, '2019-06-15 07:08:20', '2019-06-15 01:23:20', 1),
+(47, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:19:36', '2019-06-15 02:34:36', 1),
+(48, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:22:46', '2019-06-15 02:37:46', 1),
+(49, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:29:32', '2019-06-15 02:44:32', 1),
+(50, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:31:17', '2019-06-15 02:46:17', 1),
+(51, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:33:35', '2019-06-15 02:48:35', 1),
+(52, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:34:05', '2019-06-15 02:49:05', 1),
+(53, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:37:18', '2019-06-15 02:52:18', 1),
+(54, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:37:25', '2019-06-15 02:52:25', 1),
+(55, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:39:35', '2019-06-15 02:54:35', 1),
+(56, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:40:17', '2019-06-15 02:55:17', 1),
+(57, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:42:07', '2019-06-15 02:57:07', 1),
+(58, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:45:55', '2019-06-15 03:00:55', 1),
+(59, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:46:32', '2019-06-15 03:01:32', 1),
+(60, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:49:36', '2019-06-15 03:04:36', 1),
+(61, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:49:53', '2019-06-15 03:04:53', 1),
+(62, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:50:26', '2019-06-15 03:05:26', 1),
+(63, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:50:56', '2019-06-15 03:05:56', 1),
+(64, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:51:50', '2019-06-15 03:06:50', 1),
+(65, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:53:29', '2019-06-15 03:08:29', 1),
+(66, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:53:45', '2019-06-15 03:08:45', 1),
+(67, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:53:57', '2019-06-15 03:08:57', 1),
+(68, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:54:28', '2019-06-15 03:09:28', 1),
+(69, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:55:09', '2019-06-15 03:10:09', 1),
+(70, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:56:43', '2019-06-15 03:11:43', 1),
+(71, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:56:54', '2019-06-15 03:11:54', 1),
+(72, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:57:08', '2019-06-15 03:12:08', 1),
+(73, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:57:21', '2019-06-15 03:12:21', 1),
+(74, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:57:50', '2019-06-15 03:12:50', 1),
+(75, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:12', '2019-06-15 03:13:12', 1),
+(76, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:19', '2019-06-15 03:13:19', 1),
+(77, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:52', '2019-06-15 03:13:52', 1),
+(78, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:58:59', '2019-06-15 03:13:59', 1),
+(79, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 08:59:13', '2019-06-15 03:14:13', 1),
+(80, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:00:31', '2019-06-15 03:15:31', 1),
+(81, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:03:01', '2019-06-15 03:18:01', 1),
+(82, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:03:25', '2019-06-15 03:18:25', 1),
+(83, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:04:14', '2019-06-15 03:19:14', 1),
+(84, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:06:36', '2019-06-15 03:21:36', 1),
+(85, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:06:57', '2019-06-15 03:21:57', 1),
+(86, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:07:24', '2019-06-15 03:22:24', 1),
+(87, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:07:40', '2019-06-15 03:22:40', 1),
+(88, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:08:22', '2019-06-15 03:23:22', 1),
+(89, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:08:49', '2019-06-15 03:23:49', 1),
+(90, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:09:46', '2019-06-15 03:24:46', 1),
+(91, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:09:58', '2019-06-15 03:24:58', 1),
+(92, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:10:06', '2019-06-15 03:25:06', 1),
+(93, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:12:34', '2019-06-15 03:27:34', 1),
+(94, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:13:14', '2019-06-15 03:28:14', 1),
+(95, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:13:59', '2019-06-15 03:28:59', 1),
+(96, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:18:19', '2019-06-15 03:33:19', 1),
+(97, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:20:55', '2019-06-15 03:35:55', 1),
+(98, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-06-15 09:23:28', '2019-06-15 03:38:28', 1),
+(99, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-07-16 11:05:44', '2019-06-15 03:39:58', 1),
+(100, 'vehicles', 0, 'Vehicle', NULL, 1, 0, 1, '2019-08-08 16:39:56', '2019-06-16 07:02:01', 1),
+(101, 'locations', 0, 'Location', NULL, 1, 0, 1, '2019-06-23 09:31:16', '2019-06-23 03:46:16', 1),
+(102, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:46:29', '2019-06-23 09:01:29', 1),
+(103, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:47:25', '2019-06-23 09:02:25', 1),
+(104, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:48:17', '2019-06-23 09:03:17', 1),
+(105, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:50:48', '2019-06-23 09:05:48', 1),
+(106, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:51:56', '2019-06-23 09:06:56', 1),
+(107, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 14:55:31', '2019-06-23 09:10:31', 1),
+(108, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:09:40', '2019-06-23 09:24:40', 1),
+(109, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:09:54', '2019-06-23 09:24:54', 1),
+(110, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:10:21', '2019-06-23 09:25:21', 1),
+(111, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:11:35', '2019-06-23 09:26:35', 1),
+(112, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:11:59', '2019-06-23 09:26:59', 1),
+(113, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:11', '2019-06-23 09:28:11', 1),
+(114, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:32', '2019-06-23 09:28:32', 1),
+(115, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:44', '2019-06-23 09:28:44', 1),
+(116, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:13:54', '2019-06-23 09:28:54', 1),
+(117, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:14:17', '2019-06-23 09:29:17', 1),
+(118, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:14:40', '2019-06-23 09:29:40', 1),
+(119, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:16:32', '2019-06-23 09:31:32', 1),
+(120, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:17:13', '2019-06-23 09:32:13', 1),
+(121, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:18:25', '2019-06-23 09:33:25', 1),
+(122, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:18:52', '2019-06-23 09:33:52', 1),
+(123, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:21:42', '2019-06-23 09:36:42', 1),
+(124, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:21:53', '2019-06-23 09:36:53', 1),
+(125, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:22:04', '2019-06-23 09:37:04', 1),
+(126, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:24:04', '2019-06-23 09:39:04', 1),
+(127, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:24:22', '2019-06-23 09:39:22', 1),
+(128, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:24:41', '2019-06-23 09:39:41', 1),
+(129, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:17', '2019-06-23 09:40:17', 1),
+(130, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:29', '2019-06-23 09:40:29', 1),
+(131, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:37', '2019-06-23 09:40:37', 1),
+(132, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:25:45', '2019-06-23 09:40:45', 1),
+(133, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:26:10', '2019-06-23 09:41:10', 1),
+(134, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:28:23', '2019-06-23 09:43:23', 1),
+(135, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:28:51', '2019-06-23 09:43:51', 1),
+(136, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:29:33', '2019-06-23 09:44:33', 1),
+(137, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:29:43', '2019-06-23 09:44:43', 1),
+(138, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:30:52', '2019-06-23 09:45:52', 1),
+(139, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:32:53', '2019-06-23 09:47:53', 1),
+(140, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:33:29', '2019-06-23 09:48:29', 1),
+(141, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:33:59', '2019-06-23 09:48:59', 1),
+(142, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:35:22', '2019-06-23 09:50:22', 1),
+(143, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:35:42', '2019-06-23 09:50:42', 1),
+(144, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:36:06', '2019-06-23 09:51:06', 1),
+(145, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:36:40', '2019-06-23 09:51:40', 1),
+(146, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:36:47', '2019-06-23 09:51:47', 1),
+(147, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:37:34', '2019-06-23 09:52:34', 1),
+(148, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:38:00', '2019-06-23 09:53:00', 1),
+(149, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:38:20', '2019-06-23 09:53:20', 1),
+(150, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:39:54', '2019-06-23 09:54:54', 1),
+(151, 'schedules', 0, 'Schedule', NULL, 1, 0, 1, '2019-06-23 15:40:16', '2019-06-23 09:55:16', 1),
+(152, 'schedules', 0, 'Schedule', 'jhkl', 0, 1, 1, '2020-02-22 13:48:53', '2019-06-23 09:55:41', 1),
+(153, 'schedules', 0, 'Schedule', '1234', 1, 1, 1, '2020-02-22 13:48:43', '2019-06-23 09:56:22', 1),
+(154, 'schedules', 0, 'Schedule', 'qwerqwerqwer', 1, 1, 1, '2020-02-21 20:04:13', '2019-06-23 09:57:00', 1),
+(155, 'schedules', 0, 'Schedule', 'qq', 1, 1, 1, '2020-02-21 19:50:17', '2019-06-23 09:57:09', 1),
+(156, 'schedules', 0, 'Schedule', 'asdasdasd', 1, 1, 1, '2020-02-21 15:14:52', '2019-06-23 09:57:26', 1),
+(157, 'schedules', 0, 'Schedule', 'sfsdf', 1, 1, 1, '2020-02-21 15:14:02', '2019-06-23 09:58:12', 1),
+(158, 'schedules', 0, 'Schedule', 'Lorem Ipsum is simply dum ublishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1, 1, '2020-02-21 15:13:16', '2019-06-23 11:49:11', 1),
+(159, 'schedules', 0, 'Schedule', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, 1, 1, '2020-02-21 15:11:52', '2019-06-26 07:02:17', 1),
+(160, 'vehicles', 0, 'Vehicle', 'qwer', 1, 1, 1, '2020-02-21 19:50:00', '2019-07-14 10:41:57', 1),
+(161, 'vehicles', 0, 'Vehicle', 'qwerty', 1, 1, 1, '2020-02-21 19:49:49', '2019-07-14 10:42:55', 1),
+(162, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-22 20:23:27', '2020-02-22 14:38:27', 1),
+(163, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-22 20:23:48', '2020-02-22 14:38:48', 1),
+(164, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-22 20:24:42', '2020-02-22 14:39:42', 1),
+(165, 'amenities', 0, 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:25:48', '2020-02-22 14:40:48', 1),
+(166, 'amenities', 0, 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:26:09', '2020-02-22 14:41:09', 1),
+(167, 'amenities', 0, 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:28:27', '2020-02-22 14:43:27', 1),
+(168, 'amenities', 0, 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:29:03', '2020-02-22 14:44:03', 1),
+(169, 'amenities', 0, 'Amenity', NULL, 1, 0, 1, '2020-02-22 20:59:14', '2020-02-22 15:14:14', 1),
+(170, 'amenities', 0, 'Amenity', NULL, 1, 0, 1, '2020-02-22 21:02:16', '2020-02-22 15:17:16', 1),
+(171, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:36:45', 1),
+(172, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:41:47', 1),
+(173, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:41:54', 1),
+(174, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:45:14', 1),
+(175, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:46:01', 1),
+(176, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 15:46:50', 1),
+(177, 'amenities', 0, 'Amenities', 'test', 1, 1, 1, '2020-02-22 21:33:32', '2020-02-22 15:48:06', 1),
+(178, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 16:46:47', 1),
+(179, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-22 17:20:37', 1),
+(180, 'amenities', 0, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-23 03:45:28', 1),
+(181, 'amenities', 19, 'Amenities', NULL, 1, 1, 1, NULL, '2020-02-23 03:57:01', 1),
+(182, 'amenities', 20, 'Amenities', 'asdfasdf', 0, 1, 1, '2020-02-24 10:15:35', '2020-02-23 11:08:30', 1),
+(183, 'amenities', 21, 'Amenities', 'tr', 1, 1, 1, '2020-02-24 21:55:45', '2020-02-24 16:10:34', 1),
+(184, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 16:34:51', '2020-02-25 10:49:51', 1),
+(185, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 16:35:03', '2020-02-25 10:50:03', 1),
+(186, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 16:38:48', '2020-02-25 10:50:16', 1),
+(187, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:26:16', '2020-02-25 13:41:16', 1),
+(188, 'locations', 0, 'Location', NULL, 0, 0, NULL, NULL, '2020-02-25 13:42:16', 1),
+(189, 'locations', 0, 'Location', NULL, 0, 0, NULL, NULL, '2020-02-25 13:47:55', 1),
+(190, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:41:49', '2020-02-25 13:56:49', 1),
+(191, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:44:24', '2020-02-25 13:59:24', 1),
+(192, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:45:57', '2020-02-25 14:00:57', 1),
+(193, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:48:36', '2020-02-25 14:03:36', 1),
+(194, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:49:26', '2020-02-25 14:04:26', 1),
+(195, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:50:57', '2020-02-25 14:05:57', 1),
+(196, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:51:59', '2020-02-25 14:06:59', 1),
+(197, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:53:25', '2020-02-25 14:08:25', 1),
+(198, 'amenities', 22, 'Amenities', NULL, 0, 0, NULL, NULL, '2020-02-25 14:10:25', 1),
+(199, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:56:41', '2020-02-25 14:11:41', 1),
+(200, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:56:53', '2020-02-25 14:11:53', 1),
+(201, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:57:26', '2020-02-25 14:12:26', 1),
+(202, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:58:18', '2020-02-25 14:13:18', 1),
+(203, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 19:59:24', '2020-02-25 14:14:24', 1),
+(204, 'locations', 29, 'Location', NULL, 1, 0, 1, '2020-02-25 20:00:58', '2020-02-25 14:15:58', 1),
+(205, 'locations', 30, 'Location', NULL, 0, 0, NULL, NULL, '2020-02-25 14:23:10', 1),
+(206, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 20:21:52', '2020-02-25 14:36:52', 1),
+(207, 'locations', 32, 'Location', NULL, 1, 1, 1, '2020-02-26 12:51:55', '2020-02-25 14:38:47', 1);
 
 -- --------------------------------------------------------
 
@@ -1781,6 +1899,14 @@ ALTER TABLE `client_page_contents`
   ADD PRIMARY KEY (`id`),
   ADD KEY `client_id` (`client_id`),
   ADD KEY `updated_by` (`updated_by`);
+
+--
+-- Indexes for table `explore`
+--
+ALTER TABLE `explore`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_created_by` (`created_by`),
+  ADD KEY `fk_updated_by` (`updated_by`);
 
 --
 -- Indexes for table `locations`
@@ -2081,13 +2207,13 @@ ALTER TABLE `advertisement`
 -- AUTO_INCREMENT for table `amenities`
 --
 ALTER TABLE `amenities`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `blog_categories`
@@ -2099,7 +2225,7 @@ ALTER TABLE `blog_categories`
 -- AUTO_INCREMENT for table `blog_comments`
 --
 ALTER TABLE `blog_comments`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `bookings`
@@ -2111,31 +2237,37 @@ ALTER TABLE `bookings`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `client_page_contents`
 --
 ALTER TABLE `client_page_contents`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `explore`
+--
+ALTER TABLE `explore`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `news_categories`
@@ -2189,13 +2321,13 @@ ALTER TABLE `sections`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `transactions`
@@ -2267,7 +2399,7 @@ ALTER TABLE `vendor_comments`
 -- AUTO_INCREMENT for table `verification_actions`
 --
 ALTER TABLE `verification_actions`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=180;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
 
 --
 -- AUTO_INCREMENT for table `verification_comments`
@@ -2376,6 +2508,13 @@ ALTER TABLE `clients`
 ALTER TABLE `client_page_contents`
   ADD CONSTRAINT `client_page_contents_ibfk_1` FOREIGN KEY (`updated_by`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `client_r` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `explore`
+--
+ALTER TABLE `explore`
+  ADD CONSTRAINT `fk_created_by` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_updated_by` FOREIGN KEY (`updated_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `locations`
