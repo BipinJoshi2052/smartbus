@@ -366,47 +366,23 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
    <div class = "container" data-animation = "fadeInUp">
       <div class = "testimonails">
          <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
+             <?php if (!empty($explore) && count($explore) > 0):
+                 foreach ($explore as $e) :
+                     ?>
             <div class = "item">
                <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal2.jpg" alt = ""/>
+                  <img src="<?php echo (isset($e['image']) && $e['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $e['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>"  alt = "" title = "">
 
                </div>
 
             </div>
-            <div class = "item">
-               <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal3.jpg" alt = ""/>
 
-               </div>
 
-            </div>
-            <div class = "item ">
-
-               <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal4.jpg" alt = ""/>
-
-               </div>
-            </div>
-            <div class = "item ">
-               <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/nepal8.jpg" alt = ""/>
-
-               </div>
-            </div>
-            <div class = "item ">
-
-               <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/bg-11.jpg" alt = ""/>
-
-               </div>
-            </div>
-            <div class = "item ">
-               <div class = "explore-nepal">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/bg/bg-11.jpg" alt = ""/>
-
-               </div>
-
-            </div>
+                 <?php endforeach;
+                 ?>
+             <?php else : ?>
+                <h3>No Image Found</h3>
+             <?php endif; ?>
          </div>
       </div>
    </div>
@@ -668,60 +644,34 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                <h2 class = "title">Frequently Asked Questions</h2>
             </div>
             <div class = "panel-group no-list" id = "accordion1" data-animation = "fadeInLeft">
+                <?php if (!empty($faq) && count($faq) > 0):
+                foreach ($faq as $f) :
+                ?>
                <div class = "panel panel-default active">
                   <div class = "panel-heading">
                      <div class = "panel-title">
                         <!-- Tab -->
-                        <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item1">
+                        <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item<?php echo $f['id'] ?>">
                            <i class = "icon-mobile9"></i>
-                           How Do I book a ticket ?
+                            <?php echo (isset($f['title'])) ? $f['title'] : '' ?>
                         </a>
                      </div>
                   </div>
-                  <div id = "item1" class = "panel-collapse collapse in">
+                  <div id = "item<?php echo $f['id'] ?>" class = "panel-collapse collapse in">
                      <div class = "panel-body">
                         <!-- Tab Content-->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi recusandae optio earum sequi accusantium culpa vitae iste sit commodi eaque voluptatem officia quam.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi.</p>
+                        <p><?php echo (isset($f['content'])) ? $f['content'] : '' ?></p>
                      </div>
                   </div>
                </div>
-               <div class = "panel panel-default active">
-                  <div class = "panel-heading">
-                     <div class = "panel-title">
-                        <!-- Tab -->
-                        <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item2">
-                           <i class = "icon-code"></i>
-                           How Do I pay ?
-                        </a>
-                     </div>
-                  </div>
-                  <div id = "item2" class = "panel-collapse collapse">
-                     <div class = "panel-body">
-                        <!-- Tab Content-->Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque natus quaerat voluptate? Asperiores hic dolore voluptate corporis obcaecati reiciendis sunt ipsam iste. Eligendi inventore voluptatibus quia saepe odit deserunt nam?
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                     </div>
-                  </div>
-               </div>
-               <div class = "panel panel-default">
-                  <div class = "panel-heading">
-                     <div class = "panel-title">
-                        <!-- Tab -->
-                        <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item3">
-                           <i class = "icon-mic"></i>
-                           Is it Safe ?
-                        </a>
-                     </div>
-                  </div>
-                  <div id = "item3" class = "panel-collapse collapse">
-                     <div class = "panel-body">
-                        <!-- Image -->
-                        <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/additional-img2.jpg" class = "pull-right" width = "120" height = "82" alt = ""/>
-                        <!-- Tab Content-->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores ipsa esse obcaecati repudiandae veniam amet modi recusandae optio earum sequi accusantium culpa vitae iste sit commodi eaque voluptatem officia quam.</p>
-                     </div>
-                  </div>
-               </div>
+                <?php endforeach;
+                    ?>
+                <?php else : ?>
+                   <h3>No FAQ Found</h3>
+                <?php endif; ?>
+
+
+
             </div>
             <!--     <div class = "text-center margin-top-10">
                <a href = "<?php echo Yii::$app->request->baseUrl; ?>/site/faq" class = "btn btn-primary">Read More</a>

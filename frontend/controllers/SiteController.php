@@ -3,6 +3,8 @@
 namespace frontend\controllers;
 
 use common\components\HelperBlog;
+use common\components\HelperExplore;
+use common\components\HelperFaq;
 use common\components\HelperMessages;
 use common\components\HelperNews;
 use common\components\HelperTestimonails;
@@ -83,8 +85,10 @@ class SiteController extends Controller {
 
         return $this->render('index', [
                 'blog'        => HelperBlog::getSiteBlog(),
+                'faq'        => HelperFaq::getSiteFaq(),
                 'testimonial' => HelperTestimonails::getTestimonial(),
-                'news'=>HelperNews::getSiteNews()
+                'news'=>HelperNews::getSiteNews(),
+                'explore'=>HelperExplore::getSiteExplore(),
         ]);
     }
 

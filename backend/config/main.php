@@ -39,6 +39,7 @@ return [
                             'vehicles/types/edit/<id:[a-zA-Z0-9-]+>/' => 'vehicles/types/',
                             'locations/edit/<id:[a-zA-Z0-9-]+>/'      => 'locations/',
                             'amenities/edit/<id:[a-zA-Z0-9-]+>/'      => 'amenities/',
+                            'faq/edit/<id:[a-zA-Z0-9-]+>/'      => 'faq/',
 
 
                             'settings/edit/<id:[a-zA-Z0-9-]+>/' => 'settings/',

@@ -95,7 +95,7 @@ class HelperExplore extends Component {
     }
 
     public static function getSiteExplore() {
-        $explore = Explore::find()->where(['id' => 1])->all();
+        $explore = Explore::find()->where(['is_active' => 1])->all();
         return $explore;
     }
 
