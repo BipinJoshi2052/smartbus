@@ -4,7 +4,6 @@ namespace common\components;
 use common\models\generated\Auth;
 use common\models\User;
 use Yii;
-
 use yii\authclient\ClientInterface;
 use yii\helpers\ArrayHelper;
 

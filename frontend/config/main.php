@@ -22,14 +22,14 @@ return [
                         'clients' => [
                                 'google'   => [
                                         'class'        => 'yii\authclient\clients\Google',
-                                        'clientId'     => '902448783333-7ofpm1b9buleninc80s8k5041tmfaqnt.apps.googleusercontent.com',
-                                        'clientSecret' => 'q-GbZlXOo9lJXzcMbcZfux9M',
+                                        'clientId'     => '327064425708-kagg0nu7nnd5onve7tdf2rreqnc5q8b4.apps.googleusercontent.com',
+                                        'clientSecret' => 'EoIrK4UJKvr5H8LA-_lqezZR',
                                 ],
                                 'facebook' => [
                                         'class'          => 'yii\authclient\clients\Facebook',
                                         //                                        'authUrl'        => 'https://www.facebook.com/dialog/oauth?display=popup',
-                                        'clientId'       => '366193937569883',
-                                        'clientSecret'   => '1ba2a0db6e71619f7f17db1529bfabf4',
+                                        'clientId'       => '2775532572493611',
+                                        'clientSecret'   => '4ce0a91d994ab89a7fa0412738797919',
                                         'attributeNames' => [
                                                 'name',
                                                 'email',
