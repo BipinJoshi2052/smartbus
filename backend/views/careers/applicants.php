@@ -22,9 +22,9 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
         </div>
        <p style="padding: 15px; font-size: larger">
            <?php if($count) {
-               echo '<span class="label label-light-success" style="margin-right: 15px;padding: 10px;">'.count($applicants). ' Total Messages</span>';
-               echo '<span class="label label-success" style="margin-right: 15px;padding: 10px;">'.$count['count_unseen']. ' New Messages</span>';
-               echo '<span class="label label-danger" style="margin-right: 15px;padding: 10px;">'.$count['count_seen']. ' Seen messages</span>';
+               echo '<span class="label label-light-success" style="margin-right: 15px;padding: 10px;">'.count($applicants). ' Total Applications</span>';
+               echo '<span class="label label-success" style="margin-right: 15px;padding: 10px;">'.$count['count_unseen']. ' New Applications</span>';
+               echo '<span class="label label-danger" style="margin-right: 15px;padding: 10px;">'.$count['count_seen']. ' Seen Applictions</span>';
            } ?>
           <span id="refresh" class="label label-primary refresh hidden" style=""><i class="mdi mdi-refresh"></i>&nbsp;Refresh</span>
        </p>
