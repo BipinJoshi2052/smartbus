@@ -80,6 +80,7 @@ class ClientsController extends Controller {
         $id = Misc::decrypt($id);
         return $this->render('index', [
                 'clients'  => Clients::find()
+                                     ->orderBy(['id' => SORT_DESC])
                                      ->all(),
                 'editable' => ($id > 0) ? Clients::findOne($id) : false,
         ]);
@@ -88,10 +89,10 @@ class ClientsController extends Controller {
     public function actionUpdate() {
         $image = (isset($_FILES['image'])) ? $_FILES['image'] : [];
         if (isset($_POST['client'])) {
-            $updated = Helper::setModel('clients', $_POST['client'], $image);
+            $updated = Helper::setClient( $_POST['client'], $image);
             if ($updated != false) {
                 Misc::setFlash('success', 'Client Updated.');
-                return $this->redirect(Yii::$app->request->baseUrl . '/clients/edit/' . Misc::encrypt($updated['id']));
+                return $this->redirect(Yii::$app->request->baseUrl . '/clients/edit/' . Misc::encrypt($updated));
             }
         }
 
@@ -117,8 +118,8 @@ class ClientsController extends Controller {
         }
         $existing_clients = HelperClients::getAllClientsManagement();
         return $this->render('client-management/form', [
-                'clients'           => HelperClients::getClients(),
-                'editable'          => $post,
+                'clients'            => HelperClients::getClients(),
+                'editable'           => $post,
                 'existing_client_id' => $existing_client_id
         ]);
     }
@@ -129,7 +130,6 @@ class ClientsController extends Controller {
         if ($result != false) {
             $this->redirect(Yii::$app->request->baseUrl . '/clients/post/' . Misc::encrypt($result));
         }
-
     }
 
     public function actionList() {
@@ -138,7 +138,8 @@ class ClientsController extends Controller {
 
     public function actionDelete() {
         if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
-            return HelperClients::deleteClients($_POST['id']);
+            $delete = HelperClients::deleteClients($_POST['id']);
+            return $delete;
         }
 
     }

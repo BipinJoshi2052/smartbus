@@ -7,7 +7,10 @@
 
 namespace common\components;
 
+use common\components\HelperUpload as Upload;
 use common\models\Amenities;
+use common\models\Blog;
+use common\models\Clients;
 use common\models\generated\UserRoles;
 use common\models\Locations;
 use common\models\Messages;
@@ -337,6 +340,63 @@ class Helper extends Component {
 
         }
     }
+
+    public static function setClient($post, $image) {
+        if (empty($post['id'])) {
+            $model = new Clients();
+            $model->attributes = $post;
+            if ($model->save()) {
+                $id = $model->id;
+                if (isset($image['name']) && strlen(trim($image['name'])) > 0) {
+                    $file = $image;
+                    if ($id > 0) {
+                        $model = Clients::findOne($id);
+                        // Upload New file
+                        $up = Upload::upload($file);
+
+                        if ($up) {
+                            $model->image = $up;
+                            $model->save(false);
+                        }
+
+                    }
+                }
+                return $id;
+            }
+            return false;
+        }
+        else {
+            $id = Misc::decrypt($post['id']);
+            $model = Clients::findOne($id);
+
+            //category
+            $model->attributes = $post;
+            //updated_on
+            $model->updated_on = date('Y-m-d H:i:s');
+            //updated_by
+            $model->updated_by = Yii::$app->user->identity->id;
+
+            if ($model->save()) {
+                if (isset($image['name']) && strlen(trim($image['name'])) > 0) {
+                    $file = $image;
+                    if ($id > 0) {
+                        $model = Clients::findOne($id);
+                        // Upload New file
+                        $up = Upload::upload($file);
+
+                        if ($up) {
+                            $model->image = $up;
+                            $model->save(false);
+                        }
+
+                    }
+                }
+                return $id;
+            }
+            return false;
+        }
+    }
+
 
     public static function setModel($table, $data, $image = [], $seats = []) {
 

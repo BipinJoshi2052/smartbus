@@ -2,51 +2,58 @@
     /* @var $this yii\web\View */
     $this->title = 'Partner';
 ?>
-<div class = "page-header">
-    <div class = "container">
-        <h1 class = "title">Partner Name</h1>
-    </div>
-    <div class = "breadcrumb-box">
+   <?php if(isset($client)) {?>
+    <div class = "page-header">
         <div class = "container">
-            <ul class = "breadcrumb">
-                <li>
-                    <a href = "index.html">Home</a>
-                </li>
-                <li>
-                    <a href = "#">Partner</a>
-                </li>
-                <li class = "active">Partner Name</li>
-            </ul>
-        </div>
-    </div>
-</div><!-- page-header -->
-<section class = "page-section animated fadeInUp visible" data-animation = "fadeInUp">
-    <div class = "container">
+            <h1 class = "title"><?php echo $client['title']; ?></h1>
+        </div></div>
 
-        <div class = "row">
-            <div data-appear-animation = "fadeInLeft" class = "col-md-6 text-center appear-animation fadeInLeft appear-animation-visible">
-                <!-- Image -->
-                <img width = "960" height = "960" alt = "" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/agency-1.jpg">
+        <section class = "page-section animated fadeInUp visible" data-animation = "fadeInUp">
+            <div class = "container">
+
+                <div class = "row">
+                    <div class = "col-md-3">
+                        <!-- Image -->
+                        <img alt = "" src = "<?php echo Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $client['client']['image']; ?>">
+                    </div>
+                    <div class = "col-md-9">
+                        <div class = "section-title text-left animated fadeInUp visible" data-animation = "fadeInUp">
+                            <!-- Title -->
+                            <h2 class = "title"><?php echo $client['title']; ?></h2>
+                        </div>
+                        <!-- Content -->
+                        <div data-animation = "fadeInDown" class = "animated fadeInDown visible">
+                            <p>URL: <a href = "<?php echo $client['client']['link']; ?>"><?php echo $client['client']['link']; ?></a></p>
+                        </div>
+                        <div data-animation = "fadeInDown" class = "animated fadeInDown visible">
+                            <p><?php echo $client['content']; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class = "col-md-6">
-                <div class = "section-title text-left animated fadeInUp visible" data-animation = "fadeInUp">
-                    <!-- Title -->
-                    <h2 class = "title">Tell your Dreams <br> we make It real </h2>
-                </div>
-                <!-- Content -->
-                <div data-animation = "fadeInDown" class = "animated fadeInDown visible">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. porttitor consecteturadipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </div>
-                <div data-animation = "fadeInDown" class = "animated fadeInDown visible">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. porttitor consecteturadipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis.
-                    </p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus malesuada facilisis. Nunc consectetur odio sed dolor tincidunt porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+
+   <?php }else{?>
+       <div class = "page-header">
+           <div class = "container">
+               <h1 class = "title">No Information Found</h1>
+           </div>
+       </div>
+           <section class = "page-section animated fadeInUp visible" data-animation = "fadeInUp">
+               <div class = "container">
+                   <div class = "row">
+                       <div class = "col-md-12">
+                           <div class = "section-title text-left animated fadeInUp visible" data-animation = "fadeInUp">
+                               <!-- Title -->
+                               <h2 class = "title">No Information Available</h2>
+                           </div>
+                           <!-- Content -->
+                       </div>
+                   </div>
+               </div>
+           </section>
+
+   <?php } ?>
+
+

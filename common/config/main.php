@@ -22,10 +22,16 @@ return [
                             '<controller:\w+>/<id:\d+>'                         => '<controller>/view',
                             '<controller:\w+>/<action:\w+>/<id:\d+>'            => '<controller>/<action>',
                             '<controller:\w+>/<action:\w+>'                     => '<controller>/<action>',
-
+                            'site/careers/<id:[a-zA-Z0-9-]+>/'      => 'site/careers',
+                            'site/partner/<id:[a-zA-Z0-9-]+>/'      => 'site/partner/',
+                            'site/careers/<id:[a-zA-Z0-9-]+>/'      => 'site/careers',
 //                            'site/message/' => 'site/message/',
                             'clients/post/<id:[a-zA-Z0-9-]+>/'      => 'clients/post',
                             'explore/edit/<id:[a-zA-Z0-9-]+>/'      => 'explore/',
+                            //Vacancy
+                            'careers/post/<id:[a-zA-Z0-9-]+>/'      => 'careers/post',
+
+
                             //News
                             'news/post/<id:[a-zA-Z0-9-]+>/' => 'news/post',
                             'news/edit-category/<id:[a-zA-Z0-9-]+>/' => 'news/edit-category',

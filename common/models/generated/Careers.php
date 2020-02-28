@@ -17,6 +17,8 @@ use Yii;
  * @property int $experience
  * @property string $website
  * @property string $other_details
+ * @property string $file
+ * @property int $is_new
  * @property string $created_on
  */
 class Careers extends \yii\db\ActiveRecord
@@ -35,10 +37,12 @@ class Careers extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['age', 'expected_salary', 'experience'], 'integer'],
+            [['age', 'expected_salary', 'experience', 'is_new'], 'integer'],
             [['website', 'other_details'], 'string'],
+            [['file'], 'required'],
             [['created_on'], 'safe'],
             [['name', 'email', 'city', 'phone'], 'string', 'max' => 200],
+            [['file'], 'string', 'max' => 250],
         ];
     }
 
@@ -58,6 +62,8 @@ class Careers extends \yii\db\ActiveRecord
             'experience' => 'Experience',
             'website' => 'Website',
             'other_details' => 'Other Details',
+            'file' => 'File',
+            'is_new' => 'Is New',
             'created_on' => 'Created On',
         ];
     }
