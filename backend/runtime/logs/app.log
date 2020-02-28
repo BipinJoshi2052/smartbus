@@ -28173,3 +28173,91 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1582824678.173
     'REQUEST_TIME' => 1582824678
 ]
+2020-02-28 10:33:30 [::1][1][evvtotuns5uu1ekfmo3gsnajbf][error][yii\base\ErrorException:2] yii\base\ErrorException: in_array() expects parameter 2 to be array, bool given in C:\xampp\htdocs\smartbus\backend\controllers\UsersController.php:85
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(2, 'in_array() expe...', 'C:\\xampp\\htdocs...', 85, Array)
+#1 C:\xampp\htdocs\smartbus\backend\controllers\UsersController.php(85): in_array('update', true)
+#2 [internal function]: backend\controllers\UsersController->actionType('admin')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('type', Array)
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('users/type', Array)
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#8 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#9 {main}
+2020-02-28 10:33:30 [::1][1][evvtotuns5uu1ekfmo3gsnajbf][info][application] $_GET = [
+    'type' => 'admin'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '3aaec7a1c7983960fb0db22d6770e426d78ebf323fc05f3c90814891b408617ea:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"3hOZDqQPi9mK2wlthorCw5EkgMGxWHel\";}'
+    '_web_session' => 'evvtotuns5uu1ekfmo3gsnajbf'
+    '_csrf-backend' => '28989c80171b44467fca976adfd8013e67eff08edca203ff5f8aab9bb3007361a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"7cdxC6IwD28pTaUuqHoM95UMJbQcVyjr\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_REFERER' => 'http://localhost:8080/smartbus/primary/messages/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=3aaec7a1c7983960fb0db22d6770e426d78ebf323fc05f3c90814891b408617ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%223hOZDqQPi9mK2wlthorCw5EkgMGxWHel%22%3B%7D; _web_session=evvtotuns5uu1ekfmo3gsnajbf; _csrf-backend=28989c80171b44467fca976adfd8013e67eff08edca203ff5f8aab9bb3007361a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%227cdxC6IwD28pTaUuqHoM95UMJbQcVyjr%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python27\\;C:\\Python27\\Scripts;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\flutter\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\hp\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\hp\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\nodejs\\;C:\\Users\\hp\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 8080</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '8080'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52085'
+    'REDIRECT_URL' => '/smartbus/primary/users/type/admin'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/users/type/admin'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1582865310.578
+    'REQUEST_TIME' => 1582865310
+]
