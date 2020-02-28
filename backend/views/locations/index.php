@@ -108,7 +108,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Locations';
                           <?php $counter++; ?>
                          <label for="<?= $counter; ?>" class="control-label">Verification Status</label>
 
-                         <a class="d-hover d-block  <?= (($eVstatus == 0) && ($is_authorized)) ? '' : 'no-pointer' ?>" href="<?= (($eVstatus == 0) && ($is_authorized)) ? Yii::$app->request->baseUrl . '/verify/actions/' . $editable['verification_id'] : 'javascript:void(0);' ?>">
+                         <a class="d-hover d-block  <?= ($eVstatus == 0) ? '' : 'no-pointer' ?>" href="<?= ($eVstatus == 0) ? Yii::$app->request->baseUrl . '/verify/actions/' . $editable['verification_id'] : 'javascript:void(0);' ?>">
                             <div class="form-control d-block <?= ($eVstatus > 0) ? 'success' : 'danger' ?>">
                                <div class="verification-status">
                                    <?php if ($eVstatus == 0) : ?>

@@ -51,20 +51,12 @@ $this->title = Yii::$app->params['system_name'] . ' | Clients';
                   </div>
                   <div class="form-group">
                      <div class="row">
-                        <div class=" col-sm-6 col-xs-12">
+                        <div class=" col-sm-12 col-xs-12">
                             <?php $counter++; ?>
-                           <label for="<?php echo $counter; ?>" class="control-label">Show in Home Page</label>
-                           <select id="<?php echo $counter; ?>" name="client[on_home]" class="form-control required">
-                              <option <?php echo (isset($editable['on_home']) && $editable['on_home'] == 1) ? 'selected = "selected"' : '' ?> value="1">Show</option>
-                              <option <?php echo (isset($editable['on_home']) && $editable['on_home'] == 0) ? 'selected = "selected"' : '' ?> value="0">Hide</option>
-                           </select>
-                        </div>
-                        <div class=" col-sm-6 col-xs-12">
-                            <?php $counter++; ?>
-                           <label for="<?php echo $counter; ?>" class="control-label">Show in About Page</label>
-                           <select id="<?php echo $counter; ?>" name="client[on_about]" class="form-control required">
-                              <option <?php echo (isset($editable['on_about']) && $editable['on_about'] == 1) ? 'selected = "selected"' : '' ?> value="1">Show</option>
-                              <option <?php echo (isset($editable['on_about']) && $editable['on_about'] == 0) ? 'selected = "selected"' : '' ?> value="0">Hide</option>
+                           <label for="<?php echo $counter; ?>" class="control-label">Visibility</label>
+                           <select id="<?php echo $counter; ?>" name="client[is_active]" class="form-control required">
+                              <option <?php echo (isset($editable['is_active']) && $editable['is_active'] == 1) ? 'selected = "selected"' : '' ?> value="1">Show</option>
+                              <option <?php echo (isset($editable['is_active']) && $editable['is_active'] == 0) ? 'selected = "selected"' : '' ?> value="0">Hide</option>
                            </select>
                         </div>
                      </div>
@@ -139,7 +131,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Clients';
                             <td><?php echo \common\components\Misc::dmY($client['created_on']); ?></td>
                             <td class="text-right">
                                <a class="btn btn-primary btn-sm" href="<?php echo Yii::$app->request->baseUrl; ?>/clients/edit/<?php echo \common\components\Misc::encrypt($client['id']) ?>">Edit</a>
-                               <a class="btn btn-default btn-sm delete-item" href="javascript:void();" data-tab="Clients" data-id="<?php echo \common\components\Misc::encrypt($client['id']); ?>">Delete</a>
+                               <a class="btn btn-default btn-sm delete-client" href="javascript:void();" data-tab="Clients" data-id="<?php echo $client['id']; ?>">Delete</a>
                             </td>
                          </tr>
                       <?php endforeach; ?>

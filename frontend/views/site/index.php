@@ -686,8 +686,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
    </div>
 
 </section>
-
-
 <section id = "clients" class = "page-section">
    <div class = "container">
       <div class = "section-title">
@@ -697,30 +695,11 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       <div class = "row">
          <div class = "col-md-12 text-center">
             <div class = "owl-carousel navigation-1" data-pagination = "false" data-items = "6" data-autoplay = "true" data-navigation = "true">
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/partner/">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/1.png" width = "170" height = "170" alt = ""/>
+               <?php foreach ($clients as $c => $client): ?>
+               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/site/partner/<?php echo \common\components\Misc::encrypt($client['id']); ?>">
+                  <img src = "<?php echo Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $client['image']; ?>" width = "170" height = "170" alt = ""/>
                </a>
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/partner/">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/2.png" width = "170" height = "170" alt = ""/>
-               </a>
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/partner/">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/3.png" width = "170" height = "170" alt = ""/>
-               </a>
-               <a href = "#">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/4.png" width = "170" height = "170" alt = ""/>
-               </a>
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/partner/">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/5.png" width = "170" height = "170" alt = ""/>
-               </a>
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/partner/">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/6.png" width = "170" height = "170" alt = ""/>
-               </a>
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/partner/">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/1.png" width = "170" height = "170" alt = ""/>
-               </a>
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/partner/">
-                  <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/clients/2.png" width = "170" height = "170" alt = ""/>
-               </a>
+               <?php endforeach; ?>
             </div>
          </div>
       </div>

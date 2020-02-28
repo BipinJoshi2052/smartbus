@@ -25,16 +25,6 @@ class HelperClients extends Component {
         foreach ($clients_exist as $c => $k) {
             $client_id[] = $k['client_id'];
         }
-//        $Clients = Clients::find()->asArray()->all();
-//        foreach ($Clients as $a =>$k){
-//            if(!in_array($k['id'],$client_id)) {
-//                echo '<pre>';
-//                print_r($k);
-//                echo '</pre>';
-//            }
-//        }
-//        die;
-
         return $client_id;
     }
 
@@ -48,11 +38,22 @@ class HelperClients extends Component {
         return $clients;
     }
 
+    public static function getClientsPage($id) {
+        $singleClient = \common\models\ClientPageContents::find()
+                                                         ->where('client_id = ' . $id)
+                                                         ->with('client')
+                                                         ->asArray()
+                                                         ->one();
+
+        return $singleClient;
+    }
+
     public static function getSingleClientsPage($id) {
         $singleClient = ClientPageContents::find()
                                           ->where('id = ' . $id)
                                           ->asArray()
                                           ->one();
+
         return $singleClient;
     }
 
@@ -123,6 +124,9 @@ class HelperClients extends Component {
 
     public static function deleteClients($id) {
         $model = Clients::findOne($id);
+        echo '<pre>';
+        print_r($model);
+        echo '</pre>';
 
         return $model->delete() ? json_encode(true) : json_encode(false);
     }

@@ -5,13 +5,14 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "clients".
+ * This is the model class for table "{{%clients}}".
  *
  * @property int $id
  * @property string $image
  * @property string $name
  * @property string $info
  * @property string $link
+ * @property int $is_active
  * @property string $created_on
  * @property int $created_by
  * @property string $updated_on
@@ -28,7 +29,7 @@ class Clients extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'clients';
+        return '{{%clients}}';
     }
 
     /**
@@ -39,8 +40,8 @@ class Clients extends \yii\db\ActiveRecord
         return [
             [['name'], 'required'],
             [['name', 'info', 'link'], 'string'],
+            [['is_active', 'created_by', 'updated_by'], 'integer'],
             [['created_on', 'updated_on'], 'safe'],
-            [['created_by', 'updated_by'], 'integer'],
             [['image'], 'string', 'max' => 128],
             [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
             [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
@@ -58,6 +59,7 @@ class Clients extends \yii\db\ActiveRecord
             'name' => 'Name',
             'info' => 'Info',
             'link' => 'Link',
+            'is_active' => 'Is Active',
             'created_on' => 'Created On',
             'created_by' => 'Created By',
             'updated_on' => 'Updated On',
