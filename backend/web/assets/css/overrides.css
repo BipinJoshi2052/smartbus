@@ -3114,3 +3114,7 @@ table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc {
 .font-20{
     font-size: 20px;
 }
+.view-message h5 a{
+    border-bottom: none!important;
+    padding: 0 0 0 0!important;
+}

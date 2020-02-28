@@ -33,6 +33,8 @@ return [
                             'users/create/<type:[a-zA-Z0-9-]+>/'      => 'users/create/',
                             'users/type/<type:[a-zA-Z0-9-]+>/'        => 'users/type/',
                             'schedules/view/<id:[a-zA-Z0-9-]+>/'      => 'schedules/view/',
+                            'careers/view/<id:[a-zA-Z0-9-]+>/'      => 'careers/view/',
+                            'careers/edit/<id:[a-zA-Z0-9-]+>/'      => 'careers/edit/',
                             'schedules/edit/<id:[a-zA-Z0-9-]+>/'      => 'schedules/edit/',
                             'bookings/edit/<id:[a-zA-Z0-9-]+>/'       => 'bookings/form/',
                             'vehicles/edit/<id:[a-zA-Z0-9-]+>/'       => 'vehicles/edit/',

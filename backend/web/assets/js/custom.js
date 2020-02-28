@@ -519,6 +519,48 @@ $(document).ready(function ($) {
 
       });
    }
+   if ($('.delete-vacancy').length) {
+      $('.delete-vacancy').on("click", function () {
+         var cid = $(this).data("id");
+         var table = $(this).data("table");
+         swal({
+                  title: "Delete Blog ?",
+                  text: "Are you sure, you want to delete this Vacancy.",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Yes, delete it",
+                  cancelButtonText: "Cancel",
+                  closeOnConfirm: false,
+                  closeOnCancel: true
+               },
+               function (isConfirm) {
+                  if (isConfirm) {
+                     var $this = $(this);
+                     var $id = $(this).attr("data-id");
+                     $.ajax({
+                        url: baseUrl + "/careers/delete",
+                        type: 'post',
+                        data: {
+                           id: cid,
+                        },
+                        success: function (data) {
+                           if (data === 'false') {
+                              typeAlert('Error', 'Sorry, Could not delete Vacancy', 'error');
+                           } else {
+                              typeAlert('Success', 'Vacancy Deleted.', 'success');
+                              location.reload();
+                           }
+                        },
+                        error: function () {
+                           typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+                        }
+                     });
+                  }
+               });
+
+      });
+   }
    if ($('.delete-blog-category').length) {
       $('.delete-blog-category').on("click", function () {
          var cid = $(this).data("id");
@@ -895,6 +937,42 @@ $(document).ready(function ($) {
          location.reload();
       })
 
+   });
+   $(function () {
+      $('.noti-mess').on("click", function () {
+         var cid = $('.new-mess').data("id");
+         var unseen = cid-1;
+         console.log(unseen);
+         // $.ajax({
+         //    url: baseUrl + "/messages/read-message",
+         //    type: 'post',
+         //    data: {
+         //       id: cid
+         //    },
+         //    success: function (data) {
+         //       console.log(data);
+         //       if (data === '') {
+         //          typeAlert('Error', 'Sorry, Could not open Message', 'error');
+         //       } else {
+         //          var a = JSON.parse(data);
+         //
+         //          if ($('[data-for="new"]')) {
+         //             $('[data-id="id' + a['id'] + '"]').html('<span data-for="seen" class="label label-danger">Seen</span>');
+         //          } else {
+         //             $('[data-id="id' + a['id'] + '"]').html('<span data-for="new" class="label label-danger">New</span>');
+         //
+         //          }
+         //          $('.modal').modal('show');
+         //          $('.modal-dialog').html(a['result']);
+         //          $('.refresh').removeClass('hidden')
+         //       }
+         //    },
+         //    error: function () {
+         //       typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+         //    }
+         // });
+
+      });
    });
    $(function () {
       $('.show-message').on("click", function () {

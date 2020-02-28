@@ -653,6 +653,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                         <!-- Tab -->
                         <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item<?php echo $f['id'] ?>">
                            <i class = "icon-mobile9"></i>
+
                             <?php echo (isset($f['title'])) ? $f['title'] : '' ?>
                         </a>
                      </div>
