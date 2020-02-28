@@ -7,6 +7,9 @@ class ClientPageContents extends \common\models\generated\ClientPageContents {
         return array_merge(Parent::rules(), [
         ]);
     }
+    public function getClient() {
+        return $this->hasOne(Clients::className(), ['id' => 'client_id']);
+    }
 
 
 }
