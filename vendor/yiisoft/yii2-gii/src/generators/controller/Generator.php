@@ -98,7 +98,7 @@ class Generator extends \yii\gii\Generator
     {
         return [
             'controller.php',
-            'view.php',
+            'applicants.php',
         ];
     }
 
@@ -177,7 +177,7 @@ class Generator extends \yii\gii\Generator
         foreach ($this->getActionIDs() as $action) {
             $files[] = new CodeFile(
                 $this->getViewFile($action),
-                $this->render('view.php', ['action' => $action])
+                $this->render('applicants.php', ['action' => $action])
             );
         }
 

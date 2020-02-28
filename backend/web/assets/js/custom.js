@@ -562,6 +562,48 @@ $(document).ready(function ($) {
 
       });
    }
+   if ($('.delete-vacancy').length) {
+      $('.delete-vacancy').on("click", function () {
+         var cid = $(this).data("id");
+         var table = $(this).data("table");
+         swal({
+                  title: "Delete Blog ?",
+                  text: "Are you sure, you want to delete this Vacancy.",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Yes, delete it",
+                  cancelButtonText: "Cancel",
+                  closeOnConfirm: false,
+                  closeOnCancel: true
+               },
+               function (isConfirm) {
+                  if (isConfirm) {
+                     var $this = $(this);
+                     var $id = $(this).attr("data-id");
+                     $.ajax({
+                        url: baseUrl + "/careers/delete",
+                        type: 'post',
+                        data: {
+                           id: cid,
+                        },
+                        success: function (data) {
+                           if (data === 'false') {
+                              typeAlert('Error', 'Sorry, Could not delete Vacancy', 'error');
+                           } else {
+                              typeAlert('Success', 'Vacancy Deleted.', 'success');
+                              location.reload();
+                           }
+                        },
+                        error: function () {
+                           typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+                        }
+                     });
+                  }
+               });
+
+      });
+   }
    if ($('.delete-blog-category').length) {
       $('.delete-blog-category').on("click", function () {
          var cid = $(this).data("id");

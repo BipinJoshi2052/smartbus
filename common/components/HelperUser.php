@@ -22,15 +22,16 @@
 
     class HelperUser extends Component {
 
-        public static function addUser($data, $role) {
+        public static function addUser($data) {
             $model = new User();
             $model->name = isset($data['name']) ? $data['name'] : '';
-            $model->username = isset($data['username']) ? $data['username'] : '';
+            $model->username = isset($data['email']) ? $data['email'] : '';
             $model->setPassword($data['password']);
-            $model->role = Yii::$app->params['role_assoc'][$role];
+            $model->generateAuthKey();
+            $model->role =  isset($data['role']) ? $data['role'] : '';
             $model->email = isset($data['email']) ? $data['email'] : '';
             $model->phone = isset($data['phone']) ? $data['phone'] : 0;
-            $model->mobile = isset($data['mobile']) ? $data['mobile'] : 0;
+
             //$model->profile_picture     = isset($data['profile_picture']) ? $data['profile_picture'] : '';
             $model->status = isset($data['status']) && $data['status'] == 1 ? 10 : 0;
 

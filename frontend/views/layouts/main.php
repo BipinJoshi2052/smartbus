@@ -2,7 +2,6 @@
 /* @var $this \yii\web\View */
 
 /* @var $content string */
-
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 
@@ -701,23 +700,17 @@ AppAsset::register($this);
             </div>
 
             <div class = "sign-up text-center">
-               <form method = "post" class = "register-form" id = "signup-form">
+               <form enctype = "multipart/form-data" method = "post" class = "register-form" id = "signup-form" action="<?php echo Yii::$app->request->baseUrl; ?>/register/insert/">
+                  <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
+                  <input type="hidden" name="role" value="5">
                   <p class = "title">Don't have an Account?</p>
                   <h6 class = "title"> Register Now.</h6>
                   <div id = "success"></div>
                   <input type = "text" placeholder = "Name *" name = "name" class = "form-control bg-white">
                   <input type = "email" placeholder = "Email *" name = "email" class = "form-control bg-white" data-bv-field = "email">
                   <i class = "form-control-feedback bv-no-label" data-bv-icon-for = "email" style = "display: none;" data-original-title = "" title = ""></i>
-                  <input type = "text" placeholder = "User Name *" name = "name" class = "form-control bg-white">
                   <input type = "text" placeholder = "Phone *" name = "phone" class = "form-control bg-white">
-                  <div class = "row" role = "form">
-                     <div class = "col-md-6">
-                        <input type = "text" class = "form-control bg-white" id = "password" placeholder = "Password *">
-                     </div>
-                     <div class = "col-md-6">
-                        <input type = "text" class = "form-control bg-white" id = "password1" placeholder = "Re-Enter Password *">
-                     </div>
-                  </div>
+                  <input type = "password" class = "form-control bg-white" id = "password" name="password" placeholder = "Password *">
                   <div class = "clearfix"></div>
                   <div class = "buttons-box clearfix">
                      <button class = "btn full btn-black" id = "submit">Register Now</button>

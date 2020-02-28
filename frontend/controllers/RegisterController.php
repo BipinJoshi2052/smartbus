@@ -4,6 +4,7 @@
      */
     namespace frontend\controllers;
 
+    use common\components\HelperUser;
     use common\models\LoginForm;
     use common\models\User;
     use frontend\models\PasswordResetRequestForm;
@@ -51,5 +52,11 @@
          */
         public function actionAgent() {
                return $this->render('agent');
+        }
+        public function actionInsert(){
+            $data = Yii::$app->request->post();
+            $post = HelperUser::addUser($data);
+            return $this->redirect(Yii::$app->request->baseUrl);
+
         }
     }
