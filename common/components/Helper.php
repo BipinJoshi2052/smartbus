@@ -36,6 +36,7 @@ class Helper extends Component {
         self::getMessages();
         self::getRoles();
         self::setParamPermissions();
+        HelperCareers::getCount();
         parent::init();
     }
 

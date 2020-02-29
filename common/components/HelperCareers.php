@@ -46,7 +46,8 @@ class HelperCareers extends Component {
     public static function getCount() {
         $count_unseen = Careers::find()->where(['=', 'is_new', '0'])->count();
         $count_seen = Careers::find()->where(['=', 'is_new', '1'])->count();
-        //            $count_all= Messages::find()->where(['is_new'])->count();
+
+        Yii::$app->params['count_application'] = $count_unseen;
         return $count = [
                 'count_unseen' => $count_unseen,
                 'count_seen'   => $count_seen,
@@ -94,8 +95,6 @@ class HelperCareers extends Component {
     public static function setStatus($data) {
         $id = $data['id'];
         $model = Vacancy::findOne($id);
-        $model->title = $data['title'];
-        $model->description = $data['description'];
         $model->updated_on = date('Y-m-d H:i:s');
         $model->is_active=$data['is_active'];
         if ($model->save()) {

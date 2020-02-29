@@ -14,7 +14,6 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
                 Applicants
             </h3>
         </div>
-
     </div>
     <div class = "card extended blog-post-wrapper">
         <div class = "card-header">
@@ -28,9 +27,8 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
            } ?>
           <span id="refresh" class="label label-primary refresh hidden" style=""><i class="mdi mdi-refresh"></i>&nbsp;Refresh</span>
        </p>
-
-
         <div class = "card-body">
+           <?php if(isset($applicants) && !empty($applicants)) {?>
             <div class = "table-responsive">
                 <table class = "table  table-striped blog-post" data-plugin = "datatable">
                     <thead>
@@ -59,17 +57,15 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
                        <td><?php echo $app['experience'] ?></td>
                         <td >
                           <a class = "btn btn-primary btn-sm" href = "<?php echo Yii::$app->request->baseUrl; ?>/careers/view/<?php echo \common\components\Misc::encrypt($app['id']); ?>" data-id = "<?php echo $app['id']; ?>" data-tab = "applicants">View</a>
-                            <!--                                    <a class = "btn btn-primary btn-sm" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/blog/post/--><?php //echo \common\components\Misc::encrypt($post['id']); ?><!--">Edit</a>-->
-                            <!--                                    <a class = "btn btn-default btn-sm delete-item" href = "javascript:void(0);" data-id = "--><?php //echo $post['id']; ?><!--" data-tab = "Blog">Delete</a>-->
-                       </td>
+                         </td>
                     </tr>
-<?php }?>
+<?php } ?>
                     </tbody>
                 </table>
             </div>
-
+<?php }else{ ?>
             <h3>Sorry, No Posts Found</h3>
-
+<?php } ?>
         </div>
     </div>
 
