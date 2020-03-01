@@ -163,7 +163,7 @@ AppAsset::register($this);
                            ?>
                         </span></div>
                      <?php }else {?>
-                        <div class = "new-notify"><span>
+                        <div class = "new-notify" style="background-color: red"><span>
                            <?php
                               echo '0';
                            ?>
@@ -301,7 +301,7 @@ AppAsset::register($this);
                         </span></div>
                             <?php
                         } else { ?>
-                          <div class = "new-notify"><span>
+                          <div class = "new-notify" style="background-color: red"><span>
                            <?php
                            echo Yii::$app->params['count_messages']['count_unseen'];
                            ?>
