@@ -1,4 +1,5 @@
 <?php
+
     /* @var $this yii\web\View */
     $this->title = 'FAQ';
     $this->registerJsFile(Yii::$app->request->baseUrl . '/assets/js/jquery.mixitup.min.js');

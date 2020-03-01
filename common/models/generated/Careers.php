@@ -10,11 +10,11 @@ use Yii;
  * @property int $id
  * @property string $name
  * @property string $email
- * @property int $age
+ * @property string $age
  * @property string $city
  * @property string $phone
- * @property int $expected_salary
- * @property int $experience
+ * @property string $expected_salary
+ * @property string $experience
  * @property string $website
  * @property string $other_details
  * @property string $file
@@ -37,9 +37,9 @@ class Careers extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['age', 'expected_salary', 'experience', 'is_new'], 'integer'],
-            [['website', 'other_details'], 'string'],
-            [['file'], 'required'],
+            [['age', 'expected_salary', 'experience', 'website', 'other_details'], 'string'],
+            ['', 'required'],
+            [['is_new'], 'integer'],
             [['created_on'], 'safe'],
             [['name', 'email', 'city', 'phone'], 'string', 'max' => 200],
             [['file'], 'string', 'max' => 250],

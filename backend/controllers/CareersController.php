@@ -9,6 +9,7 @@ use common\components\HelperBlogComments;
 use common\components\HelperCareers;
 use common\components\Misc;
 use common\models\Blog;
+use common\models\Careers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -118,7 +119,17 @@ class CareersController extends Controller {
                 'editable' => $post,
         ]);
     }
+    public function actionPdf($id) {
+        $model = Careers::findOne($id);
 
+        // This will need to be the path relative to the root of your app.
+        $filePath ='/../common/assets/files/uploads';
+
+        // Might need to change '@app' for another alias
+        $completePath = Yii::getAlias('@app'.$filePath.'/'.$model->file);
+
+        return Yii::$app->response->sendFile($completePath, $model->file);
+    }
 //    public function actionComment() {
 //        if (isset($_POST['post'])) {
 //            $comment =  HelperBlog::setBlogComments($_POST['post']);

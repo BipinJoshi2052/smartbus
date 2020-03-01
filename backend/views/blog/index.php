@@ -74,9 +74,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
                             <a class = "btn btn-default btn-sm delete-item" href = "javascript:void(0);" data-id = "<?php echo $post['id']; ?>" data-tab = "Blog">Delete</a>
                          </td>
                       </tr>
-                   <?php
-
-                   endforeach; ?>
+                   <?php endforeach; ?>
 
                    </tbody>
                 </table>

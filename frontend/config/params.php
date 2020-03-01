@@ -2,6 +2,10 @@
 $rel_path = '/common/assets/';
 return [
     'adminEmail' => 'info@smartbus.com.np',
+    'file_path'=>[
+            'file' => $rel_path. '/files',
+            'uploads'  => $rel_path . '/files/uploads/',
+    ],
     'image_path'                    => [
             'image'    => $rel_path . '/images/',
             'uploads'  => $rel_path . '/images/uploads/',

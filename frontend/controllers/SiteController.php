@@ -2,7 +2,9 @@
 
 namespace frontend\controllers;
 
+use common\components\Helper;
 use common\components\HelperBlog;
+use common\components\HelperCareers;
 use common\components\HelperClients;
 use common\components\HelperExplore;
 use common\components\HelperFaq;
@@ -115,9 +117,18 @@ class SiteController extends Controller {
     }
 
     public function actionCareers() {
-        $page = 'team';
-        return $this->render('careers');
+        if(isset($_POST['post'] ) ) {
+            $r = HelperCareers::setApplication($_POST['post'], (isset($_FILES['file']) && !empty($_FILES['file'])) ? $_FILES['file'] : '');
+            return $this->render('careers', [
+                    'careers'  => HelperCareers::getVacancy(),
+                    'response' => $r,
+            ]);
+        }
+        return $this->render('careers', [
+                'careers'  => HelperCareers::getVacancy(),
+                ]);
     }
+
 
     public function actionContact() {
         $page = 'contact';

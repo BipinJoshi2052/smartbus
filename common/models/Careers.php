@@ -8,10 +8,11 @@ use common\models\generated\User;
 class Careers extends \common\models\generated\Careers {
     public function rules() {
         return [
-                [['age', 'expected_salary', 'experience'], 'integer'],
-                [['website', 'other_details'], 'string'],
+                [['age', 'expected_salary', 'experience', 'website', 'other_details'], 'string'],
+                [['is_new'], 'integer'],
                 [['created_on'], 'safe'],
                 [['name', 'email', 'city', 'phone'], 'string', 'max' => 200],
+                [['file'], 'string', 'max' => 250],
         ];
     }
 

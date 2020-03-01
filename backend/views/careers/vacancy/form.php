@@ -10,10 +10,10 @@ $this->title = Yii::$app->params['system_name'] . ' | Add new Vacancy';
         <div class = "row page-titles">
             <div class = "col-md-12 align-self-center">
                 <h3 class = "text-themecolor d_inline_b  m-b-0 m-t-0">
-                    <?php echo (isset($editable['name'])) ? ' <i class="mdi mdi-pencil"></i> Edit - ' . $editable['name'] . '' : ' <i class="mdi mdi-add"></i> Add New Vacancy' ?>
+                    <?php echo (isset($editable['title'])) ? ' <i class="mdi mdi-pencil"></i> Edit - ' . $editable['title'] . '' : ' <i class="mdi mdi-add"></i> Add New Vacancy' ?>
                 </h3>
                 <div class = "page-actions ">
-                    <a class = "btn btn-secondary <?php echo (isset($editable['name'])) ? '' : 'd_none'; ?>" href = "<?php echo Yii::$app->request->baseUrl; ?>/careers/post/">
+                    <a class = "btn btn-secondary <?php echo (isset($editable['title'])) ? '' : 'd_none'; ?>" href = "<?php echo Yii::$app->request->baseUrl; ?>/careers/post/">
                         <i class = "mdi mdi-plus"></i>
                         Add New Vacancy
                     </a>
@@ -36,13 +36,13 @@ $this->title = Yii::$app->params['system_name'] . ' | Add new Vacancy';
                             <div class = "form-group">
                                 <?php $counter++; ?>
                                 <label for = "<?php echo $counter; ?>" class = "control-label required">Title</label>
-                                <input id = "<?php echo $counter; ?>" name = "post[title]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['name'])) ? $editable['name'] : '' ?>">
+                                <input id = "<?php echo $counter; ?>" name = "post[title]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
                             </div>
 
                             <div class = "form-group">
                                 <?php $counter++; ?>
                                 <label for = "<?php echo $counter; ?>" class = "control-label ">Content</label>
-                                <textarea rows="5" id = "<?php echo $counter; ?>" name = "post[description]" class = "summernote"><?php echo (isset($editable['other_details'])) ? $editable['other_details'] : '' ?></textarea>
+                                <textarea rows="5" id = "<?php echo $counter; ?>" name = "post[description]" class = "summernote"><?php echo (isset($editable['description'])) ? $editable['description'] : '' ?></textarea>
                             </div>
 
 

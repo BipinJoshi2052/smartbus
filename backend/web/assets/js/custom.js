@@ -427,7 +427,7 @@ $(document).ready(function ($) {
 
    $(function () {
       $('.data-table, [data-plugin="datatable"]').DataTable({
-         "displayLength": 50,
+         "displayLength": 20,
          "lengthMenu": [[50, 100, 200, 500, -1], [50, 100, 200, 500, "All"]],
          "aaSorting": [],
          "columnDefs": [
@@ -1020,6 +1020,7 @@ $(document).ready(function ($) {
    $(function () {
       $('.show-message').on("click", function () {
          var cid = $(this).data("id");
+         var modal = $('.modal-message');
          $.ajax({
             url: baseUrl + "/messages/read-message",
             type: 'post',
@@ -1032,15 +1033,16 @@ $(document).ready(function ($) {
                   typeAlert('Error', 'Sorry, Could not open Message', 'error');
                } else {
                   var a = JSON.parse(data);
-
+                  //message seen or new
                   if ($('[data-for="new"]')) {
                      $('[data-id="id' + a['id'] + '"]').html('<span data-for="seen" class="label label-danger">Seen</span>');
                   } else {
                      $('[data-id="id' + a['id'] + '"]').html('<span data-for="new" class="label label-danger">New</span>');
-
                   }
-                  $('.modal').modal('show');
-                  $('.modal-dialog').html(a['result']);
+
+
+                  modal.find('.modal-dialog').html(a['result']);
+                 modal.modal('show');
                   $('.refresh').removeClass('hidden')
                }
             },

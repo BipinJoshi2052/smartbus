@@ -20,7 +20,8 @@ use yii\data\Pagination;
 
 class HelperCareers extends Component {
     public static function getApplicants() {
-        $model = Careers::find()->asArray()->all();
+        $model = Careers::find()->asArray()->orderBy('created_on DESC')->all();
+
         return $model;
     }
 
@@ -39,7 +40,7 @@ class HelperCareers extends Component {
     }
 
     public static function getSingle($id) {
-        $model = Careers::find()->where('id = ' . $id)->asArray()->one();
+        $model = Vacancy::find()->where('id = ' . $id)->asArray()->one();
         return $model;
     }
 
@@ -97,7 +98,7 @@ class HelperCareers extends Component {
         $model->title = $data['title'];
         $model->description = $data['description'];
         $model->updated_on = date('Y-m-d H:i:s');
-        $model->is_active=$data['is_active'];
+        $model->is_active = $data['is_active'];
         if ($model->save()) {
             return $model;
         }
@@ -107,4 +108,32 @@ class HelperCareers extends Component {
         die;
 
     }
+
+    public static function setApplication($post, $file='') {
+
+        $model = new Careers();
+        $model->attributes =$post;
+        if ($model->save()) {
+
+            if (isset($file['name']) && strlen(trim($file['name'])) > 0) {
+                $docfile = $file;
+                $go = Upload::uploadFile($docfile);
+            }
+            if ($go) {
+                $model->file = $go;
+                $model->save(false);
+            }
+            return true;
+        }
+      else {
+        return false;
+        }
+//        echo '<pre>';
+//        print_r($model->getErrors());
+//        echo '</pre>';
+//        die;
+    }
+
+
 }
+

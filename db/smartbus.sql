@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2020 at 08:08 AM
+-- Generation Time: Mar 01, 2020 at 08:52 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -245,7 +245,8 @@ INSERT INTO `blog` (`id`, `category_id`, `slug`, `title`, `subtitle`, `post_cont
 (17, 7, 'check-blog', 'Check Blog', 'Subtitle', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '1582271378.webp', 1, 1, '2020-02-21 13:34:38', '2020-02-26 12:56:43', 1),
 (19, 8, 'aspernatur-nisi-iste', 'Aspernatur nisi iste', 'Neque nisi illo duis', 'Dolor fuga Dolores ', '15822714246.jpg', 1, 1, '2020-02-21 13:35:24', '2020-02-25 16:15:02', 1),
 (20, 7, 'voluptates-aut-labor', 'Voluptates aut labor', 'Fuga Quae vero enim', 'Ab sint numquam ali', '15822714375.jpg', 1, 1, '2020-02-21 13:35:37', '2020-02-25 16:15:04', 1),
-(23, 7, 'blog', 'Blog', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '1582559787.webp', 1, 13, '2020-02-24 21:41:26', '2020-02-24 21:41:26', 13);
+(23, 7, 'blog', 'Blog', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '1582559787.webp', 1, 13, '2020-02-24 21:41:26', '2020-02-24 21:41:26', 13),
+(24, 8, 'quia-sit-anim-adipis', 'Quia sit anim adipis', 'Molestiae rerum natu', 'Tempore qui dolorem', '1582885912).png', 0, 1, '2020-02-28 16:16:52', '2020-02-28 16:16:52', 1);
 
 -- --------------------------------------------------------
 
@@ -354,6 +355,74 @@ INSERT INTO `bookings` (`id`, `booking_code`, `schedule_id`, `booker_id`, `booki
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `careers`
+--
+
+CREATE TABLE `careers` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) DEFAULT NULL,
+  `email` varchar(200) DEFAULT NULL,
+  `age` text DEFAULT NULL,
+  `city` varchar(200) DEFAULT NULL,
+  `phone` varchar(200) DEFAULT NULL,
+  `expected_salary` text DEFAULT NULL,
+  `experience` text DEFAULT NULL,
+  `website` longtext DEFAULT NULL,
+  `other_details` longtext DEFAULT NULL,
+  `file` varchar(250) NOT NULL,
+  `is_new` int(11) NOT NULL DEFAULT 0,
+  `created_on` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `careers`
+--
+
+INSERT INTO `careers` (`id`, `name`, `email`, `age`, `city`, `phone`, `expected_salary`, `experience`, `website`, `other_details`, `file`, `is_new`, `created_on`) VALUES
+(5, 'Solomon Raymond', 'qovav@mailinator.com', 'Quibusdam sint volup', 'Assumenda aliqua In', '+1 (673) 891-2922', 'Laudantium beatae a', 'Numquam cupidatat ve', 'https://www.hulu.us', 'Quam voluptatibus do', '1582889431le.pdf', 1, '2020-02-28 00:00:00'),
+(6, 'Mari Pugh', 'dawypyfyr@mailinator.com', 'Voluptas in voluptat', 'Proident qui aut ip', '+1 (795) 716-6952', 'Pariatur Asperiores', 'Veniam eos accusamu', 'https://www.wetelejojerytu.cc', 'Ratione magni quia e', '', 1, '2020-03-01 00:00:00'),
+(7, 'Mari Pugh', 'dawypyfyr@mailinator.com', 'Voluptas in voluptat', 'Proident qui aut ip', '+1 (795) 716-6952', 'Pariatur Asperiores', 'Veniam eos accusamu', 'https://www.wetelejojerytu.cc', 'Ratione magni quia e', '1583035446le.pdf', 1, '2020-03-01 00:00:00'),
+(8, 'Mari Pugh', 'dawypyfyr@mailinator.com', 'Voluptas in voluptat', 'Proident qui aut ip', '+1 (795) 716-6952', 'Pariatur Asperiores', 'Veniam eos accusamu', 'https://www.wetelejojerytu.cc', 'Ratione magni quia e', '1583035480le.pdf', 1, '2020-03-01 00:00:00'),
+(9, 'Erasmus Humphrey', 'niwafotonu@mailinator.net', 'Eum enim quam labori', 'Ipsum omnis odio et ', '+1 (198) 571-2991', 'Consequatur sint e', 'Quo veniam eos tem', 'https://www.tynukuhe.org', 'Veritatis occaecat a', '1583035502le.pdf', 1, '2020-03-01 00:00:00'),
+(10, 'Isabelle Mullins', 'cojym@mailinator.net', 'Sint iusto atque exc', 'Sit doloremque est a', '+1 (708) 793-2905', 'Ea dolores quo conse', 'Vero adipisicing qui', 'https://www.qisuk.co', 'Fugiat et ut incidid', '1583035994le.pdf', 1, '2020-03-01 00:00:00'),
+(11, 'Kibo Hicks', 'qiqaxic@mailinator.com', 'Magnam possimus qui', 'Consectetur mollitia', '+1 (467) 451-4692', 'Deserunt quia deseru', 'Aliquam aliqua Sunt', 'https://www.qozewatagikenyt.cc', 'Quaerat labore minim', '1583036101le.pdf', 0, '2020-03-01 00:00:00'),
+(12, 'Holmes Rasmussen', 'doxydoxer@mailinator.net', 'Facilis dolor dolore', 'Nihil non aliquid la', '+1 (525) 527-7761', 'Velit proident et l', 'Similique odit ab an', 'https://www.qomimys.cc', 'Sint quos velit aute', '1583036447le.pdf', 0, '2020-03-01 00:00:00'),
+(13, 'Holmes Rasmussen', 'doxydoxer@mailinator.net', 'Facilis dolor dolore', 'Nihil non aliquid la', '+1 (525) 527-7761', 'Velit proident et l', 'Similique odit ab an', 'https://www.qomimys.cc', 'Sint quos velit aute', '1583036467le.pdf', 1, '2020-03-01 00:00:00'),
+(14, 'Coby Deleon', 'nywekag@mailinator.net', 'Nobis ut accusantium', 'Ex aut dolor incidun', '+1 (458) 428-7052', 'Voluptas sed tempore', 'Qui consequat Excep', 'https://www.giboguriqyxa.co', 'Dolor voluptas sunt', '1583036580le.pdf', 0, '2020-03-01 00:00:00'),
+(15, 'Coby Deleon', 'nywekag@mailinator.net', 'Nobis ut accusantium', 'Ex aut dolor incidun', '+1 (458) 428-7052', 'Voluptas sed tempore', 'Qui consequat Excep', 'https://www.giboguriqyxa.co', 'Dolor voluptas sunt', '1583036615le.pdf', 0, '2020-03-01 00:00:00'),
+(16, 'Coby Deleon', 'nywekag@mailinator.net', 'Nobis ut accusantium', 'Ex aut dolor incidun', '+1 (458) 428-7052', 'Voluptas sed tempore', 'Qui consequat Excep', 'https://www.giboguriqyxa.co', 'Dolor voluptas sunt', '1583037007le.pdf', 0, '2020-03-01 00:00:00'),
+(17, 'Coby Deleon', 'nywekag@mailinator.net', 'Nobis ut accusantium', 'Ex aut dolor incidun', '+1 (458) 428-7052', 'Voluptas sed tempore', 'Qui consequat Excep', 'https://www.giboguriqyxa.co', 'Dolor voluptas sunt', '1583037214le.pdf', 0, '2020-03-01 00:00:00'),
+(18, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037270le.pdf', 0, '2020-03-01 00:00:00'),
+(19, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037332le.pdf', 0, '2020-03-01 00:00:00'),
+(20, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037349le.pdf', 0, '2020-03-01 00:00:00'),
+(21, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037428le.pdf', 0, '2020-03-01 00:00:00'),
+(22, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037464le.pdf', 0, '2020-03-01 00:00:00'),
+(23, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037515le.pdf', 0, '2020-03-01 00:00:00'),
+(24, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037540le.pdf', 1, '2020-03-01 00:00:00'),
+(25, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037619le.pdf', 0, '2020-03-01 00:00:00'),
+(26, 'Kimberly Parks', 'sodynyforo@mailinator.net', 'Earum illo voluptas ', 'Fugiat in quas sapie', '+1 (206) 171-7536', 'Atque ipsum volupta', 'Vel adipisicing dolo', 'https://www.syrukys.me', 'Sit repellendus Pos', '1583037664le.pdf', 0, '2020-03-01 00:00:00'),
+(27, 'Cheryl Campbell', 'pecen@mailinator.net', 'Duis rerum facilis o', 'Tempor iste duis ill', '+1 (532) 727-2032', 'Optio quia voluptat', 'Ex sequi dolorum mol', 'https://www.jafucowukawyvyz.org.au', 'Quam iusto commodo i', '1583038411le.pdf', 1, '2020-03-01 00:00:00'),
+(28, 'Rafael Hurley', 'taqyjiqese@mailinator.net', 'Perferendis rerum an', 'Corrupti molestiae ', '+1 (623) 543-3769', 'Excepteur magna fugi', 'Unde sit in nulla q', 'https://www.gepehodywudat.me', 'Hello please review my cv i have attached i am very capable and interesting person', '1583041675le.pdf', 1, '2020-03-01 00:00:00'),
+(29, 'Rafael Hurley', 'taqyjiqese@mailinator.net', 'Perferendis rerum an', 'Corrupti molestiae ', '+1 (623) 543-3769', 'Excepteur magna fugi', 'Unde sit in nulla q', 'https://www.gepehodywudat.me', 'Hello please review my cv i have attached i am very capable and interesting person', '1583042134le.pdf', 0, '2020-03-01 00:00:00'),
+(30, 'Rafael Hurley', 'taqyjiqese@mailinator.net', 'Perferendis rerum an', 'Corrupti molestiae ', '+1 (623) 543-3769', 'Excepteur magna fugi', 'Unde sit in nulla q', 'https://www.gepehodywudat.me', 'Hello please review my cv i have attached i am very capable and interesting person', '1583042141le.pdf', 0, '2020-03-01 00:00:00'),
+(31, 'Joel Stevenson', 'mahehy@mailinator.com', 'Et ullam et in imped', 'Fugiat rem cillum n', '+1 (418) 486-7249', 'Ullam irure error re', 'Consequatur rerum co', 'https://www.depisavubyvanoc.com.au', 'Excepteur dolor exer', '1583042300le.pdf', 1, '2020-03-01 00:00:00'),
+(32, 'Xander Fields', 'myhikyj@mailinator.net', 'Irure tenetur mollit', 'A culpa ut commodo e', '+1 (183) 943-5354', 'Expedita eu accusamu', 'Aliqua Voluptates v', 'https://www.tomi.org.uk', 'Lorem consequatur m', '1583042421le.pdf', 0, '2020-03-01 00:00:00'),
+(33, 'Xander Fields', 'myhikyj@mailinator.net', 'Irure tenetur mollit', 'A culpa ut commodo e', '+1 (183) 943-5354', 'Expedita eu accusamu', 'Aliqua Voluptates v', 'https://www.tomi.org.uk', 'Lorem consequatur m', '1583042446le.pdf', 0, '2020-03-01 00:00:00'),
+(34, 'Xander Fields', 'myhikyj@mailinator.net', 'Irure tenetur mollit', 'A culpa ut commodo e', '+1 (183) 943-5354', 'Expedita eu accusamu', 'Aliqua Voluptates v', 'https://www.tomi.org.uk', 'Lorem consequatur m', '1583042459le.pdf', 0, '2020-03-01 00:00:00'),
+(35, 'Jessamine Garner', 'volubyr@mailinator.net', 'Officiis omnis anim ', 'Earum est porro obc', '+1 (174) 233-9108', 'Ut sequi et qui quo ', 'Lorem aut sit culpa ', 'https://www.zabydexyxigez.me.uk', 'Distinctio Quas lor', '1583042522le.pdf', 0, '2020-03-01 00:00:00'),
+(36, 'Ursula Collins', 'wumytu@mailinator.com', 'Ipsum dolore cum nul', 'Soluta labore dolore', '+1 (585) 393-5651', 'Commodo aliquip dolo', 'Omnis ut quo labore ', 'https://www.genuxaracolage.com.au', 'Rerum iusto elit ma', '1583042782le.pdf', 0, '2020-03-01 00:00:00'),
+(37, 'Yoshio Wilcox', 'wefy@mailinator.net', 'Officia elit sunt q', 'Sed sint qui cupidat', '+1 (689) 103-9912', 'Et dolorum qui ut ea', 'Corporis debitis ea ', 'https://www.senytabiz.us', 'Vero ea odio esse vo', '1583042958le.pdf', 0, '2020-03-01 00:00:00'),
+(38, 'Gloria Olson', 'geruh@mailinator.net', 'In ex sit inventore ', 'Culpa dolor est nece', '+1 (328) 502-1293', 'Dolore ex enim dolor', 'Ea sint nulla anim l', 'https://www.wehebivi.cc', 'Hello sir how are you\r\n', '1583043085le.pdf', 0, '2020-03-01 00:00:00'),
+(39, 'Yoel', 'quzenizi@mailinator.com', 'Fugiat nihil laudant', 'Qui delectus sed no', '+1 (246) 721-4692', 'Consequatur commodi ', 'Inventore veniam ex', 'https://www.gizidulowyq.com', 'Quaerat laboriosam ', '1583043187le.pdf', 1, '2020-03-01 00:00:00'),
+(40, 'Quentin Ray', 'cajod@mailinator.net', 'Sunt accusantium con', 'Amet asperiores qui', '+1 (801) 637-3275', 'Qui voluptas consequ', 'Laudantium eu est ', 'https://www.datyb.cm', 'Ut in libero dolor e', '1583043338le.pdf', 0, '2020-03-01 00:00:00'),
+(41, 'Zachary Holland', 'jylopywaqe@mailinator.net', 'Quis rem sit dolore ', 'Sed nostrud saepe no', '+1 (765) 271-9428', 'Culpa minus ipsum e', 'Amet sint cillum e', 'https://www.midarapigyxyzis.org.au', 'Ipsa aut consequunt', '1583043449le.pdf', 1, '2020-03-01 00:00:00'),
+(42, 'Zorita Ingram', 'rezak@mailinator.net', 'Temporibus est susci', 'Asperiores amet adi', '+1 (983) 308-5061', 'Recusandae Velit e', 'Quia voluptas elit ', 'https://www.xupitugow.com.au', 'Cum suscipit odit se', '1583043785le.pdf', 1, '2020-03-01 12:08:05'),
+(43, 'Giacomo Hull', 'fopomujo@mailinator.com', 'Soluta atque irure e', 'Soluta enim adipisic', '+1 (769) 951-8821', 'Omnis libero nostrud', 'Et omnis dolore exer', 'https://www.mexug.ca', 'Ea enim natus recusa', '1583045752le.pdf', 1, '2020-03-01 12:40:52'),
+(44, 'Eagan Boyer', 'xanyz@mailinator.com', 'Et maiores cum est q', 'Ad rerum ipsum labor', '+1 (478) 445-2214', 'Debitis enim ut dolo', 'Unde sit consectetur', 'https://www.zimape.co.uk', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.', '1583046048le.pdf', 1, '2020-03-01 12:45:48');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `clients`
 --
 
@@ -363,6 +432,7 @@ CREATE TABLE `clients` (
   `name` longtext COLLATE utf8_swedish_ci NOT NULL,
   `info` longtext COLLATE utf8_swedish_ci DEFAULT NULL,
   `link` longtext COLLATE utf8_swedish_ci DEFAULT NULL,
+  `is_active` int(11) DEFAULT 0,
   `created_on` datetime NOT NULL DEFAULT current_timestamp(),
   `created_by` bigint(20) DEFAULT NULL,
   `updated_on` datetime DEFAULT NULL,
@@ -373,18 +443,14 @@ CREATE TABLE `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`id`, `image`, `name`, `info`, `link`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
-(1, '1550469093o.jpg', 'a', 'casdasd', '', '2019-02-18 11:36:33', NULL, '2020-02-21 17:35:17', 1),
-(2, '15504691241.png', 'b', NULL, 'https://mssag.ch/en/jobs.php', '2019-02-18 11:37:04', NULL, NULL, NULL),
-(3, '1550469152o.png', 'c', NULL, 'https://truejapantours.com/', '2019-02-18 11:37:32', NULL, NULL, NULL),
-(4, '15504691861.png', 'd', NULL, 'https://time-itms.com/wp/#home_section', '2019-02-18 11:38:06', NULL, NULL, NULL),
-(5, '1550469213o.png', 'e', NULL, 'http://www.ulissetouroperator.com/en/about-us/', '2019-02-18 11:38:33', NULL, NULL, NULL),
-(6, '1550469238o.jpg', 'f', NULL, 'https://www.facebook.com/balkanadriatic/?tn-str=k*f', '2019-02-18 11:38:58', NULL, NULL, NULL),
-(7, '1550469609e.png', 'g', NULL, 'http://www.silver-tray.com', '2019-02-18 11:45:09', NULL, NULL, NULL),
-(8, '1550469651o.png', 'h', NULL, 'http://www.americanguestusa.com/en/', '2019-02-18 11:45:51', NULL, NULL, NULL),
-(9, NULL, 'i', '', '', '2020-02-18 11:09:56', 1, NULL, NULL),
-(10, '15820035644.jpg', 'j', 'Et dolores ut possim', '', '2020-02-18 11:11:04', 1, NULL, NULL),
-(11, '1582627242.webp', 'k', 'Deleniti numquam lab', 'https://www.youtube.com', '2020-02-25 16:25:27', 1, '2020-02-25 16:25:42', 1);
+INSERT INTO `clients` (`id`, `image`, `name`, `info`, `link`, `is_active`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
+(8, '15828723025.png', 'Company Name 6', 'asdf', 'https://google.com/', 1, '2019-02-18 11:45:51', NULL, '2020-02-28 12:30:02', 1),
+(9, '15828722884.png', 'Company Name 7', '', 'https://google.com/', 0, '2020-02-18 11:09:56', 1, '2020-02-28 12:29:48', 1),
+(10, '15828722793.png', 'Company Name 8', 'Et dolores ut possim', 'https://google.com/', 0, '2020-02-18 11:11:04', 1, '2020-02-28 12:29:39', 1),
+(11, '15828722722.png', 'Company Name 9', 'Deleniti numquam lab', 'https://google.com/', 0, '2020-02-25 16:25:27', 1, '2020-02-28 12:29:32', 1),
+(21, '15828722191.png', 'Lacey Trevino', 'Delectus fuga Pers', 'https://www.google.com', 1, '2020-02-28 12:28:39', NULL, '2020-02-28 12:28:48', 1),
+(26, '15828722722.png', 'Company Name 9', 'Deleniti numquam lab', 'https://google.com/', 0, '2020-02-25 16:25:27', 1, '2020-02-28 12:29:32', 1),
+(27, '15828722722.png', 'Company Name 9', 'Deleniti numquam lab', 'https://google.com/', 0, '2020-02-25 16:25:27', 1, '2020-02-28 12:29:32', 1);
 
 -- --------------------------------------------------------
 
@@ -410,11 +476,8 @@ CREATE TABLE `client_page_contents` (
 --
 
 INSERT INTO `client_page_contents` (`id`, `client_id`, `title`, `remark`, `extra_notes`, `content`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
-(2, 6, 'Aut commodo aliquip ', 'Duis culpa exercita', 'Quia blanditiis occa', 'Tenetur tempore vit', '2020-02-25 15:45:48', 1, '2020-02-25 15:45:48', 1),
-(4, 11, 'Nostrum dolores ut e', 'At officia tempora m', 'Non asperiores aut a', 'Reprehenderit in nu', '2020-02-26 04:13:19', 1, '2020-02-26 04:13:19', 1),
-(5, 10, 'Eveniet recusandae', 'Excepteur accusamus ', 'Eveniet voluptatem', 'Nostrud libero numqu', '2020-02-26 04:15:55', 1, '2020-02-26 04:15:55', 1),
-(6, 4, 'Consequuntur quia es', 'Cumque hic et non su', 'Maxime vitae possimu', 'Anim fugiat ducimus', '2020-02-26 04:19:04', 1, '2020-02-26 04:19:04', 1),
-(9, 3, 'Cupiditate deserunt ', 'Fugiat adipisicing e', 'Qui vitae eiusmod el', 'Quisquam autem omnis', '2020-02-26 04:22:33', 1, '2020-02-26 04:22:33', 1);
+(11, 21, 'Ut necessitatibus fu', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci eaque magnam modi recusandae! Blanditiis debitis nulla reiciendis saepe voluptatum. Aliquid, excepturi explicabo facere hic laudantium saepe sint velit veniam.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci eaque magnam modi recusandae! Blanditiis debitis nulla reiciendis saepe voluptatum. Aliquid, excepturi explicabo facere hic laudantium saepe sint velit veniam.', '2020-02-28 07:28:08', 1, '2020-02-28 07:28:08', 1),
+(12, 10, 'In sunt nulla dolor ', 'Animi eaque officia', 'Exercitation assumen', 'Voluptatem id nisi t', '2020-02-28 07:30:35', 1, '2020-02-28 07:30:35', 1);
 
 -- --------------------------------------------------------
 
@@ -443,10 +506,39 @@ INSERT INTO `explore` (`id`, `title`, `image`, `is_active`, `created_on`, `creat
 (3, 'a', NULL, 0, '2020-02-25 07:47:14', 1, '2020-02-25 07:47:14', 1),
 (4, 'a', NULL, 0, '2020-02-25 07:47:24', 1, '2020-02-25 07:47:24', 1),
 (5, 'this is title', '1582617495_.jpg', 0, '2020-02-25 07:50:26', 1, '2020-02-25 07:58:15', 1),
-(6, 'this is title', '1582617507L.jpg', 0, '2020-02-25 07:58:27', 1, '2020-02-25 07:58:27', 1),
-(8, 'this is title', '15826245174.jpg', 1, '2020-02-25 09:55:17', 1, '2020-02-25 09:55:17', 1),
-(9, 'this is title', '15826265978.jpg', 1, '2020-02-25 10:29:57', 1, '2020-02-25 10:29:57', 1),
+(6, 'this is title', '1582868388.webp', 1, '2020-02-25 07:58:27', 1, '2020-02-28 05:39:48', 1),
+(8, 'this is title', '15828027315.jpg', 1, '2020-02-25 09:55:17', 1, '2020-02-27 11:25:31', 1),
+(9, 'this is title', '1582802717.webp', 1, '2020-02-25 10:29:57', 1, '2020-02-27 11:25:17', 1),
 (10, 'Francesca Justicewet', '15826295142.jpg', 1, '2020-02-25 11:12:03', 1, '2020-02-25 11:18:34', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` bigint(20) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `content` longtext NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_by` bigint(20) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_by` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `title`, `content`, `is_active`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(1, 'Ut eum aut quidem qes', 'Ut pariatur Rem eum', 1, '2020-02-27 09:45:25', 1, '2020-02-27 09:51:21', 1),
+(2, 'Ut doloremque accusa', 'Itaque voluptatem al', 1, '2020-02-27 09:47:05', 1, '2020-02-27 10:14:01', 1),
+(3, 'Non sint sit esse', 'Tempora distinctio ', 1, '2020-02-27 10:11:28', 1, '2020-02-27 10:47:49', 1),
+(4, 'Sit elit dolorem q', 'Soluta accusantium p', 0, '2020-02-27 10:13:51', 1, '2020-02-27 10:13:51', 1),
+(5, 'Impedit voluptate c', 'Voluptatem et cumqu', 0, '2020-02-27 10:18:09', 1, '2020-02-27 10:18:09', 1),
+(6, 'Irure ad qui autem s', 'Et exercitationem al', 1, '2020-02-27 11:21:38', 1, '2020-02-27 11:21:38', 1);
 
 -- --------------------------------------------------------
 
@@ -510,7 +602,9 @@ INSERT INTO `locations` (`id`, `name`, `street`, `city`, `district`, `zone`, `st
 (29, 'lesley orr', 'Ut ab eu commodi est', 'Deleniti odit molest', 'Sit eum veritatis si', NULL, '1', 123, 123, 'Aliqua Quam molliti', 1, 1, 204, 1, NULL, NULL, '2020-02-25 20:00:58'),
 (30, 'samson mosley', 'Duis blanditiis dele', 'Cupiditate quisquam ', 'Et veniam ratione c', NULL, '4', 345, 345, 'Itaque voluptatem q', 1, 0, 205, 1, NULL, NULL, '2020-02-25 20:08:10'),
 (31, 'zenia peterson', 'Nostrum porro cillum', 'Sint elit debitis f', 'Natus ut ex quisquam', NULL, '3', 4, 4, 'Omnis eiusmod adipis', 1, 1, 206, 1, NULL, NULL, '2020-02-25 20:21:52'),
-(32, 'astra sharpe', 'Quia dicta aliquid v', 'Rerum nihil officia ', 'Impedit enim harum ', NULL, '6', 5, 5, 'Dolorem iusto minim ', 1, 1, 207, 1, 1, '2020-02-26 12:51:55', '2020-02-25 20:23:47');
+(32, 'astra sharpe', 'Quia dicta aliquid v', 'Rerum nihil officia ', 'Impedit enim harum ', NULL, '6', 5, 5, 'Dolorem iusto minim ', 1, 1, 207, 1, 1, '2020-02-26 12:51:55', '2020-02-25 20:23:47'),
+(33, 'stella sargent', 'Reprehenderit culpa', 'Sunt velit consequa', 'Qui non nulla incidu', NULL, '5', 123, 123, 'Iure reprehenderit q', 1, 1, 208, 1, 1, '2020-02-28 10:34:28', '2020-02-28 10:19:53'),
+(34, 'alfreda phelps', 'Ea aspernatur eligen', 'Adipisicing consequa', 'Ex ea itaque aut dig', NULL, '4', 15, 51, 'Sit irure asperiore', 1, 1, 209, 1, NULL, NULL, '2020-02-28 12:11:57');
 
 -- --------------------------------------------------------
 
@@ -533,24 +627,25 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id`, `name`, `email`, `phone`, `message`, `is_new`, `created_on`) VALUES
-(26, 'Sebastian Morris', 'xifarycuj@mailinator.com', '+1 (368) 427-9579', 'Dolores maxime corpo', 1, '2020-02-27 01:01:14'),
-(27, 'Carlos Cunningham', 'vugomype@mailinator.net', '+1 (512) 893-4138', 'Impedit consequatur', 1, '2020-02-27 01:01:59'),
-(28, 'Tanisha Whitehead', 'labekuju@mailinator.com', '+1 (483) 472-5603', 'Doloremque incidunt', 1, '2020-02-27 01:02:18'),
-(29, 'Yvette Rodriguez', 'fubexafopi@mailinator.com', '+1 (865) 458-9271', 'Quam fuga Adipisci', 1, '2020-02-27 01:05:58'),
-(30, 'Jenna Cain', 'rosotig@mailinator.com', '+1 (444) 291-5207', 'Commodo facere ipsum', 1, '2020-02-27 01:06:18'),
-(31, 'Quinn Sykes', 'ciby@mailinator.net', '+1 (593) 414-6685', 'Rerum obcaecati enim', 1, '2020-02-27 01:06:35'),
-(32, 'Kathleen Mathis', 'keryvycota@mailinator.com', '+1 (134) 591-1624', 'Non iure quia odit v', 1, '2020-02-27 01:07:08'),
-(33, 'Nyssa Sweet', 'kugyjo@mailinator.net', '+1 (949) 529-3514', 'Sunt dolor lorem in', 1, '2020-02-27 01:07:31'),
-(34, 'Desiree White', 'fupehego@mailinator.com', '+1 (527) 205-7851', 'Pariatur Perspiciat', 1, '2020-02-27 01:08:15'),
-(35, 'Vladimir Fulton', 'pyzajevizo@mailinator.com', '+1 (643) 202-2217', 'Amet veritatis irur', 1, '2020-02-27 01:09:05'),
-(36, 'Katell Harrell', 'kagydacazy@mailinator.net', '+1 (739) 477-8426', 'In maiores quae volu', 1, '2020-02-27 01:09:20'),
-(37, 'Nomlanga Whitney', 'dutuxamija@mailinator.net', '+1 (688) 921-3774', 'Porro voluptas repre', 1, '2020-02-27 01:09:40'),
-(38, 'Nadine Bradshaw', 'kiquvehuta@mailinator.com', '+1 (589) 926-9001', 'Cum sunt ipsum aut c', 1, '2020-02-27 01:10:06'),
-(39, 'Kiara Salazar', 'vigudu@mailinator.net', '+1 (716) 756-5299', 'Pariatur Aut sit N', 1, '2020-02-27 01:11:54'),
-(40, 'Dominic Mejia', 'kusenyb@mailinator.net', '+1 (635) 952-3822', 'Magna dolor eligendi', 1, '2020-02-27 09:44:16'),
-(41, 'Kai Dawson', 'hefelovupu@mailinator.net', '+1 (806) 975-9163', 'Blanditiis et qui au', 1, '2020-02-27 09:44:44'),
-(42, 'Ariel Kirkland', 'sijyn@mailinator.com', '+1 (402) 157-1709', 'Consequatur Rerum d', 1, '2020-02-27 10:16:37'),
-(43, 'Ivor Hawkins', 'goxufyh@mailinator.net', '+1 (801) 596-6612', 'Sapiente eiusmod mol', 1, '2020-02-27 11:01:21');
+(26, 'Sebastian Morris', 'xifarycuj@mailinator.com', '+1 (368) 427-9579', 'Dolores maxime corpo', 0, '2020-02-27 01:01:14'),
+(27, 'Carlos Cunningham', 'vugomype@mailinator.net', '+1 (512) 893-4138', 'Impedit consequatur', 0, '2020-02-27 01:01:59'),
+(28, 'Tanisha Whitehead', 'labekuju@mailinator.com', '+1 (483) 472-5603', 'Doloremque incidunt', 0, '2020-02-27 01:02:18'),
+(29, 'Yvette Rodriguez', 'fubexafopi@mailinator.com', '+1 (865) 458-9271', 'Quam fuga Adipisci', 0, '2020-02-27 01:05:58'),
+(30, 'Jenna Cain', 'rosotig@mailinator.com', '+1 (444) 291-5207', 'Commodo facere ipsum', 0, '2020-02-27 01:06:18'),
+(31, 'Quinn Sykes', 'ciby@mailinator.net', '+1 (593) 414-6685', 'Rerum obcaecati enim', 0, '2020-02-27 01:06:35'),
+(32, 'Kathleen Mathis', 'keryvycota@mailinator.com', '+1 (134) 591-1624', 'Non iure quia odit v', 0, '2020-02-27 01:07:08'),
+(33, 'Nyssa Sweet', 'kugyjo@mailinator.net', '+1 (949) 529-3514', 'Sunt dolor lorem in', 0, '2020-02-27 01:07:31'),
+(34, 'Desiree White', 'fupehego@mailinator.com', '+1 (527) 205-7851', 'Pariatur Perspiciat', 0, '2020-02-27 01:08:15'),
+(35, 'Vladimir Fulton', 'pyzajevizo@mailinator.com', '+1 (643) 202-2217', 'Amet veritatis irur', 0, '2020-02-27 01:09:05'),
+(36, 'Katell Harrell', 'kagydacazy@mailinator.net', '+1 (739) 477-8426', 'In maiores quae volu', 0, '2020-02-27 01:09:20'),
+(37, 'Nomlanga Whitney', 'dutuxamija@mailinator.net', '+1 (688) 921-3774', 'Porro voluptas repre', 0, '2020-02-27 01:09:40'),
+(38, 'Nadine Bradshaw', 'kiquvehuta@mailinator.com', '+1 (589) 926-9001', 'Cum sunt ipsum aut c', 0, '2020-02-27 01:10:06'),
+(39, 'Kiara Salazar', 'vigudu@mailinator.net', '+1 (716) 756-5299', 'Pariatur Aut sit N', 0, '2020-02-27 01:11:54'),
+(40, 'Dominic Mejia', 'kusenyb@mailinator.net', '+1 (635) 952-3822', 'Magna dolor eligendi', 0, '2020-02-27 09:44:16'),
+(41, 'Kai Dawson', 'hefelovupu@mailinator.net', '+1 (806) 975-9163', 'Blanditiis et qui au', 0, '2020-02-27 09:44:44'),
+(42, 'Ariel Kirkland', 'sijyn@mailinator.com', '+1 (402) 157-1709', 'Consequatur Rerum d', 0, '2020-02-27 10:16:37'),
+(43, 'Ivor Hawkins', 'goxufyh@mailinator.net', '+1 (801) 596-6612', 'Sapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod mol', 0, '2020-02-27 11:01:21'),
+(44, 'Jordan Cooke', 'wubomuj@mailinator.net', '+1 (138) 837-1435', 'Accusamus qui labori', 0, '2020-03-01 12:09:27');
 
 -- --------------------------------------------------------
 
@@ -1209,6 +1304,40 @@ INSERT INTO `user_roles` (`id`, `role`, `display_name`, `is_active`, `created_on
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `vacancy`
+--
+
+CREATE TABLE `vacancy` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) DEFAULT NULL,
+  `description` longtext DEFAULT NULL,
+  `is_active` int(11) NOT NULL DEFAULT 0,
+  `updated_on` datetime NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vacancy`
+--
+
+INSERT INTO `vacancy` (`id`, `title`, `description`, `is_active`, `updated_on`, `created_on`) VALUES
+(3, 'Requirements', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, ,from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', 0, '2020-03-01 11:32:08', '2020-02-28 00:00:00'),
+(4, 'Sint asperiores illu', 'Ut dolorem quia aut ', 1, '2020-02-28 15:32:39', '2020-02-28 00:00:00'),
+(5, 'Quia excepteur persp asdcasdcasdcasdc', 'Omnis rerum illum i', 1, '2020-02-28 15:33:00', '2020-02-28 00:00:00'),
+(6, 'Hello', 'Natus doloribus elig hello', 0, '2020-02-28 12:21:03', '2020-02-28 00:00:00'),
+(7, 'Cupidatat vero conse y', 'Delectus nostrud po y', 1, '2020-02-28 13:03:23', '2020-02-28 00:00:00'),
+(8, 'Nobis omnis esse do', 'Est aute proident ', 0, '2020-02-28 12:28:44', '2020-02-28 00:00:00'),
+(9, 'Provident beatae do', 'Ab ut quia nihil quo', 1, '2020-02-28 13:09:37', '2020-02-28 00:00:00'),
+(10, 'Provident beatae do', 'Ab ut quia nihil quo', 0, '2020-02-28 12:57:46', '2020-02-28 00:00:00'),
+(11, 'Provident beatae do', 'Ab ut quia nihil quo', 0, '2020-02-28 12:59:28', '2020-02-28 00:00:00'),
+(12, 'Provident beatae do', 'Ab ut quia nihil quo', 0, '2020-02-28 12:59:30', '2020-02-28 00:00:00'),
+(13, 'Provident beatae do', 'Ab ut quia nihil quo', 0, '2020-02-28 13:00:17', '2020-02-28 00:00:00'),
+(14, 'Provident beatae do', 'Ab ut quia nihil quo', 0, '2020-02-28 13:00:20', '2020-02-28 00:00:00'),
+(15, 'Provident beatae do', 'Ab ut quia nihil quo', 0, '2020-02-28 13:01:14', '2020-02-28 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vehicles`
 --
 
@@ -1641,7 +1770,9 @@ INSERT INTO `verification_actions` (`id`, `table_name`, `table_id`, `comment`, `
 (204, 'locations', 29, 'Location', NULL, 1, 0, 1, '2020-02-25 20:00:58', '2020-02-25 14:15:58', 1),
 (205, 'locations', 30, 'Location', NULL, 0, 0, NULL, NULL, '2020-02-25 14:23:10', 1),
 (206, 'locations', 0, 'Location', NULL, 1, 0, 1, '2020-02-25 20:21:52', '2020-02-25 14:36:52', 1),
-(207, 'locations', 32, 'Location', NULL, 1, 1, 1, '2020-02-26 12:51:55', '2020-02-25 14:38:47', 1);
+(207, 'locations', 32, 'Location', NULL, 1, 1, 1, '2020-02-26 12:51:55', '2020-02-25 14:38:47', 1),
+(208, 'locations', 33, 'Location', NULL, 1, 0, 1, '2020-02-28 10:34:28', '2020-02-28 04:34:53', 1),
+(209, 'locations', 34, 'Location', NULL, 0, 0, NULL, '2020-02-28 12:11:57', '2020-02-28 06:26:57', 1);
 
 -- --------------------------------------------------------
 
@@ -1885,6 +2016,12 @@ ALTER TABLE `bookings`
   ADD KEY `dropping` (`dropping`);
 
 --
+-- Indexes for table `careers`
+--
+ALTER TABLE `careers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
@@ -1907,6 +2044,14 @@ ALTER TABLE `explore`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_created_by` (`created_by`),
   ADD KEY `fk_updated_by` (`updated_by`);
+
+--
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `faq_created_by` (`created_by`),
+  ADD KEY `faq_updated_by` (`updated_by`);
 
 --
 -- Indexes for table `locations`
@@ -2068,6 +2213,12 @@ ALTER TABLE `user_roles`
   ADD UNIQUE KEY `role` (`role`);
 
 --
+-- Indexes for table `vacancy`
+--
+ALTER TABLE `vacancy`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `vehicles`
 --
 ALTER TABLE `vehicles`
@@ -2213,7 +2364,7 @@ ALTER TABLE `amenities`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `blog_categories`
@@ -2234,16 +2385,22 @@ ALTER TABLE `bookings`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `careers`
+--
+ALTER TABLE `careers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `client_page_contents`
 --
 ALTER TABLE `client_page_contents`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `explore`
@@ -2252,16 +2409,22 @@ ALTER TABLE `explore`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `locations`
 --
 ALTER TABLE `locations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -2354,6 +2517,12 @@ ALTER TABLE `user_roles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `vacancy`
+--
+ALTER TABLE `vacancy`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
 -- AUTO_INCREMENT for table `vehicles`
 --
 ALTER TABLE `vehicles`
@@ -2399,7 +2568,7 @@ ALTER TABLE `vendor_comments`
 -- AUTO_INCREMENT for table `verification_actions`
 --
 ALTER TABLE `verification_actions`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=208;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
 
 --
 -- AUTO_INCREMENT for table `verification_comments`
@@ -2515,6 +2684,13 @@ ALTER TABLE `client_page_contents`
 ALTER TABLE `explore`
   ADD CONSTRAINT `fk_created_by` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_updated_by` FOREIGN KEY (`updated_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `faq`
+--
+ALTER TABLE `faq`
+  ADD CONSTRAINT `faq_created_by` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `faq_updated_by` FOREIGN KEY (`updated_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `locations`

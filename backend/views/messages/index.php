@@ -108,7 +108,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
    </div>
 
 </div>
-<div class = "modal" tabindex = "-1" role = "dialog" id = "message-box">
+<div class = "modal modal-message" tabindex = "-1" role = "dialog" id = "message-box">
    <div class = "modal-dialog" role = "document">
    </div>
 </div>
