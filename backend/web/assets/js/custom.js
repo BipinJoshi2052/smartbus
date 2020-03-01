@@ -427,8 +427,8 @@ $(document).ready(function ($) {
 
    $(function () {
       $('.data-table, [data-plugin="datatable"]').DataTable({
-         "displayLength": 20,
-         "lengthMenu": [[50, 100, 200, 500, -1], [50, 100, 200, 500, "All"]],
+         "displayLength": 25,
+         "lengthMenu": [[25,50, 100, 200, 500, -1], [25,50, 100, 200, 500, "All"]],
          "aaSorting": [],
          "columnDefs": [
             {"orderable": false, "targets": [-1]}
@@ -1039,7 +1039,6 @@ $(document).ready(function ($) {
                   } else {
                      $('[data-id="id' + a['id'] + '"]').html('<span data-for="new" class="label label-danger">New</span>');
                   }
-
 
                   modal.find('.modal-dialog').html(a['result']);
                  modal.modal('show');

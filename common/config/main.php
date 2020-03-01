@@ -22,7 +22,7 @@ return [
                             '<controller:\w+>/<id:\d+>'                         => '<controller>/view',
                             '<controller:\w+>/<action:\w+>/<id:\d+>'            => '<controller>/<action>',
                             '<controller:\w+>/<action:\w+>'                     => '<controller>/<action>',
-                            'site/careers/<id:[a-zA-Z0-9-]+>/'      => 'site/careers',
+
                             'site/partner/<id:[a-zA-Z0-9-]+>/'      => 'site/partner/',
                             'site/careers/<id:[a-zA-Z0-9-]+>/'      => 'site/careers',
 //                            'site/message/' => 'site/message/',

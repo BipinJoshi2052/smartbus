@@ -162,8 +162,13 @@ AppAsset::register($this);
                               echo Yii::$app->params['count_messages']['count_unseen'];
                            ?>
                         </span></div>
-                     <?php
-                     } ?>
+                     <?php }else {?>
+                        <div class = "new-notify"><span>
+                           <?php
+                              echo '0';
+                           ?>
+                           </span></div>
+                    <?php }?>
                   </a>
                   <div class = "dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby = "2">
                      <ul>
@@ -295,7 +300,13 @@ AppAsset::register($this);
                            ?>
                         </span></div>
                             <?php
-                        } ?>
+                        } else { ?>
+                          <div class = "new-notify"><span>
+                           <?php
+                           echo Yii::$app->params['count_messages']['count_unseen'];
+                           ?>
+                        </span></div>
+                        <?php } ?>
                      </span>
                   </a>
                </li>

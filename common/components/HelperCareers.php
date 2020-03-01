@@ -47,7 +47,6 @@ class HelperCareers extends Component {
     public static function getCount() {
         $count_unseen = Careers::find()->where(['=', 'is_new', '0'])->count();
         $count_seen = Careers::find()->where(['=', 'is_new', '1'])->count();
-
         Yii::$app->params['count_application'] = $count_unseen;
         return $count = [
                 'count_unseen' => $count_unseen,

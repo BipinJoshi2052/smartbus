@@ -20,7 +20,7 @@
         {
             $count_unseen =Messages::find()->where(['=','is_new','1'])->count();
             $count_seen =Messages::find()->where(['=','is_new','0'])->count();
-//            $count_all= Messages::find()->where(['is_new'])->count();
+            Yii::$app->params['count_messages']['count_unseen'] = $count_unseen;
             return $count=[
                     'count_unseen' => $count_unseen,
                     'count_seen' => $count_seen,

@@ -32,7 +32,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
             <?php if(isset($applicants) && $applicants != '') {?>
 
             <div class = "table-responsive">
-                <table class = "table  table-striped blog-post" data-plugin = "datatable">
+                <table class = "table  table-striped applicants-post" data-plugin = "datatable">
                     <thead>
                     <tr>
                         <th>S.N</th>
