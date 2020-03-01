@@ -2008,13 +2008,30 @@ header .navbar {
 .hidden{
     display: none;
 }
-/*.post-image img{*/
-/*    height: 255px;*/
-/*}*/
-/*.navbar-light .navbar-nav .nav-link{
-    color: white ;
+
+.post-image img{
+    height: 255px;
+    object-fit: cover;
+
 }
-*/
+.dp-01{
+    min-width: 11.8rem;
+}
+.mb-17{
+    margin-bottom: 17px ! important ;
+}
+.ln-22{
+     line-height: 22px ! important;
+}
+.client-image img{
+    object-fit: cover;
+}
+.news-img-main {
+    width: 100% ! important;
+}
+/*.wid-155{
+    width: 188px;
+}*/
 
 
 

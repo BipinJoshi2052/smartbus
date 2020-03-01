@@ -17,7 +17,7 @@ $this->title = 'Single News Post';
              <?php if (!empty($post) && count($post) > 0):?>
              <div class="col-md-12">
                 <div class="post-image opacity">
-                   <img src="<?php echo (isset($post['image']) && $post['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $post['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt="" title=""></div>
+                   <img src="<?php echo (isset($post['image']) && $post['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $post['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" class="img-01 " alt="" title=""></div>
 
                 <div class="post-content top-pad-20">
                    <p> <?php echo $post['post_content']?></p>

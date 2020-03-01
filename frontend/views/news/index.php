@@ -31,11 +31,12 @@ use yii\widgets\LinkPager;
           <?php if (!empty($news) && count($news) > 0):
 
               foreach ($news as $b => $post) :?>
-                 <div class = "post-item">
-                    <div class = "post-image pull-left">
-                       <img src = "<?php echo (isset($post['image']) && $post['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $post['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "320" height = "282" alt = "" title = ""/>
+                 <div class = " row post-item">
+                    <div class = "col-md-4 post-image  ">
+                       <img src = "<?php echo (isset($post['image']) && $post['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $post['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" class="news-img-main"   alt = "" title = ""/>
                     </div>
-                    <h2 class = "post-title">
+                    <div class="col-md-8" > 
+                        <h2 class = "post-title">
                        <a href = "<?php echo Yii::$app->request->baseUrl; ?>/news/post/<?php echo \common\components\Misc::encrypt($post['id']); ?>"><?php echo $post['title'] ?></a>
                     </h2>
                     <div class = "post-content ">
@@ -56,8 +57,12 @@ use yii\widgets\LinkPager;
                            echo $timestamp[0];
                            ?>
                          </span>
-                       <span class="author"><i class="fa fa-heart"></i><?php echo (isset($post['category']['name'])) ?  $post['category']['name'] : '' ?></span>
+                    </div>
+                  
+                       <!-- Category -->
 
+<!--                       <span class = "category pull-right">-->
+<!--                        <i class = "fa fa-heart"></i>  Travel, Nature, Business</span>-->
                     </div>
                     <div class = "clearfix"></div>
                  </div>

@@ -21,7 +21,7 @@
                           </blockquote>
                        </div>
                        <div class = "client-details text-center">
-                          <div class = "client-image">
+                          <div class = "client-image ">
                              <img class = "img-circle" src = "<?php echo (isset($t['image']) && $t['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $t['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "80" height = "80" alt = "">
                           </div>
                           <div class = "client-details">

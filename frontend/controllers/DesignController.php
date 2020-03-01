@@ -67,6 +67,19 @@ class DesignController extends Controller {
 
         return $this->render('search');
     }
+      public function actionDashboard() {
+
+        return $this->render('dashboard');
+    }
+     public function actionHistory() {
+
+        return $this->render('history');
+    }
+     public function actionChangepassword() {
+
+        return $this->render('changepassword');
+    }
+
 
    
 }
