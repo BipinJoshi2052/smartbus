@@ -28,11 +28,9 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
           <span id="refresh" class="label label-primary refresh hidden" style=""><i class="mdi mdi-refresh"></i>&nbsp;Refresh</span>
        </p>
         <div class = "card-body">
-<<<<<<< HEAD
+
             <?php if(isset($applicants) && $applicants != '') {?>
-=======
-           <?php if(isset($applicants) && !empty($applicants)) {?>
->>>>>>> 9c5e31c1b906af51a25ef35071f4d15525f2f2b7
+
             <div class = "table-responsive">
                 <table class = "table  table-striped blog-post" data-plugin = "datatable">
                     <thead>
@@ -67,15 +65,11 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
                     </tbody>
                 </table>
             </div>
-<<<<<<< HEAD
+
                <?php } else{ ?>
 
             <h3>Sorry, No Application Found</h3>
-=======
-<?php }else{ ?>
-            <h3>Sorry, No Posts Found</h3>
-<?php } ?>
->>>>>>> 9c5e31c1b906af51a25ef35071f4d15525f2f2b7
+
         </div>
        <?php } ?>
 
