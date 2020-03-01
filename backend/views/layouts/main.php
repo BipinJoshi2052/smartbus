@@ -154,11 +154,16 @@ AppAsset::register($this);
 
                <li class = "nav-item dropdown message-bar">
                   <a class = "nav-link dropdown-toggle text-muted waves-effect waves-dark" href = "javascript:void(0);" id = "2" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false"> <i class = "mdi mdi-email"></i>
+                     <?php  
+                     if(Yii::$app->params['count_messages']['count_unseen'] > 0) {
+                     ?>
                      <div class = "new-notify"><span>
                            <?php
                               echo Yii::$app->params['count_messages']['count_unseen'];
                            ?>
                         </span></div>
+                     <?php
+                     } ?>
                   </a>
                   <div class = "dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby = "2">
                      <ul>
@@ -260,7 +265,13 @@ AppAsset::register($this);
                <li>
                   <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/careers/view-applicants" aria-expanded = "false">
                      <i class = "mdi mdi-file-document"></i>
-                     <span class = "hide-menu">View Applications </span>
+                     <span class = "hide-menu">View Applications
+                     <span class="new-notify">
+                           <?php
+                           echo Yii::$app->params['count_application'];
+                           ?>
+                        </span>
+                     </span>
                   </a>
                </li>
                <li>
@@ -274,7 +285,18 @@ AppAsset::register($this);
                <li>
                   <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/messages/" aria-expanded = "false">
                      <i class = "mdi mdi-wallet-giftcard"></i>
-                     <span class = "hide-menu">View Messages </span>
+                     <span class = "hide-menu">View Messages
+                        <?php
+                        if(Yii::$app->params['count_messages']['count_unseen'] > 0) {
+                            ?>
+                           <div class = "new-notify"><span>
+                           <?php
+                           echo Yii::$app->params['count_messages']['count_unseen'];
+                           ?>
+                        </span></div>
+                            <?php
+                        } ?>
+                     </span>
                   </a>
                </li>
                <li class = "nav-divider"></li>

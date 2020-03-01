@@ -88,3 +88,45 @@ Frontend
 
         Contact
                      •	Send Message
+
+
+Mail Code
+if (isset($_POST['submit'])) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $message = addslashes($_POST['message']);        
+        $purpose = $_POST['purpose'];
+
+        $to = "info@nationalcollege.edu.np";
+        $email_subject = "Contact Form";
+        $from = ''.$email.'';
+        $email_message = '<html>
+          <head>
+          <title></title>
+          <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+          <style>
+          </style>
+          </head>
+          <body>
+          <p><b>Mail From Contact Form</b><b>Name: </b>'.$name.' <br/><b>Email:</b> '.$email.'<br/><b>Phone: </b>'.$phone.' <br/><b>Purpose: </b>'.$purpose.'<br/><b>Message: </b>'.$message.'<br/></p>
+          </body>
+          </html>';
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = 'To:'.$to;
+        $headers[] = 'From:Contact Form<'.$email.'>';
+        $headers[] = "Reply-To: info@nationalcollege.edu.np";        
+        $mail =  mail($to,$email_subject,$email_message, implode("\r\n", $headers));
+
+
+        $insert = mysql_query("INSERT INTO message (name,message,msg_type,message_date,message_time,phone,email,purpose) VALUES ('$name','".$message."','message',CURDATE(),CURTIME(),'$phone','$email','$purpose')") or die(mysql_error());
+        if (!$insert) {
+            $error_ = 1;
+        }
+        else
+        {
+            $success_ = 1;
+        header('Location: contact.php');
+        }
+    }
