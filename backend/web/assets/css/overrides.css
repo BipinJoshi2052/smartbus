@@ -2282,15 +2282,15 @@ select.form-control optgroup {
 
 .new-notify {
     position: absolute;
-    top: 15px;
+    top: 0px;
     right: 0;
-    height: 15px;
-    width: 15px;
-    line-height: 13px;
+    height: 28px;
+    width: 28px;
+    line-height: 29px;
     text-align: center;
-    background: #F44336;
-    color: #ffffff;
-    border-radius: 50%;
+    background: #EB5A5A;
+    color: #FFFFFF;
+    border-radius: 122%;
 }
 
 .topbar .top-navbar .navbar-nav > .nav-item > .nav-link .new-notify span {
