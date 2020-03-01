@@ -17,7 +17,10 @@ $this->title = 'Careers';
    <div class = "container">
    <div class = "row">
    <div class = "col-sm-12 col-md-12 col-lg-7">
-   <h4 style = "margin-bottom: 5px;">Careers</h4>
+    <div class="section-title mb-17 text-left animated fadeInUp visible" data-animation="fadeInUp">
+   <!-- Heading -->
+   <h2 class="title">Careers</h2>
+</div>
    <!--                <div class="row">-->
    <!--                    <div class="col-sm-6 col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>-->
    <!--                    <div class="col-sm-6 col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>-->
@@ -55,9 +58,13 @@ $this->title = 'Careers';
        </div>
         <?php Yii::$app->session->getFlash('success'); ?>
        <div class = "col-sm-12 col-md-12 col-lg-5">
+         <div class="section-title mb-17 text-left animated fadeInUp visible" data-animation="fadeInUp">
+   <!-- Heading -->
+   <h2 class="title">Apply</h2>
+</div>
           <div class = "career-form">
-             <form role = "form" action = "<?= Yii::$app->request->baseUrl; ?>/site/careers" class = "form-box" name = "post" id = "careerform" method = "post" enctype = 'multipart/form-data'>
-                <h3 class = "title">Apply Now</h3>
+             <form role = "form" action = "<?= Yii::$app->request->baseUrl; ?>/site/careers" class = "" name = "post" id = "careerform" method = "post" enctype = 'multipart/form-data'>
+              
                 <p id = "form-message2" class = "form-message2"></p>
                 <div class = "input-text form-group">
                    <input required class = "input-name form-control" type = "text" id = "name" name = "post[name]" placeholder = "Name"/>

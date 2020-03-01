@@ -71,10 +71,10 @@ Yii::$app->session->getFlash('success');
                             </div>
                             <!-- Field 4 -->
                             <div class = "textarea-message form-group">
-                                <textarea required name = "message" class = "textarea-message hight-82 form-control" placeholder = "Message" rows = "2"></textarea>
+                                <textarea required name = "message" class = "textarea-message hight- form-control" placeholder = "Message" rows = "2"></textarea>
                             </div>
                             <!-- Button -->
-                           <a class="btn btn-default btn-block submit-contact">Send Now <i class = "icon-paper-plane"></i></a>
+                           <a class="btn btn-default btn-block submit-contact text-white">Send Now <i class = "icon-paper-plane"></i></a>
 <!--                            <button class = "btn btn-default btn-block submit-contact" type = "submit">Send Now-->
 <!--                                <i class = "icon-paper-plane"></i>-->
 <!--                            </button>-->

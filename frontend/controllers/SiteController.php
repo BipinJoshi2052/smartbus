@@ -2,10 +2,7 @@
 
 namespace frontend\controllers;
 
-
 use common\components\Helper;
-
-use common\components\AuthHandler;
 use common\components\HelperBlog;
 use common\components\HelperCareers;
 use common\components\HelperClients;
@@ -14,7 +11,6 @@ use common\components\HelperFaq;
 use common\components\HelperMessages;
 use common\components\HelperNews;
 use common\components\HelperTestimonails;
-use common\components\HelperUser;
 use common\components\Misc;
 use common\models\generated\Careers;
 use common\models\LoginForm;
@@ -41,6 +37,12 @@ class SiteController extends Controller {
         return ['access' => ['class' => AccessControl::className(), 'only' => ['logout', 'signup'], 'rules' => [['actions' => ['signup'], 'allow' => true, 'roles' => ['?'],], ['actions' => ['logout'], 'allow' => true, 'roles' => ['@'],],],], 'verbs' => ['class' => VerbFilter::className(), 'actions' => [//                        'logout' => ['post'],
         ],],];
     }
+
+    public function beforeAction($action) {
+        $this->enableCsrfValidation = false;
+        return parent::beforeAction($action);
+    }
+
     public function actions() {
         return [
                 'error'   => [
@@ -57,18 +59,10 @@ class SiteController extends Controller {
         ];
     }
 
-    public function beforeAction($action) {
-        $this->enableCsrfValidation = false;
-        return parent::beforeAction($action);
+    public function onAuthSuccess($client) {
+        $userAttributes = $client->getUserAttributes();
+        // (new \Swift_Transport_Esmtp_AuthHandler($client))->handle();
     }
-
-
-
-        public function onAuthSuccess($client)
-        {
-            (new AuthHandler($client))->handle();
-        }
-
 
     public function actionIndex() {
         $page = 'home';

@@ -21,7 +21,7 @@ AppAsset::register($this);
    <link rel = "shortcut icon" href = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/images/uploads/fav.png"/>
    <!-- General CSS -->
    <link href = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/css/general.css" rel = 'stylesheet' type = 'text/css'/>
-
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
    <!-- Fonts CSS -->
 
@@ -163,11 +163,11 @@ AppAsset::register($this);
                          </li>
                       <?php else: ?>
                          <li class = "nav-item dropdown">
-                            <a class = "nav-link dropdown-toggle  pv-0" href = "#" id = "navbarMoreDropdown" role = "button" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false">
-                                <?php echo Yii::$app->user->identity->name; ?>
+                            <a class = "nav-link dropdown-toggle  pv-0 ln-22 wid-155" href = "#" id = "navbarMoreDropdown" role = "button" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false">
+                               <i class="fa fa-user-o" aria-hidden="true"></i>   <?php echo Yii::$app->user->identity->name; ?>
                                <span class = "caret"></span>
                             </a>
-                            <div class = "dropdown-menu" aria-labelledby = "navbarMoreDropdown">
+                            <div class = "dropdown-menu dp-01" aria-labelledby = "navbarMoreDropdown">
                                <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/applet/">Dashboard</a>
                                <div class = "dropdown-divider"></div>
                                <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/site/logout/">
@@ -679,7 +679,7 @@ AppAsset::register($this);
                </div>
             </div>
             <div class = "form-login">
-               <form  method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/site/login/" id = "login-form">
+               <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/site/login/" id = "login-form">
                   <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
                   <div class = "form-group">
                      <label class = "sr-only required" for = "login-email">Email address</label>
