@@ -49,10 +49,16 @@ use Yii;
  * @property ClientPageContents[] $clientPageContents
  * @property Clients[] $clients
  * @property Clients[] $clients0
+ * @property Explore[] $explores
+ * @property Explore[] $explores0
+ * @property Faq[] $faqs
+ * @property Faq[] $faqs0
  * @property Locations[] $locations
  * @property Locations[] $locations0
  * @property News[] $news
  * @property News[] $news0
+ * @property NewsCategories[] $newsCategories
+ * @property NewsCategories[] $newsCategories0
  * @property Permissions[] $permissions
  * @property Permissions[] $permissions0
  * @property ScheduleDepartures[] $scheduleDepartures
@@ -61,30 +67,7 @@ use Yii;
  * @property Schedules[] $schedules0
  * @property Schedules[] $schedules1
  * @property Schedules[] $schedules2
- * @property VerificationUsers $verification
- * @property User $createdBy
- * @property User[] $users
- * @property User $updatedBy
- * @property User[] $users0
- * @property UserRoles $role0
- * @property UserDetails $userDetails
- * @property VehicleComments[] $vehicleComments
- * @property VehicleComments[] $vehicleComments0
- * @property VehicleRatings[] $vehicleRatings
- * @property VehicleRatings[] $vehicleRatings0
- * @property VehicleTypes[] $vehicleTypes
- * @property VehicleTypes[] $vehicleTypes0
- * @property Vehicles[] $vehicles
- * @property Vehicles[] $vehicles0
- * @property Vehicles[] $vehicles1
- * @property VendorComments[] $vendorComments
- * @property VendorComments[] $vendorComments0
  * @property VerificationActions[] $verificationActions
- * @property VerificationActions[] $verificationActions0
- * @property VerificationComments[] $verificationComments
- * @property VerificationComments[] $verificationComments0
- * @property VerificationUsers[] $verificationUsers
- * @property VerificationUsers[] $verificationUsers0
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -101,7 +84,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [
+        /*return [
             [['incorrect_login', 'name', 'username', 'auth_key', 'password_hash', 'email'], 'required'],
             [['incorrect_login', 'role', 'email_verified', 'status', 'phone_is_validated', 'verification_id', 'is_verified', 'created_by', 'updated_by'], 'integer'],
             [['image'], 'string'],
@@ -114,10 +97,20 @@ class User extends \yii\db\ActiveRecord
             [['auth_key'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
-            [['verification_id'], 'exist', 'skipOnError' => true, 'targetClass' => VerificationUsers::className(), 'targetAttribute' => ['verification_id' => 'id']],
-            [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
-            [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
-            [['role'], 'exist', 'skipOnError' => true, 'targetClass' => UserRoles::className(), 'targetAttribute' => ['role' => 'id']],
+        ];*/
+        return [
+                [['incorrect_login', 'role', 'email_verified', 'status', 'phone_is_validated', 'verification_id', 'is_verified', 'created_by', 'updated_by'], 'integer'],
+                [['name', 'username', 'auth_key', 'password_hash', 'email'], 'required'],
+                [['image'], 'string'],
+                [['created_on', 'updated_on'], 'safe'],
+                [['name'], 'string', 'max' => 150],
+                [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+                [['auth_key'], 'string', 'max' => 32],
+                [['email_verification', 'phone'], 'string', 'max' => 64],
+                [['username'], 'unique'],
+                [['auth_key'], 'unique'],
+                [['email'], 'unique'],
+                [['password_reset_token'], 'unique'],
         ];
     }
 
@@ -314,6 +307,38 @@ class User extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getExplores()
+    {
+        return $this->hasMany(Explore::className(), ['created_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getExplores0()
+    {
+        return $this->hasMany(Explore::className(), ['updated_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFaqs()
+    {
+        return $this->hasMany(Faq::className(), ['created_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getFaqs0()
+    {
+        return $this->hasMany(Faq::className(), ['updated_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getLocations()
     {
         return $this->hasMany(Locations::className(), ['created_by' => 'id']);
@@ -341,6 +366,22 @@ class User extends \yii\db\ActiveRecord
     public function getNews0()
     {
         return $this->hasMany(News::className(), ['updated_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getNewsCategories()
+    {
+        return $this->hasMany(NewsCategories::className(), ['created_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getNewsCategories0()
+    {
+        return $this->hasMany(NewsCategories::className(), ['updated_by' => 'id']);
     }
 
     /**
@@ -410,192 +451,8 @@ class User extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getVerification()
-    {
-        return $this->hasOne(VerificationUsers::className(), ['id' => 'verification_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getCreatedBy()
-    {
-        return $this->hasOne(User::className(), ['id' => 'created_by']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsers()
-    {
-        return $this->hasMany(User::className(), ['created_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUpdatedBy()
-    {
-        return $this->hasOne(User::className(), ['id' => 'updated_by']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUsers0()
-    {
-        return $this->hasMany(User::className(), ['updated_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getRole0()
-    {
-        return $this->hasOne(UserRoles::className(), ['id' => 'role']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getUserDetails()
-    {
-        return $this->hasOne(UserDetails::className(), ['user_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicleComments()
-    {
-        return $this->hasMany(VehicleComments::className(), ['vendor_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicleComments0()
-    {
-        return $this->hasMany(VehicleComments::className(), ['customer_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicleRatings()
-    {
-        return $this->hasMany(VehicleRatings::className(), ['customer_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicleRatings0()
-    {
-        return $this->hasMany(VehicleRatings::className(), ['vendor_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicleTypes()
-    {
-        return $this->hasMany(VehicleTypes::className(), ['updated_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicleTypes0()
-    {
-        return $this->hasMany(VehicleTypes::className(), ['created_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicles()
-    {
-        return $this->hasMany(Vehicles::className(), ['user_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicles0()
-    {
-        return $this->hasMany(Vehicles::className(), ['updated_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVehicles1()
-    {
-        return $this->hasMany(Vehicles::className(), ['created_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVendorComments()
-    {
-        return $this->hasMany(VendorComments::className(), ['vendor_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVendorComments0()
-    {
-        return $this->hasMany(VendorComments::className(), ['customer_id' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getVerificationActions()
     {
         return $this->hasMany(VerificationActions::className(), ['verified_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVerificationActions0()
-    {
-        return $this->hasMany(VerificationActions::className(), ['requested_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVerificationComments()
-    {
-        return $this->hasMany(VerificationComments::className(), ['requested_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVerificationComments0()
-    {
-        return $this->hasMany(VerificationComments::className(), ['verified_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVerificationUsers()
-    {
-        return $this->hasMany(VerificationUsers::className(), ['verified_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVerificationUsers0()
-    {
-        return $this->hasMany(VerificationUsers::className(), ['requested_by' => 'id']);
     }
 }

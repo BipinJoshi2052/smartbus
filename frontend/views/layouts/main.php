@@ -679,7 +679,7 @@ AppAsset::register($this);
                </div>
             </div>
             <div class = "form-login">
-               <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/site/login/" id = "login-form">
+               <form  method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/site/login/" id = "login-form">
                   <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
                   <div class = "form-group">
                      <label class = "sr-only required" for = "login-email">Email address</label>

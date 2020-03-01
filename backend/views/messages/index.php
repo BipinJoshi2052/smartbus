@@ -83,7 +83,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
                          <!--                         </td>-->
                          <td class = "text-right">
 
-                            <a href = "javascript:void(0);" data-id = "<?php echo $message['id'] ?>" class = "btn btn-primary btn-sm show-message">
+                            <a href = "javascript:void(0);" data-id = "<?php echo $message['id'] ?>" class = "btn btn-primary btn-sm show-message1">
                                View
                             </a>
                             <!--                            <a class = "btn btn-primary btn-sm" href = "--><?php //echo Yii::$app->request->baseUrl;
@@ -108,7 +108,12 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
    </div>
 
 </div>
+<<<<<<< HEAD
 <div class = "modal modal-message" tabindex = "-1" role = "dialog" id = "message-box">
    <div class = "modal-dialog" role = "document">
+=======
+<div class = "modal1" tabindex = "-1" role = "dialog" id = "message-box">
+   <div class = "modal-dialog1" role = "document">
+>>>>>>> 9c5e31c1b906af51a25ef35071f4d15525f2f2b7
    </div>
 </div>

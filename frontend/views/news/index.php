@@ -56,10 +56,8 @@ use yii\widgets\LinkPager;
                            echo $timestamp[0];
                            ?>
                          </span>
-                       <!-- Category -->
+                       <span class="author"><i class="fa fa-heart"></i><?php echo (isset($post['category']['name'])) ?  $post['category']['name'] : '' ?></span>
 
-<!--                       <span class = "category pull-right">-->
-<!--                        <i class = "fa fa-heart"></i>  Travel, Nature, Business</span>-->
                     </div>
                     <div class = "clearfix"></div>
                  </div>
