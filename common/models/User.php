@@ -27,34 +27,16 @@ class User extends \common\models\generated\User implements IdentityInterface {
      * {@inheritdoc}
      */
     public function rules() {
-//        return array_merge(Parent::rules(), [
-//                ['status', 'default', 'value' => self::STATUS_ACTIVE],
-//                ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-//                [['name', 'email', 'phone'], 'filter', 'filter' => 'trim'],
-//                [['name'], 'filter', 'filter' => 'ucwords'],
-//                [['incorrect_login'], 'default', 'value' => 0],
-//                [['email'], 'unique', 'targetClass' => '\common\models\User'],
-//                [['email'], 'default', 'value' => null],
-//
-//        ]);
-        return [
-                [[ 'name', 'phone','role', 'password_hash', 'email'], 'required'],
-                [['incorrect_login', 'role', 'email_verified', 'status', 'phone_is_validated', 'verification_id', 'is_verified', 'created_by', 'updated_by'], 'integer'],
-                [['image'], 'string'],
-                [['created_on', 'updated_on'], 'safe'],
-                [['name'], 'string', 'max' => 150],
-                [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
-                [['auth_key'], 'string', 'max' => 32],
-                [['email_verification', 'phone'], 'string', 'max' => 64],
-                [['username'], 'unique'],
-                [['auth_key'], 'unique'],
-                [['email'], 'unique'],
-                [['password_reset_token'], 'unique'],
-                [['verification_id'], 'exist', 'skipOnError' => true, 'targetClass' => VerificationUsers::className(), 'targetAttribute' => ['verification_id' => 'id']],
-                [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => \common\models\generated\User::className(), 'targetAttribute' => ['created_by' => 'id']],
-                [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
-                [['role'], 'exist', 'skipOnError' => true, 'targetClass' => UserRoles::className(), 'targetAttribute' => ['role' => 'id']],
-        ];
+        return array_merge(Parent::rules(), [
+                ['status', 'default', 'value' => self::STATUS_ACTIVE],
+                ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+                [['name', 'email', 'phone'], 'filter', 'filter' => 'trim'],
+                [['name'], 'filter', 'filter' => 'ucwords'],
+                [['incorrect_login'], 'default', 'value' => 0],
+                [['email'], 'unique', 'targetClass' => '\common\models\User'],
+                [['email'], 'default', 'value' => null],
+
+        ]);
 
     }
 

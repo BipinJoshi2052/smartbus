@@ -24,10 +24,11 @@ class AuthHandler
 
     public function handle()
     {
+
         $attributes = $this->client->getUserAttributes();
         $email = ArrayHelper::getValue($attributes, 'email');
         $id = ArrayHelper::getValue($attributes, 'id');
-        $nickname = ArrayHelper::getValue($attributes, 'login');
+        $username = ArrayHelper::getValue($attributes, 'name');
 
         /* @var Auth $auth */
         $auth = Auth::find()->where([
@@ -39,35 +40,43 @@ class AuthHandler
             if ($auth) { // login
                 /* @var User $user */
                 $user = $auth->user;
+
                 $this->updateUserInfo($user);
                 Yii::$app->user->login($user, Yii::$app->params['user.rememberMeDuration']);
             } else { // signup
+
                 if ($email !== null && User::find()->where(['email' => $email])->exists()) {
+
                     Yii::$app->getSession()->setFlash('error', [
+
                             Yii::t('app', "User with the same email as in {client} account already exists but isn't linked to it. Login using email first to link it.", ['client' => $this->client->getTitle()]),
                     ]);
                 } else {
                     $password = Yii::$app->security->generateRandomString(6);
                     $user = new User([
-                                             'username' => $nickname,
-                                             'github' => $nickname,
+                                             'username' => $email,
+                                             'name' => $username,
                                              'email' => $email,
                                              'password' => $password,
+                                             'role' => 5,
+                                             'email_verified' =>10,
                                      ]);
                     $user->generateAuthKey();
                     $user->generatePasswordResetToken();
 
                     $transaction = User::getDb()->beginTransaction();
 
+
                     if ($user->save()) {
                         $auth = new Auth([
-                                                 'user_id' => $user->id,
+                                                 'user_id' => $user['id'],
                                                  'source' => $this->client->getId(),
                                                  'source_id' => (string)$id,
                                          ]);
+
                         if ($auth->save()) {
                             $transaction->commit();
-                            Yii::$app->user->login($user, Yii::$app->params['user.rememberMeDuration']);
+                            Yii::$app->user->login($user);
                         } else {
                             Yii::$app->getSession()->setFlash('error', [
                                     Yii::t('app', 'Unable to save {client} account: {errors}', [
@@ -88,6 +97,7 @@ class AuthHandler
             }
         } else { // user already logged in
             if (!$auth) { // add auth provider
+
                 $auth = new Auth([
                                          'user_id' => Yii::$app->user->id,
                                          'source' => $this->client->getId(),

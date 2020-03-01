@@ -23,17 +23,27 @@
     class HelperUser extends Component {
 
         public static function addUser($data) {
+//        echo '<pre>';
+//        print_r($data['verified_email']);
+//        echo '</pre>';
+//        die;
             $model = new User();
+            $model->attributes = $data;
+
             $model->name = isset($data['name']) ? $data['name'] : '';
             $model->username = isset($data['email']) ? $data['email'] : '';
-            $model->setPassword($data['password']);
+            isset($data['password']) ? $model->setPassword($data['password']) : $model->password_hash =Yii::$app->security->generateRandomString(12);
+//            $model->setPassword($data['password']);
             $model->generateAuthKey();
-            $model->role =  isset($data['role']) ? $data['role'] : '';
+            $model->role =  isset($data['role']) ? $data['role'] : 5;
             $model->email = isset($data['email']) ? $data['email'] : '';
-            $model->phone = isset($data['phone']) ? $data['phone'] : 0;
+            $model->phone = isset($data['phone']) ? $data['phone'] : '';
+            $model->incorrect_login = isset($data['incorrect_login']) ? $data['incorrect_login'] : 0;
+//            $model->email_verified = isset($data['verified_email']) ? $data['verified_email'] : 0;
 
             //$model->profile_picture     = isset($data['profile_picture']) ? $data['profile_picture'] : '';
             $model->status = isset($data['status']) && $data['status'] == 1 ? 10 : 0;
+////
 
             return $model->save() ? $model : FALSE;
         }
