@@ -51502,6 +51502,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1583059806.42
     'REQUEST_TIME' => 1583059806
 ]
+<<<<<<< HEAD
 2020-03-02 11:41:11 [::1][1][93duvq5oniu2plh2jbqfo6nepl][error][yii\base\ErrorException:2] yii\base\ErrorException: in_array() expects parameter 2 to be array, bool given in C:\xampp\htdocs\smartbus\backend\controllers\UsersController.php:85
 Stack trace:
 #0 [internal function]: yii\base\ErrorHandler->handleError(2, 'in_array() expe...', 'C:\\xampp\\htdocs...', 85, Array)
@@ -53813,6 +53814,9 @@ $_SERVER = [
     'REQUEST_TIME' => 1583135360
 ]
 2020-03-02 13:34:27 [::1][1][8eq1mqrkpkckqfgtos8e62smjt][error][yii\base\InvalidArgumentException] yii\base\UnknownMethodException: Calling unknown method: common\models\generated\User::getrole0() in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:300
+=======
+2020-03-02 13:36:42 [::1][1][1n7m0nsgkkrl9s945u8d4q4gqm][error][yii\base\InvalidArgumentException] yii\base\UnknownMethodException: Calling unknown method: common\models\generated\User::getrole0() in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:300
+>>>>>>> ef57f0231716445fc7a2264dc2ac6fa638b9947e
 Stack trace:
 #0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(1244): yii\base\Component->__call('getrole0', Array)
 #1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQueryTrait.php(177): yii\db\BaseActiveRecord->getRelation('role0')
@@ -53858,22 +53862,35 @@ Stack trace:
 #17 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
 #18 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
 #19 {main}
+<<<<<<< HEAD
 2020-03-02 13:34:27 [::1][1][8eq1mqrkpkckqfgtos8e62smjt][info][application] $_GET = []
+=======
+2020-03-02 13:36:42 [::1][1][1n7m0nsgkkrl9s945u8d4q4gqm][info][application] $_GET = []
+>>>>>>> ef57f0231716445fc7a2264dc2ac6fa638b9947e
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
+<<<<<<< HEAD
     '_csrf-frontend' => '025a354c22ebdf5d5c36a4bbacaa0ef15ffa0d996d2fdb30822ad4748b887813a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"UmLcDWjLprEZ-wIwlGMtyXNMbjTv_pBQ\";}'
     '_web_session' => '8eq1mqrkpkckqfgtos8e62smjt'
     '_csrf-backend' => 'cfecace20c114ee82c205a11506bf71deef10c489168e6733739c2f2419cca5ca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"J8Qju7XMk47-3PZhO5zfTJswDubKf4nf\";}'
+=======
+    '_web_session' => '1n7m0nsgkkrl9s945u8d4q4gqm'
+    '_csrf-frontend' => '1fad6191204c04eb9bb4f1df633132a1f5f0c93a2f59474de2ffb452cd4a6895a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qroauo5Y7tPFEoHZYqEV0AztPTgjnzTD\";}'
+    '_csrf-backend' => 'c7600a5ca8d20bfa87ec7bf16dbaf8bdedc9e7fa859d57ccbd9718c2a0811edda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Efimc9LvR22LP9_xK8kGbhWvibBhZboW\";}'
+>>>>>>> ef57f0231716445fc7a2264dc2ac6fa638b9947e
 ]
 
 $_SESSION = [
     '__flash' => []
+<<<<<<< HEAD
     'yii\\authclient\\clients\\Google_google_authState' => '6a6b53fbb7c25445f93e67778107fb7490f8a2a372160eaf0d3e98e56718e39e'
     '__returnUrl' => '/smartbus/primary/permissions'
+=======
+>>>>>>> ef57f0231716445fc7a2264dc2ac6fa638b9947e
     '__id' => 1
 ]
 
@@ -53900,6 +53917,7 @@ $_SERVER = [
     'HTTP_SEC_FETCH_SITE' => 'same-origin'
     'HTTP_SEC_FETCH_MODE' => 'navigate'
     'HTTP_SEC_FETCH_USER' => '?1'
+<<<<<<< HEAD
     'HTTP_REFERER' => 'http://localhost/smartbus/primary/verify/action'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
@@ -53912,6 +53930,20 @@ $_SERVER = [
     'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
 '
     'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+=======
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ne;q=0.8,la;q=0.7'
+    'HTTP_COOKIE' => '_web_session=1n7m0nsgkkrl9s945u8d4q4gqm; _csrf-frontend=1fad6191204c04eb9bb4f1df633132a1f5f0c93a2f59474de2ffb452cd4a6895a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qroauo5Y7tPFEoHZYqEV0AztPTgjnzTD%22%3B%7D; _csrf-backend=c7600a5ca8d20bfa87ec7bf16dbaf8bdedc9e7fa859d57ccbd9718c2a0811edda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Efimc9LvR22LP9_xK8kGbhWvibBhZboW%22%3B%7D'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Users\\sonam\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\sonam\\AppData\\Roaming\\npm;C:\\Users\\sonam\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\MongoDB\\Server\\4.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.2.26 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.2.26'
+>>>>>>> ef57f0231716445fc7a2264dc2ac6fa638b9947e
     'SERVER_NAME' => 'localhost'
     'SERVER_ADDR' => '::1'
     'SERVER_PORT' => '80'
@@ -53922,7 +53954,11 @@ $_SERVER = [
     'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
     'SERVER_ADMIN' => 'postmaster@localhost'
     'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+<<<<<<< HEAD
     'REMOTE_PORT' => '64362'
+=======
+    'REMOTE_PORT' => '62546'
+>>>>>>> ef57f0231716445fc7a2264dc2ac6fa638b9947e
     'REDIRECT_URL' => '/smartbus/primary/verify/comments'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
@@ -53931,6 +53967,7 @@ $_SERVER = [
     'REQUEST_URI' => '/smartbus/primary/verify/comments'
     'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
     'PHP_SELF' => '/smartbus/backend/web/index.php'
+<<<<<<< HEAD
     'REQUEST_TIME_FLOAT' => 1583135367.616
     'REQUEST_TIME' => 1583135367
 ]
@@ -54024,4 +54061,8 @@ $_SERVER = [
     'PHP_SELF' => '/smartbus/backend/web/index.php'
     'REQUEST_TIME_FLOAT' => 1583142546.359
     'REQUEST_TIME' => 1583142546
+=======
+    'REQUEST_TIME_FLOAT' => 1583135502.287
+    'REQUEST_TIME' => 1583135502
+>>>>>>> ef57f0231716445fc7a2264dc2ac6fa638b9947e
 ]
