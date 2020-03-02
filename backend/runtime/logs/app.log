@@ -51502,3 +51502,123 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1583059806.42
     'REQUEST_TIME' => 1583059806
 ]
+2020-03-02 13:36:42 [::1][1][1n7m0nsgkkrl9s945u8d4q4gqm][error][yii\base\InvalidArgumentException] yii\base\UnknownMethodException: Calling unknown method: common\models\generated\User::getrole0() in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:300
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(1244): yii\base\Component->__call('getrole0', Array)
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQueryTrait.php(177): yii\db\BaseActiveRecord->getRelation('role0')
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQueryTrait.php(144): yii\db\ActiveQuery->normalizeRelations(Object(common\models\generated\User), Array)
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(220): yii\db\ActiveQuery->findWith(Array, '[[<span class="...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate(Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveRelationTrait.php(269): yii\db\ActiveQuery->all()
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQueryTrait.php(151): yii\db\ActiveQuery->populateRelation('requesteduser', '<span class="st...')
+#8 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(220): yii\db\ActiveQuery->findWith(Array, '<span class="st...')
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate(Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#11 C:\xampp\htdocs\smartbus\common\components\Verification.php(62): yii\db\ActiveQuery->all()
+#12 C:\xampp\htdocs\smartbus\backend\controllers\VerifyController.php(100): common\components\Verification::getComments()
+#13 [internal function]: backend\controllers\VerifyController->actionComments()
+#14 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('comments', Array)
+#17 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('verify/comments', Array)
+#18 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#19 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#20 {main}
+
+Next yii\base\InvalidArgumentException: common\models\generated\User has no relation named "role0". in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php:1247
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQueryTrait.php(177): yii\db\BaseActiveRecord->getRelation('role0')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQueryTrait.php(144): yii\db\ActiveQuery->normalizeRelations(Object(common\models\generated\User), Array)
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(220): yii\db\ActiveQuery->findWith(Array, '[[<span class="...')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate(Array)
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveRelationTrait.php(269): yii\db\ActiveQuery->all()
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQueryTrait.php(151): yii\db\ActiveQuery->populateRelation('requesteduser', '<span class="st...')
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(220): yii\db\ActiveQuery->findWith(Array, '<span class="st...')
+#8 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate(Array)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\Query->all(NULL)
+#10 C:\xampp\htdocs\smartbus\common\components\Verification.php(62): yii\db\ActiveQuery->all()
+#11 C:\xampp\htdocs\smartbus\backend\controllers\VerifyController.php(100): common\components\Verification::getComments()
+#12 [internal function]: backend\controllers\VerifyController->actionComments()
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('comments', Array)
+#16 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('verify/comments', Array)
+#17 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#18 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#19 {main}
+2020-03-02 13:36:42 [::1][1][1n7m0nsgkkrl9s945u8d4q4gqm][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_web_session' => '1n7m0nsgkkrl9s945u8d4q4gqm'
+    '_csrf-frontend' => '1fad6191204c04eb9bb4f1df633132a1f5f0c93a2f59474de2ffb452cd4a6895a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"qroauo5Y7tPFEoHZYqEV0AztPTgjnzTD\";}'
+    '_csrf-backend' => 'c7600a5ca8d20bfa87ec7bf16dbaf8bdedc9e7fa859d57ccbd9718c2a0811edda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Efimc9LvR22LP9_xK8kGbhWvibBhZboW\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ne;q=0.8,la;q=0.7'
+    'HTTP_COOKIE' => '_web_session=1n7m0nsgkkrl9s945u8d4q4gqm; _csrf-frontend=1fad6191204c04eb9bb4f1df633132a1f5f0c93a2f59474de2ffb452cd4a6895a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22qroauo5Y7tPFEoHZYqEV0AztPTgjnzTD%22%3B%7D; _csrf-backend=c7600a5ca8d20bfa87ec7bf16dbaf8bdedc9e7fa859d57ccbd9718c2a0811edda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Efimc9LvR22LP9_xK8kGbhWvibBhZboW%22%3B%7D'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Users\\sonam\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\sonam\\AppData\\Roaming\\npm;C:\\Users\\sonam\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\MongoDB\\Server\\4.2\\bin;'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.2.26 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.2.26'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '62546'
+    'REDIRECT_URL' => '/smartbus/primary/verify/comments'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/verify/comments'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583135502.287
+    'REQUEST_TIME' => 1583135502
+]

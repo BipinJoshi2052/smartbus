@@ -189,205 +189,9 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
    </div>
 
 
-   <!--  <div id=""  class="container banner-01" >
-
-    <div class="row">
-         <div class = "col-md-12 col-sm-12 col-lg-7 mb-sm-4 padding-right-20" data-animation = "fadeInLeft">
-
-             <div class = "owl-carousel pagination-1 dark-switch" data-pagination = "true" data-autoplay = "true" data-navigation = "false" data-singleitem = "true" data-animation = "fadeInUp">
-                <div class = "item">
-
-                   <div class="hero-text">
-
- <h1>BOOK  <span>YOUR TICKET NOW</span></h1>
-
-  <h2 class = "entry-title" style="color: #FF9800;">
-                     IT IS SO EASY THAT ANYONE CAN DO IT
-
-                   </h2>
-
-
-                   <div class = "entry-content">
-                      <p>Lorem ipsum dolor sit amet,accusantium nobis tempora conse <br>
-                      Lorem ipsum dolor sit amet,accusantium nobis tempora consequ.</p>
-
-
-                   </div>
-
- <a href="#" class="primary-btn">BOOK TICKET NOW</a>
- </div>
-
-
-                </div>
-                <div class = "item">
-
-                   <div class="hero-text">
-
- <h1>BOOK  <span>YOUR TICKET NOW</span></h1>
-
-  <h2 class = "entry-title" style="color: #FF9800;">
-                     IT IS SO EASY THAT ANYONE CAN DO IT
-
-                   </h2>
-
-
-                   <div class = "entry-content">
-                      <p>Lorem ipsum dolor sit amet,accusantium nobis tempora consequ <br>
-                      Lorem ipsum dolor sit amet,accusantium nobis tempora consequatu.</p>
-
-
-                   </div>
-
- <a href="#" class="primary-btn">BOOK TICKET NOW</a>
- </div>
-
-
-                </div>
-             </div>
-
-          </div>
-          <div class="col-md-12 col-sm-12 col-lg-5 mb-sm-4 padding-left-20 animated fadeInRight visible" data-animation="fadeInRight">
-
-
-               <ul class="nav nav-pills nav-01" id="pills-tab" role="tablist">
-                <h4>Book Tickets</h4>
-   <li class="nav-item my-search">
-     <a class="nav-link active tab-01" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">BUS TICKET</a>
-   </li>
-   <li class="nav-item rent">
-     <a class="nav-link tab-01" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">RENT</a>
-   </li>
-
- </ul>
-
-             <form action="#" class="request-form ftco-animate bg-01 fadeInUp ftco-animated search-ticket">
-
-
- <div class="tab-content tab-content-01" id="pills-tabContent">
-   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-
-
-       <div class="input-group">
-          <input class="input-name form-control form-02" type="text" id="career_name" name="career_name" placeholder="From">
-
-
-          <div class="">
-           <span  class="swap" id="inputGroupPrepend2"><i class="fa fa-exchange" aria-hidden="true"></i></span>
-         </div>
-       </div>
-
-                        <div class="input-text form-group">
-                             <input class="input-name form-control" type="text" id="career_name" name="career_name" placeholder="To">
-                         </div>
-
-                            <div class="form-group ">
-
-                          <input type="text" class="form-control form-02 fm-01" id="departure-date" placeholder="Arivall Date">
-                          <input type="text" class="form-control" id="return-date" placeholder="Return Date">
-                        </div>
-
-                     <div class="book-my-ticket">
-                         <button type="submit" class="btn btn-pm">Search</button>
-                     </div>
-
-
-                     </div>
-   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-
- </div>
-
-
-                      </form>
-
-          </div>
-       </div> -->
-
-   <!--   <div class="row" >
-    <div class="col-sm-12 col-md-8 col-lg-8" >
-
-
-<div class="banner-header-01" >
- <h1 class="upper animation animated-item-1">
-                          <span class="text-color">Creative</span> Multi-purpose Theme</h1>
-                          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-
-
-<a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login-modal">Sign Up</a>
-
-</div>
-
-
-    </div>
-     <div class="col-sm-12 col-md-4 col-lg-4" >
-       <form action="#" class="request-form ftco-animate bg-01 fadeInUp ftco-animated">
-                   <h2>Book Tickets</h2>
-                      <div class="form-group">
-                         <label for="" class="label">Departure</label>
-                         <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                      </div>
-                      <div class="form-group">
-                         <label for="" class="label">Destination</label>
-                         <input type="text" class="form-control" placeholder="City, Airport, Station, etc">
-                      </div>
-                      <div class="d-flex">
-                         <div class="form-group mr-2">
-                       <label for="" class="label">Pick-up Date</label>
-                       <input type="text" class="form-control" id="departure-date" placeholder="Date">
-                     </div>
-                     <div class="form-group ml-2">
-                       <label for="" class="label">Drop-off ate</label>
-                       <input type="text" class="form-control" id="return-date" placeholder="Date">
-                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="" class="label">Pick-up time</label>
-                    <input type="text" class="form-control ui-timepicker-input" id="time_pick" placeholder="Time" autocomplete="off">
-                  </div>
-                   <div class="form-group">
-                     <input type="submit" value="Search" class="btn btn-info py-3 px-4">
-                   </div>
-                   </form>
-    </div>
-
- </div> -->
 
 
 </section>
-
-
-<section id = "testimonials" class = "page-section light-bg">
-   <div class = "section-title" data-animation = "fadeInUp">
-      <!-- Heading -->
-      <h2 class = "title">Explore More</h2>
-   </div>
-   <div class = "container" data-animation = "fadeInUp">
-      <div class = "testimonails">
-         <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
-             <?php if (!empty($explore) && count($explore) > 0):
-                 foreach ($explore as $e) :
-                     ?>
-            <div class = "item">
-               <div class = "explore-nepal">
-                  <img src="<?php echo (isset($e['image']) && $e['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $e['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>"  alt = "" title = "">
-
-               </div>
-
-            </div>
-
-
-                 <?php endforeach;
-                 ?>
-             <?php else : ?>
-                <h3>No Image Found</h3>
-             <?php endif; ?>
-         </div>
-      </div>
-   </div>
-</section><!-- testimonials -->
-
 <section>
    <div class = "container">
 
@@ -427,6 +231,39 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 
    </div>
 </section>
+
+
+<section id = "testimonials" class = "page-section light-bg">
+   <div class = "section-title" data-animation = "fadeInUp">
+      <!-- Heading -->
+      <h2 class = "title">Explore More</h2>
+   </div>
+   <div class = "container" data-animation = "fadeInUp">
+      <div class = "testimonails">
+         <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
+             <?php if (!empty($explore) && count($explore) > 0):
+                 foreach ($explore as $e) :
+                     ?>
+            <div class = "item">
+               <div class = "explore-nepal">
+                  <img src="<?php echo (isset($e['image']) && $e['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $e['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>"  alt = "" title = "">
+
+               </div>
+
+            </div>
+
+
+                 <?php endforeach;
+                 ?>
+             <?php else : ?>
+                <h3>No Image Found</h3>
+             <?php endif; ?>
+         </div>
+      </div>
+   </div>
+</section><!-- testimonials -->
+
+
 
 
 <section>
@@ -615,7 +452,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 <?php endif; ?>
 
 
-<section class = "faq-01" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/nepal6.jpg);     background-position-y: center; background-size: cover;">
+<section class = "faq-01 bk-01" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/nepal6.jpg);     background-position-y: center; background-size: cover;">
 
    <div class = " ">
 

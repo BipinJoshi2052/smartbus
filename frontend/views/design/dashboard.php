@@ -1,24 +1,28 @@
 
  
 <style type="text/css">
-	*{box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box;}.content{/*width: 260px;*/ }.colors{/*width: 260px;*/ float: left; margin: 20px auto;}.colors a{width: 44.8px; height: 30px; float: left;}.colors .default{background: #414956;}.colors .blue{background: #58c9ee;}.colors .green{background: #03A678;}.colors .red{background: #ED5565;}.colors .white{background: #fff;}.colors .black{background: #292929;}
 
 
+
+.p-01{
+  position: relative;
+}
 
 .jquery-accordion-menu ul li  {
-    width: 100%;
-    padding: 10px 5px;
+  width: 100%;
+    padding: 9px 5px;
     float: left;
     text-decoration: none;
-    color: black;
+    color: #343a40bd;
     background: #ffffff;
-   font-family: roboto;
+    font-family: roboto;
     overflow: hidden;
+    font-weight: 700;
     font-size: 14px;
   
 }
 .jquery-accordion-menu>ul>li{
-  border-bottom: solid 1px #3b424d;
+  border-bottom: solid 1px #343a4040;
 }
 /*.jquery-accordion-menu ul li a{
    width: 100%;
@@ -123,58 +127,6 @@
 	    padding-right: 18px;
 }
 
-/*drop-hover*/
-.dropbtn {
-    background-color: #4caf500f;
-    color: white;
-    /* padding: 15px; */
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    padding: 11px 20px;
-    line-height: 15px;
-    border: 1px solid;
-}
-/*.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}*/
-
-.dropdown-01 {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-  right: 0;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown-01:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-01:hover .dropbtn {
-  background-color: #ff9800;
-}
 .dash-history{
       padding: 10px 0 15px 0;
 }
@@ -185,11 +137,14 @@
     text-decoration: none;
     color: white;
     font-size: 13px;
-    background: black;
+    background: #58c9ee;
     white-space: nowrap;
     position: relative;
 
   
+}
+.change-ps:hover{
+  color: white ! important;
 }
 .change-ps i{
 
@@ -201,7 +156,7 @@
     height: 180px;
     object-fit: cover;
 }
-.profile-img .file {
+/*.profile-img .file {
     position: relative;
     margin-top: -20%;
     width: 100%;
@@ -209,7 +164,7 @@
     border-radius: 0;
     font-size: 15px;
     background: #212529b8;
-}
+}*/
 .profile-img .file input {
     position: absolute;
     opacity: 0;
@@ -217,14 +172,77 @@
     top: 0;
 }
 .profile-img .file span{
-  position: absolute;
-    top: -16%;
+     position: absolute;
     left: 46%;
-    z-index: 9999;
+    z-index: 99;
+    top: 69%;
 }
 .title{
   margin-bottom: 0px;
       padding: 4px 0;
+}
+.rounded-1{
+  color: #58c9ee ! important;
+}
+.rounded-1:hover{
+  color: white ! important;
+}
+.rounded-0{
+    color: #58c9ee ! important;
+}
+.rounded-0:hover{
+
+  color: white ! important;
+
+}
+.tb-sm-01 td, .tb-sm-01 th{
+  color: #343a40d1;
+  padding: 0.4rem;
+} 
+.md-history{
+  display: flex ! important;
+  background: #58c9ee;
+}
+.rounded-1:active, .rounded-1:focus{
+/*  background-color: #6CC0FB;*/
+    border-color: #6CC0FB;
+    color: #fff ! important;
+}
+.tb-history{
+  font-size: 14px;
+}
+@media (max-width: 500px) {
+.tb-history{
+  display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+}
+.dash-head h4{
+  margin-bottom: 15px;
+  line-height: 1;
+  font-size: 20px;
+}
+.md-more-history span{
+  font-weight: 600;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.md-history-body{
+  padding: 20px;
+
+}
+.cl-01{
+  color: white;
+}
+.md-title{
+  color: white;
+}
+.md-radius{
+  border-radius:.3rem ! important;
+}
+.client-details{
+  padding: 10px 0;
 }
 
 </style>
@@ -234,17 +252,19 @@
 <section class="dash-history">
 
 	<div class="container" >
-		<div class="row" >
-			<div class="col-sm-6 col-md-3 col-lg-3" >
+		<div class="row client-details" >
+			<div class="col-sm-12 col-md-3 col-lg-3" >
           
-          <a class="position-absolute ml-3 mt-3 text-white set-01" href="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit cover images"><i class="fa fa-cog" aria-hidden="true"></i> </a>
+          <a class="position-absolute ml-3 mt-3 text-white set-01" href="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit cover images" style="z-index: 99;" ><i class="fa fa-cog" aria-hidden="true"></i> </a>
       <div  class="profiles p-01  rounded text-center shadow-1 icon-block1">
 
                                                   <div class="profile-img p-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt="">
+
+                            <img src="/smartbus/common/assets/images/uploads/dash.jpeg" alt="">
                             <div class="file btn ">
-                             <span type="file" name="file" > <i class="fa fa-camera" aria-hidden="true"></i></span>
-                                <h3 class="title text-light">@sonam</h3>
+                             
+                             <span type="file" id="myFile" name="file" > <input type="file" name="file"> <i class="fa fa-camera" aria-hidden="true"></i></span>
+                              
                             </div>
                         </div>
                                                 </div>
@@ -263,66 +283,81 @@
 					
 					<li> Phone : 123456789 </li>
 					<li> Gender : Male </li>
-					<!-- <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>Help</a></li> -->
-         <!--  <li><a href="#"><i class="fa fa-key" aria-hidden="true"></i>Change Password</a></li> -->
-					
-					<!-- <li><a href="#"  data-toggle="collapse" data-target="#submenu-1" >Services <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-						<ul id="submenu-1" class="collapse">
-							<li><a href="#">
-							Web Design </a></li>
-							<li><a href="#">Hosting </a></li>
-							<li><a href="#">Design </a>
-							</li>
-							<li><a href="#">Consulting </a></li>
-						</ul>
-					</li> -->
+				
 				</ul>
           <a class="change-ps" href="#"><i class="fa fa-key" aria-hidden="true"></i>Change Password</a>
 				
 			</div>
 		</div>
 		</div>
-		<div class=" col-sm-6 col-md-9 col-lg-9" >
-			
-		<div class="dash-var" >
-			<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputTeaxt4">Name</label>
-      <input type="text" class="form-control" id="inputName">
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="Email" class="form-control" id="inputEmail">
-    </div>
-     <div class="form-group col-md-6">
-      <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-    </div>
-     <div class="form-group col-md-6">
-      <label for="inputAddress">Address</label>
-   <input type="text" name="post[phone]" pattern="[0-9]" class="input-name form-control" placeholder="Phone">
-    </div>
-     <div class="form-group col-md-4">
-      <label for="inputState">Gender</label>
-      <select id="inputState" class="form-control">
-        <option selected>Male</option>
-        <option>Femal</option>
-        <option>Other</option>
+		<div class=" col-sm-12 col-md-9 col-lg-9" >
+     
+      
+      
 
-      </select>
-    </div>
+      <div class="dash-var" >
+         <div class="dash-head text-left" >
+        <h4>History</h4>
+      </div>
+      
+      <table class="table table-striped table-bordered  table-sm tb-sm-01 tb-history text-center ">
+  <thead>
+    <tr>
+      <th scope="col"> Date</th>
+      <th scope="col">From</th>
+      <th scope="col">To</th>
+      <th scope="col">Passenger No</th>
+      <th scope="col">Price</th>
+       <th scope="col">Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">3/2/2020</th>
+      <td>Kathmandu</td>
+      <td>Pokhara</td>
+       <td>2</td>
+        <td>Rs 600</td>
+     <td>  <div class="bid-button">
+         <a href="" class="btn btn-primary btn-outline-primary rounded-1 text-white  " data-toggle="modal" data-target=".bd-example-modal-lg" >Detail</a>
+    </div></td>
+    </tr>
+    <tr>
+       <th scope="row">3/2/2020</th>
+      <td>Kathmandu</td>
+      <td>Pokhara</td>
+       <td>2</td>
+       <td>Rs 600</td>
+     <td>  <div class="bid-button">
+         <a href="" class="btn btn-primary btn-outline-primary rounded-1 text-white  ">Detail</a>
+    </div></td>
+    </tr>
+    <tr>
+   <th scope="row">3/2/2020</th>
+      <td>Kathmandu</td>
+      <td>Pokhara</td>
+       <td>2</td>
+       <td>Rs 600</td>
+     <td>  <div class="bid-button">
+         <a href="" class="btn btn-primary btn-outline-primary rounded-1 text-white  ">Detail</a>
+    </div></td>
+    </tr>
+  </tbody>
+</table>
+
     
+<div class="more-info">
+    <a href="" class="btn btn-primary btn-outline-primary rounded-0 text-white py-2 px-4"> More</a>
+</div>
+      
+    </div>
 
-  </div>
 
- 
-  
-  
- <!--  <button type="submit" class="btn btn-primary">Sign in</button> -->
-</form>
+
+
+
+
 			
-		</div>
 
 
 			
@@ -333,7 +368,59 @@
 		
 	</div>
 
+  <!-- Large modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+ -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content md-radius">
+      <div class="modal-header md-history ">
+        <h5 class="modal-title md-title">History</h5>
+        <button type="button" class="close cl-01" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+         <div class="modal-body md-history-body">
+          <div class="row">
+            <div class="col-md-4" >
+              <div class="md-more-history" >
+                <P> <span>Depature Date </span>: &nbsp;14th, May 2020 at 6:00 AM  </P>
+              </div>
+              
+              
+            </div>
+              <div class="col-md-4" >
+              <div class="md-more-history" >
+                <P><span> Depature  </span> :&nbsp; Pokhara </P>
+              </div>
+            </div>
+              <div class="col-md-4" >
+              <div class="md-more-history" >
+                <P><span> Seat Booked </span> :&nbsp; A1, B1, A2  </P>
+              </div>
+            </div>
+               <div class="col-md-4" >
+              <div class="md-more-history" >
+                <P> <span> Arrival </span> :&nbsp;Kathmandu  </P>
+              </div>
+            </div>
+               <div class="col-md-4" >
+              <div class="md-more-history" >
+                <P> <span>Arrival Date </span> :&nbsp; 14th, May 2020 at 6:00 AM   </P>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+       <div class="modal-footer">
+       
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 	
 </section>
+

@@ -71,7 +71,7 @@ Yii::$app->session->getFlash('success');
                             </div>
                             <!-- Field 4 -->
                             <div class = "textarea-message form-group">
-                                <textarea required name = "message" class = "textarea-message hight- form-control" placeholder = "Message" rows = "2"></textarea>
+                                <textarea required name = "message" class = "textarea-message height-153 form-control" placeholder = "Message" rows = "2"></textarea>
                             </div>
                             <!-- Button -->
                            <a class="btn btn-default btn-block submit-contact text-white">Send Now <i class = "icon-paper-plane"></i></a>
