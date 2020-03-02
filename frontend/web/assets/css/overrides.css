@@ -18,7 +18,9 @@ accent red : #ff4d4d
     color: #58c9ee ! important;
 }
 
-
+.bk-01{
+    padding: 0px ! important;
+}
 
 body, .btn {
     font-size: 15px;
@@ -773,6 +775,7 @@ footer .social-icon a {
 
 label {
     font-weight: 400;
+    color: #6c757d;
 }
 
 a:hover {
@@ -1072,6 +1075,7 @@ a:hover {
 
 /* ======== End style for seat ======== */
 .highlighted {
+
     color: #FF9800;
     font-weight: 500;
 }
@@ -2022,6 +2026,8 @@ header .navbar {
 }
 .ln-22{
      line-height: 22px ! important;
+     border-radius: 35px ! important;
+    border: 3px solid #eee ! important;
 }
 .client-image img{
     object-fit: cover;
@@ -2032,6 +2038,23 @@ header .navbar {
 /*.wid-155{
     width: 188px;
 }*/
-
-
-
+.counter-process{
+    padding: 30px 0 0 0;
+}
+.explore-btn-01 button{
+    padding: 12px 35px !important;
+    border-radius: 0px ! important;
+    font-size: 20px ! important;
+    font-family: sans-serif ! important;
+    /* background-color: #58C9EE ! important; */
+    border-color: #58C9EE ! important;
+    color: #FFFFFF;
+    border: 1px solid var(--gray) ! important;
+}
+.explore-btn-01{
+    padding-top: 18px;
+}
+.h1{
+        border-radius: 35px ;
+        border: 3px solid #eee ! important;
+}

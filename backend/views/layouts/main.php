@@ -162,13 +162,8 @@ AppAsset::register($this);
                               echo Yii::$app->params['count_messages']['count_unseen'];
                            ?>
                         </span></div>
-                     <?php }else {?>
-                        <div class = "new-notify" style="background-color: red"><span>
-                           <?php
-                              echo '0';
-                           ?>
-                           </span></div>
-                    <?php }?>
+                     <?php }?>
+
                   </a>
                   <div class = "dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby = "2">
                      <ul>
@@ -271,11 +266,21 @@ AppAsset::register($this);
                   <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/careers/view-applicants" aria-expanded = "false">
                      <i class = "mdi mdi-file-document"></i>
                      <span class = "hide-menu">View Applications
+                         <?php
+                         if(Yii::$app->params['count_application'] > 0) {
+                         ?>
                      <span class="new-notify">
                            <?php
                            echo Yii::$app->params['count_application'];
                            ?>
                         </span>
+                        <?php } else { ?>
+                            <div class = "new-notify" style="background-color: red"><span>
+                           <?php
+                           echo Yii::$app->params['count_application'];
+                           ?>
+                        </span></div>
+                         <?php } ?>
                      </span>
                   </a>
                </li>

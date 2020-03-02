@@ -119,7 +119,7 @@
   Global Style
 *******************************************************************************/
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', roboto, sans-serif;
     height: 100%;
     line-height: 1.8;
     font-style: normal;
@@ -355,7 +355,7 @@ a:focus {
 
 .container {
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
 }
 
 /* Positions */
@@ -442,6 +442,7 @@ section,
 .footer-widget,
 .copyright {
     position: relative;
+    padding: 60px 0;
 }
 
 .wide .container {
@@ -468,7 +469,7 @@ section,
 }
 
 .page-section {
-    padding: 25px 0;
+    padding: 60px 0;
     display: block;
     overflow: hidden;
     position: relative;
@@ -4541,10 +4542,16 @@ ul.tags li {
 .widget ul {
     padding: 0px;
     margin: 0px;
+    display: inline-block;
 }
 
 .widget li {
     list-style: none;
+   line-height: 21px;
+    display: inline-block;
+    /* padding: 10px; */
+    padding: 0 24px 0 0;
+    font-size: 15px;
 }
 
 .widget li a,
@@ -4584,7 +4591,7 @@ ul.tags li {
 .widget .widget-title {
     /* border-bottom: 1px solid #E1E1E1;*/
     border-bottom: 1px solid white;
-    margin: 0 0 12px;
+    margin: 0 0 20px;
     position: relative;
 }
 
@@ -6752,7 +6759,7 @@ ul.tags li {
     /*background: #F2F2F2;*/
     background: #1E1C26;
     line-height: 21px;
-    padding: 30px 0 13px;
+    padding: 30px 0 30px;
 }
 
 .footer .footer-widget .widget-title {
@@ -9662,6 +9669,7 @@ CONTENT STYLE
     background: #58C9EE;
     border: 1px solid #58C9EE;
     color: white ! important;
+    padding: 10px ;
 }
 
 .mg-0 li a:hover {
@@ -10389,6 +10397,7 @@ input.form-control.search-slt.location-1 {
     background-color: #58C9EE ! important;
     border-color: #58C9EE ! important;
     color: #FFFFFF;
+    border: 1px solid #58C9EE ! important
 }
 
 .explore-btn {
@@ -10423,7 +10432,7 @@ input.form-control.search-slt.location-1 {
 }
 
 .pd-1 {
-    padding: 30px 10px 30px 30px;
+    padding: 40px 10px 40px 30px ! important;
 }
 
 .bc-01 {
@@ -10463,11 +10472,11 @@ input.form-control.search-slt.location-1 {
 .post-content p{
     text-align: justify;
 }
-.hight-153{
+.height-153{
     height: 153px ! important;
 }
 .navbar-nav > li{
-    padding: 4px;
+    padding: 5px;
 }
 .wid-155 i {
         padding-left: 4px;

@@ -159,10 +159,11 @@ AppAsset::register($this);
                   <ul class = "navbar-nav ml-auto mg-0">
                       <?php if ((Yii::$app->user->isGuest)): ?>
                          <li class = "nav-item">
-                            <a href = "javascript:void(0);" class = "highlighted" data-toggle = "modal" data-target = "#login-modal">Login/SignUp</a>
+                            <a href = "javascript:void(0);" class = "highlighted h1" data-toggle = "modal" data-target = "#login-modal">Login/SignUp</a>
                          </li>
                       <?php else: ?>
                          <li class = "nav-item dropdown">
+
                             <a class = "nav-link dropdown-toggle  pv-0 ln-22 wid-155" href = "#" id = "navbarMoreDropdown" role = "button" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false">
                                <i class="fa fa-user-o" aria-hidden="true"></i>   <?php echo Yii::$app->user->identity->name; ?>
                                <span class = "caret"></span>
@@ -288,15 +289,26 @@ AppAsset::register($this);
                <div class = "col-xs-12 col-sm-6 col-md-4 widget bottom-xs-pad-20">
                   <div class = "widget-title">
                      <!-- Title -->
-                     <h3 class = "title">About Us</h3>
+                     <h3 class = "title">Links</h3>
                   </div>
+                  <ul>
+
+                    <li><a href=""> Home </a></li>
+                    <li><a href=""> About </a></li>
+                    <li><a href=""> Blog</a></li>
+                    <li><a href=""> News </a></li>
+                    <li><a href=""> Carees</a> </li>
+                  </ul>
+                  <div class="explore-btn-01">
+                  <button type="submit" class="btn btn-1">BOOK NOW</button>
+               </div>
                   <!-- Text -->
-                  <p>
+                 <!--  <p>
                      <?php
                      $about = json_decode(Yii::$app->params['settings']['about_us']);
                      print $about->{'about_us'};
                      ?>
-                  </p>
+                  </p> -->
 
                   <!--    <p>
                         <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
@@ -314,7 +326,7 @@ AppAsset::register($this);
                      <!-- Title -->
                      <h3 class = "title">Contact</h3>
                   </div>
-                  <p>
+                  <p style="font-size: 15px;" >
 
                      <strong>Office:</strong>
                       <?php
@@ -323,7 +335,7 @@ AppAsset::register($this);
                       ?>
                   </p>
                   <!-- Phone -->
-                  <p>
+                  <p style="font-size: 15px;">
                      <strong>Call Us:</strong>
                       <?php
                       $contact = json_decode(Yii::$app->params['settings']['contact']);

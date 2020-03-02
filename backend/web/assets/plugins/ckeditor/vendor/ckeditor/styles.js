@@ -11,7 +11,7 @@
 //
 // If you do not have plugins that depend on this file in your editor build, you can simply
 // ignore it. Otherwise it is strongly recommended to customize this file to match your
-// website requirements and design properly.
+// website requirements and dashboard properly.
 //
 // For more information refer to: https://docs.ckeditor.com/ckeditor4/docs/#!/guide/dev_styles-section-style-rules
 

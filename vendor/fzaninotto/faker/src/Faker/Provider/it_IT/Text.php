@@ -10,7 +10,7 @@ class Text extends \Faker\Provider\Text
      * Questo e-book è stato realizzato anche grazie al sostegno di:
      *
      * E-text
-     * Web design, Editoria, Multimedia
+     * Web dashboard, Editoria, Multimedia
      * (pubblica il tuo libro, o crea il tuo sito con E-text!)
      * http://www.e-text.it/
      *

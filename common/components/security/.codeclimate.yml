@@ -9,7 +9,7 @@ engines:
   phpmd:
     enabled: true
     config:
-      rulesets: "codesize,design,unusedcode"
+      rulesets: "codesize,dashboard,unusedcode"
 ratings:
   paths:
   - "**.php"
