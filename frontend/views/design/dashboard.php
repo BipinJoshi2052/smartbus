@@ -263,7 +263,7 @@
                             <img src="/smartbus/common/assets/images/uploads/dash.jpeg" alt="">
                             <div class="file btn ">
                              
-                             <span type="file" id="myFile" name="file" > <input type="file" name="file"> <i class="fa fa-camera" aria-hidden="true"></i></span>
+                             <span id="myImg" type="file" id="myFile" name="file" > <input type="file" name="file"> <i class="fa fa-camera" aria-hidden="true"></i></span>
                               
                             </div>
                         </div>
@@ -418,7 +418,25 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+    /* The uploader form */
+    $(function () {
+        $(":file").change(function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = imageIsLoaded;
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
+    });
+
+    function imageIsLoaded(e) {
+        $('#myImg').attr('src', e.target.result);
+        $('#yourImage').attr('src', e.target.result);
+    };
+
+</script>
 
 
 	
