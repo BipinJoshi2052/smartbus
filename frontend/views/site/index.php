@@ -321,7 +321,46 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 </section>
 
 <?= $this->render('../snippets/counter') ?>
+<section id = "testimonials" class = "page-section light-bg">
+   <div class = "section-title" data-animation = "fadeInUp">
+      <!-- Heading -->
+      <h2 class = "title">What Our Clients Say?</h2>
+   </div>
+   <div class = "container" data-animation = "fadeInUp">
+      <div class = "testimonails">
+         <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
 
+
+             <?php if (!empty($testimonial) && count($testimonial) > 0):
+                 foreach ($testimonial as $t) :
+                     ?>
+                    <div class = "item">
+                       <div class = "desc-border bottom-arrow">
+                          <blockquote class = "small-text text-center">
+                              <?php echo (isset($t['content'])) ? $t['content'] : '' ?>
+                          </blockquote>
+                       </div>
+                       <div class = "client-details text-center">
+                          <div class = "client-image">
+                             <img style = "height: 80px;" class = "img-circle" src = "<?php echo (isset($t['image']) && $t['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $t['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "80" height = "80" alt = "">
+                          </div>
+                          <div class = "client-details">
+                             <!-- Name -->
+                             <strong class = "text-color"><?php echo (isset($t['name'])) ? $t['name'] : '' ?></strong>
+                             <!-- Company -->
+                             <span><?php echo (isset($t['position'])) ? $t['position'] : '' ?></span>
+                          </div>
+                       </div>
+                    </div>
+                 <?php endforeach;
+                 ?>
+             <?php else : ?>
+                <h3>No Testomonials Found</h3>
+             <?php endif; ?>
+         </div>
+      </div>
+   </div>
+</section>
 
 <section>
    <div class = "container">
@@ -376,47 +415,78 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 
 <?= $this->render('../snippets/user_signup') ?>
 
+<section class = "faq-01 bk-01" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/nepal6.jpg);     background-position-y: center; background-size: cover;">
 
-<section id = "testimonials" class = "page-section light-bg">
-   <div class = "section-title" data-animation = "fadeInUp">
-      <!-- Heading -->
-      <h2 class = "title">What Our Clients Say?</h2>
-   </div>
-   <div class = "container" data-animation = "fadeInUp">
-      <div class = "testimonails">
-         <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
+   <div class = " ">
+
+      <div class = "row m-0">
+
+         <div class = "col-sm-12 col-md-6 col-lg-6 pd-1" data-animation = "fadeInRight">
+            <div class = "explore-01">
 
 
-             <?php if (!empty($testimonial) && count($testimonial) > 0):
-                 foreach ($testimonial as $t) :
-                     ?>
-                    <div class = "item">
-                       <div class = "desc-border bottom-arrow">
-                          <blockquote class = "small-text text-center">
-                              <?php echo (isset($t['content'])) ? $t['content'] : '' ?>
-                          </blockquote>
-                       </div>
-                       <div class = "client-details text-center">
-                          <div class = "client-image">
-                             <img style = "height: 80px;" class = "img-circle" src = "<?php echo (isset($t['image']) && $t['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $t['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" width = "80" height = "80" alt = "">
-                          </div>
-                          <div class = "client-details">
-                             <!-- Name -->
-                             <strong class = "text-color"><?php echo (isset($t['name'])) ? $t['name'] : '' ?></strong>
-                             <!-- Company -->
-                             <span><?php echo (isset($t['position'])) ? $t['position'] : '' ?></span>
-                          </div>
-                       </div>
-                    </div>
-                 <?php endforeach;
-                 ?>
-             <?php else : ?>
-                <h3>No Testomonials Found</h3>
-             <?php endif; ?>
+               <div class = "section-title text-left">
+                  <!-- Heading -->
+                  <h2 class = "title" style = "color: white;">Book Your Ticket</h2>
+               </div>
+
+               <span>We Make Your Travel Fun</span>
+               <p>We Provie You The Best Service For Your Exploretion</p>
+
+               <div class = "explore-btn">
+                  <button type = "submit" class = "btn btn-1">BOOK NOW</button>
+               </div>
+            </div>
          </div>
+         <div class = "col-md-6 col-sm-12 col-xs-12 pd-1 bc-01 padding-left-20" data-animation = "fadeInRight">
+            <div class = "section-title text-left">
+               <!-- Heading -->
+               <h2 class = "title">Frequently Asked Questions</h2>
+            </div>
+            <div class = "panel-group no-list" id = "accordion1" data-animation = "fadeInLeft">
+                <?php if (!empty($faq) && count($faq) > 0):
+                    foreach ($faq as $f) :
+                        ?>
+                       <div class = "panel panel-default active">
+                          <div class = "panel-heading">
+                             <div class = "panel-title">
+                                <!-- Tab -->
+                                <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item<?php echo $f['id'] ?>">
+                                   <i class = "icon-mobile9"></i>
+
+                                    <?php echo (isset($f['title'])) ? $f['title'] : '' ?>
+                                </a>
+                             </div>
+                          </div>
+                          <div id = "item<?php echo $f['id'] ?>" class = "panel-collapse collapse in">
+                             <div class = "panel-body">
+                                <!-- Tab Content-->
+                                <p><?php echo (isset($f['content'])) ? $f['content'] : '' ?></p>
+                             </div>
+                          </div>
+                       </div>
+                    <?php endforeach;
+                    ?>
+                <?php else : ?>
+                   <h3>No FAQ Found</h3>
+                <?php endif; ?>
+
+
+
+            </div>
+            <!--     <div class = "text-center margin-top-10">
+               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/site/faq" class = "btn btn-primary">Read More</a>
+            </div> -->
+         </div>
+
+
       </div>
+
+
    </div>
-</section><!-- testimonials -->
+
+</section>
+<!-- testimonials -->
 <?= $this->render('../snippets/vendor_signup') ?>
 
 
@@ -452,77 +522,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 <?php endif; ?>
 
 
-<section class = "faq-01 bk-01" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/nepal6.jpg);     background-position-y: center; background-size: cover;">
 
-   <div class = " ">
-
-      <div class = "row m-0">
-
-         <div class = "col-sm-12 col-md-6 col-lg-6 pd-1" data-animation = "fadeInRight">
-            <div class = "explore-01">
-
-
-               <div class = "section-title text-left">
-                  <!-- Heading -->
-                  <h2 class = "title" style = "color: white;">Book Your Ticket</h2>
-               </div>
-
-               <span>We Make Your Travel Fun</span>
-               <p>We Provie You The Best Service For Your Exploretion</p>
-
-               <div class = "explore-btn">
-                  <button type = "submit" class = "btn btn-1">BOOK NOW</button>
-               </div>
-            </div>
-         </div>
-         <div class = "col-md-6 col-sm-12 col-xs-12 pd-1 bc-01 padding-left-20" data-animation = "fadeInRight">
-            <div class = "section-title text-left">
-               <!-- Heading -->
-               <h2 class = "title">Frequently Asked Questions</h2>
-            </div>
-            <div class = "panel-group no-list" id = "accordion1" data-animation = "fadeInLeft">
-                <?php if (!empty($faq) && count($faq) > 0):
-                foreach ($faq as $f) :
-                ?>
-               <div class = "panel panel-default active">
-                  <div class = "panel-heading">
-                     <div class = "panel-title">
-                        <!-- Tab -->
-                        <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item<?php echo $f['id'] ?>">
-                           <i class = "icon-mobile9"></i>
-
-                            <?php echo (isset($f['title'])) ? $f['title'] : '' ?>
-                        </a>
-                     </div>
-                  </div>
-                  <div id = "item<?php echo $f['id'] ?>" class = "panel-collapse collapse in">
-                     <div class = "panel-body">
-                        <!-- Tab Content-->
-                        <p><?php echo (isset($f['content'])) ? $f['content'] : '' ?></p>
-                     </div>
-                  </div>
-               </div>
-                <?php endforeach;
-                    ?>
-                <?php else : ?>
-                   <h3>No FAQ Found</h3>
-                <?php endif; ?>
-
-
-
-            </div>
-            <!--     <div class = "text-center margin-top-10">
-               <a href = "<?php echo Yii::$app->request->baseUrl; ?>/site/faq" class = "btn btn-primary">Read More</a>
-            </div> -->
-         </div>
-
-
-      </div>
-
-
-   </div>
-
-</section>
 <section id = "clients" class = "page-section">
    <div class = "container">
       <div class = "section-title">

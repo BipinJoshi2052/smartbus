@@ -26,15 +26,36 @@ Yii::$app->session->getFlash('success');
                             <i class = "fa fa-microphone i-9x icons-circle text-color light-bg hover-black"></i>
                             <div class = "title">Phones</div>
                             <p>
-                               Support: +123 (345) 6789 
+                              <?php
+                              $contacts = json_decode(Yii::$app->params['settings']['contact']);
+                              $c[]= explode(',',$contacts[0]->{'call_us'});
+                              foreach ($c as $con => $contact){
+                                  foreach ($contact as $co){?>
+                                     <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a> /
+                                  <?php }
+                              } ?>
                             </p>
                             
                         </address>
+                       <p> Support:
+                           <?php
+                           $contacts = json_decode(Yii::$app->params['settings']['contact']);
+                           $c[]= $contacts[0]->{'email'};
+                           echo '<pre>';
+                           print_r($contacts);
+                           echo '</pre>';
+                           die;
+                           foreach ($c as $con => $contact){
+                               foreach ($contact as $co){?>
+                                  <a href="mailto:<?php echo $co; ?>"><?php echo $co; ?></a> /
+                               <?php }
+                           }
+                           ?>
                         <address class = "col-sm-4 col-md-4">
                             <i class = "fa fa-envelope i-9x icons-circle text-color light-bg hover-black"></i>
                             <div class = "title">  Email Addresses</div>
-                            <div> <p> Support:
-                                <a href = "mailto:support@example.com">support@example.com</a></p>
+                            <div>
+                               </p>
                             </div>
                         </address>
                     </div>

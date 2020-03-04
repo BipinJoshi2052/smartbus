@@ -169,7 +169,7 @@ AppAsset::register($this);
                                <span class = "caret"></span>
                             </a>
                             <div class = "dropdown-menu dp-01" aria-labelledby = "navbarMoreDropdown">
-                               <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/applet/">Dashboard</a>
+                               <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/">Dashboard</a>
                                <div class = "dropdown-divider"></div>
                                <a class = "dropdown-item" href = "<?php echo Yii::$app->request->baseUrl; ?>/site/logout/">
                                   <i class = "fa fa-power"></i>
@@ -293,22 +293,22 @@ AppAsset::register($this);
                   </div>
                   <ul>
 
-                    <li><a href=""> Home </a></li>
-                    <li><a href=""> About </a></li>
-                    <li><a href=""> Blog</a></li>
-                    <li><a href=""> News </a></li>
-                    <li><a href=""> Carees</a> </li>
+                    <li><a href="<?php echo Yii::$app->request->baseUrl; ?>/"> Home </a></li>
+                    <li><a href = "<?= Yii::$app->request->baseUrl; ?>/site/about">About</a> </li>
+                    <li><a href="<?= Yii::$app->request->baseUrl; ?>/blog/""> Blog</a></li>
+                    <li><a href="<?= Yii::$app->request->baseUrl; ?>/news/""> News </a></li>
+                    <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/careers""> Carees</a> </li>
                   </ul>
                   <div class="explore-btn-01">
                   <button type="submit" class="btn btn-1">BOOK NOW</button>
                </div>
                   <!-- Text -->
-                 <!--  <p>
-                     <?php
-                     $about = json_decode(Yii::$app->params['settings']['about_us']);
-                     print $about->{'about_us'};
-                     ?>
-                  </p> -->
+<!--                  <p>-->
+<!--                     --><?php
+//                     $about = json_decode(Yii::$app->params['settings']['about_us']);
+//                     print $about->{'about_us'};
+//                     ?>
+<!--                  </p> -->
 
                   <!--    <p>
                         <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
@@ -338,8 +338,14 @@ AppAsset::register($this);
                   <p style="font-size: 15px;">
                      <strong>Call Us:</strong>
                       <?php
-                      $contact = json_decode(Yii::$app->params['settings']['contact']);
-                      print $contact[0]->{'call_us'};
+                      $contacts = json_decode(Yii::$app->params['settings']['contact']);
+                      $c[]= explode(',',$contacts[0]->{'call_us'});
+                      foreach ($c as $con => $contact){
+                        foreach ($contact as $co){?>
+                          <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a> / 
+                        <?php }
+                      }
+//                      print $contact[0]->{'call_us'};
                       ?>
                   </p>
                </div>
