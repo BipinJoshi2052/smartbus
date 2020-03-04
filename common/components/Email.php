@@ -99,7 +99,7 @@
             '<tbody>' .
             '<tr>' .
             '<td style="padding:30px; background:#2ecc71; color:#ffffff; font-size:16px; font-weight:600;">' .
-            '<div style="float:left; display:inline-block;">' . '<img style="width: auto; height:50px;" src="' . Yii::$app->params['contact']['logo'] . '"/>' . '</div>' .
+            '<div style="float:left; display:inline-block;">' . '<img style="width: auto; height:50px;" src="' . Yii::$app->params['logo'] . '"/>' . '</div>' .
             '<div style="float:right; display:inline-block; margin-top:20px; font-size:16px; font-family: lato; font-weight:600;">' . $title . '</div>' .
             '</td>' .
             '</tr>' .
@@ -111,13 +111,13 @@
             '<tr>' .
             '<td  style="text-align:center; padding:10px 0 30px 0;  color:#606366; font-size:14px; font-weight:400">' .
             '<span style="padding:4px 20px;  font-family: lato; font-size: 13px;">Phone: ' .
-            Yii::$app->params['contact']['phone'] .
+            Yii::$app->params['phone'] .
             '</span>' .
             '<span style="padding:4px 10px;  font-family: lato; font-size: 13px;">Email: ' .
             '<a style=" text-decoration:none; color:#679EE8;  font-family: lato; font-size: 13px;" href="mailto:' .
-            Yii::$app->params['contact']['email'] .
+            Yii::$app->params['supportEmail'].
             '">' .
-            Yii::$app->params['contact']['email'] .
+            Yii::$app->params['supportEmail'] .
             '</a>' .
             '</span>' .
             '<span style="padding:4px 10px;  font-family: lato; font-size: 13px;">Website: ' .

@@ -215,6 +215,7 @@ class SiteController extends Controller {
      * @throws BadRequestHttpException
      */
     public function actionResetPassword($token) {
+
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidArgumentException $e) {

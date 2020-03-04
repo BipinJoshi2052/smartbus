@@ -13,7 +13,7 @@
 
     namespace common\components;
 
-    use common\models\testimonials;
+    use common\models\Testimonials;
     use yii\base\Component;
 
     class HelperTestimonails extends Component {

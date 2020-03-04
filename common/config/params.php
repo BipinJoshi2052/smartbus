@@ -3,6 +3,8 @@ $abs_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR
 return [
         'system_name'                   => 'Smart Bus',
         'adminEmail'                    => 'info@smbus.com',
+        'phone'                         => '981454664',
+        'logo'                          =>$abs_path.'/images/uploads/logo.png',
         'supportEmail'                  => 'support@smbus.com',
         'user.passwordResetTokenExpire' => 3600,
         'dbname'                        => 'smartbus',
@@ -28,6 +30,7 @@ return [
                 'height' => 250,
         ],
 
+
         'allowed_incorrect_login'    => 15,
         'email'                      => [
                 'Host'            => 'mail.codecater.com',
@@ -40,7 +43,7 @@ return [
                 'CharSet'         => 'utf-8',
                 'ContentType'     => 'text/html',
                 'From'            => 'test@codecater.com',
-                'FromName'        => "Auto-generated Email",
+                'FromName'        => "Smartbus | Auto - Generated email",
                 'Username'        => 'test@codecater.com',
                 'Password'        => '12HelloGoogle34',
                 'AltBody'         => 'To view the message, please use an HTML compatible email viewer!!',
