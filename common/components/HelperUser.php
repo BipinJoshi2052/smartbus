@@ -15,6 +15,7 @@
 namespace common\components;
 
 use common\components\Email as Email;
+use common\models\UserDetails;
 use Yii;
 use yii\base\Component;
 use common\components\Query;
@@ -152,5 +153,14 @@ class HelperUser extends Component {
             $return = 'icp';
         }
         return ['status' => $return];
+    }
+
+    public static function getUserDetails() {
+        $model=UserDetails::find()->asArray()->all();
+        return $model;
+    }
+    public static function getSingleUserDetails($id) {
+        $model=UserDetails::find()->where('user_id ='.$id)->asArray()->one();
+        return $model;
     }
 }
