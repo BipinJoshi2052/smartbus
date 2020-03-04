@@ -74,6 +74,10 @@ class User extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    public function getRole0()
+    {
+        return $this->hasOne(UserRoles::className(), ['id' => 'role']);
+    }
     public static function tableName()
     {
         return 'user';
@@ -100,7 +104,7 @@ class User extends \yii\db\ActiveRecord
         ];*/
         return [
                 [['incorrect_login', 'role', 'email_verified', 'status', 'phone_is_validated', 'verification_id', 'is_verified', 'created_by', 'updated_by'], 'integer'],
-                [['name', 'username', 'auth_key', 'password_hash', 'email'], 'required'],
+                [[ 'username', 'auth_key', 'password_hash', 'email'], 'required'],
                 [['image'], 'string'],
                 [['created_on', 'updated_on'], 'safe'],
                 [['name'], 'string', 'max' => 150],

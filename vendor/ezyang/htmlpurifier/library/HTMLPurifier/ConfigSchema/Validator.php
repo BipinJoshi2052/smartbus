@@ -4,7 +4,7 @@
  * Performs validations on HTMLPurifier_ConfigSchema_Interchange
  *
  * @note If you see '// handled by InterchangeBuilder', that means a
- *       design decision in that class would prevent this validation from
+ *       dashboard decision in that class would prevent this validation from
  *       ever being necessary. We have them anyway, however, for
  *       redundancy.
  */

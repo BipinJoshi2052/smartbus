@@ -26204,7 +26204,7 @@ var OS2 = new r.VersionedStruct(r.uint16, {
     ySuperscriptYOffset: r.int16, // recommended vertical offset from the baseline for superscripts
     yStrikeoutSize: r.int16, // width of the strikeout stroke
     yStrikeoutPosition: r.int16, // position of the strikeout stroke relative to the baseline
-    sFamilyClass: r.int16, // classification of font-family design
+    sFamilyClass: r.int16, // classification of font-family dashboard
     panose: new r.Array(r.uint8, 10), // describe the visual characteristics of a given typeface
     ulCharRange: new r.Array(r.uint32, 4),
     vendorID: new r.String(4), // four character identifier for the font vendor
@@ -27957,17 +27957,17 @@ var CPAL = new r.VersionedStruct(r.uint16, {
 
 var BaseCoord = new r.VersionedStruct(r.uint16, {
   1: { // Design units only
-    coordinate: r.int16 // X or Y value, in design units
+    coordinate: r.int16 // X or Y value, in dashboard units
   },
 
   2: { // Design units plus contour point
-    coordinate: r.int16, // X or Y value, in design units
+    coordinate: r.int16, // X or Y value, in dashboard units
     referenceGlyph: r.uint16, // GlyphID of control glyph
     baseCoordPoint: r.uint16 // Index of contour point on the referenceGlyph
   },
 
   3: { // Design units plus Device table
-    coordinate: r.int16, // X or Y value, in design units
+    coordinate: r.int16, // X or Y value, in dashboard units
     deviceTable: new r.Pointer(r.uint16, Device) // Device table for X or Y value
   }
 });
@@ -39621,7 +39621,7 @@ var TTFFont = (_class = function () {
     }
 
     /**
-     * If this is an italic font, the angle the cursor should be drawn at to match the font design
+     * If this is an italic font, the angle the cursor should be drawn at to match the font dashboard
      * @type {number}
      */
 

@@ -33,7 +33,7 @@ class HTMLPurifier_ElementDef
 
     // XXX: Design note: currently, it's not possible to override
     // previously defined AttrTransforms without messing around with
-    // the final generated config. This is by design; a previous version
+    // the final generated config. This is by dashboard; a previous version
     // used an associated list of attr_transform, but it was extremely
     // easy to accidentally override other attribute transforms by
     // forgetting to specify an index (and just using 0.)  While we

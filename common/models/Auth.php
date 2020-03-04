@@ -8,7 +8,7 @@ use common\models\generated\User;
 class Auth extends \common\models\generated\Auth {
     public function rules() {
         return array_merge(Parent::rules(), [
-                [['title'], 'filter', 'filter' => 'trim'],
+
         ]);
     }
 

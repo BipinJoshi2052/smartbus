@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 use common\components\Helper;
+use common\components\AuthHandler;
 use common\components\HelperBlog;
 use common\components\HelperCareers;
 use common\components\HelperClients;
@@ -60,7 +61,7 @@ class SiteController extends Controller {
     }
 
     public function onAuthSuccess($client) {
-        $userAttributes = $client->getUserAttributes();
+        (new AuthHandler($client))->handle($client);
         // (new \Swift_Transport_Esmtp_AuthHandler($client))->handle();
     }
 
@@ -215,6 +216,7 @@ class SiteController extends Controller {
      * @throws BadRequestHttpException
      */
     public function actionResetPassword($token) {
+
         try {
             $model = new ResetPasswordForm($token);
         } catch (InvalidArgumentException $e) {
