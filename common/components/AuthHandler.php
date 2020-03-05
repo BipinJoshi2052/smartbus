@@ -41,6 +41,7 @@ class AuthHandler {
                                         ])->one();
 
             if ($auth) { // login
+
                 $model = new LoginSocial();
                 $model->username = $auth['user']->username;
                 $l = $model->login();
@@ -49,6 +50,7 @@ class AuthHandler {
 //                                    return $this->goBack();
 //                                }
 //                                $m = Yii::$app->user->login($user, 0);
+               
             }
             else{
                 $user = User::find()->where(['email' => $email])->one();
@@ -61,6 +63,8 @@ class AuthHandler {
                                          'source'    => $this->client->getId(),
                                          'source_id' => (string)$id,
                                  ]);
+                $auth->save();
+
                 $model = new LoginSocial();
                 $model->username = $auth['user']->username;
                 $l = $model->login();
