@@ -114,32 +114,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                   <div class = "tab-pane fade show active pd" id = "pills-home" role = "tabpanel" aria-labelledby = "pills-home-tab">
                      <div class = "row ">
 
-                        <!--   <div class="col-lg-4 col-md-5 col-sm-12 swap-01 ">
-
-                            <div class="row" >
-                              <div class="col" >
-                                 <div class="location-icon" >
-                              <span> <i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                             <input type="text" class="form-control search-slt " placeholder="Enter Pickup City">
-
-                            </div>
-                              </div>
-                              <div class="center-part">
-                       <button class="btn btn-option" id="search-swap-locations" type="button">
-                          <i class="fa fa-arrows-h"></i>
-                       </button>
-
-                    </div>
-                               <div class="col" >
-                                  <div class="location-icon" >
-                              <span> <i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control search-slt" placeholder="Enter Drop City">
-                            </div>
-                              </div>
-
-                            </div>
-                            </div> -->
-                        <!--  <span  class="swap" id="inputGroupPrepend2"><i class="fa fa-exchange" aria-hidden="true"></i></span> -->
+                     
 
 
                         <div class = "col-lg-2 col-md-5 col-sm-12 ">
@@ -545,14 +520,14 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 <section class = "page-section">
    <div class = "container">
       <div class = "row top-padding-40">
-         <div class = "col-md-5 text-center" data-appear-animation = "fadeInLeft">
+         <div class = " col-sm-12 col-md-12 col-lg-5  text-center" data-appear-animation = "fadeInLeft">
             <div class = "double-img">
                <!-- Images -->
                <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/iphone6.png" width = "250" height = "415" alt = "" class = "relative animated fadeInLeft visible" data-animation = "fadeInLeft">
                <img src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/images/sections/iphone6.png" width = "290" height = "415" alt = "" class = "image-right relative animated fadeInRight visible" data-animation = "fadeInRight">
             </div>
          </div>
-         <div class = "col-md-7" data-appear-animation = "fadeInRight">
+         <div class = "col-sm-12 col-md-12 col-lg-7" data-appear-animation = "fadeInRight">
             <div class = "section-title text-left">
                <!-- Heading -->
                <h2 class = "title">COMING SOON</h2>

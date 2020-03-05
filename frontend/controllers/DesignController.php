@@ -79,6 +79,10 @@ class DesignController extends Controller {
 
         return $this->render('changepassword');
     }
+     public function actionEmail() {
+
+        return $this->render('email');
+    }
 
 
    
