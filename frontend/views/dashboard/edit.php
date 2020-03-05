@@ -287,114 +287,139 @@
 
 </style>
 
-
+<!--<pre>--><?php //print_r($editable) ?><!--</pre>-->
 <section class = "dash-history">
 
    <div class = "container">
-      <div class =         "row client-details">
+      <div class = "row client-details">
          <div class = "col-sm-12 col-md-3 col-lg-3">
 
             <a class = "position-absolute ml-3 mt-3 text-white set-01" href = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/edit" data-toggle = "tooltip" data-placement = "bottom" title = "" data-original-title = "Edit cover images" style = "z-index: 99;">
                <i class = "fa fa-cog" aria-hidden = "true"></i>
             </a>
             <div class = "profiles p-01  rounded text-center shadow-1 icon-block1">
-
                <div class = "profile-img p-img">
-
                   <img src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
-                  <div class = "file btn ">
 
-                     <span type = "file" id = "myFile" name = "file"> <input type = "file" name = "file"> <i class = "fa fa-camera" aria-hidden = "true"></i></span>
-
-                  </div>
+                  <!--                  <div class = "file btn ">-->
+                  <!--                     <span type = "file" id = "myFile" name = "file">-->
+                  <!--                        <input type = "file" name = "file">-->
+                  <!--                        <i class = "fa fa-camera" aria-hidden = "true"></i>-->
+                  <!--                     </span>-->
+                  <!--                  </div>-->
                </div>
+               <!--            <div class="form-control">-->
+               <!--               <label class = "custom-file-label" >-->
+               <!--                  <i class = "fa fa-file"></i>-->
+               <!--                  <span>Upload Image</span>-->
+               <!--               </label>-->
+               <!--               <input accept = "image/x-png,image/jpeg" type = "file" name = "image" class = "custom-file-input"  onchange = "readURL(this);" src = "--><?php //echo (isset($editable['image']) && $editable['image'] != '') ? $editable['image'] : '' ?><!--">-->
+               <!---->
+               <!--            </div>-->
             </div>
-
-
-            <div class = "content">
-
-               <div id = "jquery-accordion-menu" class = "jquery-accordion-menu">
-                  <!-- <div class="jquery-accordion-menu-header">DashBoard </div> -->
-                  <ul>
-                     <li class = "active"> Name : <?php echo Yii::$app->user->identity->name; ?> </li>
-                     <li>Email : <?php echo Yii::$app->user->identity->email; ?> </li>
-                     <li> Address :<?php echo $details['address']; ?> </li>
-                     <li> Phone : <?php echo $details['phone']; ?></li>
-                     <!--				<li> Gender : --><?php //echo $details['gender']; ?><!-- </li>-->
-
-                  </ul>
-                  <a class = "change-ps" href =" <?php echo Yii::$app->request->baseUrl; ?>/dashboard/reset/"><i class = "fa fa-key" aria-hidden = "true"></i>Change Password</a>
-
-               </div>
-            </div>
+            <!--            <div class = "content">-->
+            <!--               <div id = "jquery-accordion-menu" class = "jquery-accordion-menu">-->
+            <!--                  <ul>-->
+            <!--                     <li>Name : --><?php //echo Yii::$app->user->identity->name; ?><!--</li>-->
+            <!--                     <li>Email : --><?php //echo Yii::$app->user->identity->email; ?><!-- </li>-->
+            <!--                     <li> Address :--><?php //echo $editable['address']; ?><!-- </li>-->
+            <!--                     <li> Phone : --><?php //echo $editable['phone']; ?><!--</li>-->
+            <!--                  </ul>-->
+            <!--                  <a class = "change-ps" href = " --><?php //echo Yii::$app->request->baseUrl; ?><!--/dashboard/reset/"><i class = "fa fa-key" aria-hidden = "true"></i>Change Password</a>-->
+            <!--               </div>-->
+            <!--            </div>-->
          </div>
+
          <div class = " col-sm-12 col-md-9 col-lg-9">
 
 
             <div class = "dash-var">
                <div class = "dash-head text-left">
-                  <h4>Edit Account</h4>
+                  <h4>Edit Profile</h4>
                </div>
-<form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/" enctype = "multipart/form-data">
-   <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
-   <?php $counter = 0; ?>
-  <div class="row">
-   <div class="col-md-6">
-   <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">Name</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div>
-   </div>
-   <div class = "col-md-6">
-   <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">email</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div>
-   </div><div class = "col-md-6">
+               <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/update" enctype = "multipart/form-data">
+                  <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
+                  <input type = "hidden" name = "post[id]" value = "<?php echo (isset($editable['user_id'])) ? $editable['user_id'] : '' ?>"/>
+                   <?php $counter = 0; ?>
+                  <div class = "row">
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Name</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['user']['name'])) ? $editable['user']['name'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Email</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[email]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['user']['email'])) ? $editable['user']['email'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
 
-   <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">Address</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div> </div><div class = "col-md-6">
-     <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">Phone</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div></div> <div class = "col-md-6">
-     <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">Citizenship No</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div></div><div class = "col-md-6">
-
-     <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">License No</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div></div>
-     <div class = "col-md-6">
-     <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">Company</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div></div>
-     <div class = "col-md-6">
-     <div class = "form-group">
-       <?php $counter++; ?>
-      <label for = "<?php echo $counter; ?>" class = "control-label required">Contact Person Name</label>
-      <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-   </div></div>
-     <div class = "col-md-6">
-        <div class = "form-group">
-            <?php $counter++; ?>
-           <label for = "<?php echo $counter; ?>" class = "control-label required">Contact Person Phone</label>
-           <input id = "<?php echo $counter; ?>" name = "post[name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['title'])) ? $editable['title'] : '' ?>">
-        </div></div>
-  </div>
-</form>
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Address</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[address]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['address'])) ? $editable['address'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Phone</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[phone]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['phone'])) ? $editable['phone'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Citizenship No</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[citizenship]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['citizenship'])) ? $editable['citizenship'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">License No</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[license_no]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['license_no'])) ? $editable['license_no'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Company</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[company]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['company'])) ? $editable['company'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Contact Person Name</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[contact_person_name]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['contact_person_name'])) ? $editable['contact_person_name'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Contact Person Phone</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[contact_person_phone]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['contact_person_phone'])) ? $editable['contact_person_phone'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                        <div class = "form-group">
+                            <?php $counter++; ?>
+                           <label for = "<?php echo $counter; ?>" class = "control-label required">Contact Person Email</label>
+                           <input id = "<?php echo $counter; ?>" name = "post[contact_person_email]" type = "text" class = "form-control required" value = "<?php echo (isset($editable['contact_person_email'])) ? $editable['contact_person_email'] : '' ?>">
+                        </div>
+                     </div>
+                     <div class = "col-md-6">
+                     <div class = "form-group">
+                        <button type = "submit" class = "btn btn-primary">Submit</button>
+                     </div>
+                     </div>
+                  </div>
+               </form>
             </div>
 
 

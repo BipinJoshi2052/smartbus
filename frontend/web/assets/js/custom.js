@@ -7,6 +7,8 @@ $(document).ready(function ($) {
    "use strict";
 
 
+
+
    $(function () {
       if ($('.home-banner').length > 0) {
          $('.home-banner').carousel();

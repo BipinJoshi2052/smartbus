@@ -2,7 +2,9 @@
 
 namespace frontend\controllers;
 
+use common\components\Helper;
 use common\components\HelperBlog;
+use common\components\HelperUpload;
 use common\components\HelperUser;
 use common\components\Misc;
 use common\models\Blog;
@@ -30,6 +32,7 @@ class DashboardController extends Controller {
     }
 
     public function beforeAction($action) {
+        $this->enableCsrfValidation = false;
         if ($action->id == 'error') {
             $this->layout = 'error';
         }
@@ -46,7 +49,7 @@ class DashboardController extends Controller {
     {
         $id=Yii::$app->user->identity->id;
         return $this->render('edit',[
-                'details'=>HelperUser::getSingleUserDetails($id)
+                'editable'=>HelperUser::getSingleUserDetails($id)
         ]);
     }
     public function actionReset()
@@ -96,9 +99,28 @@ class DashboardController extends Controller {
     }
 
 
+    public function actionUpdateImage() {
+        $user_id = Yii::$app->session->id;
+        if(isset($_FILES["file"]))
+        {
+                return json_encode(true);
+         }
+        return json_encode(false);
 
+    }
 
-
+    public function actionUpdate($id = '') {
+        if (isset($_POST['post'])) {
+            $dashboard = Helper::setDashboard($_POST['post']);
+            if ($dashboard != false) {
+                Misc::setFlash('success', 'Your Comment has been sent for verification.');
+            }
+                else {
+                    Misc::setFlash('success', 'Your Comment has been Posted.');
+                }
+                return $this->redirect(Yii::$app->request->baseUrl . '/dashboard/edit/');
+            }
+        }
 
 }
 //    public function actionIndex() {
@@ -126,24 +148,5 @@ class DashboardController extends Controller {
 //        return $this->render('single', ['post' => HelperBlog::getSingleBlog($id)]);
 //    }
 //
-//    public function actionUpdate($id = '') {
-//        if (isset($_POST['post'])) {
-//            $comment = HelperBlog::setBlogComments($_POST['post']);
-//            if ($comment != false) {
-//                if ($comment['role'] != 1) {
-//                    Misc::setFlash('success', 'Your Comment has been sent for verification.');
-//                }
-//                else {
-//                    Misc::setFlash('success', 'Your Comment has been Posted.');
-//                }
-//                return $this->redirect(Yii::$app->request->baseUrl . '/blog/view/' . Misc::encrypt($comment['blog_id']));
-//            }
-//        }
-//        $blog = Yii::$app->request->post();
-//        $comments = HelperBlog::setComment($blog);
-//        return $this->render('single', [
-//                'post' => HelperBlog::getSingleBlogUser($blog['id'])
-//        ]);
-//
-//    }
+
 //}

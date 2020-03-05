@@ -17,26 +17,40 @@ Yii::$app->session->getFlash('success');
             <div class = "row">
                 <div class = "col-md-12 contact-info">
                     <div class = "row text-center">
-                        <address class = "col-sm-4 col-md-4">
+                        <div class = "col-sm-4 col-md-4">
                             <i class = "fa fa-map-marker i-9x icons-circle text-color light-bg hover-black"></i>
                             <div class = "title">Address</div>
                            <p>49 Archdale, 2B Charleston, New York City, USA </p> 
-                        </address>
-                        <address class = "col-sm-4 col-md-4">
+                        </div>
+                        <div class = "col-sm-4 col-md-4">
                             <i class = "fa fa-microphone i-9x icons-circle text-color light-bg hover-black"></i>
                             <div class = "title">Phones</div>
                             <p>
-                               Support: +123 (345) 6789 
+                              <?php
+                              $contacts = json_decode(Yii::$app->params['settings']['contact']);
+                              $c[]= explode(',',$contacts[0]->{'call_us'});
+                              foreach ($c as $con => $contact){
+                                  foreach ($contact as $co){?>
+                                     <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a> /
+                                  <?php }
+                              } ?>
                             </p>
                             
-                        </address>
-                        <address class = "col-sm-4 col-md-4">
+                        </div>
+                       <div class = "col-sm-4 col-md-4">
                             <i class = "fa fa-envelope i-9x icons-circle text-color light-bg hover-black"></i>
                             <div class = "title">  Email Addresses</div>
-                            <div> <p> Support:
-                                <a href = "mailto:support@example.com">support@example.com</a></p>
+                            <div>
+                                <?php
+                                $contacts = json_decode(Yii::$app->params['settings']['contact']);
+                                $c= explode(',',$contacts[0]->{'email'});
+                                foreach ($c as $con => $contact){?>
+                                    <a href="mailto:<?php echo $contact; ?>"><?php echo $contact; ?></a>
+                                    <?php
+                                }
+                                ?>
                             </div>
-                        </address>
+                        </div>
                     </div>
                 </div>
             </div>

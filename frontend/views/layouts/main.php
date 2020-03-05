@@ -338,8 +338,14 @@ AppAsset::register($this);
                   <p style="font-size: 15px;">
                      <strong>Call Us:</strong>
                       <?php
-                      $contact = json_decode(Yii::$app->params['settings']['contact']);
-                      print $contact[0]->{'call_us'};
+                      $contacts = json_decode(Yii::$app->params['settings']['contact']);
+                      $c[]= explode(',',$contacts[0]->{'call_us'});
+                      foreach ($c as $con => $contact){
+                        foreach ($contact as $co){?>
+                          <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a> / 
+                        <?php }
+                      }
+//                      print $contact[0]->{'call_us'};
                       ?>
                   </p>
                </div>
