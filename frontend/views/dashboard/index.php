@@ -29,18 +29,7 @@
       border-bottom: solid 1px #343a4040;
    }
 
-   /*.jquery-accordion-menu ul li a{
-      width: 100%;
-       padding: 10px 5px;
-       float: left;
-       text-decoration: none;
-       color: white;
-       font-size: 13px;
-       background: black;
-       white-space: nowrap;
-       position: relative;
-       overflow: hidden;
-   }*/
+  
    .jquery-accordion-menu-label {
       min-width: 20px;
       padding: 1px 2px 1px 1px;
@@ -301,10 +290,13 @@
 
                <div class = "profile-img p-img">
 
-                  <img src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
+
+                                                 
+
+                  <img id="blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
                   <div class = "file btn ">
 
-                     <span type = "file" id = "myFile" name = "file"> <input type = "file" name = "file"> <i class = "fa fa-camera" aria-hidden = "true"></i></span>
+                     <span > <input type='file' onchange="readURL(this);" /> <i class = "fa fa-camera" aria-hidden = "true"></i></span>
 
                   </div>
                </div>
@@ -455,4 +447,35 @@
 
 
 </section>
+<script type="text/javascript">
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+
+                
+                 $.ajax({
+            type:'POST',
+            url: 'theUpload.php',
+            data: input.files[0],
+            success:function(data){
+                console.log("success");
+                console.log(data);
+                alert(data);
+            },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            }
+        });
+
+            }
+        }
+</script>
 

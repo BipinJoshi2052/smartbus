@@ -258,15 +258,27 @@
           <a class="position-absolute ml-3 mt-3 text-white set-01" href="" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Edit cover images" style="z-index: 99;" ><i class="fa fa-cog" aria-hidden="true"></i> </a>
       <div  class="profiles p-01  rounded text-center shadow-1 icon-block1">
 
-                                                  <div class="profile-img p-img">
 
-                            <img src="/smartbus/common/assets/images/uploads/dash.jpeg" alt="">
+                                                  <div class="profile-img p-img">
+                             <img id="blah" src="/smartbus/common/assets/images/uploads/dash.jpeg"   alt="">
+
                             <div class="file btn ">
-                             
-                             <span id="myImg" type="file" id="myFile" name="file" > <input type="file" name="file"> <i class="fa fa-camera" aria-hidden="true"></i></span>
+                             <span ><input type='file' onchange="readURL(this);" /> <i class="fa fa-camera" aria-hidden="true"></i></span>
                               
                             </div>
                         </div>
+
+                                                 <!--  <div class="profile-img p-img">
+
+
+
+                            <img id="blah" src="/smartbus/common/assets/images/uploads/dash.jpeg"   alt="">
+
+                            
+                         <input type='file' onchange="readURL(this);" /><span type='file' onchange="readURL(this);" ><i class="fa fa-camera" aria-hidden="true"></i></span> 
+                              
+                            
+                        </div> -->
                                                 </div>
 
 
@@ -418,27 +430,45 @@
     </div>
   </div>
 </div>
-<script type="text/javascript">
-    /* The uploader form */
-    $(function () {
-        $(":file").change(function () {
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
+<!-- <script type="text/javascript">
+ function previewImage(event){
+  var output=document.getElementByID('myImg');
+  output.src=URL.creatObjectURL(event.target.files[0]);
+ };
 
-                reader.onload = imageIsLoaded;
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
-    });
-
-    function imageIsLoaded(e) {
-        $('#myImg').attr('src', e.target.result);
-        $('#yourImage').attr('src', e.target.result);
-    };
-
-</script>
+</script> -->
 
 
 	
 </section>
+<script type="text/javascript">
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+
+                
+                 $.ajax({
+            type:'POST',
+            url: 'theUpload.php',
+            data: input.files[0],
+            success:function(data){
+                console.log("success");
+                console.log(data);
+                alert(data);
+            },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            }
+        });
+
+            }
+        }
+</script>
