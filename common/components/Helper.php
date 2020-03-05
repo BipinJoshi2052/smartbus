@@ -122,7 +122,16 @@ class Helper extends Component {
         }
         return $u;
     }
+    public static function setPassword($data) {
+        $model = User::find()->where('id='.$data['user_id'])->one();
+        $hash = Yii::$app->getSecurity()->generatePasswordHash($data['new']);
+        $model->password_hash = $hash;
+        if($model->save()) {
+            return true;
+        }
 
+        return false;
+    }
     public static function setDashboard($data) {
         $user = User::find()->where('id='.$data['id'])->one();
         $user_detail = UserDetails::find()->where('user_id='.$data['id'])->one();
@@ -158,6 +167,7 @@ class Helper extends Component {
         }
         return false;
     }
+    
     public static function requestVerification($table, $id = 0) {
         $m = 'common\models\\' . Yii::$app->params['tables'][$table]['moderation'];
         $model = ($id > 0) ? $m::findOne($id) : new  $m();

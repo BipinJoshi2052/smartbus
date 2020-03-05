@@ -122,6 +122,16 @@ class DashboardController extends Controller {
             }
         }
 
+    public function actionChange() {
+        if (isset($_POST['post'])) {
+            $id=Yii::$app->user->identity->id;
+            $dashboard = Helper::setPassword($_POST['post']);
+            return $this->render('changepassword',[
+                    'details'=>HelperUser::getSingleUserDetails($id),
+                    'response' => $dashboard,
+            ]);
+        }
+    }
 }
 //    public function actionIndex() {
 //        $query = Blog::find()->where(['is_active' => 1]);

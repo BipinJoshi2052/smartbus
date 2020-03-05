@@ -1,7 +1,6 @@
-<?php //echo '<pre>';
-//print_r($details);
-//echo '</pre>';
-//die;?>
+<?php
+$this->title = 'Dashboard';
+?>
 
 
 <style type = "text/css">
