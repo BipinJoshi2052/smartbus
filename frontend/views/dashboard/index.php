@@ -4,6 +4,8 @@
 //die;?>
 
 
+
+
 <style type = "text/css">
 
 
@@ -291,7 +293,14 @@
                <div class = "profile-img p-img">
 
 
-                                                 
+                                                 <!--  <div class="profile-img p-img">
+                             <img id="blah" src="/smartbus/common/assets/images/uploads/dash.jpeg"   alt="">
+
+                            <div class="file btn ">
+                             <span ><input type='file' onchange="readURL(this);" /> <i class="fa fa-camera" aria-hidden="true"></i></span>
+                              
+                            </div>
+                        </div> -->
 
                   <img id="blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
                   <div class = "file btn ">

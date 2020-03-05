@@ -97,17 +97,21 @@
 <section style="margin:0; padding:0; background-color:#EAF3FF;">
   <div class="container" >
     
-      <table style="width:50%; border-left:2px solid #2ecc71 ; border-right:2px solid #2ecc71; font: 400 14px/1.6em Lato, sans-serif;"  border="0" cellpadding="0" cellspacing="0">' .
+      <table style="width:50%; border-left:2px solid #5da6da ; border-right:2px solid #5da6da; font: 400 14px/1.6em Lato, sans-serif;"  border="0" cellpadding="0" cellspacing="0">' .
             <tbody>
             <tr>
-            <td style="padding:30px; background:#2ecc71; color:#ffffff; font-size:16px; font-weight:600;"> 
+            <td style="padding:30px; background:#5da6da; color:#ffffff; font-size:16px; font-weight:600;"> 
             <div style="float:left; display:inline-block;"> <img style="width: auto; height:50px;" src="' . Yii::$app->params['logo'] . '"/> </div>
-            <div style="float:right; display:inline-block; margin-top:20px; font-size:16px; font-family: lato; font-weight:600;"> Sign Up </div>
+            <div style="float:right; display:inline-block; margin-top:5px; font-size:16px; font-family: lato; font-weight:600;"> Sign Up </div>
             </td>
             </tr>
             <tr>
             <td style="text-align:center; padding:40px 30px; line-height:28px; color:#606366; font-size:13px; font-weight:400; font-family: lato; ">
-            $msgbody .
+              <p>Thank You For Your Registratiuon <br>
+                    Here is your Varification Key
+               </p>
+               <p>12345</p>
+
             </td> 
             </tr>
             <tr>
@@ -132,7 +136,7 @@
             </td>
             </tr>
             <tr>
-            <td style="text-align:center; padding:10px 30px; background:#2ecc71; color:#ffffff; font-size:12px; font-family: lato; font-weight:400">
+            <td style="text-align:center; padding:10px 30px; background:#5da6da; color:#ffffff; font-size:12px; font-family: lato; font-weight:400">
             Yii::$app->params['contact']['name'] .
              <br/> 
              <a href=""  style="text-decoration:none; color:#ffffff;  font-size:12px; font-family: lato; " target="_blank">
