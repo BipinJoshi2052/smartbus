@@ -40,15 +40,10 @@ Yii::$app->session->getFlash('success');
                        <p> Support:
                            <?php
                            $contacts = json_decode(Yii::$app->params['settings']['contact']);
-                           $c[]= $contacts[0]->{'email'};
-                           echo '<pre>';
-                           print_r($contacts);
-                           echo '</pre>';
-                           die;
-                           foreach ($c as $con => $contact){
-                               foreach ($contact as $co){?>
-                                  <a href="mailto:<?php echo $co; ?>"><?php echo $co; ?></a> /
-                               <?php }
+                           $c= explode(',',$contacts[0]->{'email'});
+                           foreach ($c as $con => $contact){?>
+                                  <a href="mailto:<?php echo $co; ?>"><?php echo $co; ?></a>
+                               <?php
                            }
                            ?>
                         <address class = "col-sm-4 col-md-4">

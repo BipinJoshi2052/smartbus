@@ -21,6 +21,7 @@ use yii\base\Component;
 use common\components\Query;
 use common\components\Misc;
 use common\models\User as User;
+use yii\bootstrap\Html;
 
 class HelperUser extends Component {
 
@@ -52,8 +53,12 @@ class HelperUser extends Component {
                 $receiver = Yii::$app->params['adminEmail'];
                 $name = 'Yoel';
                 $subject = 'Sign Up';
-                $message = 'checking for new user';
-                if (Email::sendTo($receiver, $name, $subject, $message)) {
+                $token = Yii::$app->request->baseUrl;
+                $body = 'Click on the link below to verify your email. Thanks'.'<a>'.$token.'</a>';
+                $message = Email::template('Sign up',$body);
+
+
+                if (Email::sendTo('','','','')) {
                     return true;
                 }
                 else {
@@ -160,7 +165,7 @@ class HelperUser extends Component {
         return $model;
     }
     public static function getSingleUserDetails($id) {
-        $model=UserDetails::find()->where('user_id ='.$id)->asArray()->one();
+        $model=UserDetails::find()->where('user_id ='.$id)->with('user')->asArray()->one();
         return $model;
     }
 }

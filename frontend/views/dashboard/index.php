@@ -294,7 +294,9 @@
       <div class =         "row client-details">
          <div class = "col-sm-12 col-md-3 col-lg-3">
 
-            <a class = "position-absolute ml-3 mt-3 text-white set-01" href = "" data-toggle = "tooltip" data-placement = "bottom" title = "" data-original-title = "Edit cover images" style = "z-index: 99;"><i class = "fa fa-cog" aria-hidden = "true"></i> </a>
+            <a class = "position-absolute ml-3 mt-3 text-white set-01" href = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/edit" data-toggle = "tooltip" data-placement = "bottom" title = "" data-original-title = "Edit cover images" style = "z-index: 99;">
+               <i class = "fa fa-cog" aria-hidden = "true"></i>
+            </a>
             <div class = "profiles p-01  rounded text-center shadow-1 icon-block1">
 
                <div class = "profile-img p-img">
@@ -317,11 +319,11 @@
                      <li class = "active"> Name : <?php echo Yii::$app->user->identity->name; ?> </li>
                      <li>Email : <?php echo Yii::$app->user->identity->email; ?> </li>
                      <li> Address :<?php echo $details['address']; ?> </li>
-                     <li> Phone : <?php echo $details['phone']; ?>123456789</li>
+                     <li> Phone : <?php echo $details['phone']; ?></li>
                      <!--				<li> Gender : --><?php //echo $details['gender']; ?><!-- </li>-->
 
                   </ul>
-                  <a class = "change-ps" href = "#"><i class = "fa fa-key" aria-hidden = "true"></i>Change Password</a>
+                  <a class = "change-ps" href =" <?php echo Yii::$app->request->baseUrl; ?>/dashboard/reset/"><i class = "fa fa-key" aria-hidden = "true"></i>Change Password</a>
 
                </div>
             </div>
