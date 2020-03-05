@@ -54,6 +54,9 @@ class User extends \common\models\generated\User implements IdentityInterface {
         return static::findOne(['auth_key' => $token, 'status' => self::STATUS_ACTIVE]); //,  'is_verified' => true
     }
 
+    public static function findByEmailVerification($token) {
+        return static::findOne(['email_verification' => $token,]); //,  'is_verified' => true
+    }
     /**
      * {@inheritdoc}
      */
@@ -120,12 +123,18 @@ class User extends \common\models\generated\User implements IdentityInterface {
     public function getAuthKey() {
         return $this->auth_key;
     }
+public function getEmailKey() {
+        return $this->email_verification;
+    }
 
     /**
      * {@inheritdoc}
      */
     public function validateAuthKey($authKey) {
         return $this->getAuthKey() === $authKey;
+    }
+    public function validateEmailCode($emailKey) {
+        return $this->getEmailKey() === $emailKey;
     }
 
     /**
@@ -150,6 +159,9 @@ class User extends \common\models\generated\User implements IdentityInterface {
      */
     public function generateAuthKey() {
         $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+    public function generateEmailCode() {
+        $this->email_verification = Yii::$app->security->generateRandomString();
     }
 
     /**

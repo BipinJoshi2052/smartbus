@@ -66,33 +66,36 @@ class SiteController extends Controller {
 
     public function actionIndex() {
         $page = 'home';
-
+        print_r(Yii::$app->user);
+//        die;
         return $this->render('index', [
                 'blog'        => HelperBlog::getSiteBlog(),
-                'faq'        => HelperFaq::getSiteFaq(),
+                'faq'         => HelperFaq::getSiteFaq(),
                 'testimonial' => HelperTestimonails::getTestimonial(),
-                'news'=>HelperNews::getSiteNews(),
-                'explore'=>HelperExplore::getSiteExplore(),
-                'clients'=>HelperClients::getClients(),
+                'news'        => HelperNews::getSiteNews(),
+                'explore'     => HelperExplore::getSiteExplore(),
+                'clients'     => HelperClients::getClients(),
         ]);
     }
+
     public function actionPartner($id = '') {
         if ($id != '') {
             $id = Misc::decrypt($id);
             $post = HelperClients::getClientsPage($id);
         }
-//        $existing_clients = HelperClients::getAllClientsManagement();
+        //        $existing_clients = HelperClients::getAllClientsManagement();
         return $this->render('/partner/index.php', [
-                'client'            => $post,
-//                'editable'           => $post,
-//                'existing_client_id' => $existing_client_id
+                'client' => $post,
+                //                'editable'           => $post,
+                //                'existing_client_id' => $existing_client_id
         ]);
     }
+
     public function actionAbout() {
         $page = 'about';
         $settings = Settings::getSettings();
-        return $this->render('about',[
-                'settings' =>$settings,
+        return $this->render('about', [
+                'settings' => $settings,
         ]);
     }
 
@@ -117,7 +120,7 @@ class SiteController extends Controller {
     }
 
     public function actionCareers() {
-        if(isset($_POST['post'] ) ) {
+        if (isset($_POST['post'])) {
             $r = HelperCareers::setApplication($_POST['post'], (isset($_FILES['file']) && !empty($_FILES['file'])) ? $_FILES['file'] : '');
             return $this->render('careers', [
                     'careers'  => HelperCareers::getVacancy(),
@@ -125,8 +128,8 @@ class SiteController extends Controller {
             ]);
         }
         return $this->render('careers', [
-                'careers'  => HelperCareers::getVacancy(),
-                ]);
+                'careers' => HelperCareers::getVacancy(),
+        ]);
     }
 
 
@@ -138,19 +141,19 @@ class SiteController extends Controller {
 
     public function actionMessage() {
         Yii::$app->controller->enableCsrfValidation = false;
-            if (Yii::$app->request->isAjax) {
-                $post = Yii::$app->request->post('contact');
+        if (Yii::$app->request->isAjax) {
+            $post = Yii::$app->request->post('contact');
 
-                $message = new Messages();
-                $message->attributes = $post;
-                if ($message->save()) {
-                    echo json_encode(true);
-                }
-                else {
-                    echo '<pre>';
-                    print_r($message);
-                }
+            $message = new Messages();
+            $message->attributes = $post;
+            if ($message->save()) {
+                echo json_encode(true);
             }
+            else {
+                echo '<pre>';
+                print_r($message);
+            }
+        }
     }
 
     public function actionRegisterVendor() {
@@ -161,7 +164,6 @@ class SiteController extends Controller {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
@@ -237,18 +239,18 @@ class SiteController extends Controller {
     }
 
     public function actionCareer() {
-//        $model = new Careers();
-//        if ($model->load(Yii::$app->request->post())) {
-//            if ($user = $model->signup()) {
-//                if (Yii::$app->getUser()
-//                             ->login($user)) {
-//                    return $this->goHome();
-//                }
-//            }
-//        }
+        //        $model = new Careers();
+        //        if ($model->load(Yii::$app->request->post())) {
+        //            if ($user = $model->signup()) {
+        //                if (Yii::$app->getUser()
+        //                             ->login($user)) {
+        //                    return $this->goHome();
+        //                }
+        //            }
+        //        }
         $response = 1;
         return $this->render('careers', [
                 'response' => $response,
-                ]);
+        ]);
     }
 }

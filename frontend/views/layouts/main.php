@@ -718,11 +718,10 @@ AppAsset::register($this);
                   <p class = "title">Don't have an Account?</p>
                   <h6 class = "title"> Register Now.</h6>
                   <div id = "success"></div>
-                  <input type = "text" placeholder = "Name *" name = "name" class = "form-control bg-white">
                   <input type = "email" placeholder = "Email *" name = "email" class = "form-control bg-white" data-bv-field = "email">
                   <i class = "form-control-feedback bv-no-label" data-bv-icon-for = "email" style = "display: none;" data-original-title = "" title = ""></i>
                   <input type = "text" placeholder = "Phone *" name = "phone" class = "form-control bg-white">
-                  <input type = "password" class = "form-control bg-white" id = "password" name="password" placeholder = "Password *">
+<!--                  <input type = "password" class = "form-control bg-white" id = "password" name="password" placeholder = "Password *">-->
                   <div class = "clearfix"></div>
                   <div class = "buttons-box clearfix">
                      <button class = "btn full btn-black" id = "submit">Register Now</button>
