@@ -90,6 +90,15 @@
     .is-center {
       text-align:center;
     }
+
+
+    /*e-mail*/
+    .registration-details p{
+      margin-bottom: 2px;
+    }
+    .margin-top-12{
+      margin-top: 12px;
+    }
    
 	  
   </style>    
@@ -106,11 +115,28 @@
             </td>
             </tr>
             <tr>
-            <td style="text-align:center; padding:40px 30px; line-height:28px; color:#606366; font-size:13px; font-weight:400; font-family: lato; ">
-              <p>Thank You For Your Registratiuon <br>
-                    Here is your Varification Key
+              <td class="registration-details"  style="text-align:center; padding:17px 30px; line-height:19px; color:#606366; font-size:13px; font-weight:400; font-family: lato; " >
+                <div>
+                  <p>Welcom, to the Smartbus </p>
+                  
+                  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi facere earum quis ipsa vitae qui minima esse ducimus dolorum iste nisi laborum repellat dolores dolore debitis adipisci nemo quia autem pariatur a voluptatem dignissimos maiores accusantium nobis tempora consequatur </p>
+                
+                </div>
+                
+              </td>
+            </tr>
+            <tr>
+            <td class="registration-details"  style="text-align:center; padding:40px 30px; line-height:19px; color:#606366; font-size:13px; font-weight:400; font-family: lato; ">
+            
+            <div class="welcome-email" >
+              <p>Welcom, to the Smartbus  </p>
+              
+            </div>
+
+              <p>Thank You For Your Registratiuon </p>
+                   <p> Here is your Varification Key
                </p>
-               <p>12345</p>
+               <P> <strong> 12345</strong></p>
 
             </td> 
             </tr>
@@ -139,11 +165,34 @@
             <td style="text-align:center; padding:10px 30px; background:#5da6da; color:#ffffff; font-size:12px; font-family: lato; font-weight:400">
             Yii::$app->params['contact']['name'] .
              <br/> 
+
              <a href=""  style="text-decoration:none; color:#ffffff;  font-size:12px; font-family: lato; " target="_blank">
 
               www.smartbus.com
                
              </a>
+               <div class = "social-icon margin-top-12 gray-bg icons-circle i-3x">
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'facebook'})){echo $contact[0]->{'facebook'};} ?>">
+                        <i class = "fa fa-facebook"></i>
+                     </a>
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'twitter'})){echo $contact[0]->{'twitter'};} ?>">
+                        <i class = "fa fa-twitter"></i>
+                     </a>
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'pinterest'})){echo $contact[0]->{'pinterest'};} ?>">
+                        <i class = "fa fa-pinterest"></i>
+                     </a>
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'google'})){echo $contact[0]->{'google'};} ?>">
+                        <i class = "fa fa-google"></i>
+                     </a>
+                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if(isset($contact[0]->{'linkedin'})){echo $contact[0]->{'linkedin'};} ?>">
+                        <i class = "fa fa-linkedin"></i>
+                     </a>
+                  </div>
            
             </td>
             </tr> 
