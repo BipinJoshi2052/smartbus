@@ -711,7 +711,7 @@ AppAsset::register($this);
                   </div>
                   <div class = "form-group">
                      <div class = "help-block">
-                        <a class = "pull-left" href = "#">Forgot Password ?</a>
+                        <a class = "pull-left" href = "">Forgot Password ?</a>
                         <button type = "submit" class = "btn btn-primary pull-right">Login</button>
                         <div class = "clearfix"></div>
                      </div>

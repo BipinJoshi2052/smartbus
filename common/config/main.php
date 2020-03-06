@@ -45,7 +45,7 @@ return [
                             'blog/view/<id:[a-zA-Z0-9-]+>/' => 'blog/view',
                             'blog/post/<id:[a-zA-Z0-9-]+>/' => 'blog/post',
                             //advertisement
-                            'advertisement/post/<id:[a-zA-Z0-9-]+>/' => 'advertisement/post',
+                            'advertisement/post/<id:[a-zA-Z0-9-au]+>/' => 'advertisement/post',
 
                             // Rules for API
                             'api/search/search-locations/<term:[a-zA-Z0-9-]+>/' => 'api/search/search-locations/',

@@ -286,7 +286,6 @@
    }
 
 </style>
-
 <!--<pre>--><?php //print_r($editable) ?><!--</pre>-->
 <section class = "dash-history">
 
@@ -299,7 +298,7 @@
             </a>
             <div class = "profiles p-01  rounded text-center shadow-1 icon-block1">
                <div class = "profile-img p-img">
-                  <img id = "blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
+                  <img id = "blah" src = "<?php echo (isset($editable['user']['image']) && $editable['user']['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $editable['user']['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "user" class = "">
 
                   <div class = "file btn ">
                      <form method = "post" action = "" enctype = "multipart/form-data">

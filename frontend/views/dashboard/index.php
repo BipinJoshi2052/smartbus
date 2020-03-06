@@ -291,16 +291,13 @@ $this->title = 'Dashboard';
                <div class = "profile-img p-img">
 
 
-                  <!--  <div class="profile-img p-img">
-<img id="blah" src="/smartbus/common/assets/images/uploads/dash.jpeg"   alt="">
 
-<div class="file btn ">
-<span ><input type='file' onchange="readURL(this);" /> <i class="fa fa-camera" aria-hidden="true"></i></span>
+                  <img id = "blah" src = "<?php echo (isset($details['user']['image']) && $details['user']['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $details['user']['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "user" class = "">
 
-</div>
-</div> -->
 
-                  <img id = "blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
+
+
+
                   <div class = "file btn ">
                      <form method = "post" action = "" enctype = "multipart/form-data">
                         <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
@@ -323,8 +320,8 @@ $this->title = 'Dashboard';
                   <ul>
                      <li class = "active"> Name : <?php echo Yii::$app->user->identity->name; ?> </li>
                      <li>Email : <?php echo Yii::$app->user->identity->email; ?> </li>
-                     <li> Address :<?php echo $details['address']; ?> </li>
-                     <li> Phone : <?php echo $details['phone']; ?></li>
+                     <li> Address :<?php echo  (isset($details['address'])) ? $details['address'] : '' ?> </li>
+                     <li> Phone : <?php echo  (isset($details['phone'])) ? $details['phone'] : '' ?></li>
                      <!--				<li> Gender : --><?php //echo $details['gender']; ?><!-- </li>-->
 
                   </ul>
