@@ -167,15 +167,7 @@ $this->title = 'Dashboard';
       object-fit: cover;
    }
 
-   /*.profile-img .file {
-       position: relative;
-       margin-top: -20%;
-       width: 100%;
-       border: none;
-       border-radius: 0;
-       font-size: 15px;
-       background: #212529b8;
-   }*/
+  
    .profile-img .file input {
       position: absolute;
       opacity: 0;
@@ -457,7 +449,5 @@ $this->title = 'Dashboard';
 
 
 </section>
-<script type = "text/javascript">
 
-</script>
 

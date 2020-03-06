@@ -29,7 +29,7 @@ use  yii\web\UrlManager;
 
 
 
-class HelperUser extends Component {
+class HelperRegister extends Component {
 
     public static function addUser($data) {
         //        echo '<pre>';
@@ -42,7 +42,7 @@ class HelperUser extends Component {
         $model->name = isset($data['name']) ? $data['name'] : '';
         $model->username = isset($data['email']) ? $data['email'] : '';
         //   isset($data['password']) ? $model->setPassword($data['password']) : $model->password_hash =Yii::$app->security->generateRandomString(12);
-        $model->password_hash = Yii::$app->getSecurity()->generatePasswordHash(12);
+        $model->password = Yii::$app->getSecurity()->generatePasswordHash(12);
         $model->generateAuthKey();
         $model->generateEmailcode() ;
         $model->role = isset($data['role']) ? $data['role'] : 5;
@@ -61,41 +61,26 @@ class HelperUser extends Component {
                 $name = 'Yoel';
                 $subject = 'Sign Up';
                 $url ='http://smartbus.ritechsolution.com';
-                $id =$model->email_verification;
-                $body = 'Click on the link below to verify your email. Thanks '.
-                        $url.'/register/validate/'.$id;
+                $authKey = $model->auth_key;
+                $body = 'Click on the link below to verify your email. Thanks  Your password is '. $authKey.
+                        $url.'/register/validate/'.' Use the password to login in next time';
                 $message = Email::template('Sign up',$body);
-
-                if(Email::sendTo($email, $name, $subject, $message))
-                {
-                  return true;
-                }
+             Email::sendTo($email,$name,$subject,$message);
 
             }
 
         }
     }
 
-    public static function editUser($data, $id) {
 
-        $model = User::findOne($id);
 
-        $model->name = isset($data['name']) ? $data['name'] : '';
-        $model->username = isset($data['username']) ? $data['username'] : '';
-        if (!empty($data['password'])) {
-            $model->setPassword($data['password']);
-        }
-        $model->email = isset($data['email']) ? $data['email'] : '';
-        $model->phone = isset($data['phone']) ? $data['phone'] : 0;
-        $model->mobile = isset($data['mobile']) ? $data['mobile'] : 0;
-        return $model->save(false) ? $model : false;
-    }
-
-    public static function editableUser($value, $id, $field) {
-        $model = User::findOne($id);
-        $model->$field = $value;
-        return $model->save(false) ? $model : false;
-    }
+   public static function getAuthKey($auth) {
+       $model = User::find()->where('auth_key ='.$auth)->asArray->all();
+       echo '<pre>';
+       print_r($model);
+       echo '</pre>';
+       die;
+   }
 
     public static function getUser($field, $value) {
         $data = Query::queryOne("SELECT * FROM `user` WHERE `$field` = '$value'");
@@ -170,9 +155,7 @@ class HelperUser extends Component {
         return $model;
     }
     public static function getSingleUserDetails($id) {
-
-        $model=UserDetails::find()->where('user_id ='.$id)->with('user')->asArray()->one();
-
+        $model=UserDetails::find()->where('user_id ='.$id)->asArray()->one();
         return $model;
     }
 }

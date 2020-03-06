@@ -8,7 +8,7 @@ use yii\base\Model;
 /**
  * Login form
  */
-class LoginSocial extends Model {
+class LoginSocial extends Model  {
     public $username;
 
     public $rememberMe = true;
@@ -37,18 +37,19 @@ class LoginSocial extends Model {
      */
     public function login() {
         $user = $this->getUser();
-        $m = Yii::$app->user->login($user, $this->rememberMe ? 3600 * 24 * 30 : 0);
-        return $m;
+       return Yii::$app->user->login($user, $this->rememberMe ? 3600 * 24 * 30 : 0);
     }
 
     /**
      * Finds user by [[username]]
      *
+     *
      * @return User|null
      */
     protected function getUser() {
         if ($this->_user === null) {
-            $this->_user = User::findByUsername($this->username);
+
+            $this->_user = User::findByUsernameAll($this->username);
         }
         return $this->_user;
     }

@@ -46,19 +46,19 @@ class AuthHandler {
                 $model = new LoginSocial();
                 $model->username = $auth['user']->username;
                 $l = $model->login();
-//                return $this->goBack();
-//                                if ($model->load(Yii::$app->request->post()) && $model->login()) {
-//                                    return $this->goBack();
-//                                }
-//                                $m = Yii::$app->user->login($user, 0);
+                //                return $this->goBack();
+                //                                if ($model->load(Yii::$app->request->post()) && $model->login()) {
+                //                                    return $this->goBack();
+                //                                }
+                //                                $m = Yii::$app->user->login($user, 0);
 
             }
             else{
                 $user = User::find()->where(['email' => $email])->one();
-//                echo '<pre>';
-//                print_r($user);
-//                echo '</pre>';
-//                die;
+                //                echo '<pre>';
+                //                print_r($user);
+                //                echo '</pre>';
+                //                die;
                 $auth = new Auth([
                                          'user_id'   => $user['id'],
                                          'source'    => $this->client->getId(),
@@ -69,63 +69,63 @@ class AuthHandler {
                 $model = new LoginSocial();
                 $model->username = $auth['user']->username;
                 $l = $model->login();
-//                return $this->goBack();
+                //                return $this->goBack();
 
             }
         }
-            else { // signup
-                $password = Yii::$app->security->generateRandomString(12);
-                $user = new User([
-                                         'username'       => $email,
-                                         'name'           => $email,
-                                         'email'          => $email,
-                                         'password'       => $password,
-                                         'role'           => 5,
-                                         'email_verified' => 10,
+        else { // signup
+            $password = Yii::$app->security->generateRandomString(12);
+            $user = new User([
+                                     'username'       => $email,
+                                     'name'           => $email,
+                                     'email'          => $email,
+                                     'password'       => $password,
+                                     'role'           => 5,
+                                     'email_verified' => 10,
+                             ]);
+            $user->generateAuthKey();
+            $user->generatePasswordResetToken();
+
+            $transaction = User::getDb()->beginTransaction();
+
+            if ($user->save()) {
+                $auth = new Auth([
+                                         'user_id'   => $user['id'],
+                                         'source'    => $this->client->getId(),
+                                         'source_id' => (string)$id,
                                  ]);
-                $user->generateAuthKey();
-                $user->generatePasswordResetToken();
+                $details = new UserDetails(['user_id' => $user['id']]);
+                $details->save();
 
-                $transaction = User::getDb()->beginTransaction();
-
-                if ($user->save()) {
-                    $auth = new Auth([
-                                             'user_id'   => $user['id'],
-                                             'source'    => $this->client->getId(),
-                                             'source_id' => (string)$id,
-                                     ]);
-                    $details = new UserDetails(['user_id' => $user['id']]);
-                    $details->save();
-
-                    if ($auth->save()) {
-                        $transaction->commit();
-                        $model = new LoginSocial();
-                        $model->username = $auth['user']->username;
-                        $l = $model->login();
-                        //                        Yii::$app->user->login($user);
-                    }
-                    else {
-                        Yii::$app->getSession()->setFlash('error', [
-                                Yii::t('app', 'Unable to save {client} account: {errors}', [
-                                        'client' => $this->client->getTitle(),
-                                        'errors' => json_encode($auth->getErrors()),
-                                ]),
-                        ]);
-                    }
+                if ($auth->save()) {
+                    $transaction->commit();
+                    $model = new LoginSocial();
+                    $model->username = $auth['user']->username;
+                    $l = $model->login();
+                    //                        Yii::$app->user->login($user);
                 }
                 else {
                     Yii::$app->getSession()->setFlash('error', [
-                            Yii::t('app', 'Unable to save user: {errors}', [
+                            Yii::t('app', 'Unable to save {client} account: {errors}', [
                                     'client' => $this->client->getTitle(),
-                                    'errors' => json_encode($user->getErrors()),
+                                    'errors' => json_encode($auth->getErrors()),
                             ]),
                     ]);
                 }
             }
+            else {
+                Yii::$app->getSession()->setFlash('error', [
+                        Yii::t('app', 'Unable to save user: {errors}', [
+                                'client' => $this->client->getTitle(),
+                                'errors' => json_encode($user->getErrors()),
+                        ]),
+                ]);
+            }
+        }
 
-            /*   Yii::$app->getSession()->setFlash('error', [
-                       Yii::t('app', "User with the same email as in {client} account already exists but isn't linked to it. Login using email first to link it.", ['client' => $this->client->getTitle()]),
-               ]);*/
+        /*   Yii::$app->getSession()->setFlash('error', [
+                   Yii::t('app', "User with the same email as in {client} account already exists but isn't linked to it. Login using email first to link it.", ['client' => $this->client->getTitle()]),
+           ]);*/
 
         //echo '<pre>';
         //print_r($auth);

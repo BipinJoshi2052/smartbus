@@ -441,9 +441,9 @@ class User extends Component
         $request = Yii::$app->getRequest();
         $canRedirect = !$checkAcceptHeader || $this->checkRedirectAcceptable();
         if ($this->enableSession
-            && $request->getIsGet()
-            && (!$checkAjax || !$request->getIsAjax())
-            && $canRedirect
+                && $request->getIsGet()
+                && (!$checkAjax || !$request->getIsAjax())
+                && $canRedirect
         ) {
             $this->setReturnUrl($request->getUrl());
         }
@@ -470,10 +470,10 @@ class User extends Component
     protected function beforeLogin($identity, $cookieBased, $duration)
     {
         $event = new UserEvent([
-            'identity' => $identity,
-            'cookieBased' => $cookieBased,
-            'duration' => $duration,
-        ]);
+                                       'identity' => $identity,
+                                       'cookieBased' => $cookieBased,
+                                       'duration' => $duration,
+                               ]);
         $this->trigger(self::EVENT_BEFORE_LOGIN, $event);
 
         return $event->isValid;
@@ -492,10 +492,10 @@ class User extends Component
     protected function afterLogin($identity, $cookieBased, $duration)
     {
         $this->trigger(self::EVENT_AFTER_LOGIN, new UserEvent([
-            'identity' => $identity,
-            'cookieBased' => $cookieBased,
-            'duration' => $duration,
-        ]));
+                                                                      'identity' => $identity,
+                                                                      'cookieBased' => $cookieBased,
+                                                                      'duration' => $duration,
+                                                              ]));
     }
 
     /**
@@ -509,8 +509,8 @@ class User extends Component
     protected function beforeLogout($identity)
     {
         $event = new UserEvent([
-            'identity' => $identity,
-        ]);
+                                       'identity' => $identity,
+                               ]);
         $this->trigger(self::EVENT_BEFORE_LOGOUT, $event);
 
         return $event->isValid;
@@ -526,8 +526,8 @@ class User extends Component
     protected function afterLogout($identity)
     {
         $this->trigger(self::EVENT_AFTER_LOGOUT, new UserEvent([
-            'identity' => $identity,
-        ]));
+                                                                       'identity' => $identity,
+                                                               ]));
     }
 
     /**
@@ -543,9 +543,9 @@ class User extends Component
             $data = json_decode($value, true);
             if (is_array($data) && isset($data[2])) {
                 $cookie = Yii::createObject(array_merge($this->identityCookie, [
-                    'class' => 'yii\web\Cookie',
-                    'value' => $value,
-                    'expire' => time() + (int) $data[2],
+                        'class' => 'yii\web\Cookie',
+                        'value' => $value,
+                        'expire' => time() + (int) $data[2],
                 ]));
                 Yii::$app->getResponse()->getCookies()->add($cookie);
             }
@@ -564,13 +564,13 @@ class User extends Component
     protected function sendIdentityCookie($identity, $duration)
     {
         $cookie = Yii::createObject(array_merge($this->identityCookie, [
-            'class' => 'yii\web\Cookie',
-            'value' => json_encode([
-                $identity->getId(),
-                $identity->getAuthKey(),
-                $duration,
-            ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
-            'expire' => time() + $duration,
+                'class' => 'yii\web\Cookie',
+                'value' => json_encode([
+                                               $identity->getId(),
+                                               $identity->getAuthKey(),
+                                               $duration,
+                                       ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),
+                'expire' => time() + $duration,
         ]));
         Yii::$app->getResponse()->getCookies()->add($cookie);
     }
@@ -617,7 +617,7 @@ class User extends Component
     protected function removeIdentityCookie()
     {
         Yii::$app->getResponse()->getCookies()->remove(Yii::createObject(array_merge($this->identityCookie, [
-            'class' => 'yii\web\Cookie',
+                'class' => 'yii\web\Cookie',
         ])));
     }
 

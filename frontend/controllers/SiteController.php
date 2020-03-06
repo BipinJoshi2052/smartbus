@@ -91,7 +91,7 @@ class SiteController extends Controller {
 
     public function actionIndex() {
         $page = 'home';
-
+//        die;
         return $this->render('index', [
                 'blog'        => HelperBlog::getSiteBlog(),
                 'faq'         => HelperFaq::getSiteFaq(),
@@ -109,6 +109,7 @@ class SiteController extends Controller {
         }
         return $this->render('/partner/index.php', [
                 'client' => $post,
+
         ]);
     }
 
@@ -185,7 +186,6 @@ class SiteController extends Controller {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
