@@ -100,4 +100,8 @@ class UserDetails extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
+//    public function getUserPresence($id)
+//    {
+//        return $this->hasOne(UserDetails::className(), ['user_id' => $id]);
+//    }
 }

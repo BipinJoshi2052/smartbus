@@ -170,7 +170,7 @@ class HelperUser extends Component {
         return $model;
     }
     public static function getSingleUserDetails($id) {
-        $model=UserDetails::find()->where('user_id ='.$id)->asArray()->one();
+        $model=UserDetails::find()->where('user_id ='.$id)->with('user')->asArray()->one();
         return $model;
     }
 }

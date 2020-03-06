@@ -122,7 +122,52 @@ class Helper extends Component {
         }
         return $u;
     }
+    public static function setPassword($data) {
+        $model = User::find()->where('id='.$data['user_id'])->one();
+        $hash = Yii::$app->getSecurity()->generatePasswordHash($data['new']);
+        $model->password_hash = $hash;
+        if($model->save()) {
+            return true;
+        }
 
+        return false;
+    }
+    public static function setDashboard($data) {
+        $user = User::find()->where('id='.$data['id'])->one();
+        $user_detail = UserDetails::find()->where('user_id='.$data['id'])->one();
+        if(isset($user_detail) && !empty($user_detail)) {
+            $user_detail->company = $data['company'];
+            $user_detail->address = $data['address'];
+            $user_detail->phone = $data['phone'];
+            $user_detail->citizenship = $data['citizenship'];
+            $user_detail->license_no = $data['license_no'];
+            $user_detail->contact_person_name = $data['contact_person_name'];
+            $user_detail->contact_person_phone = $data['contact_person_phone'];
+            $user_detail->contact_person_email = $data['contact_person_email'];
+        }
+        else{
+            $user_detail = new UserDetails();
+            $user_detail->company = $data['company'];
+            $user_detail->address = $data['address'];
+            $user_detail->phone = $data['phone'];
+            $user_detail->citizenship = $data['citizenship'];
+            $user_detail->license_no = $data['license_no'];
+            $user_detail->contact_person_name = $data['contact_person_name'];
+            $user_detail->contact_person_phone = $data['contact_person_phone'];
+            $user_detail->contact_person_email = $data['contact_person_email'];
+        }
+        if($user_detail->save()) {
+            $user->name = $data['name'];
+            $user->email = $data['email'];
+            if($user->save()) {
+                return true;
+            }else{
+                return false;
+            }
+        }
+        return false;
+    }
+    
     public static function requestVerification($table, $id = 0) {
         $m = 'common\models\\' . Yii::$app->params['tables'][$table]['moderation'];
         $model = ($id > 0) ? $m::findOne($id) : new  $m();
