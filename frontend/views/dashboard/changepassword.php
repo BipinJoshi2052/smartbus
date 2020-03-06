@@ -1,7 +1,6 @@
-<?php //echo '<pre>';
-//print_r($details);
-//echo '</pre>';
-//die;?>
+<?php
+$this->title = 'Change Password ';
+?>
 
 
 <style type = "text/css">
@@ -330,27 +329,32 @@
          <div class=" col-sm-6 col-md-9 col-lg-9" >
 
                <div class="dash-var" >
-                 <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/" enctype = "multipart/form-data">
+                 <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/change" enctype = "multipart/form-data">
                     <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
+                    <input type = "hidden" name = "post[user_id]" value = "<?php echo  Yii::$app->user->identity->id; ?>"/>
                     <?php $counter = 0; ?>
                      <div class="form-row">
                         <div class="form-group col-md-6">
                            <label for="inputEmail4">Old Password</label>
-                           <input type="password" class="form-control" id="">
+                           <input name="post[old]" type="password" class="form-control" id="">
                         </div>
                      </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                            <label for="inputPassword4">New-Password</label>
-                           <input type="password" class="form-control" id="inputPassword4">
+                           <input name="post[new]" type="password" class="form-control" id="password">
+                           <div class="result" id="result"></div>
                         </div>
                         <div class="form-group col-md-6">
                            <label for="inputPassword4">Repeat-Password</label>
-                           <input type="password" class="form-control" id="inputPassword4">
+                           <input type="password" name="post[rep]" class="form-control" id="repeat">
+                           <div class="password-match"></div>
                         </div>
+                       <div class="form-group">
+                          <button class="btn btn-success password-btn" disabled type="submit">Confirm</button>
+                       </div>
                      </div>
                   </form>
-
                </div>
 
 
@@ -361,5 +365,14 @@
 
    </div>
 </section>
-
+<?php if (isset($response) && $response == 1) {
+    echo '<script type="text/javascript">';
+    echo 'setTimeout(function () { swal("Password Changed!","Your password has been sent.","success");';
+    echo '}, 1000);</script>';
+}
+elseif (isset($response) && $response == 0) {
+    echo '<script type="text/javascript">';
+    echo 'setTimeout(function () { swal("Error!","There was an error processing the request!","error");';
+    echo '}, 1000);</script>';
+} ?>
 

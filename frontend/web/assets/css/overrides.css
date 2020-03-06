@@ -2058,3 +2058,23 @@ header .navbar {
         border-radius: 35px ;
         border: 3px solid #eee ! important;
 }
+.short{
+    font-weight:bold;
+    color:#FF0000;
+    font-size:larger;
+}
+.weak{
+    font-weight:bold;
+    color:orange;
+    font-size:larger;
+}
+.good{
+    font-weight:bold;
+    color:#2D98F3;
+    font-size:larger;
+}
+.strong{
+    font-weight:bold;
+    color: limegreen;
+    font-size:larger;
+}

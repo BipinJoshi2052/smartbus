@@ -57470,6 +57470,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1583380652.322
     'REQUEST_TIME' => 1583380652
 ]
+<<<<<<< HEAD
 2020-03-05 12:52:52 [::1][33][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 19361 bytes' 
 
 in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2-debug\src\LogTarget.php:98
@@ -57484,12 +57485,29 @@ Stack trace:
 #6 [internal function]: yii\log\Logger->flush(true)
 #7 {main}
 2020-03-05 12:52:50 [::1][33][-][info][application] $_GET = []
+=======
+2020-03-05 10:11:01 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 19361 bytes' 
+
+in E:\xampp\htdocs\smartbus\vendor\yiisoft\yii2-debug\src\LogTarget.php:98
+
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(8, 'unserialize(): ...', 'E:\\xampp\\htdocs...', 98, Array)
+#1 E:\xampp\htdocs\smartbus\vendor\yiisoft\yii2-debug\src\LogTarget.php(98): unserialize('<<<<<<< HEAD\r\na...')
+#2 E:\xampp\htdocs\smartbus\vendor\yiisoft\yii2-debug\src\LogTarget.php(73): yii\debug\LogTarget->updateIndexFile('E:\\xampp\\htdocs...', Array)
+#3 E:\xampp\htdocs\smartbus\vendor\yiisoft\yii2-debug\src\LogTarget.php(128): yii\debug\LogTarget->export()
+#4 E:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect(Array, true)
+#5 E:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch(Array, true)
+#6 [internal function]: yii\log\Logger->flush(true)
+#7 {main}
+2020-03-05 10:10:55 [::1][1][-][info][application] $_GET = []
+>>>>>>> 1a5ce44a5af645b22bc6c4ec598c0ae8c102a49b
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
+<<<<<<< HEAD
     'hide_solutions' => 'true'
     '_web_session' => '5hob1dutik6ljerfh8dh4m9tah'
     '_csrf-frontend' => '2a23ec48cc1db37d156514e420899633c4d6d634927383e894583f0027eafcd8a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"AO39QEpKw-Z2F-l9UkTVxoxAcZA1Ud9b\";}'
@@ -57723,10 +57741,16 @@ $_COOKIE = [
     '_web_session' => 'n7f59t1aspn4tc748r4eqot18u'
     '_csrf-frontend' => '70decfc3dddb7748eb282fb81c8e59d4ba872b9256a87a72b590acd959ef48c5a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"5ZbSk8B3KCNg-ZCF_WqeLSkJqry4dfJo\";}'
     '_csrf-backend' => '607970fe3a3419806874fefe0a179b6c7f3ef7dc5bb36d725133eeb8e38bc2f7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"_uQ-IcNepmpO5wrh0RANbXD8elWdE-47\";}'
+=======
+    '_web_session' => 'hknqur0fusikmnrjkcel6usprh'
+    '_csrf-frontend' => '5e2dee33ab3b7f3ee8a2c31a585ad237092b21880968475d61321bb421d4fc19a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"etK82CtxuaKZ74AngRTTAj9eTOOoEfcF\";}'
+    '_csrf-backend' => 'b87d0a0c54b32dfe76b47e0703c2ee897583148ea59f99f3ea6d1727c24c7427a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"LmPfCOe-9RjGwB4mTdmMtYiEC_I5BMtk\";}'
+>>>>>>> 1a5ce44a5af645b22bc6c4ec598c0ae8c102a49b
 ]
 
 $_SESSION = [
     '__flash' => []
+<<<<<<< HEAD
     '__id' => 13
 ]
 
@@ -58228,10 +58252,22 @@ $_SERVER = [
     'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
     'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
     'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+=======
+    'yii\\authclient\\clients\\Facebook_facebook_authState' => 'ea053850c9b2a8daca615507ba5039cdcfddc1975b441eb5b2257fc00f8912ed'
+    'yii\\authclient\\clients\\Google_google_authState' => 'd5589a12510640fd068c5e5cb5328201ecb433f02c3126b7cb0aee9a4f3cc150'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+>>>>>>> 1a5ce44a5af645b22bc6c4ec598c0ae8c102a49b
     'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
     'REDIRECT_PHPRC' => '\\xampp\\php'
     'REDIRECT_TMP' => '\\xampp\\tmp'
     'REDIRECT_STATUS' => '200'
+<<<<<<< HEAD
     'MIBDIRS' => 'C:/xampp/php/extras/mibs'
     'MYSQL_HOME' => '\\xampp\\mysql\\bin'
     'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
@@ -58252,15 +58288,39 @@ $_SERVER = [
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
     'HTTP_COOKIE' => 'hide_solutions=true; _csrf-backend=c3e5a1dc6f13cfe480ab0675dfcebf582a52c4c4a1f183e15fd14babd19bd502a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Jfgnpzq57JFXr0gouUCtn0_jLNTUgZLx%22%3B%7D; _web_session=elr9hvhmrnst9bo55o2kva5n0h; _csrf-frontend=ecc6522acb7d8219675d115c9bc467771e6f74477db27a5fe78cb98befcd2fb7a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22auK9s2vbV3e4tlHNbR26RUXzr9pcei9O%22%3B%7D'
     'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python27\\;C:\\Python27\\Scripts;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\flutter\\bin;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Users\\hp\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\hp\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\nodejs\\;C:\\Users\\hp\\AppData\\Roaming\\npm'
+=======
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_DNT' => '1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary'
+    'HTTP_COOKIE' => '_web_session=hknqur0fusikmnrjkcel6usprh; _csrf-frontend=5e2dee33ab3b7f3ee8a2c31a585ad237092b21880968475d61321bb421d4fc19a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22etK82CtxuaKZ74AngRTTAj9eTOOoEfcF%22%3B%7D; _csrf-backend=b87d0a0c54b32dfe76b47e0703c2ee897583148ea59f99f3ea6d1727c24c7427a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22LmPfCOe-9RjGwB4mTdmMtYiEC_I5BMtk%22%3B%7D'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Git\\cmd;C:\\Users\\deepe\\AppData\\Local\\Microsoft\\WindowsApps;'
+>>>>>>> 1a5ce44a5af645b22bc6c4ec598c0ae8c102a49b
     'SystemRoot' => 'C:\\WINDOWS'
     'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\WINDOWS'
+<<<<<<< HEAD
     'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 8080</address>
+=======
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+>>>>>>> 1a5ce44a5af645b22bc6c4ec598c0ae8c102a49b
 '
     'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
     'SERVER_NAME' => 'localhost'
     'SERVER_ADDR' => '::1'
+<<<<<<< HEAD
     'SERVER_PORT' => '8080'
     'REMOTE_ADDR' => '::1'
     'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
@@ -58271,13 +58331,33 @@ $_SERVER = [
     'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
     'REMOTE_PORT' => '59784'
     'REDIRECT_URL' => '/smartbus/primary/vehicles'
+=======
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '51750'
+    'REDIRECT_URL' => '/smartbus/primary/'
+>>>>>>> 1a5ce44a5af645b22bc6c4ec598c0ae8c102a49b
     'GATEWAY_INTERFACE' => 'CGI/1.1'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
     'REQUEST_METHOD' => 'GET'
     'QUERY_STRING' => ''
+<<<<<<< HEAD
     'REQUEST_URI' => '/smartbus/primary/vehicles'
     'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
     'PHP_SELF' => '/smartbus/backend/web/index.php'
     'REQUEST_TIME_FLOAT' => 1583400171.621
     'REQUEST_TIME' => 1583400171
+=======
+    'REQUEST_URI' => '/smartbus/primary/'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583382355.321
+    'REQUEST_TIME' => 1583382355
+>>>>>>> 1a5ce44a5af645b22bc6c4ec598c0ae8c102a49b
 ]

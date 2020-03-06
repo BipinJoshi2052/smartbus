@@ -7,8 +7,6 @@ $(document).ready(function ($) {
    "use strict";
 
 
-
-
    $(function () {
       if ($('.home-banner').length > 0) {
          $('.home-banner').carousel();
@@ -49,7 +47,7 @@ $(document).ready(function ($) {
                   } else {
                      // $('.response').removeClass('hidden');
                      // $('.response')  .html('<h5>Your Message has been sent.</h5>');
-                     $('.submit-contact' ).addClass('disabled');
+                     $('.submit-contact').addClass('disabled');
 
                      swal({
                         title: "Message Sent!",
@@ -65,7 +63,8 @@ $(document).ready(function ($) {
                      text: "Your message could not be sent!",
                      icon: "error",
                      button: "OK!",
-                  });               }
+                  });
+               }
             });
          } else {
             validator.focusInvalid();
@@ -93,7 +92,7 @@ $(document).ready(function ($) {
    });
 
 
-   $(function(){
+   $(function () {
 
    });
    // Select 2
@@ -105,10 +104,60 @@ $(document).ready(function ($) {
          });
       }
    });
+   $(function () {
+
+      $('#repeat').keyup(function(){
+         if ($('#repeat').val() !== $('#password').val()) {
+            $(".password-match").html("Password do not match").css("color","red");
+         }else{
+            $(".password-match").html("Password matched").css("color","green");
+            $('.password-btn').prop("disabled", false);
+         }
+      });
+   });
+   $(function () {
+      $('#password').keyup(function () {
+         $('#result').html(checkPasswordStrength($('#password').val()));
+      });
+
+      function checkPasswordStrength(password) {
+         var strength = 0;
+         if (password.length < 6) {
+            $('#result').removeClass();
+            $('#result').addClass('short');
+            return 'Too short';
+         }
+         if (password.length > 7) {
+            strength += 1;
+         }
+         if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+            strength += 1;
+         }
+         if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) {
+            strength += 1;
+         }
+         if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) {
+            strength += 1;
+         }
+         if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) {
+            strength += 1;
+         }
+         if (strength < 2) {
+            $('#result').removeClass();
+            $('#result').addClass('weak');
+            return 'Weak';
+         } else if (strength === 2) {
+            $('#result').removeClass();
+            $('#result').addClass('good');
+            return 'Good';
+         } else {
+            $('#result').removeClass();
+            $('#result').addClass('strong');
+            return 'Strong';
+         }
 
 
+      }
 
-
-
-
+   });
 });
