@@ -709,7 +709,7 @@ AppAsset::register($this);
                   </div>
                   <div class = "form-group">
                      <div class = "help-block">
-                        <a class = "pull-left" href = "#">Forgot Password ?</a>
+                        <a class = "pull-left" href = "">Forgot Password ?</a>
                         <button type = "submit" class = "btn btn-primary pull-right">Login</button>
                         <div class = "clearfix"></div>
                      </div>
@@ -801,7 +801,7 @@ if (Yii::$app->session->hasFlash('flash')): ?>
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/plugins/moment/moment.js"></script>
 
 <!--  Bootstrap min-js Picker -->
-<script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/vendor/bootstrap4/css/bootstrap.min.js"></script>
+<script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/vendor/bootstrap4/js/bootstrap.min.js"></script>
 <!--<script type="text/javascript"-->
 <!--        src="--><?php //echo Yii::$app->request->baseUrl; ?><!--/assets/js/bootstrap-datetimepicker.min.js"></script>-->
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/js/jquery-ui/jquery-ui.min.js"></script>

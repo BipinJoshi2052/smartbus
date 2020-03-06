@@ -168,15 +168,7 @@ $this->title = 'Dashboard';
       object-fit: cover;
    }
 
-   /*.profile-img .file {
-       position: relative;
-       margin-top: -20%;
-       width: 100%;
-       border: none;
-       border-radius: 0;
-       font-size: 15px;
-       background: #212529b8;
-   }*/
+  
    .profile-img .file input {
       position: absolute;
       opacity: 0;
@@ -292,6 +284,9 @@ $this->title = 'Dashboard';
                <div class = "profile-img p-img">
 
 
+                  <img src = "<?php echo (isset($details['user']['image']) && $details['user']['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $details['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "user" class = "">
+
+
                                                  <!--  <div class="profile-img p-img">
                              <img id="blah" src="/smartbus/common/assets/images/uploads/dash.jpeg"   alt="">
 
@@ -301,7 +296,8 @@ $this->title = 'Dashboard';
                             </div>
                         </div> -->
 
-                  <img id="blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
+<!--                  <img id="blah" src = "--><?//= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?><!-- " alt = "user" class = "">-->
+
                   <div class = "file btn ">
 
                      <span > <input type='file' onchange="readURL(this);" /> <i class = "fa fa-camera" aria-hidden = "true"></i></span>
@@ -318,8 +314,8 @@ $this->title = 'Dashboard';
                   <ul>
                      <li class = "active"> Name : <?php echo Yii::$app->user->identity->name; ?> </li>
                      <li>Email : <?php echo Yii::$app->user->identity->email; ?> </li>
-                     <li> Address :<?php echo $details['address']; ?> </li>
-                     <li> Phone : <?php echo $details['phone']; ?></li>
+                     <li> Address :<?php echo  (isset($details['address'])) ? $details['address'] : '' ?> </li>
+                     <li> Phone : <?php echo  (isset($details['phone'])) ? $details['phone'] : '' ?></li>
                      <!--				<li> Gender : --><?php //echo $details['gender']; ?><!-- </li>-->
 
                   </ul>
@@ -470,7 +466,7 @@ $this->title = 'Dashboard';
                 
                  $.ajax({
             type:'POST',
-            url: 'theUpload.php',
+            url: baseUrl + "/dashboard/update-image",
             data: input.files[0],
             success:function(data){
                 console.log("success");

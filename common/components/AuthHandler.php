@@ -30,9 +30,10 @@ class AuthHandler {
 
         $email = ArrayHelper::getValue($attributes, 'email');
         $id = ArrayHelper::getValue($attributes, 'id');
-//        $username = ArrayHelper::getValue($attributes, 'given_name');
+        $username = ArrayHelper::getValue($attributes, 'given_name');
 
-       if ($email !== null && User::find()->where(['email' => $email])->exists()) {
+
+        if ($email !== null && User::find()->where(['email' => $email])->exists()) {
 
             /* @var Auth $auth */
             $auth = Auth::find()->where([
@@ -44,7 +45,7 @@ class AuthHandler {
 
                 $model = new LoginSocial();
                 $model->username = $auth['user']->username;
-                 $model->login();
+                $l = $model->login();
                 //                return $this->goBack();
                 //                                if ($model->load(Yii::$app->request->post()) && $model->login()) {
                 //                                    return $this->goBack();
@@ -67,7 +68,7 @@ class AuthHandler {
 
                 $model = new LoginSocial();
                 $model->username = $auth['user']->username;
-                 $model->login();
+                $l = $model->login();
                 //                return $this->goBack();
 
             }
@@ -100,7 +101,7 @@ class AuthHandler {
                     $transaction->commit();
                     $model = new LoginSocial();
                     $model->username = $auth['user']->username;
-                   $model->login();
+                    $l = $model->login();
                     //                        Yii::$app->user->login($user);
                 }
                 else {
@@ -131,6 +132,7 @@ class AuthHandler {
         //echo '</pre>';
         if (Yii::$app->user->isGuest) {
             if ($auth) { // login
+                /* @var User $user */
 
                 $user = $auth['user'];
                 Yii::$app->user->login($user);
