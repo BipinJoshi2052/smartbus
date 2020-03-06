@@ -67,7 +67,6 @@ class SiteController extends Controller {
 
     public function actionIndex() {
         $page = 'home';
-        print_r(Yii::$app->user);
 //        die;
         return $this->render('index', [
                 'blog'        => HelperBlog::getSiteBlog(),

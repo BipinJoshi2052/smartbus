@@ -78,7 +78,14 @@ class User extends \common\models\generated\User implements IdentityInterface {
     public static function findByUsername($username) {
         return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
     }
-
+    /**
+     * Finds user by username
+     * @param string $username
+     * @return static|null
+     */
+    public static function findByUsernameAll($username) {
+        return static::findOne(['username' => $username]);
+    }
     /**
      * Finds user by password reset token
      * @param string $token password reset token

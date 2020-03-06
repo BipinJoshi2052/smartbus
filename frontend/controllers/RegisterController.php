@@ -10,7 +10,9 @@ use common\components\HelperRegister;
 use common\components\Misc;
 use common\models\generated\Auth;
 use common\models\LoginForm;
+use common\models\LoginSocial;
 use common\models\User;
+use yii\web\IdentityInterface;
 use frontend\models\PasswordResetRequestForm;
 use Yii;
 use yii\web\Controller;
@@ -72,13 +74,17 @@ class RegisterController extends Controller {
                 $user->email_verified = 1;
                 //   $user->email_verification='';
             }
+
             if ($user->save()) {
-                Yii::$app->user->login($user);
+                $model = new LoginSocial();
+                $model->username = $user->username;
+                $model->login();
+
             }
+
         }
-        /* echo Yii::$app->user->identity->name;
-         die;*/
-        return $this->goHome();
+        return $this->redirect(Yii::$app->request->baseUrl);
+
     }
 
 

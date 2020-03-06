@@ -29,7 +29,8 @@ return [
 //                            'site/message/' => 'site/message/',
                             'clients/post/<id:[a-zA-Z0-9-]+>/'      => 'clients/post',
                             'explore/edit/<id:[a-zA-Z0-9-]+>/'      => 'explore/',
-                            'register/validate/<id:[a-zA-Z0-9-]+>/'      => 'register/validate',
+                            'register/validate/<id:[a-zA-Z0-9-_]+>/'      => 'register/validate/',
+
                             //Vacancy
                             'careers/post/<id:[a-zA-Z0-9-]+>/'      => 'careers/post',
 
