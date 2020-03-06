@@ -125,6 +125,7 @@ class Helper extends Component {
 
     public static function setDashboard($data) {
         $user = User::find()->where('id='.$data['id'])->one();
+
         $user_detail = UserDetails::find()->where('user_id='.$data['id'])->one();
         if(isset($user_detail) && !empty($user_detail)) {
             $user_detail->company = $data['company'];
@@ -147,9 +148,11 @@ class Helper extends Component {
             $user_detail->contact_person_phone = $data['contact_person_phone'];
             $user_detail->contact_person_email = $data['contact_person_email'];
         }
+
         if($user_detail->save()) {
             $user->name = $data['name'];
             $user->email = $data['email'];
+
             if($user->save()) {
                 return true;
             }else{

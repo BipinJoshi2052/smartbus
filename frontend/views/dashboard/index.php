@@ -301,7 +301,7 @@
 
                <div class = "profile-img p-img">
 
-                  <img src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
+                  <img src = "<?php echo (isset($details['user']['image']) && $details['user']['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $details['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "user" class = "">
                   <div class = "file btn ">
 
                      <span type = "file" id = "myFile" name = "file"> <input type = "file" name = "file"> <i class = "fa fa-camera" aria-hidden = "true"></i></span>
@@ -318,8 +318,8 @@
                   <ul>
                      <li class = "active"> Name : <?php echo Yii::$app->user->identity->name; ?> </li>
                      <li>Email : <?php echo Yii::$app->user->identity->email; ?> </li>
-                     <li> Address :<?php echo $details['address']; ?> </li>
-                     <li> Phone : <?php echo $details['phone']; ?></li>
+                     <li> Address :<?php echo  (isset($details['address'])) ? $details['address'] : '' ?> </li>
+                     <li> Phone : <?php echo  (isset($details['phone'])) ? $details['phone'] : '' ?></li>
                      <!--				<li> Gender : --><?php //echo $details['gender']; ?><!-- </li>-->
 
                   </ul>

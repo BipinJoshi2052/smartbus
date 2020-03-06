@@ -6,6 +6,7 @@ use common\models\Auth;
 use common\models\LoginForm;
 use common\models\LoginSocial;
 use common\models\User;
+use common\models\UserDetails;
 use Yii;
 use yii\authclient\ClientInterface;
 use yii\helpers\ArrayHelper;
@@ -50,7 +51,7 @@ class AuthHandler {
 //                                    return $this->goBack();
 //                                }
 //                                $m = Yii::$app->user->login($user, 0);
-               
+
             }
             else{
                 $user = User::find()->where(['email' => $email])->one();
@@ -93,6 +94,8 @@ class AuthHandler {
                                              'source'    => $this->client->getId(),
                                              'source_id' => (string)$id,
                                      ]);
+                    $details = new UserDetails(['user_id' => $user['id']]);
+                    $details->save();
 
                     if ($auth->save()) {
                         $transaction->commit();
