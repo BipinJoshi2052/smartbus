@@ -1,8 +1,7 @@
 <?php
 $this->title = 'Dashboard';
+
 ?>
-
-
 
 
 <style type = "text/css">
@@ -30,7 +29,7 @@ $this->title = 'Dashboard';
       border-bottom: solid 1px #343a4040;
    }
 
-  
+
    .jquery-accordion-menu-label {
       min-width: 20px;
       padding: 1px 2px 1px 1px;
@@ -281,7 +280,7 @@ $this->title = 'Dashboard';
 <section class = "dash-history">
 
    <div class = "container">
-      <div class =         "row client-details">
+      <div class = "row client-details">
          <div class = "col-sm-12 col-md-3 col-lg-3">
 
             <a class = "position-absolute ml-3 mt-3 text-white set-01" href = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/edit" data-toggle = "tooltip" data-placement = "bottom" title = "" data-original-title = "Edit cover images" style = "z-index: 99;">
@@ -292,19 +291,25 @@ $this->title = 'Dashboard';
                <div class = "profile-img p-img">
 
 
-                                                 <!--  <div class="profile-img p-img">
-                             <img id="blah" src="/smartbus/common/assets/images/uploads/dash.jpeg"   alt="">
+                  <!--  <div class="profile-img p-img">
+<img id="blah" src="/smartbus/common/assets/images/uploads/dash.jpeg"   alt="">
 
-                            <div class="file btn ">
-                             <span ><input type='file' onchange="readURL(this);" /> <i class="fa fa-camera" aria-hidden="true"></i></span>
-                              
-                            </div>
-                        </div> -->
+<div class="file btn ">
+<span ><input type='file' onchange="readURL(this);" /> <i class="fa fa-camera" aria-hidden="true"></i></span>
 
-                  <img id="blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
+</div>
+</div> -->
+
+                  <img id = "blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
                   <div class = "file btn ">
+                     <form method = "post" action = "" enctype = "multipart/form-data">
+                        <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
 
-                     <span > <input type='file' onchange="readURL(this);" /> <i class = "fa fa-camera" aria-hidden = "true"></i></span>
+                        <span>
+                        <input type = 'file' id = "pic" onchange = "readURL(this);"/>
+                        <i class = "fa fa-camera" aria-hidden = "true"></i>
+                     </span>
+                     </form>
 
                   </div>
                </div>
@@ -323,7 +328,7 @@ $this->title = 'Dashboard';
                      <!--				<li> Gender : --><?php //echo $details['gender']; ?><!-- </li>-->
 
                   </ul>
-                  <a class = "change-ps" href =" <?php echo Yii::$app->request->baseUrl; ?>/dashboard/reset/"><i class = "fa fa-key" aria-hidden = "true"></i>Change Password</a>
+                  <a class = "change-ps" href = " <?php echo Yii::$app->request->baseUrl; ?>/dashboard/reset/"><i class = "fa fa-key" aria-hidden = "true"></i>Change Password</a>
 
                </div>
             </div>
@@ -455,35 +460,7 @@ $this->title = 'Dashboard';
 
 
 </section>
-<script type="text/javascript">
-    function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+<script type = "text/javascript">
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-
-                
-                 $.ajax({
-            type:'POST',
-            url: 'theUpload.php',
-            data: input.files[0],
-            success:function(data){
-                console.log("success");
-                console.log(data);
-                alert(data);
-            },
-            error: function(data){
-                console.log("error");
-                console.log(data);
-            }
-        });
-
-            }
-        }
 </script>
 

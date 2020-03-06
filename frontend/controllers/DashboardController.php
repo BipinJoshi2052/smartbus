@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use common\components\Helper;
 use common\components\HelperBlog;
 use common\components\HelperUpload;
+use common\components\HelperUpload as Upload;
 use common\components\HelperUser;
 use common\components\Misc;
 use common\models\Blog;
@@ -54,6 +55,14 @@ class DashboardController extends Controller {
     }
     public function actionReset()
     {
+        if (isset($_POST['post'])) {
+            $id=Yii::$app->user->identity->id;
+            $dashboard = Helper::setPassword($_POST['post']);
+            return $this->render('changepassword',[
+                    'details'=>HelperUser::getSingleUserDetails($id),
+                    'response' => $dashboard,
+            ]);
+        }
         $id=Yii::$app->user->identity->id;
         return $this->render('changepassword',[
                 'details'=>HelperUser::getSingleUserDetails($id)
@@ -99,12 +108,16 @@ class DashboardController extends Controller {
     }
 
 
-    public function actionUpdateImage() {
-        $user_id = Yii::$app->session->id;
-        if(isset($_FILES["file"]))
-        {
-                return json_encode(true);
-         }
+    public function actionImage() {
+        $image = (isset($_FILES['file'])) ? $_FILES['file'] : [];
+        $user_id = Yii::$app->user->id;
+        $model = User::find()->where('id='.$user_id)->one();
+        $up = Upload::upload($image);
+        if ($up) {
+            $model->image = $up;
+            $model->save(false);
+            return json_encode(true);
+        }
         return json_encode(false);
 
     }
@@ -133,30 +146,3 @@ class DashboardController extends Controller {
         }
     }
 }
-//    public function actionIndex() {
-//        $query = Blog::find()->where(['is_active' => 1]);
-//        $countQuery = clone $query;
-//        $pages = new Pagination(['totalCount' => $countQuery->count()]);
-//        $models = $query->offset($pages->offset)
-//                        ->limit($pages->limit)
-//                        ->all();
-//
-//        return $this->render('index', [
-//                'models' => $models,
-//                'pages'  => $pages,
-//        ]);
-//    }
-//
-//    public function actionView($id = '') {
-//
-//        if ($id != '') {
-//            $id = Misc::decrypt($id);
-//            return $this->render('single', [
-//                    'post'       => HelperBlog::getSingleBlogUser($id),
-//                    'categories' => HelperBlog::getCategories(),]);
-//        }
-//        return $this->render('single', ['post' => HelperBlog::getSingleBlog($id)]);
-//    }
-//
-
-//}

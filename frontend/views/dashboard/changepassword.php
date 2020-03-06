@@ -329,7 +329,7 @@ $this->title = 'Change Password ';
          <div class=" col-sm-6 col-md-9 col-lg-9" >
 
                <div class="dash-var" >
-                 <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/change" enctype = "multipart/form-data">
+                 <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/reset" enctype = "multipart/form-data">
                     <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
                     <input type = "hidden" name = "post[user_id]" value = "<?php echo  Yii::$app->user->identity->id; ?>"/>
                     <?php $counter = 0; ?>

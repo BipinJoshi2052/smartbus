@@ -3,15 +3,71 @@ function truncateDate(date) {
    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
 }
 
+function readURL(input) {
+   if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+         $('#blah').attr('src', e.target.result);
+      };
+      reader.readAsDataURL(input.files[0]);
+      /* $(document).ready(function(){
+          $.ajax({
+             url: baseUrl + "/dashboard/update-image",
+             type: 'POST',
+             data: input.files[0],
+             success: function (data) {
+                console.log("success");
+                console.log(data);
+                alert(data);
+             },
+             error: function (data) {
+                console.log("error");
+                console.log(data);
+             }
+          });
+       });*/
+
+
+   }
+}
+
 $(document).ready(function ($) {
    "use strict";
 
+   $('#pic').on('change', function () {
+      var fd = new FormData();
+      var files = $('#pic')[0].files[0];
+      fd.append('file',files);
 
+      // console.log(fd);
+      $.ajax({
+         url: baseUrl + "/dashboard/image",
+         type: 'POST',
+         data: fd,
+         processData: false,
+         contentType: false,
+         success: function (data) {
+            console.log("success");
+         },
+         error: function (data) {
+            console.log("error");
+         }
+      });
+
+   });
    $(function () {
       if ($('.home-banner').length > 0) {
          $('.home-banner').carousel();
       }
    });
+
+  /* $(function () {
+      $('#pic').on("change", function () {
+         console.log('asdf');
+
+      });
+   });*/
    $(function () {
       $('.submit-contact').on("click", function (e) {
          var form = $("#contact-form");
@@ -106,11 +162,11 @@ $(document).ready(function ($) {
    });
    $(function () {
 
-      $('#repeat').keyup(function(){
+      $('#repeat').keyup(function () {
          if ($('#repeat').val() !== $('#password').val()) {
-            $(".password-match").html("Password do not match").css("color","red");
-         }else{
-            $(".password-match").html("Password matched").css("color","green");
+            $(".password-match").html("Password do not match").css("color", "red");
+         } else {
+            $(".password-match").html("Password matched").css("color", "green");
             $('.password-btn').prop("disabled", false);
          }
       });

@@ -299,35 +299,21 @@
             </a>
             <div class = "profiles p-01  rounded text-center shadow-1 icon-block1">
                <div class = "profile-img p-img">
-                  <img src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
+                  <img id = "blah" src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
 
-                  <!--                  <div class = "file btn ">-->
-                  <!--                     <span type = "file" id = "myFile" name = "file">-->
-                  <!--                        <input type = "file" name = "file">-->
-                  <!--                        <i class = "fa fa-camera" aria-hidden = "true"></i>-->
-                  <!--                     </span>-->
-                  <!--                  </div>-->
+                  <div class = "file btn ">
+                     <form method = "post" action = "" enctype = "multipart/form-data">
+                        <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
+
+                        <span>
+                        <input type = 'file' id = "pic" onchange = "readURL(this);"/>
+                        <i class = "fa fa-camera" aria-hidden = "true"></i>
+                     </span>
+                     </form>
+
+                  </div>
                </div>
-               <!--            <div class="form-control">-->
-               <!--               <label class = "custom-file-label" >-->
-               <!--                  <i class = "fa fa-file"></i>-->
-               <!--                  <span>Upload Image</span>-->
-               <!--               </label>-->
-               <!--               <input accept = "image/x-png,image/jpeg" type = "file" name = "image" class = "custom-file-input"  onchange = "readURL(this);" src = "--><?php //echo (isset($editable['image']) && $editable['image'] != '') ? $editable['image'] : '' ?><!--">-->
-               <!---->
-               <!--            </div>-->
             </div>
-            <!--            <div class = "content">-->
-            <!--               <div id = "jquery-accordion-menu" class = "jquery-accordion-menu">-->
-            <!--                  <ul>-->
-            <!--                     <li>Name : --><?php //echo Yii::$app->user->identity->name; ?><!--</li>-->
-            <!--                     <li>Email : --><?php //echo Yii::$app->user->identity->email; ?><!-- </li>-->
-            <!--                     <li> Address :--><?php //echo $editable['address']; ?><!-- </li>-->
-            <!--                     <li> Phone : --><?php //echo $editable['phone']; ?><!--</li>-->
-            <!--                  </ul>-->
-            <!--                  <a class = "change-ps" href = " --><?php //echo Yii::$app->request->baseUrl; ?><!--/dashboard/reset/"><i class = "fa fa-key" aria-hidden = "true"></i>Change Password</a>-->
-            <!--               </div>-->
-            <!--            </div>-->
          </div>
 
          <div class = " col-sm-12 col-md-9 col-lg-9">

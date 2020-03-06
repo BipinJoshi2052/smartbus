@@ -81,6 +81,9 @@ AppAsset::register($this);
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
    <script src = "https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
    <script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+<!--   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
+   <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/plugins/jquery3/jquery.js"></script>
+
    <script>
       var baseUrl = '<?php echo Yii::$app->request->baseUrl; ?>';
       var flash = '';
@@ -615,7 +618,6 @@ AppAsset::register($this);
    </div> <!-- end chat -->
 
 </div>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
 
 <script type = "text/javascript">
@@ -749,7 +751,6 @@ AppAsset::register($this);
    </div><!-- modal-dialog -->
 </div><!-- modal -->
 <!-- jQuery -->
-<script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/plugins/jquery3/jquery.js"></script>
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/vendor/bootstrap4/js/bootstrap.min.js"></script>
 
