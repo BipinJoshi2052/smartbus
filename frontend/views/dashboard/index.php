@@ -168,15 +168,7 @@ $this->title = 'Dashboard';
       object-fit: cover;
    }
 
-   /*.profile-img .file {
-       position: relative;
-       margin-top: -20%;
-       width: 100%;
-       border: none;
-       border-radius: 0;
-       font-size: 15px;
-       background: #212529b8;
-   }*/
+  
    .profile-img .file input {
       position: absolute;
       opacity: 0;
@@ -470,7 +462,7 @@ $this->title = 'Dashboard';
                 
                  $.ajax({
             type:'POST',
-            url: 'theUpload.php',
+            url: baseUrl + "/dashboard/update-image",
             data: input.files[0],
             success:function(data){
                 console.log("success");
