@@ -25,6 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
+                
+               <!--  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Remeber Me</label> -->
 
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 

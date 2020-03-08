@@ -517,7 +517,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       </div>
    </div>
 </section><!-- clients -->
-<section class = "page-section">
+<section class = "page-section light-bg ">
    <div class = "container">
       <div class = "row top-padding-40">
          <div class = " col-sm-12 col-md-12 col-lg-5  text-center" data-appear-animation = "fadeInLeft">
