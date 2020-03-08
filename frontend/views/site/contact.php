@@ -31,8 +31,9 @@ Yii::$app->session->getFlash('success');
                               $c[]= explode(',',$contacts[0]->{'call_us'});
                               foreach ($c as $con => $contact){
                                   foreach ($contact as $co){?>
-                                     <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a> /
+                                     <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a> 
                                   <?php }
+
                               } ?>
                             </p>
                             

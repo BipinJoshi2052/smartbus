@@ -9667,15 +9667,23 @@ CONTENT STYLE
 }
 
 .mg-0 li a {
-    background: #58C9EE;
+  /*  background: #58C9EE;
     border: 1px solid #58C9EE;
     color: white ! important;
-    padding: 10px ;
+    padding: 10px ;*/
+    background: #ffffff;
+    border: 1px solid #58C9EE;
+    color: #58c9ee ! important;
+    padding: 10px;
+
 }
 
 .mg-0 li a:hover {
-    background: transparent ! important;
-    color: #58C9EE ! important;
+   /* background: transparent ! important;
+    color: #58C9EE ! important;*/
+    background: #58c9ee ! important;
+    color: #ffffff ! important;
+
 }
 
 .rent a:hover {
@@ -10480,7 +10488,8 @@ input.form-control.search-slt.location-1 {
     padding: 5px;
 }
 .wid-155 i {
-        padding-left: 4px;
+       padding-left: 10px;
+    padding-right: 4px;
 }
 
 /*dash-profile*/

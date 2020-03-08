@@ -112,7 +112,7 @@ $this->title = 'Single Post';
                </div>
                <div class = "col-md-6">
                   <div class = "input-text form-group">
-                     <input type = "number" name = "post[phone]" class = "input-name form-control" placeholder = "Phone"/>
+                     <input type = "text" name = "post[phone]" class = "input-name form-control" placeholder = "Phone"/>
                   </div>
                </div>
 
