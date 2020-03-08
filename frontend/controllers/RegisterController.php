@@ -11,6 +11,7 @@ use common\components\Misc;
 use common\models\generated\Auth;
 use common\models\LoginForm;
 use common\models\LoginSocial;
+use common\models\Settings;
 use common\models\User;
 use yii\web\IdentityInterface;
 use frontend\models\PasswordResetRequestForm;

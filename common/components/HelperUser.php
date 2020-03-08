@@ -36,6 +36,20 @@ class HelperUser extends Component {
         //        print_r($data);
         //        echo '</pre>';
         //        die;
+        $contact = json_decode(Yii::$app->params['settings']['contact']);
+        if(isset($contact[0]->{'facebook'})){
+            $fa= $contact[0]->{'facebook'};
+        }
+        if(isset($contact[0]->{'twitter'})){
+            $tw = $contact[0]->{'twitter'};
+        }
+        if(isset($contact[0]->{'linkedin'})){
+            $ln= $contact[0]->{'linkedin'};
+        }
+        if(isset($contact[0]->{'google'})){
+            $gp= $contact[0]->{'google'};
+        }
+
         $model = new User();
         $model->attributes = $data;
 
@@ -61,10 +75,12 @@ class HelperUser extends Component {
                 $name = 'Yoel';
                 $subject = 'Sign Up';
                 $url ='http://smartbus.ritechsolution.com';
+                   $ca =[$fa,$tw,$ln,$gp];
                 $id =$model->email_verification;
                 $body = 'Click on the link below to verify your email. Thanks '.
                         $url.'/register/validate/'.$id;
-                $message = Email::template('Sign up',$body);
+               // $message = Email::template('Sign up',$body);
+                $message = Email::template2('Signup', $body,$ca);
 
                 if(Email::sendTo($email, $name, $subject, $message))
                 {
