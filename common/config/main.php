@@ -30,6 +30,7 @@ return [
                             'clients/post/<id:[a-zA-Z0-9-]+>/'      => 'clients/post',
                             'explore/edit/<id:[a-zA-Z0-9-]+>/'      => 'explore/',
                             'register/validate/<id:[a-zA-Z0-9-_]+>/'      => 'register/validate/',
+                            'site/reset-final/<id:[a-zA-Z0-9-_-]+>/'      => 'site/reset-final',
 
                             //Vacancy
                             'careers/post/<id:[a-zA-Z0-9-]+>/'      => 'careers/post',

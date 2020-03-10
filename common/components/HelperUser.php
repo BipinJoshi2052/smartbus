@@ -30,6 +30,38 @@ use  yii\web\UrlManager;
 
 
 class HelperUser extends Component {
+    public static function resetPassword($email)
+    {
+        $contact = json_decode(Yii::$app->params['settings']['contact']);;
+        if(isset($contact[0]->{'facebook'})){
+            $fa= $contact[0]->{'facebook'};
+        }
+        if(isset($contact[0]->{'twitter'})){
+            $tw = $contact[0]->{'twitter'};
+        }
+        if(isset($contact[0]->{'linkedin'})){
+            $ln= $contact[0]->{'linkedin'};
+        }
+        if(isset($contact[0]->{'google'})){
+            $gp= $contact[0]->{'google'};
+        }
+        $ca =[$fa,$tw,$ln,$gp];
+        $subject= 'Reset Password';
+        $name= Yii::$app->params['system_name'];
+        $id= $email['password_reset_token'];
+        $userEmail =$email['username'];
+        $url = 'http://smartbus.ritechsolution.com/';
+        $body = 'Click on the link to reset your password '.$url.'site/reset-final/'.$id;
+       $message=Email::template2('Reset Password',$body,$ca);
+       if( Email::sendTo($userEmail,$name,$subject,$message)) {
+        return 1;
+
+       }
+       else
+           {
+           return 0;
+       }
+    }
 
     public static function addUser($data) {
         //        echo '<pre>';

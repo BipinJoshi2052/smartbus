@@ -2,6 +2,7 @@
 $abs_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'assets';
 return [
         'system_name'                   => 'Smart Bus',
+        'website'                       =>'http://smartbus.ritechsolution.com/',
         'adminEmail'                    => 'info@smbus.com',
         'phone'                         => '981454664',
         'logo'                          =>$abs_path.'/images/uploads/logo.png',

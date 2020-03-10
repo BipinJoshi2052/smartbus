@@ -80,7 +80,7 @@ class RegisterController extends Controller {
                 $model = new LoginSocial();
                 $model->username = $user->username;
                 $model->login();
-
+                return $this->redirect(Yii::$app->request->baseUrl. '/site/index');
             }
 
         }
