@@ -345,6 +345,8 @@ $this->title = 'Change Password ';
                  <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/reset" enctype = "multipart/form-data">
                     <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
                     <input type = "hidden" name = "post[user_id]" value = "<?php echo  Yii::$app->user->identity->id; ?>"/>
+                    <input type = "hidden" name = "post[email]" value = ""/>
+
                     <?php $counter = 0; ?>
                      <div class="form-row">
                         <div class="form-group col-md-6">

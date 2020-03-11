@@ -211,7 +211,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 <section id = "testimonials" class = "page-section light-bg">
    <div class = "section-title" data-animation = "fadeInUp">
       <!-- Heading -->
-      <h2 class = "title">Explore More</h2>
+      <h2 class = "title">Destinations</h2>
    </div>
    <div class = "container" data-animation = "fadeInUp">
       <div class = "testimonails">

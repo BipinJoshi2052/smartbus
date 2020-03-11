@@ -77,6 +77,7 @@
         }
 
         public function actionUpdate() {
+
             $image = (isset($_FILES['image'])) ? $_FILES['image'] : [];
             if (isset($_POST['slider'])) {
                 $updated = HelperSlider::set($_POST['slider'], $image);
@@ -86,5 +87,12 @@
                 }
             }
             return $this->redirect(Yii::$app->request->baseUrl . '/slider/');
+        }
+        public function actionDelete()
+        {
+
+            if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
+                return Helperslider::deleteSlider($_POST['id']);
+            }
         }
     }

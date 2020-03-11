@@ -124,6 +124,7 @@ class Helper extends Component {
     }
     public static function setPassword($data) {
         $model = User::find()->where('id=' . $data['user_id'])->one();
+
         if ($data['email'] != '') {
             $hash = Yii::$app->getSecurity()->generatePasswordHash($data['new']);
             $model->password_hash = $hash;

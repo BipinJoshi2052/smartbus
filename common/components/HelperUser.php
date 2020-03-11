@@ -99,6 +99,7 @@ class HelperUser extends Component {
 
         //$model->profile_picture     = isset($data['profile_picture']) ? $data['profile_picture'] : '';
         $model->status = isset($data['status']) && $data['status'] == 1 ? 10 : 0;
+        $model->created_by = Yii::$app->user->identity->id;
         ////
         if ($model->save()) {
             if(isset($data['email']) && $data['email'] != '') {

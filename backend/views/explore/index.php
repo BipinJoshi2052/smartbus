@@ -70,6 +70,11 @@ $this->title = Yii::$app->params['system_name'] . ' | Explore';
                         <input accept = "image/x-png,image/jpeg" type = "file" name = "image" class = "custom-file-input" id = "file-<?php echo $counter; ?>" onchange = "readURL(this);" aria-describedby = "file-<?php echo $counter; ?>" src = "<?php echo (isset($editable['image']) && $editable['image'] != '') ? $editable['image'] : '' ?>">
                      </div>
                   </div>
+                  <div class = "form-group">
+                      <?php $counter++; ?>
+                     <label for = "<?php echo $counter; ?>" class = "control-label required">Description</label>
+                     <textarea  id = "<?php echo $counter; ?>"  name = "post[description]" class = "form-control required" ><?php echo (isset($editable['description']) ? $editable['description'] : '')?></textarea>
+                  </div>
 
                   <div class = "form-group">
                       <?php $counter++; ?>

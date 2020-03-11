@@ -61848,3 +61848,1851 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1583829093.726
     'REQUEST_TIME' => 1583829093
 ]
+2020-03-11 10:03:13 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to access array offset on value of type bool in C:\xampp\htdocs\smartbus\backend\views\slider\index.php:51
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(51): yii\base\ErrorHandler->handleError(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 51, Array)
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#5 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#6 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#12 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#13 {main}
+2020-03-11 10:03:13 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '53271'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583900293.446
+    'REQUEST_TIME' => 1583900293
+]
+2020-03-11 10:03:40 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to access array offset on value of type bool in C:\xampp\htdocs\smartbus\backend\views\slider\index.php:51
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(51): yii\base\ErrorHandler->handleError(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 51, Array)
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#5 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#6 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#8 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#12 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#13 {main}
+2020-03-11 10:03:40 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '53339'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583900320.12
+    'REQUEST_TIME' => 1583900320
+]
+2020-03-11 10:10:27 [::1][1][u4hu18dpo6smliahnjf03juub4][error][ParseError] ParseError: syntax error, unexpected ')', expecting ';' or ',' in C:\xampp\htdocs\smartbus\backend\views\slider\index.php:51
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#3 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#4 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#8 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#10 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#11 {main}
+2020-03-11 10:10:26 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '54613'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583900726.83
+    'REQUEST_TIME' => 1583900726
+]
+2020-03-11 11:17:43 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(104): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider/', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:17:43 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'flash' => -1
+    ]
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+    'flash' => '[{\"message\":\"Slide Updated.\",\"type\":\"success\"}]'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary/slider/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '49704'
+    'REDIRECT_URL' => '/smartbus/primary/slider/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider/'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583904762.997
+    'REQUEST_TIME' => 1583904762
+]
+2020-03-11 11:18:07 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(104): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider/', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:18:07 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'flash' => -1
+    ]
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+    'flash' => '[{\"message\":\"Slide Updated.\",\"type\":\"success\"}]'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary/slider/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '49789'
+    'REDIRECT_URL' => '/smartbus/primary/slider/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider/'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583904787.763
+    'REQUEST_TIME' => 1583904787
+]
+2020-03-11 11:18:08 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(104): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider/', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:18:08 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'flash' => -1
+    ]
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+    'flash' => '[{\"message\":\"Slide Updated.\",\"type\":\"success\"}]'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary/slider'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '49791'
+    'REDIRECT_URL' => '/smartbus/primary/slider/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider/'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583904788.704
+    'REQUEST_TIME' => 1583904788
+]
+2020-03-11 11:18:13 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(104): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:18:13 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'flash' => -1
+    ]
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+    'flash' => '[{\"message\":\"Slide Updated.\",\"type\":\"success\"}]'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '49797'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583904793.623
+    'REQUEST_TIME' => 1583904793
+]
+2020-03-11 11:18:20 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(104): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:18:20 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '49835'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583904800.446
+    'REQUEST_TIME' => 1583904800
+]
+2020-03-11 11:22:12 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:22:12 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '51748'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905032.588
+    'REQUEST_TIME' => 1583905032
+]
+2020-03-11 11:22:26 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:22:26 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52156'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905046.632
+    'REQUEST_TIME' => 1583905046
+]
+2020-03-11 11:22:41 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:22:41 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52201'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905061.797
+    'REQUEST_TIME' => 1583905061
+]
+2020-03-11 11:22:56 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:22:56 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52240'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905076.157
+    'REQUEST_TIME' => 1583905076
+]
+2020-03-11 11:22:56 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:22:56 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52242'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905076.53
+    'REQUEST_TIME' => 1583905076
+]
+2020-03-11 11:23:04 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:23:04 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52405'
+    'REDIRECT_URL' => '/smartbus/primaryslider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primaryslider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905084.156
+    'REQUEST_TIME' => 1583905084
+]
+2020-03-11 11:23:10 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:23:09 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52466'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905089.981
+    'REQUEST_TIME' => 1583905089
+]
+2020-03-11 11:23:10 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::link_text in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('link_text')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('link_text')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(109): yii\base\Model->offsetGet('link_text')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:23:10 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '52472'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905090.22
+    'REQUEST_TIME' => 1583905090
+]
+2020-03-11 11:24:20 [::1][1][u4hu18dpo6smliahnjf03juub4][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\Slider::created_on in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('created_on')
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Model.php(1026): yii\db\BaseActiveRecord->__get('created_on')
+#2 C:\xampp\htdocs\smartbus\backend\views\slider\index.php(112): yii\base\Model->offsetGet('created_on')
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(348): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\xampp\\htdocs...', Array, Object(backend\controllers\SliderController))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(384): yii\base\View->render('index', Array, Object(backend\controllers\SliderController))
+#7 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(74): yii\base\Controller->render('index', Array)
+#8 [internal function]: backend\controllers\SliderController->actionIndex(false)
+#9 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#12 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider', Array)
+#13 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#14 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#15 {main}
+2020-03-11 11:24:20 [::1][1][u4hu18dpo6smliahnjf03juub4][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => '0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV\";}'
+    '_web_session' => 'u4hu18dpo6smliahnjf03juub4'
+    '_csrf-backend' => '1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"j72rW9kerQ_t9y-dVtsAlW--N6wCagsY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=0926c3a5e3a0158019629b3a2e9a7419e5cae5aeea5439b6c3b8eaa5662d0500a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22PiFdBMB2-BmP1mMMZP2B63W5pQTvACKV%22%3B%7D; _web_session=u4hu18dpo6smliahnjf03juub4; _csrf-backend=1b6633fdd46b3f164a7d94166b46c2786494cd764de6d45eda788253dd404d15a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22j72rW9kerQ_t9y-dVtsAlW--N6wCagsY%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '53044'
+    'REDIRECT_URL' => '/smartbus/primary/slider'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583905160.163
+    'REQUEST_TIME' => 1583905160
+]
+2020-03-11 13:43:47 [::1][1][n5b5hehoaqa265iv5957l67c98][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined variable: id in C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php:94
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(94): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 94, Array)
+#1 [internal function]: backend\controllers\SliderController->actionDelete()
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('delete', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider/delete', Array)
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#7 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#8 {main}
+2020-03-11 13:43:47 [::1][1][n5b5hehoaqa265iv5957l67c98][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'mHyDTGXIuoSGGvEXt5QDnRtueFeiCXrgAT0_IA_YP2vqN-8uXbDz7eUjxXHS4mX_aRkRB9ZrOIhSCHNoXepRJw=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'af36c3ec61687a7510ff9155ba76164fe268f652f540eba9704dcfd6bdb8a47ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"bPc63abCZBT6bJrLEZSzD-M_skjTlJAu\";}'
+    '_web_session' => 'n5b5hehoaqa265iv5957l67c98'
+    '_csrf-backend' => '0cf339f6b1ecc2b2a3ac254c2c16821dabbfec75d1f271cd400cffe1ac2f210ca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"rKlb8xIic94fevfbrwiPtbBhS5LHR2nL\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '106'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary/slider/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=af36c3ec61687a7510ff9155ba76164fe268f652f540eba9704dcfd6bdb8a47ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22bPc63abCZBT6bJrLEZSzD-M_skjTlJAu%22%3B%7D; _web_session=n5b5hehoaqa265iv5957l67c98; _csrf-backend=0cf339f6b1ecc2b2a3ac254c2c16821dabbfec75d1f271cd400cffe1ac2f210ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22rKlb8xIic94fevfbrwiPtbBhS5LHR2nL%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '54161'
+    'REDIRECT_URL' => '/smartbus/primary/slider/delete'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider/delete'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583913527.771
+    'REQUEST_TIME' => 1583913527
+]
+2020-03-11 13:44:16 [::1][1][n5b5hehoaqa265iv5957l67c98][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined index: id in C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php:94
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\backend\controllers\SliderController.php(94): yii\base\ErrorHandler->handleError(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 94, Array)
+#1 [internal function]: backend\controllers\SliderController->actionDelete()
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('delete', Array)
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('slider/delete', Array)
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#7 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#8 {main}
+2020-03-11 13:44:16 [::1][1][n5b5hehoaqa265iv5957l67c98][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'mHyDTGXIuoSGGvEXt5QDnRtueFeiCXrgAT0_IA_YP2vqN-8uXbDz7eUjxXHS4mX_aRkRB9ZrOIhSCHNoXepRJw=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'af36c3ec61687a7510ff9155ba76164fe268f652f540eba9704dcfd6bdb8a47ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"bPc63abCZBT6bJrLEZSzD-M_skjTlJAu\";}'
+    '_web_session' => 'n5b5hehoaqa265iv5957l67c98'
+    '_csrf-backend' => '0cf339f6b1ecc2b2a3ac254c2c16821dabbfec75d1f271cd400cffe1ac2f210ca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"rKlb8xIic94fevfbrwiPtbBhS5LHR2nL\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '106'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_DEST' => 'empty'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_ORIGIN' => 'http://localhost'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary/slider/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=af36c3ec61687a7510ff9155ba76164fe268f652f540eba9704dcfd6bdb8a47ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22bPc63abCZBT6bJrLEZSzD-M_skjTlJAu%22%3B%7D; _web_session=n5b5hehoaqa265iv5957l67c98; _csrf-backend=0cf339f6b1ecc2b2a3ac254c2c16821dabbfec75d1f271cd400cffe1ac2f210ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22rKlb8xIic94fevfbrwiPtbBhS5LHR2nL%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '54188'
+    'REDIRECT_URL' => '/smartbus/primary/slider/delete'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/slider/delete'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583913556.143
+    'REQUEST_TIME' => 1583913556
+]
+2020-03-11 14:11:22 [::1][1][n5b5hehoaqa265iv5957l67c98][error][yii\base\ErrorException:2] yii\base\ErrorException: Invalid argument supplied for foreach() in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:733
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php(733): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 733, Array)
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php(603): yii\base\Component->ensureBehaviors()
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 C:\xampp\htdocs\smartbus\backend\controllers\VehiclesController.php(60): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(155): backend\controllers\VehiclesController->beforeAction(Object(yii\base\InlineAction))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('types', Array)
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('vehicles/types', Array)
+#8 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#9 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#10 {main}
+2020-03-11 14:11:22 [::1][1][n5b5hehoaqa265iv5957l67c98][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-frontend' => 'af36c3ec61687a7510ff9155ba76164fe268f652f540eba9704dcfd6bdb8a47ba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"bPc63abCZBT6bJrLEZSzD-M_skjTlJAu\";}'
+    '_web_session' => 'n5b5hehoaqa265iv5957l67c98'
+    '_csrf-backend' => '0cf339f6b1ecc2b2a3ac254c2c16821dabbfec75d1f271cd400cffe1ac2f210ca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"rKlb8xIic94fevfbrwiPtbBhS5LHR2nL\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_REFERER' => 'http://localhost/smartbus/primary/locations'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => '_csrf-frontend=af36c3ec61687a7510ff9155ba76164fe268f652f540eba9704dcfd6bdb8a47ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22bPc63abCZBT6bJrLEZSzD-M_skjTlJAu%22%3B%7D; _web_session=n5b5hehoaqa265iv5957l67c98; _csrf-backend=0cf339f6b1ecc2b2a3ac254c2c16821dabbfec75d1f271cd400cffe1ac2f210ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22rKlb8xIic94fevfbrwiPtbBhS5LHR2nL%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '55395'
+    'REDIRECT_URL' => '/smartbus/primary/vehicles/types'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/vehicles/types'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583915182.369
+    'REQUEST_TIME' => 1583915182
+]

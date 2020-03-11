@@ -18,12 +18,21 @@
     use yii\base\Component;
 
     class HelperSlider extends Component {
+
+        public static function deleteSlider($id) {
+            $model = Slider::findOne($id);
+            if ($model->delete()) {
+                return json_encode(true);
+            }
+            return json_encode(false);
+        }
         public static function set($data, $image) {
+
             if (isset($data['id']) && $data['id'] > 0) {
                 $model = Slider::findOne($data['id']);
             }
             else {
-                $model = new Slider;
+                $model = new Slider();
             }
             $model->attributes = $data;
 
@@ -40,8 +49,10 @@
                 }
             }
             if (!($model->save() == FALSE)) {
+
                 return $model;
             }
+
             Misc::setFlash('danger', 'Data not uploaded. Please Try again');
             return FALSE;
         }
