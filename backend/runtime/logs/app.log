@@ -61759,3 +61759,92 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1583479260.078
     'REQUEST_TIME' => 1583479260
 ]
+2020-03-10 14:16:33 [::1][1][aqoq27qi6tek19bhevakocpbap][error][yii\base\ErrorException:2] yii\base\ErrorException: Invalid argument supplied for foreach() in C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php:733
+Stack trace:
+#0 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php(733): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 733, Array)
+#1 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Component.php(603): yii\base\Component->ensureBehaviors()
+#2 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(274): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Controller.php(164): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 C:\xampp\htdocs\smartbus\backend\controllers\VehiclesController.php(60): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Controller.php(155): backend\controllers\VehiclesController->beforeAction(Object(yii\base\InlineAction))
+#6 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#7 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('vehicles', Array)
+#8 C:\xampp\htdocs\smartbus\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(common\components\Request))
+#9 C:\xampp\htdocs\smartbus\backend\web\index.php(19): yii\base\Application->run()
+#10 {main}
+2020-03-10 14:16:33 [::1][1][aqoq27qi6tek19bhevakocpbap][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '0hpcdhcbdje0ptv5u0un7uufcd'
+    '_csrf' => 'cd5a27aac7a59a6b27e54ada85dc1c5f18ce4d0a89e4cc63236ebe86246639c7a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"z0tdan2VCcWj1ptf47v3HecN3YHePC04\";}'
+    '_csrf-frontend' => '673ade0623d0391b8b75cffe4b652ce03c78adc492e98f0b2331e6ea89df15aca:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"tl7_9DvLdam5CroHBGQTnUUjHHN_2mgZ\";}'
+    '_web_session' => 'aqoq27qi6tek19bhevakocpbap'
+    '_csrf-backend' => '550cd19e308d76615513a71a4ab607d60b7c78c040b2f441286f6ccff75cb709a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Y2c9AhT3kB0PYcVLTrvxax8cjcWgf6dE\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/smartbus/primary'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'
+    'HTTP_SEC_FETCH_DEST' => 'document'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'PHPSESSID=0hpcdhcbdje0ptv5u0un7uufcd; _csrf=cd5a27aac7a59a6b27e54ada85dc1c5f18ce4d0a89e4cc63236ebe86246639c7a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22z0tdan2VCcWj1ptf47v3HecN3YHePC04%22%3B%7D; _csrf-frontend=673ade0623d0391b8b75cffe4b652ce03c78adc492e98f0b2331e6ea89df15aca%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22tl7_9DvLdam5CroHBGQTnUUjHHN_2mgZ%22%3B%7D; _web_session=aqoq27qi6tek19bhevakocpbap; _csrf-backend=550cd19e308d76615513a71a4ab607d60b7c78c040b2f441286f6ccff75cb709a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Y2c9AhT3kB0PYcVLTrvxax8cjcWgf6dE%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\jnerd\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\jnerd\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.2'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/smartbus/backend/web/index.php'
+    'REMOTE_PORT' => '51472'
+    'REDIRECT_URL' => '/smartbus/primary/vehicles'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/smartbus/primary/vehicles'
+    'SCRIPT_NAME' => '/smartbus/backend/web/index.php'
+    'PHP_SELF' => '/smartbus/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1583829093.726
+    'REQUEST_TIME' => 1583829093
+]

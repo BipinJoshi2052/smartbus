@@ -11,6 +11,7 @@ use common\components\Misc;
 use common\models\generated\Auth;
 use common\models\LoginForm;
 use common\models\LoginSocial;
+use common\models\Settings;
 use common\models\User;
 use yii\web\IdentityInterface;
 use frontend\models\PasswordResetRequestForm;
@@ -79,7 +80,7 @@ class RegisterController extends Controller {
                 $model = new LoginSocial();
                 $model->username = $user->username;
                 $model->login();
-
+                return $this->redirect(Yii::$app->request->baseUrl. '/site/index');
             }
 
         }

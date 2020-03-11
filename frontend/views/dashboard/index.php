@@ -1,6 +1,5 @@
 <?php
 $this->title = 'Dashboard';
-
 ?>
 
 

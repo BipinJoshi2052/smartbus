@@ -502,6 +502,13 @@ AppAsset::register($this);
       <!-- footer-bottom -->
    </footer>
 </div>
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="112574783618737"
+     theme_color="#44bec7"
+     logged_in_greeting="Hello!!! How can I help?"
+     logged_out_greeting="Hello!!! How can I help?">
+</div>
 <!--   <button class="open-button" onclick="openForm()">Chat</button> -->
 
 <!-- <div class="chat-popup" id="myForm">
@@ -575,95 +582,95 @@ AppAsset::register($this);
     <button type="submit" class="btn">Send</button> 
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form> -->
-<div id = "live-chat">
-
-   <header class = "clearfix">
-
-      <a href = "#" class = "chat-close">x</a>
-
-      <h4>Mehmet Mert</h4>
-
-      <span class = "chat-message-counter">3</span>
-
-   </header>
-
-   <div class = "chat" style="display: none;">
-
-      <div class = "chat-history">
-
-         <div class = "chat-message clearfix">
-
-            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
-
-            <div class = "chat-message-content clearfix">
-
-               <span class = "chat-time">13:35</span>
-
-               <h5>John Doe</h5>
-
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
-
-            </div> <!-- end chat-message-content-->
-
-         </div> <!-- end chat-message -->
-
-         <hr>
-
-         <div class = "chat-message clearfix">
-
-            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
-
-            <div class = "chat-message-content clearfix">
-
-               <span class = "chat-time">13:37</span>
-
-               <h5>Marco Biedermann</h5>
-
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
-
-            </div> <!-- end chat-message-content -->
-
-         </div> <!-- end chat-message -->
-
-         <hr>
-
-         <div class = "chat-message clearfix">
-
-            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
-
-            <div class = "chat-message-content clearfix">
-
-               <span class = "chat-time">13:38</span>
-
-               <h5>John Doe</h5>
-
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-            </div> <!-- end chat-message-content -->
-
-         </div> <!-- end chat-message -->
-
-         <hr>
-
-      </div> <!-- end chat-history -->
-
-
-      <form action = "#" method = "post">
-
-         <div class = "panel-footer">
-            <div class = "input-group">
-               <input id = "btn-input" type = "text" class = "form-control input-sm chat_input" placeholder = "Write your message here...">
-               <span class = "input-group-btn">
-                        <button class = "btn btn-primary btn-sm" id = "btn-chat">Send</button>
-                        </span>
-            </div>
-         </div>
-
-      </form>
-
-   </div> <!-- end chat -->
-
-</div>
+<!--<div id = "live-chat">-->
+<!---->
+<!--   <header class = "clearfix">-->
+<!---->
+<!--      <a href = "#" class = "chat-close">x</a>-->
+<!---->
+<!--      <h4>Mehmet Mert</h4>-->
+<!---->
+<!--      <span class = "chat-message-counter">3</span>-->
+<!---->
+<!--   </header>-->
+<!---->
+<!--   <div class = "chat" style="display: none;">-->
+<!---->
+<!--      <div class = "chat-history">-->
+<!---->
+<!--         <div class = "chat-message clearfix">-->
+<!---->
+<!--            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">-->
+<!---->
+<!--            <div class = "chat-message-content clearfix">-->
+<!---->
+<!--               <span class = "chat-time">13:35</span>-->
+<!---->
+<!--               <h5>John Doe</h5>-->
+<!---->
+<!--               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>-->
+<!---->
+<!--            </div>  end chat-message-content-->
+<!---->
+<!--         </div> end chat-message -->
+<!---->
+<!--         <hr>-->
+<!---->
+<!--         <div class = "chat-message clearfix">-->
+<!---->
+<!--            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">-->
+<!---->
+<!--            <div class = "chat-message-content clearfix">-->
+<!---->
+<!--               <span class = "chat-time">13:37</span>-->
+<!---->
+<!--               <h5>Marco Biedermann</h5>-->
+<!---->
+<!--               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>-->
+<!---->
+<!--            </div>  end chat-message-content -->
+<!---->
+<!--         </div>  end chat-message -->
+<!---->
+<!--         <hr>-->
+<!---->
+<!--         <div class = "chat-message clearfix">-->
+<!---->
+<!--            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">-->
+<!---->
+<!--            <div class = "chat-message-content clearfix">-->
+<!---->
+<!--               <span class = "chat-time">13:38</span>-->
+<!---->
+<!--               <h5>John Doe</h5>-->
+<!---->
+<!--               <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>-->
+<!---->
+<!--            </div>  end chat-message-content -->
+<!---->
+<!--         </div> end chat-message -->
+<!---->
+<!--         <hr>-->
+<!---->
+<!--      </div>end chat-history -->
+<!---->
+<!---->
+<!--      <form action = "#" method = "post">-->
+<!---->
+<!--         <div class = "panel-footer">-->
+<!--            <div class = "input-group">-->
+<!--               <input id = "btn-input" type = "text" class = "form-control input-sm chat_input" placeholder = "Write your message here...">-->
+<!--               <span class = "input-group-btn">-->
+<!--                        <button class = "btn btn-primary btn-sm" id = "btn-chat">Send</button>-->
+<!--                        </span>-->
+<!--            </div>-->
+<!--         </div>-->
+<!---->
+<!--      </form>-->
+<!---->
+<!--   </div>  end chat -->
+<!---->
+<!--</div>-->
 
 
 <script type = "text/javascript">
@@ -757,7 +764,7 @@ AppAsset::register($this);
                   </div>
                   <div class = "form-group">
                      <div class = "help-block">
-                        <a class = "pull-left" href = "">Forgot Password ?</a>
+                        <a class = "pull-left" href = "<?=  Yii::$app->request->baseUrl; ?>/site/reset-password/">Forgot Password ?</a>
                         <button type = "submit" class = "btn btn-primary pull-right">Login</button>
                         <div class = "clearfix"></div>
                      </div>
@@ -796,6 +803,24 @@ AppAsset::register($this);
    </div><!-- modal-dialog -->
 </div><!-- modal -->
 <!-- jQuery -->
+<div id="fb-root"></div>
+<script>
+   window.fbAsyncInit = function() {
+      FB.init({
+         xfbml            : true,
+         version          : 'v6.0'
+      });
+   };
+
+   (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/vendor/bootstrap4/js/bootstrap.min.js"></script>
 
@@ -882,6 +907,7 @@ if (Yii::$app->session->hasFlash('flash')): ?>
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/js/init-all.js"></script>
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/js/custom.js"></script>
+<!-- Load Facebook SDK for JavaScript -->
 
 <?php if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id = 'index'): ?>
 

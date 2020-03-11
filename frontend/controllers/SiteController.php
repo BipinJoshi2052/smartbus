@@ -12,16 +12,20 @@ use common\components\HelperFaq;
 use common\components\HelperMessages;
 use common\components\HelperNews;
 use common\components\HelperTestimonails;
+use common\components\HelperUser;
 use common\components\Misc;
 use common\models\generated\Careers;
 use common\models\LoginForm;
+use common\models\LoginSocial;
 use common\models\Messages;
 use common\models\Sections;
 use common\models\Settings;
+use common\models\User;
 use frontend\models\ContactForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
+use phpDocumentor\Reflection\Type;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\filters\AccessControl;
@@ -91,7 +95,7 @@ class SiteController extends Controller {
 
     public function actionIndex() {
         $page = 'home';
-//        die;
+        //        die;
         return $this->render('index', [
                 'blog'        => HelperBlog::getSiteBlog(),
                 'faq'         => HelperFaq::getSiteFaq(),
@@ -238,21 +242,69 @@ class SiteController extends Controller {
      * @return mixed
      * @throws BadRequestHttpException
      */
-    public function actionResetPassword($token) {
+    //    public function actionResetPassword($token) {
+    //
+    //        try {
+    //            $model = new ResetPasswordForm($token);
+    //        } catch (InvalidArgumentException $e) {
+    //            throw new BadRequestHttpException($e->getMessage());
+    //        }
+    //
+    //        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
+    //            Yii::$app->session->setFlash('success', 'New password saved.');
+    //
+    //            return $this->goHome();
+    //        }
+    //
+    //        return $this->render('resetPassword', ['model' => $model,]);
+    //    }
+    public function actionResetPassword() {
 
-        try {
-            $model = new ResetPasswordForm($token);
-        } catch (InvalidArgumentException $e) {
-            throw new BadRequestHttpException($e->getMessage());
+        return $this->render('resetPassword');
+
+    }
+
+    public function actionReset() {
+        $post = Yii::$app->request->post();
+        if ($post['email'] != '') {
+            $model = User::findByEmail($post['email']);
+            if ($model != '' && $model->username == $post['email']) {
+               $response= HelperUser::resetPassword($model);
+            }
+            else {
+                return $this->render('resetPassword', [
+                        'editable' => $post['email'],
+                        'error'    => 'user does not exist',
+
+
+                ]);
+            }
+            return $this->render('resetPassword', [
+                    'response' => $response,
+                    'editable' => $post['email'],
+                ]);
+        }
+    }
+
+    public function actionResetFinal($id) {
+
+        $user = User::findByPasswordResetToken($id);
+        if (!empty($user)) {
+            if ($user->validateResetPasswordToken($id)) {
+                $model = new LoginSocial();
+                $model->username = $user->username;
+                $model->login();
+                return $this->redirect(Yii::$app->request->baseUrl. '/dashboard/reset-by-email/');
+            }
+            else {
+                echo 'sorry';
+                die;
+            }
+            }
+        else {
+            return $this->redirect(Yii::$app->request->baseUrl);
         }
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password saved.');
-
-            return $this->goHome();
-        }
-
-        return $this->render('resetPassword', ['model' => $model,]);
     }
 
     public function actionReviewVehicle() {

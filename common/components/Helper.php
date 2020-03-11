@@ -123,22 +123,30 @@ class Helper extends Component {
         return $u;
     }
     public static function setPassword($data) {
-        $model = User::find()->where('id='.$data['user_id'])->one();
-        $a = $model->validatePassword($data['old']);
-        if(isset($a) && !empty($a)) {
+        $model = User::find()->where('id=' . $data['user_id'])->one();
+        if ($data['email'] != '') {
             $hash = Yii::$app->getSecurity()->generatePasswordHash($data['new']);
             $model->password_hash = $hash;
-            if($model->save()) {
+            if ($model->save()) {
                 return true;
             }
         }
-
-        return false;
+        else {
+            $a = $model->validatePassword($data['old']);
+            if (isset($a) && !empty($a)) {
+                $hash = Yii::$app->getSecurity()->generatePasswordHash($data['new']);
+                $model->password_hash = $hash;
+                if ($model->save()) {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
     public static function setDashboard($data) {
         $user = User::find()->where('id='.$data['id'])->one();
-
         $user_detail = UserDetails::find()->where('user_id='.$data['id'])->one();
+
         if(isset($user_detail) && !empty($user_detail)) {
             $user_detail->company = $data['company'];
             $user_detail->address = $data['address'];
@@ -162,14 +170,22 @@ class Helper extends Component {
         }
 
         if($user_detail->save()) {
+
             $user->name = $data['name'];
             $user->email = $data['email'];
 
-            if($user->save()) {
+            if ($user->save()) {
+
                 return true;
-            }else{
+
+            }
+
+
+            else {
                 return false;
             }
+
+
         }
         return false;
     }
