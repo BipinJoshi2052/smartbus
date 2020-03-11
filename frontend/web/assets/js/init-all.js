@@ -22,6 +22,29 @@ $(document).ready(function () {
         }
     });
 
+     $(function() {
+ 
+  $("#explore-11").owlCarousel({
+ 
+   
+    //Autoplay
+    autoPlay : true,
+    goToFirst : true,
+    goToFirstSpeed : 1000,
+    
+ 
+    // Responsive 
+    responsive: true,
+    items : 4,
+    itemsDesktop : [1199,4],
+    itemsDesktopSmall : [980,3],
+    itemsTablet: [768,2],
+    itemsMobile : [479,1]
+ 
+})
+ 
+});
+
     // OwlCarousel
     $(function () {
         if ($('.owl-carousel').length) {
@@ -64,6 +87,9 @@ $(document).ready(function () {
             });
         }
     });
+
+
+
 
     // DataAnimations
     $(function () {
