@@ -138,7 +138,7 @@ AppAsset::register($this);
                   </li>
                   <li id = "bookID" class = "nav-item">
                      <a class = "dropdown-toggle" onclick = "openSearch()" data-toggle = "collapse" href = "#collapseExample" role = "button" aria-expanded = "false" aria-controls = "collapseExample">
-                        Book Ticket
+                        My Ticket
                      </a>
                   </li>
 
@@ -213,10 +213,10 @@ AppAsset::register($this);
                         <div class = "col-lg-12">
                            <div class = "row">
                               <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
-                                 <input type = "text" class = "form-control search-slt ticket-search-02" placeholder = "Enter Pickup City">
+                                 <input type = "text" class = "form-control search-slt ticket-search-02" placeholder = "Enter the Ticket ID">
                               </div>
                               <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
-                                 <input type = "text" class = "form-control search-slt" placeholder = "Enter Drop City">
+                                 <input type = "text" class = "form-control search-slt" placeholder = "Email or Phone number">
                               </div>
 
                               <div class = "col-lg-2 col-md-2 col-sm-12 p-0">
@@ -282,6 +282,42 @@ AppAsset::register($this);
             </div>
          </div>
       </div>
+   </section>
+   <section class="operatoe-01" >
+     <div class="container" >
+        <div class="operator" >
+         <div class="section-title">
+         <!-- Heading -->
+         <h2 class="title">Top Operators</h2>
+      </div>
+        <ul>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+          <li><a href=""> YGL Operator </a></li>
+         
+        </ul>
+        
+      </div>
+       
+     </div>
    </section>
 
 
@@ -414,8 +450,18 @@ AppAsset::register($this);
                   </div> -->
                </div>
             </div>
+
+           
+
          </div>
+
+        
       </div>
+      <!-- <div class="container" >
+
+    
+      </div> -->
+
       <!-- footer-top -->
       <div class = "copyright">
          <div class = "container">

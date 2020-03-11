@@ -73,10 +73,11 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       document.body.appendChild(css);
    };
 </script>
+<!-- background-repeat: no-repeat; background-image: url("/smartbusv1/assets/slider/assets/newspaper_bg1.jpg"); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;
+ -->
+<section class = "banner-back" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/sm01.jpg);     background-position-y: center; background-size: cover;    background-position-y: -webkit-center; padding:0px;margin-top:0px;margin-bottom:0px; height: 100%; ">
 
-<section class = "banner-back" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/nepal6.jpg);     background-position-y: center; background-size: cover;    background-position-y: -webkit-center; padding:0px;margin-top:0px;margin-bottom:0px; ">
-
-   <div class = " container ">
+  <!--  <div class = " container ">
       <div class = "new-home-banner">
 
 
@@ -84,9 +85,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
             <h2 class = "typewrite" data-period = "2000" data-type = '[ "BOOK YOUR TICKET <br>IT IS SO EASY ANYONE CAN DO IT  ", "BOOK YOUR TICKET <br> IT IS SO EASY THAT ANYONE CAN DO IT ", "I Love to Develop <br> IT IS SO EASY THAT ANYONE CAN DO IT" ]'>
                <span class = "wrap"></span>
 
-               <!--  <a href="" class="typewrite" data-period="2000" data-type='[ "BOOK YOUR TICKET <br>It is so easy that anyone do it  ", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
-                  <span class="wrap"></span>
-                </a> -->
+              
             </h2>
 
             <div class = "book-my-ticket">
@@ -162,7 +161,130 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
          </div>
       </div>
    </div>
+ -->
+  <div id=""  class="container banner-01" >
 
+    <div class="row">
+         <div class = "col-md-12 col-sm-12 col-lg-7 mb-sm-4 padding-right-20" data-animation = "fadeInLeft">
+
+             <div class = "owl-carousel pagination-1 dark-switch" data-pagination = "true" data-autoplay = "true" data-navigation = "false" data-singleitem = "true" data-animation = "fadeInUp">
+                <div class = "item">
+
+                   <div class="hero-text">
+
+ <h1>BOOK  <span>YOUR TICKET NOW</span></h1>
+
+  <h2 class = "entry-title" style="color: #FF9800;">
+                     IT IS SO EASY THAT ANYONE CAN DO IT
+
+                   </h2>
+
+
+                   <div class = "entry-content">
+                      <p>Lorem ipsum dolor sit amet,accusantium nobis tempora conse <br>
+                      Lorem ipsum dolor sit amet,accusantium nobis tempora consequ.</p>
+
+
+                   </div>
+
+ <a href="#" class="primary-btn">BOOK TICKET NOW</a>
+ </div>
+
+
+                </div>
+                <div class = "item">
+
+                   <div class="hero-text">
+
+ <h1>BOOK  <span>YOUR TICKET NOW</span></h1>
+
+  <h2 class = "entry-title" style="color: #FF9800;">
+                     IT IS SO EASY THAT ANYONE CAN DO IT
+
+                   </h2>
+
+
+                   <div class = "entry-content">
+                      <p>Lorem ipsum dolor sit amet,accusantium nobis tempora consequ <br>
+                      Lorem ipsum dolor sit amet,accusantium nobis tempora consequatu.</p>
+
+
+                   </div>
+
+ <a href="#" class="primary-btn">BOOK TICKET NOW</a>
+ </div>
+
+
+                </div>
+             </div>
+
+          </div>
+          <div class="col-md-12 col-sm-12 col-lg-5 mb-sm-4 padding-left-20 animated fadeInRight visible" data-animation="fadeInRight">
+
+
+               <ul class="nav nav-pills nav-01" id="pills-tab" role="tablist">
+                <h4><i class = "icon icon-bus"></i> Book Tickets</h4>
+   <li class="nav-item my-search">
+     <a class="nav-link active tab-01" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">BUS TICKET</a>
+   </li>
+   <li class="nav-item rent">
+     <a class="nav-link tab-01" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">RENT</a>
+   </li>
+
+ </ul>
+
+             <form action="#" class="request-form ftco-animate bg-01 fadeInUp ftco-animated search-ticket">
+
+
+ <div class="tab-content tab-content-01" id="pills-tabContent">
+   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+
+
+       <div class="input-group">
+          <input class="input-name form-control form-02" type="text" id="career_name" name="career_name" placeholder="Boearding Point">
+
+
+          <div class="">
+           <span  class="swap" id="inputGroupPrepend2"><i class="fa fa-exchange" aria-hidden="true"></i></span>
+         </div>
+       </div>
+
+                        <div class="input-text form-group">
+                             <input class="input-name form-control" type="text" id="career_name" name="career_name" placeholder="Droping Point">
+                         </div>
+
+                            <div class="form-group ">
+
+                          <input type="text" class="form-control form-02 fm-01" id="departure-date" placeholder="Journey Date">
+                          <div class="today" >
+                            <a href="">today</a>
+                             <a style="border-right: 0px;" href="">tomorrow</a>
+                            
+                          </div>
+                            <div class="date-clean" >
+                            <a href="">clear</a>
+                            
+                          </div>
+                          <input type="text" class="form-control" id="return-date" placeholder="Return Date">
+
+                        </div>
+
+                     <div class="book-my-ticket">
+                         <button type="submit" class="btn btn-pm">Search</button>
+                     </div>
+
+
+                     </div>
+   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+
+ </div>
+
+                      </form>
+
+
+          </div>
+       </div>
 
 
 
@@ -213,19 +335,31 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       <!-- Heading -->
       <h2 class = "title">Explore More</h2>
    </div>
-   <div class = "container" data-animation = "fadeInUp">
-      <div class = "testimonails">
-         <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
+   <div class = "" data-animation = "fadeInUp">
+      <div class = "explore-11">
+         <div id="explore-11" class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
              <?php if (!empty($explore) && count($explore) > 0):
                  foreach ($explore as $e) :
                      ?>
-            <div class = "item">
+         <div class = "item">
                <div class = "explore-nepal">
                   <img src="<?php echo (isset($e['image']) && $e['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $e['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>"  alt = "" title = "">
+                   <div class="overlay-explore">
+                    
+                         <div class="text-01">
+                         
+                            <a href="">Explore More</a>
+                            <p> There are many variations of passages of Lorem Ipsum  </p>
+                            
+                          
+                         
+                         </div>
+                    </div>
 
                </div>
 
-            </div>
+            </div> 
+              
 
 
                  <?php endforeach;

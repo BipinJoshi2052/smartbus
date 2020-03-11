@@ -86,7 +86,8 @@
                         <i style="display: inline-block; margin-right: 1px; width: 30px; height: 30px; text-align: center; line-height: 30px;     background-color: #C6C6C6;  margin-bottom: 15px; color: #5DA6DA; border-radius: 50%;"  class = "fa fa-facebook"></i>
                      </a>
                      <a href = "">
-                        <i style=" display: inline-block; margin-right: 1px; width: 30px; height: 30px; text-align: center; line-height: 30px;     background-color: #C6C6C6; margin-bottom: 15px; color: #5DA6DA; border-radius: 50%;" class = "fa fa-twitter"></i>
+                       <img style=" display: inline-block; margin-right: 1px; width: 30px; height: 30px; text-align: center; line-height: 30px;     background-color: #C6C6C6; margin-bottom: 15px; color: #5DA6DA; border-radius: 50%;" src="/smartbus/common/assets//images/uploads/fb.png"/> </div>
+                       <!--  <i style=" display: inline-block; margin-right: 1px; width: 30px; height: 30px; text-align: center; line-height: 30px;     background-color: #C6C6C6; margin-bottom: 15px; color: #5DA6DA; border-radius: 50%;" class = "fa fa-twitter"></i> -->
                      </a>
                      <a href = "">
                         <i style=" display: inline-block; margin-right: 1px; width: 30px; height: 30px; text-align: center; line-height: 30px;    background-color: #C6C6C6; margin-bottom: 15px; color: #5DA6DA; border-radius: 50%;" class = "fa fa-pinterest"></i>
