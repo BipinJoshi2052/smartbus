@@ -29,6 +29,7 @@ return [
 //                            'site/message/' => 'site/message/',
                             'clients/post/<id:[a-zA-Z0-9-]+>/'      => 'clients/post',
                             'explore/edit/<id:[a-zA-Z0-9-]+>/'      => 'explore/',
+                            'destination/index/<id:[a-zA-Z0-9-]+>/'      => 'destination/index',
                             'register/validate/<id:[a-zA-Z0-9-_]+>/'      => 'register/validate/',
                             'site/reset-final/<id:[a-zA-Z0-9-_-]+>/'      => 'site/reset-final',
 

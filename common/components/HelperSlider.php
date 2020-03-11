@@ -18,7 +18,10 @@
     use yii\base\Component;
 
     class HelperSlider extends Component {
-
+        public static function getSlider() {
+            $slider = Slider::find()->asArray()->all();
+            return $slider;
+        }
         public static function deleteSlider($id) {
             $model = Slider::findOne($id);
             if ($model->delete()) {

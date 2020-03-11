@@ -75,7 +75,8 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 </script>
 <!-- background-repeat: no-repeat; background-image: url("/smartbusv1/assets/slider/assets/newspaper_bg1.jpg"); background-size: cover; background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;
  -->
-<section class = "banner-back" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/sm01.jpg);     background-position-y: center; background-size: cover;    background-position-y: -webkit-center; padding:0px;margin-top:0px;margin-bottom:0px; height: 100%; ">
+
+<section class = "banner-back" style = " background-image: url(<?php echo Yii::$app->request->baseUrl;?>/assets/slider/assets/banner.jpg);background-position-y: center; background-size: cover;    background-position-y: -webkit-center; padding:0px;margin-top:0px;margin-bottom:0px; min-height: 100vh; ">
 
   <!--  <div class = " container ">
       <div class = "new-home-banner">
@@ -348,7 +349,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                     
                          <div class="text-01">
                          
-                            <a href="">Explore More</a>
+                            <a href="<?php Yii::$app->request->baseUrl;?>./destination/index/<?php echo \common\components\Misc::encrypt($e['id']); ?>">Explore More</a>
                             <p> There are many variations of passages of Lorem Ipsum  </p>
                             
                           
@@ -760,3 +761,52 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
         </div>
     </div>
 </section>-->
+<section class = "page-section no-pad bg-color">
+   <div class = "container">
+      <div class = "row">
+         <div class = "col-md-12 top-pad-20 bottom-pad-20 text-center">
+            <h3 class = "text-capitalize inline-block tb-margin-20 black animated fadeInUp visible" data-animation = "fadeInUp">More queries?
+               <span class = "white">How can we help ?</span></h3>
+            <div class = "inline-block lr-pad-20">
+               <a href = "<?= Yii::$app->request->baseUrl; ?>/site/contact"" class = "btn btn-transparent-white btn-lg animated fadeInDown visible" data-animation = "fadeInDown">Contact Us</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<section class="operatoe-01" >
+    <div class="container" >
+        <div class="operator" >
+            <div class="section-title">
+                <!-- Heading -->
+                <h2 class="title">Top Operators</h2>
+            </div>
+            <ul>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+                <li><a href=""> YGL Operator </a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</section>

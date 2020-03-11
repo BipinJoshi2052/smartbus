@@ -24,7 +24,7 @@ $(document).ready(function () {
 
      $(function() {
  
-  $("#explore-11").owlCarousel({
+  $('#explore-11').owlCarousel({
  
    
     //Autoplay

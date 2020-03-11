@@ -11,6 +11,7 @@ use common\components\HelperExplore;
 use common\components\HelperFaq;
 use common\components\HelperMessages;
 use common\components\HelperNews;
+use common\components\HelperSlider;
 use common\components\HelperTestimonails;
 use common\components\HelperUser;
 use common\components\Misc;
@@ -103,6 +104,7 @@ class SiteController extends Controller {
                 'news'        => HelperNews::getSiteNews(),
                 'explore'     => HelperExplore::getSiteExplore(),
                 'clients'     => HelperClients::getClients(),
+                'slider'      =>HelperSlider::getSlider(),
         ]);
     }
 

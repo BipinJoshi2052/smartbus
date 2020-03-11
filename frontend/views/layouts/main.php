@@ -269,58 +269,6 @@ AppAsset::register($this);
 
    <!-- chat-box -->
 
-
-   <section class = "page-section no-pad bg-color">
-      <div class = "container">
-         <div class = "row">
-            <div class = "col-md-12 top-pad-20 bottom-pad-20 text-center">
-               <h3 class = "text-capitalize inline-block tb-margin-20 black animated fadeInUp visible" data-animation = "fadeInUp">More queries?
-                  <span class = "white">How can we help ?</span></h3>
-               <div class = "inline-block lr-pad-20">
-                  <a href = "<?= Yii::$app->request->baseUrl; ?>/site/contact"" class = "btn btn-transparent-white btn-lg animated fadeInDown visible" data-animation = "fadeInDown">Contact Us</a>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <section class="operatoe-01" >
-     <div class="container" >
-        <div class="operator" >
-         <div class="section-title">
-         <!-- Heading -->
-         <h2 class="title">Top Operators</h2>
-      </div>
-        <ul>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-          <li><a href=""> YGL Operator </a></li>
-         
-        </ul>
-        
-      </div>
-       
-     </div>
-   </section>
-
-
    <footer class = "footer">
       <div class = "footer-widget">
          <div class = "container">
@@ -337,6 +285,8 @@ AppAsset::register($this);
                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/blog/""> Blog</a></li>
                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/news/""> News </a></li>
                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/careers""> Carees</a> </li>
+                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/terms""> T & C</a> </li>
+                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/privacy"">Privacy</a> </li>
                   </ul>
                   <div class="explore-btn-01">
                   <button type="submit" class="btn btn-1">BOOK NOW</button>

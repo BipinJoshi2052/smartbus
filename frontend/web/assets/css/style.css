@@ -4550,7 +4550,7 @@ ul.tags li {
     line-height: 21px;
     display: inline-block;
     /* padding: 10px; */
-    padding: 0 24px 0 0;
+    padding: 0px 24px 5px 0px;
     font-size: 15px;
 }
 
@@ -4573,7 +4573,7 @@ ul.tags li {
 }
 
 .widget a:hover {
-    color: #000000;
+    color:#5EA6DA;
     -webkit-transition: color .2s linear;
     transition: color .2s linear;
 }
@@ -9299,7 +9299,7 @@ CONTENT STYLE
 }
 
 .banner-01 {
-    padding: 20px;
+    padding: 120px 20px 20px 20px;
 }
 
 .banner-header-01 {
@@ -10649,7 +10649,7 @@ input.form-control.search-slt.location-1 {
 
    .md-history {
       display: flex ! important;
-      background: #58c9ee;
+      background: #58c9ee ! important;
    }
 
    .rounded-1:active, .rounded-1:focus {
@@ -10703,7 +10703,7 @@ input.form-control.search-slt.location-1 {
       padding: 10px 0;
    }
 
-/*hover-explore*/
+/*hover-destination*/
 .explore-nepal{
     position: relative;
 }
@@ -10789,13 +10789,6 @@ input.form-control.search-slt.location-1 {
 .operator ul li a:hover {
     color: #FF9800;
 }
-
-
-
-
-
-}
-
 .change-ps:hover {
     color: white ! important;
 }

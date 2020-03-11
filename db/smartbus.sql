@@ -499,7 +499,7 @@ INSERT INTO `client_page_contents` (`id`, `client_id`, `title`, `remark`, `extra
 -- --------------------------------------------------------
 
 --
--- Table structure for table `explore`
+-- Table structure for table `destination`
 --
 
 CREATE TABLE `explore` (
@@ -514,7 +514,7 @@ CREATE TABLE `explore` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `explore`
+-- Dumping data for table `destination`
 --
 
 INSERT INTO `explore` (`id`, `title`, `image`, `is_active`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
@@ -2060,7 +2060,7 @@ ALTER TABLE `client_page_contents`
   ADD KEY `updated_by` (`updated_by`);
 
 --
--- Indexes for table `explore`
+-- Indexes for table `destination`
 --
 ALTER TABLE `explore`
   ADD PRIMARY KEY (`id`),
@@ -2431,7 +2431,7 @@ ALTER TABLE `client_page_contents`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `explore`
+-- AUTO_INCREMENT for table `destination`
 --
 ALTER TABLE `explore`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
@@ -2701,7 +2701,7 @@ ALTER TABLE `client_page_contents`
   ADD CONSTRAINT `client_r` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `explore`
+-- Constraints for table `destination`
 --
 ALTER TABLE `explore`
   ADD CONSTRAINT `fk_created_by` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
