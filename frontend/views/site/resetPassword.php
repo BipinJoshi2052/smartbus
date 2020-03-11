@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php if (isset($response) && $response == 1) {
 
     echo '<script type="text/javascript">';
-    echo 'setTimeout(function () { swal("Password Changed!","Your password reset request has been sent.","success");';
+    echo 'setTimeout(function () { swal("Password Reset Request Sent!","Your password reset request has been sent please check your email.","success");';
     echo '}, 1000);</script>';
 }
 elseif (isset($response) && $response = 0) {
