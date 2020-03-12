@@ -10,6 +10,7 @@ use Yii;
  * @property int $id
  * @property string $title
  * @property string $image
+ * @property string $description
  * @property int $is_active
  * @property string $created_on
  * @property int $created_by
@@ -35,7 +36,8 @@ class Explore extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'created_by', 'updated_by'], 'required'],
+            [['title', 'description', 'created_by', 'updated_by'], 'required'],
+            [['description'], 'string'],
             [['is_active', 'created_by', 'updated_by'], 'integer'],
             [['created_on', 'updated_on'], 'safe'],
             [['title', 'image'], 'string', 'max' => 200],
@@ -53,6 +55,7 @@ class Explore extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => 'Title',
             'image' => 'Image',
+            'description' => 'Description',
             'is_active' => 'Is Active',
             'created_on' => 'Created On',
             'created_by' => 'Created By',

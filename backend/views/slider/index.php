@@ -36,39 +36,35 @@
                         <div class = "form-group">
                             <?php $counter++; ?>
                             <label for = "<?php echo $counter; ?>" class = "control-label">Slide Order</label>
-                            <input id = "<?php echo $counter; ?>" name = "slider[slide_index]" value = "<?php echo(isset($editable['slide_index']) ? $editable['slide_index'] : '0') ?>" type = "number" class = "form-control required">
+                            <input id = "<?php echo $counter; ?>" name = "slider[slide_order]" value = "<?php echo(isset($editable['slide_order']) ? $editable['slide_order'] : '0') ?>" type = "number" class = "form-control required">
                         </div>
                         <div class = "form-group">
                             <?php $counter++; ?>
-                            <label for = "<?php echo $counter; ?>" class = "control-label">Slide Image</label>
+                            <label for = "<?php echo $counter; ?>" class = "control-label">Slider Image</label>
                             <input accept = "image/x-png,image/jpeg" id = "<?php echo $counter; ?>" name = "image" type = "file" class = "form-control <?php echo ($new) ? 'required' : '' ?>">
                         </div>
+                       <div class = "form-group">
+                           <?php $counter++; ?>
+                          <label for = "<?php echo $counter; ?>" class = "control-label">Title</label>
+                          <input id = "<?php echo $counter; ?>" name = "slider[title]" value = "<?php echo(isset($editable['title']) ? $editable['title'] : '') ?>" type = "text" class = "form-control required">
+                       </div>
+                       <div class = "form-group">
+                           <?php $counter++; ?>
+                          <label for = "<?php echo $counter; ?>" class = "control-label">Subtitle</label>
+                          <input id = "<?php echo $counter; ?>" name = "slider[subtitle]" value = "<?php echo(isset($editable['subtitle']) ? $editable['subtitle'] : '') ?>" type = "text" class = "form-control required">
+                       </div>
 
-                        <div class = "form-group">
-                            <?php $counter++; ?>
-                            <label for = "<?php echo $counter; ?>" class = "control-label">Content Alignment</label>
-                            <select id = "<?php echo $counter; ?>" name = "slider[content_align]" class = "form-control required">
-                                <option <?php echo ($editable['content_align'] == 'left') ? 'selected = "selected"' : '' ?> value = "left">Left</option>
-                                <option <?php echo ($editable['content_align'] == 'center') ? 'selected = "selected"' : '' ?> value = "center">Center</option>
-                                <option <?php echo ($editable['content_align'] == 'right') ? 'selected = "selected"' : '' ?> value = "right">Right</option>
-                            </select>
-
-                        </div>
-                        <div class = "form-group">
-                            <?php $counter++; ?>
-                            <label for = "<?php echo $counter; ?>" class = "control-label">Content</label>
-                            <textarea id = "<?php echo $counter; ?>" name = "slider[content]" class = "form-control summernote-basic required"><?php echo(isset($editable['content']) ? $editable['content'] : '') ?></textarea>
-                        </div>
                         <div class = "form-group">
                             <?php $counter++; ?>
                             <label for = "<?php echo $counter; ?>" class = "control-label">Link</label>
                             <input id = "<?php echo $counter; ?>" name = "slider[link]" value = "<?php echo(isset($editable['link']) ? $editable['link'] : '') ?>" type = "text" class = "form-control required url">
                         </div>
-                        <div class = "form-group">
-                            <?php $counter++; ?>
-                            <label for = "<?php echo $counter; ?>" class = "control-label">Link Text</label>
-                            <input id = "<?php echo $counter; ?>" name = "slider[link_text]" value = "<?php echo(isset($editable['link_text']) ? $editable['link_text'] : '') ?>" type = "text" class = "form-control required">
-                        </div>
+                       <div class = "form-group">
+                           <?php $counter++; ?>
+                          <label for = "<?php echo $counter; ?>" class = "control-label ">Description</label>
+                          <textarea id = "<?php echo $counter; ?>" name = "slider[description]" class = "summernote"><?php echo (isset($editable['description'])) ? $editable['description'] : '' ?></textarea>
+                       </div>
+
                         <div class = "form-group m-t-40 m-b-0 text-right">
                             <button class = "btn btn-primary" type = "submit">
                                 <i class = "mdi mdi-check"></i>
@@ -89,18 +85,23 @@
                         <table class = "table  table-striped" data-plugin = "datatable">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th>S.N</th>
+                                   <th>Order</th>
                                     <th>Image</th>
-                                    <th>Link</th>
-                                    <th>Link Text</th>
-                                    <th>Date</th>
-                                    <th></th>
+                                    <th>Title</th>
+<!--                                    <th>Subtitle</th>-->
+                                    <th>Created on</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($slider as $key => $slide) : ?>
+
+                                <?php
+                                $sn = 1;
+                                foreach ($slider as $key => $slide) : ?>
                                     <tr>
-                                        <td>Slide <?php echo $slide['id'] ?></td>
+                                        <td><?php echo $sn++ ?></td>
+                                       <td><?php echo $slide['slide_order'] ?></td>
                                         <td>
                                             <div class = "image-wrapper">
                                                 <?php if (isset($slide['image']) && $slide['image'] != ''): ?>
@@ -108,16 +109,18 @@
                                                 <?php endif; ?>
                                             </div>
                                         </td>
-                                        <td><?php echo ucwords($slide['link']); ?></td>
-                                        <td>
-                                            <?php if ($slide['link_text'] != ''): echo $slide['link_text']; endif; ?>
-                                        </td>
+                                        <td><?php echo ucwords($slide['title']); ?></td>
+<!--                                        <td>-->
+<!--                                            --><?php //if ($slide['subtitle'] != ''): echo $slide['subtitle']; endif; ?>
+<!--                                        </td>-->
 
                                         <td><?php echo \common\components\Misc::dmY($slide['created_on']); ?></td>
                                         <td class = "text-right">
-                                            <a class = "m-r-10" href = "<?php echo Yii::$app->request->baseUrl; ?>/slider/edit/<?php echo \common\components\Misc::encrypt($slide['id']) ?>">Edit</a>
-                                            <a class = "delete-item" data-table = "slider" data-identity = "<?php echo \common\components\Misc::encrypt($slide['id']); ?>" href = "javascript:void();">Delete</a>
+                                            <a class = "btn btn-sm btn-primary m-r-10" href = "<?php echo Yii::$app->request->baseUrl; ?>/slider/edit/<?php echo \common\components\Misc::encrypt($slide['id']) ?>">Edit</a>
+                                            <a class = "btn btn-sm btn-danger delete-slider" data-table = "slider" data-id= "<?php echo $slide['id']; ?>" href = "javascript:void();">Delete</a>
+<!--                                            <a class = "btn btn-default btn-sm delete-item" href = "javascript:void(0);" data-id = "--><?php //echo $post['id']; ?><!--" data-tab = "Blog">Delete</a>-->
                                         </td>
+
                                     </tr>
                                 <?php endforeach; ?>
 

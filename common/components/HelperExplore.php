@@ -35,6 +35,8 @@ class HelperExplore extends Component {
             //title
             $model->title = $post['title'];
             //is_active
+            //description
+            $model->description =$post['description'];
             $model->is_active = $post['is_active'];
             //created_by
             $model->created_by = Yii::$app->user->identity->id;

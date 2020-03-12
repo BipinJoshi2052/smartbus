@@ -138,7 +138,7 @@ AppAsset::register($this);
                   </li>
                   <li id = "bookID" class = "nav-item">
                      <a class = "dropdown-toggle" onclick = "openSearch()" data-toggle = "collapse" href = "#collapseExample" role = "button" aria-expanded = "false" aria-controls = "collapseExample">
-                        Book Ticket
+                        My Ticket
                      </a>
                   </li>
 
@@ -213,10 +213,10 @@ AppAsset::register($this);
                         <div class = "col-lg-12">
                            <div class = "row">
                               <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
-                                 <input type = "text" class = "form-control search-slt ticket-search-02" placeholder = "Enter Pickup City">
+                                 <input type = "text" class = "form-control search-slt ticket-search-02" placeholder = "Enter the Ticket ID">
                               </div>
                               <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
-                                 <input type = "text" class = "form-control search-slt" placeholder = "Enter Drop City">
+                                 <input type = "text" class = "form-control search-slt" placeholder = "Email or Phone number">
                               </div>
 
                               <div class = "col-lg-2 col-md-2 col-sm-12 p-0">
@@ -269,22 +269,6 @@ AppAsset::register($this);
 
    <!-- chat-box -->
 
-
-   <section class = "page-section no-pad bg-color">
-      <div class = "container">
-         <div class = "row">
-            <div class = "col-md-12 top-pad-20 bottom-pad-20 text-center">
-               <h3 class = "text-capitalize inline-block tb-margin-20 black animated fadeInUp visible" data-animation = "fadeInUp">More queries?
-                  <span class = "white">How can we help ?</span></h3>
-               <div class = "inline-block lr-pad-20">
-                  <a href = "<?= Yii::$app->request->baseUrl; ?>/site/contact"" class = "btn btn-transparent-white btn-lg animated fadeInDown visible" data-animation = "fadeInDown">Contact Us</a>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
-
    <footer class = "footer">
       <div class = "footer-widget">
          <div class = "container">
@@ -301,6 +285,8 @@ AppAsset::register($this);
                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/blog/""> Blog</a></li>
                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/news/""> News </a></li>
                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/careers""> Carees</a> </li>
+                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/terms""> T & C</a> </li>
+                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/privacy"">Privacy</a> </li>
                   </ul>
                   <div class="explore-btn-01">
                   <button type="submit" class="btn btn-1">BOOK NOW</button>
@@ -414,8 +400,18 @@ AppAsset::register($this);
                   </div> -->
                </div>
             </div>
+
+           
+
          </div>
+
+        
       </div>
+      <!-- <div class="container" >
+
+    
+      </div> -->
+
       <!-- footer-top -->
       <div class = "copyright">
          <div class = "container">
@@ -455,6 +451,13 @@ AppAsset::register($this);
       </div>
       <!-- footer-bottom -->
    </footer>
+</div>
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="112574783618737"
+     theme_color="#44bec7"
+     logged_in_greeting="Hello!!! How can I help?"
+     logged_out_greeting="Hello!!! How can I help?">
 </div>
 <!--   <button class="open-button" onclick="openForm()">Chat</button> -->
 
@@ -529,95 +532,95 @@ AppAsset::register($this);
     <button type="submit" class="btn">Send</button> 
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form> -->
-<div id = "live-chat">
-
-   <header class = "clearfix">
-
-      <a href = "#" class = "chat-close">x</a>
-
-      <h4>Mehmet Mert</h4>
-
-      <span class = "chat-message-counter">3</span>
-
-   </header>
-
-   <div class = "chat" style="display: none;">
-
-      <div class = "chat-history">
-
-         <div class = "chat-message clearfix">
-
-            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
-
-            <div class = "chat-message-content clearfix">
-
-               <span class = "chat-time">13:35</span>
-
-               <h5>John Doe</h5>
-
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>
-
-            </div> <!-- end chat-message-content-->
-
-         </div> <!-- end chat-message -->
-
-         <hr>
-
-         <div class = "chat-message clearfix">
-
-            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
-
-            <div class = "chat-message-content clearfix">
-
-               <span class = "chat-time">13:37</span>
-
-               <h5>Marco Biedermann</h5>
-
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>
-
-            </div> <!-- end chat-message-content -->
-
-         </div> <!-- end chat-message -->
-
-         <hr>
-
-         <div class = "chat-message clearfix">
-
-            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">
-
-            <div class = "chat-message-content clearfix">
-
-               <span class = "chat-time">13:38</span>
-
-               <h5>John Doe</h5>
-
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-
-            </div> <!-- end chat-message-content -->
-
-         </div> <!-- end chat-message -->
-
-         <hr>
-
-      </div> <!-- end chat-history -->
-
-
-      <form action = "#" method = "post">
-
-         <div class = "panel-footer">
-            <div class = "input-group">
-               <input id = "btn-input" type = "text" class = "form-control input-sm chat_input" placeholder = "Write your message here...">
-               <span class = "input-group-btn">
-                        <button class = "btn btn-primary btn-sm" id = "btn-chat">Send</button>
-                        </span>
-            </div>
-         </div>
-
-      </form>
-
-   </div> <!-- end chat -->
-
-</div>
+<!--<div id = "live-chat">-->
+<!---->
+<!--   <header class = "clearfix">-->
+<!---->
+<!--      <a href = "#" class = "chat-close">x</a>-->
+<!---->
+<!--      <h4>Mehmet Mert</h4>-->
+<!---->
+<!--      <span class = "chat-message-counter">3</span>-->
+<!---->
+<!--   </header>-->
+<!---->
+<!--   <div class = "chat" style="display: none;">-->
+<!---->
+<!--      <div class = "chat-history">-->
+<!---->
+<!--         <div class = "chat-message clearfix">-->
+<!---->
+<!--            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">-->
+<!---->
+<!--            <div class = "chat-message-content clearfix">-->
+<!---->
+<!--               <span class = "chat-time">13:35</span>-->
+<!---->
+<!--               <h5>John Doe</h5>-->
+<!---->
+<!--               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, explicabo quasi ratione odio dolorum harum.</p>-->
+<!---->
+<!--            </div>  end chat-message-content-->
+<!---->
+<!--         </div> end chat-message -->
+<!---->
+<!--         <hr>-->
+<!---->
+<!--         <div class = "chat-message clearfix">-->
+<!---->
+<!--            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">-->
+<!---->
+<!--            <div class = "chat-message-content clearfix">-->
+<!---->
+<!--               <span class = "chat-time">13:37</span>-->
+<!---->
+<!--               <h5>Marco Biedermann</h5>-->
+<!---->
+<!--               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, nulla accusamus magni vel debitis numquam qui tempora rem voluptatem delectus!</p>-->
+<!---->
+<!--            </div>  end chat-message-content -->
+<!---->
+<!--         </div>  end chat-message -->
+<!---->
+<!--         <hr>-->
+<!---->
+<!--         <div class = "chat-message clearfix">-->
+<!---->
+<!--            <img src = "/smartbus/assets/images/sections/blog/1.jpg" alt = "" width = "32" height = "32">-->
+<!---->
+<!--            <div class = "chat-message-content clearfix">-->
+<!---->
+<!--               <span class = "chat-time">13:38</span>-->
+<!---->
+<!--               <h5>John Doe</h5>-->
+<!---->
+<!--               <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>-->
+<!---->
+<!--            </div>  end chat-message-content -->
+<!---->
+<!--         </div> end chat-message -->
+<!---->
+<!--         <hr>-->
+<!---->
+<!--      </div>end chat-history -->
+<!---->
+<!---->
+<!--      <form action = "#" method = "post">-->
+<!---->
+<!--         <div class = "panel-footer">-->
+<!--            <div class = "input-group">-->
+<!--               <input id = "btn-input" type = "text" class = "form-control input-sm chat_input" placeholder = "Write your message here...">-->
+<!--               <span class = "input-group-btn">-->
+<!--                        <button class = "btn btn-primary btn-sm" id = "btn-chat">Send</button>-->
+<!--                        </span>-->
+<!--            </div>-->
+<!--         </div>-->
+<!---->
+<!--      </form>-->
+<!---->
+<!--   </div>  end chat -->
+<!---->
+<!--</div>-->
 
 
 <script type = "text/javascript">
@@ -711,7 +714,7 @@ AppAsset::register($this);
                   </div>
                   <div class = "form-group">
                      <div class = "help-block">
-                        <a class = "pull-left" href = "">Forgot Password ?</a>
+                        <a class = "pull-left" href = "<?=  Yii::$app->request->baseUrl; ?>/site/reset-password/">Forgot Password ?</a>
                         <button type = "submit" class = "btn btn-primary pull-right">Login</button>
                         <div class = "clearfix"></div>
                      </div>
@@ -750,6 +753,24 @@ AppAsset::register($this);
    </div><!-- modal-dialog -->
 </div><!-- modal -->
 <!-- jQuery -->
+<div id="fb-root"></div>
+<script>
+   window.fbAsyncInit = function() {
+      FB.init({
+         xfbml            : true,
+         version          : 'v6.0'
+      });
+   };
+
+   (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your customer chat code -->
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/vendor/bootstrap4/js/bootstrap.min.js"></script>
 
@@ -802,7 +823,7 @@ if (Yii::$app->session->hasFlash('flash')): ?>
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/plugins/moment/moment.js"></script>
 
 <!--  Bootstrap min-js Picker -->
-<script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/vendor/bootstrap4/js/bootstrap.min.js"></script>
+<!-- <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/vendor/bootstrap4/css/bootstrap.min.js"></script> -->
 <!--<script type="text/javascript"-->
 <!--        src="--><?php //echo Yii::$app->request->baseUrl; ?><!--/assets/js/bootstrap-datetimepicker.min.js"></script>-->
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/js/jquery-ui/jquery-ui.min.js"></script>
@@ -836,6 +857,7 @@ if (Yii::$app->session->hasFlash('flash')): ?>
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/js/init-all.js"></script>
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/js/custom.js"></script>
+<!-- Load Facebook SDK for JavaScript -->
 
 <?php if (Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id = 'index'): ?>
 

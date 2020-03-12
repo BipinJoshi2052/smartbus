@@ -503,7 +503,7 @@ AppAsset::register($this);
                            <span class = "hide-menu">Slider</span>
                         </a>
                      </li>
-                     <li class = "<?php echo (Yii::$app->controller->id == 'explore' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
+                     <li class = "<?php echo (Yii::$app->controller->id == 'destination' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
                         <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/explore/" aria-expanded = "false">
                            <span class = "hide-menu">Explore</span>
                         </a>

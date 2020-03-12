@@ -46,7 +46,10 @@ class User extends \common\models\generated\User implements IdentityInterface {
     public static function findIdentity($id) {
         return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
     }
-
+    public static function findByEmail($email)
+    {
+        return static::findOne(['username' =>$email]);
+    }
     /**
      * {@inheritdoc}
      */
@@ -133,6 +136,9 @@ class User extends \common\models\generated\User implements IdentityInterface {
 public function getEmailKey() {
         return $this->email_verification;
     }
+    public function getPasswordResetToken() {
+        return $this->password_reset_token;
+    }
 
     /**
      * {@inheritdoc}
@@ -142,6 +148,9 @@ public function getEmailKey() {
     }
     public function validateEmailCode($emailKey) {
         return $this->getEmailKey() === $emailKey;
+    }
+public function validateResetPasswordToken($token) {
+        return $this->getPasswordResetToken() === $token;
     }
 
     /**

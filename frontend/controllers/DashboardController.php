@@ -56,6 +56,7 @@ class DashboardController extends Controller {
     public function actionReset()
     {
         if (isset($_POST['post'])) {
+
             $id=Yii::$app->user->identity->id;
             $dashboard = Helper::setPassword($_POST['post']);
             return $this->render('changepassword',[
@@ -69,6 +70,18 @@ class DashboardController extends Controller {
         ]);
 
     }
+    public function actionResetByEmail()
+    {
+
+            $id=Yii::$app->user->identity->id;
+
+            return $this->render('change-password-by-email',[
+                    'details'=>HelperUser::getSingleUserDetails($id),
+
+            ]);
+        }
+
+
     public function actionRequestPasswordReset() {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -124,6 +137,7 @@ class DashboardController extends Controller {
 
     public function actionUpdate($id = '') {
         if (isset($_POST['post'])) {
+
             $dashboard = Helper::setDashboard($_POST['post']);
             if ($dashboard != false) {
                 Misc::setFlash('success', 'Your Comment has been sent for verification.');

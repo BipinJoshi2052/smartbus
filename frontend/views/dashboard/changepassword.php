@@ -295,14 +295,27 @@ $this->title = 'Change Password ';
 
             <a class = "position-absolute ml-3 mt-3 text-white set-01" href = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/edit" data-toggle = "tooltip" data-placement = "bottom" title = "" data-original-title = "Edit cover images" style = "z-index: 99;">
                <i class = "fa fa-cog" aria-hidden = "true"></i>
-            </a>            <div class = "profiles p-01  rounded text-center shadow-1 icon-block1">
+            </a>       <div class = "profiles p-01  rounded text-center shadow-1 icon-block1">
 
                <div class = "profile-img p-img">
 
-                  <img src = "<?= Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . Yii::$app->user->identity->image ?> " alt = "user" class = "">
-                  <div class = "file btn ">
 
-                     <span type = "file" id = "myFile" name = "file"> <input type = "file" name = "file"> <i class = "fa fa-camera" aria-hidden = "true"></i></span>
+
+                  <img id = "blah" src = "<?php echo (isset($details['user']['image']) && $details['user']['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $details['user']['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "user" class = "">
+
+
+
+
+
+                  <div class = "file btn ">
+                     <form method = "post" action = "" enctype = "multipart/form-data">
+                        <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
+
+                        <span>
+                        <input type = 'file' id = "pic" onchange = "readURL(this);"/>
+                        <i class = "fa fa-camera" aria-hidden = "true"></i>
+                     </span>
+                     </form>
 
                   </div>
                </div>
@@ -332,6 +345,8 @@ $this->title = 'Change Password ';
                  <form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/dashboard/reset" enctype = "multipart/form-data">
                     <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
                     <input type = "hidden" name = "post[user_id]" value = "<?php echo  Yii::$app->user->identity->id; ?>"/>
+                    <input type = "hidden" name = "post[email]" value = ""/>
+
                     <?php $counter = 0; ?>
                      <div class="form-row">
                         <div class="form-group col-md-6">
