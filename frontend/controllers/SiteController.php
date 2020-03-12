@@ -11,7 +11,9 @@ use common\components\HelperExplore;
 use common\components\HelperFaq;
 use common\components\HelperMessages;
 use common\components\HelperNews;
+use common\components\HelperPrivacy;
 use common\components\HelperSlider;
+use common\components\HelperTerms;
 use common\components\HelperTestimonails;
 use common\components\HelperUser;
 use common\components\Misc;
@@ -139,12 +141,17 @@ class SiteController extends Controller {
 
     public function actionTerms() {
         $page = 'terms';
-        return $this->render('terms');
+        return $this->render('terms', [
+                'terms' => HelperTerms::getAllTerms(),
+        ]);
     }
+
 
     public function actionPrivacy() {
         $page = 'privacy';
-        return $this->render('privacy');
+        return $this->render('privacy', [
+                'privacy' => HelperPrivacy::getAllPrivacy(),
+        ]);
     }
 
     public function actionCareers() {
