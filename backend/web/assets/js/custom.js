@@ -689,6 +689,92 @@ $(document).ready(function ($) {
 
       });
    }
+   if ($('.delete-terms').length) {
+      $('.delete-terms').on("click", function () {
+         var cid = $(this).data("id");
+         var table = $(this).data("table");
+         swal({
+                  title: "Delete Section ?",
+                  text: "Are you sure, you want to Delete this Section. It will also delete the terms inside this section",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Yes, delete it",
+                  cancelButtonText: "Cancel",
+                  closeOnConfirm: false,
+                  closeOnCancel: true
+               },
+               function (isConfirm) {
+                  if (isConfirm) {
+                     var $this = $(this);
+                     var $id = $(this).attr('data-id');
+                     console.log($id);
+                     $.ajax({
+                        url: baseUrl + "/terms/delete",
+                        type: 'post',
+                        data: {
+                           id: cid
+                        },
+                        success: function (data) {
+                           if (data === 'true') {
+                              typeAlert('Success', 'Section Deleted.', 'success');
+                              location.reload();
+                           } else {
+                              typeAlert('Error', 'Sorry, Could not delete Section', 'error');
+                           }
+                        },
+                        error: function () {
+                           typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+                        }
+                     });
+                  }
+               });
+
+      });
+   }
+   if ($('.delete-privacy').length) {
+      $('.delete-privacy').on("click", function () {
+         var cid = $(this).data("id");
+         var table = $(this).data("table");
+         swal({
+                  title: "Delete Section ?",
+                  text: "Are you sure, you want to Delete this Section. It will also delete the privacy policy inside this section",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Yes, delete it",
+                  cancelButtonText: "Cancel",
+                  closeOnConfirm: false,
+                  closeOnCancel: true
+               },
+               function (isConfirm) {
+                  if (isConfirm) {
+                     var $this = $(this);
+                     var $id = $(this).attr('data-id');
+                     console.log($id);
+                     $.ajax({
+                        url: baseUrl + "/privacy/delete",
+                        type: 'post',
+                        data: {
+                           id: cid
+                        },
+                        success: function (data) {
+                           if (data === 'true') {
+                              typeAlert('Success', 'Section Deleted.', 'success');
+                              location.reload();
+                           } else {
+                              typeAlert('Error', 'Sorry, Could not delete Section', 'error');
+                           }
+                        },
+                        error: function () {
+                           typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+                        }
+                     });
+                  }
+               });
+
+      });
+   }
    if ($('.delete-client-page-management').length) {
       $('.delete-client-page-management').on("click", function () {
          var cid = $(this).data("id");

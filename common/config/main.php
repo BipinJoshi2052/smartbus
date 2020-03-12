@@ -32,6 +32,15 @@ return [
                             'destination/index/<id:[a-zA-Z0-9-]+>/'      => 'destination/index',
                             'register/validate/<id:[a-zA-Z0-9-_]+>/'      => 'register/validate/',
                             'site/reset-final/<id:[a-zA-Z0-9-_-]+>/'      => 'site/reset-final',
+                            //terms
+                            'terms/post/<id:[a-zA-Z0-9-]+>/'      => 'terms/post',
+                            'terms/edit/<id:[a-zA-Z0-9-]+>/'      => 'terms/edit',
+                            'terms/view/<id:[a-zA-Z0-9-]+>/'      => 'terms/view',
+                            //Privacy
+                            'privacy/post/<id:[a-zA-Z0-9-]+>/'      => 'privacy/post',
+                            'privacy/edit/<id:[a-zA-Z0-9-]+>/'      => 'privacy/edit',
+                            'privacy/view/<id:[a-zA-Z0-9-]+>/'      => 'privacy/view',
+
 
                             //Vacancy
                             'careers/post/<id:[a-zA-Z0-9-]+>/'      => 'careers/post',

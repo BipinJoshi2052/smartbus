@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2020 at 02:58 PM
+-- Generation Time: Mar 12, 2020 at 10:40 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -159,7 +159,7 @@ CREATE TABLE `advertisement` (
 INSERT INTO `advertisement` (`id`, `name`, `type`, `alt_text`, `title`, `content`, `image`, `price`, `company`, `contact_person`, `phone`, `email`, `address`, `display_on`, `display_order`, `created_by`, `created_on`, `expiring_on`, `is_active`) VALUES
 (1, 'rosalyn livingstonasdfa', 0, 'Atque nemo aut elit', 'Dolorem commodi anim', 'Fuga Aute velit dol', '15822720966.jpg', 257, 'Valdez and Colon Trading', 'Eum officia velit b', '+1 (544) 815-7185', 'mytymonof@mailinator.com', 'Qui facere saepe eli', '', 0, 1, '2020-02-22 10:00:16', '2020-04-17', 1),
 (2, 'kathleen decker', 0, 'Nostrum aut eum opti', 'Et maiores incididun', 'Sint explicabo Nes', '15822738232.jpg', 383, 'Kirk Abbott Plc', 'Sapiente voluptas re', '+1 (401) 325-1968', 'dosyre@mailinator.net', 'Ea incididunt id vit', '', 0, 1, '2020-02-21 14:15:23', '1993-06-17', 0),
-(3, 'octavius byers', 0, 'Quis commodo volupta', 'Velit aut eum soluta', 'Accusamus consequunt', '1582381010.webp', 737, 'Conner Rios LLC', 'Totam ex exercitatio', '+1 (507) 193-2607', 'nuri@mailinator.com', 'Sed excepturi qui a ', '', 0, 1, '2020-02-27 10:33:48', '2020-09-12', 1);
+(3, 'octavius byers', 0, 'Quis commodo volupta', 'Velit aut eum soluta', 'Accusamus consequunt', '1582381010.webp', 737, 'Conner Rios LLC', 'Totam ex exercitatio', '+1 (507) 193-2607', 'nuri@mailinator.com', 'Sed excepturi qui a ', '', 0, 1, '2020-03-11 14:11:15', '2020-09-12', 0);
 
 -- --------------------------------------------------------
 
@@ -260,7 +260,8 @@ INSERT INTO `blog` (`id`, `category_id`, `slug`, `title`, `subtitle`, `post_cont
 (19, 8, 'aspernatur-nisi-iste', 'Aspernatur nisi iste', 'Neque nisi illo duis', 'Dolor fuga Dolores ', '15822714246.jpg', 1, 1, '2020-02-21 13:35:24', '2020-02-25 16:15:02', 1),
 (20, 7, 'voluptates-aut-labor', 'Voluptates aut labor', 'Fuga Quae vero enim', 'Ab sint numquam ali', '15822714375.jpg', 1, 1, '2020-02-21 13:35:37', '2020-02-25 16:15:04', 1),
 (23, 7, 'blog', 'Blog', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '1582559787.webp', 1, 13, '2020-02-24 21:41:26', '2020-02-24 21:41:26', 13),
-(24, 8, 'quia-sit-anim-adipis', 'Quia sit anim adipis', 'Molestiae rerum natu', 'Tempore qui dolorem', '1582885912).png', 0, 1, '2020-02-28 16:16:52', '2020-02-28 16:16:52', 1);
+(24, 8, 'quia-sit-anim-adipis', 'Quia sit anim adipis', 'Molestiae rerum natu', 'Tempore qui dolorem', '1582885912).png', 0, 1, '2020-02-28 16:16:52', '2020-02-28 16:16:52', 1),
+(25, 8, 'voluptatem-ut-ullamc', 'Voluptatem ut ullamc', 'Sit incidunt eveni', 'Ratione velit fuga ', '1583993050n.jpg', 0, 1, '2020-03-12 11:49:10', '2020-03-12 11:49:10', 1);
 
 -- --------------------------------------------------------
 
@@ -499,13 +500,14 @@ INSERT INTO `client_page_contents` (`id`, `client_id`, `title`, `remark`, `extra
 -- --------------------------------------------------------
 
 --
--- Table structure for table `destination`
+-- Table structure for table `explore`
 --
 
 CREATE TABLE `explore` (
   `id` bigint(20) NOT NULL,
   `title` varchar(200) NOT NULL,
   `image` varchar(200) DEFAULT NULL,
+  `description` longtext NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT 0,
   `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
   `created_by` bigint(20) NOT NULL,
@@ -514,19 +516,20 @@ CREATE TABLE `explore` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `destination`
+-- Dumping data for table `explore`
 --
 
-INSERT INTO `explore` (`id`, `title`, `image`, `is_active`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
-(1, 'title', '', 0, '2020-02-25 06:08:56', 1, '2020-02-25 06:08:56', 1),
-(2, 'asdf', NULL, 0, '2020-02-25 07:46:11', 1, '2020-02-25 07:46:11', 1),
-(3, 'a', NULL, 0, '2020-02-25 07:47:14', 1, '2020-02-25 07:47:14', 1),
-(4, 'a', NULL, 0, '2020-02-25 07:47:24', 1, '2020-02-25 07:47:24', 1),
-(5, 'this is title', '1582617495_.jpg', 0, '2020-02-25 07:50:26', 1, '2020-02-25 07:58:15', 1),
-(6, 'this is title', '1582868388.webp', 1, '2020-02-25 07:58:27', 1, '2020-02-28 05:39:48', 1),
-(8, 'this is title', '15828027315.jpg', 1, '2020-02-25 09:55:17', 1, '2020-02-27 11:25:31', 1),
-(9, 'this is title', '1582802717.webp', 1, '2020-02-25 10:29:57', 1, '2020-02-27 11:25:17', 1),
-(10, 'Francesca Justicewet', '15826295142.jpg', 1, '2020-02-25 11:12:03', 1, '2020-02-25 11:18:34', 1);
+INSERT INTO `explore` (`id`, `title`, `image`, `description`, `is_active`, `created_on`, `created_by`, `updated_on`, `updated_by`) VALUES
+(1, 'title', '', '', 0, '2020-02-25 06:08:56', 1, '2020-02-25 06:08:56', 1),
+(2, 'asdf', NULL, '', 0, '2020-02-25 07:46:11', 1, '2020-02-25 07:46:11', 1),
+(3, 'a', NULL, '', 0, '2020-02-25 07:47:14', 1, '2020-02-25 07:47:14', 1),
+(4, 'a', NULL, '', 0, '2020-02-25 07:47:24', 1, '2020-02-25 07:47:24', 1),
+(5, 'this is title', '1582617495_.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 0, '2020-02-25 07:50:26', 1, '2020-02-25 07:58:15', 1),
+(6, 'this is title', '1582868388.webp', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '2020-02-25 07:58:27', 1, '2020-02-28 05:39:48', 1),
+(8, 'this is title', '15828027315.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '2020-02-25 09:55:17', 1, '2020-02-27 11:25:31', 1),
+(9, 'this is title', '1582802717.webp', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '2020-02-25 10:29:57', 1, '2020-02-27 11:25:17', 1),
+(10, 'Francesca Justicewet', '15826295142.jpg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 1, '2020-02-25 11:12:03', 1, '2020-02-25 11:18:34', 1),
+(11, 'New new new check', '15839148652.jpg', 'dubai is really good bro', 1, '2020-03-11 08:17:01', 1, '2020-03-11 09:21:00', 1);
 
 -- --------------------------------------------------------
 
@@ -664,7 +667,8 @@ INSERT INTO `messages` (`id`, `name`, `email`, `phone`, `message`, `is_new`, `cr
 (43, 'Ivor Hawkins', 'goxufyh@mailinator.net', '+1 (801) 596-6612', 'Sapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod molSapiente eiusmod mol', 0, '2020-02-27 11:01:21'),
 (44, 'Jordan Cooke', 'wubomuj@mailinator.net', '+1 (138) 837-1435', 'Accusamus qui labori', 0, '2020-03-01 12:09:27'),
 (45, 'Ralph Hartman', 'pinacofe@mailinator.com', '+1 (711) 852-6892', 'Cumque autem iure la', 0, '2020-03-01 16:39:25'),
-(46, 'Chandler Daugherty', 'gica@mailinator.net', '+1 (845) 668-5639', 'Est sint adipisicin', 0, '2020-03-03 07:53:35');
+(46, 'Chandler Daugherty', 'gica@mailinator.net', '+1 (845) 668-5639', 'Est sint adipisicin', 0, '2020-03-03 07:53:35'),
+(47, 'Ariel Webster', 'mawacu@mailinator.com', '+1 (619) 142-1741', 'Consequatur Non nes', 1, '2020-03-11 14:08:54');
 
 -- --------------------------------------------------------
 
@@ -959,6 +963,30 @@ INSERT INTO `permissions_old` (`id`, `role`, `controller`, `interface`, `display
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `privacy`
+--
+
+CREATE TABLE `privacy` (
+  `id` int(11) NOT NULL,
+  `section` text NOT NULL,
+  `content` longtext NOT NULL,
+  `created_at` datetime NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `updated_by` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `privacy`
+--
+
+INSERT INTO `privacy` (`id`, `section`, `content`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(2, 'Personal Data', '<ol>\r\n	<li>PERSONAL DATA THAT YOU PROVIDE TO US. We collect Personal Data (such as name, gender, postal address, birthdate, telephone number, facsimile number, email address, credit/debit card information, photos etc.) when you voluntarily provide such information to us as and when required.</li>\r\n	<li>\r\n	<p>INFORMATION WE GET FROM YOUR USE OF OUR SERVICES. When you interact with us through the Services, we may collect or receive and store certain personally non-identifiable information. Such information is collected passively using various technologies and cannot presently be used to specifically identify you. This information includes;</p>\r\n\r\n	<ol>\r\n		<li>Device-specific information such as hardware model, operating system version, unique device identifiers, mobile network information, memory, sound card data, IP address.</li>\r\n		<li>Cookies that may uniquely identify your browser. This is described in detailed below.</li>\r\n		<li>Details of how you use our services such as your search queries.</li>\r\n		<li>Total number of visitors using our Services, the number of visitors to each page of our Services,</li>\r\n	</ol>\r\n	</li>\r\n</ol>\r\n\r\n<p>As an ongoing effort to better understand and serve the users of the Services, We often conduct research on its customer demographics, interests and behavior based on the Personal Data and other information provided to us. This research may be compiled and analyzed on an aggregate basis. We may share this non-identifiable and aggregate data with our affiliates, agents and business partners but this type of non-identifiable and aggregate does not identify you personally. We may also disclose aggregated user statistics in order to describe our services to current and prospective business partners and to other third parties for other lawful purposes.</p>\r\n', '2020-03-12 15:00:12', 1, '2020-03-12 15:00:12', 1),
+(3, 'USE OF YOUR PERSONAL DATA AND INFORMATION', '<p>We use the Personal Data you provide in a manner that is consistent with this Policy. If you provide Personal Data for certain reason, we may use the Personal Data in connection with the reason for which it was provided. Our Authorized Third Parties or we may use your Personal Data and Information for the following reasons;</p>\r\n\r\n<ol>\r\n	<li>For the purposes of technical administration of the Services.</li>\r\n	<li>For research and development.</li>\r\n	<li>Statistical analysis.</li>\r\n	<li>Customer administration.</li>\r\n	<li>Profiling services preferences.</li>\r\n	<li>Finance and marketing operations and activities and/or as required in the provision of our services including but not limited to credit control services.</li>\r\n	<li>In compliance with any regulatory, statutory or legal obligation imposed on us by any relevant authority.</li>\r\n	<li>To operate and provide the Services to you.</li>\r\n	<li>To support your questions about the use of the Services.</li>\r\n	<li>To detect and prevent fraudulent activity.</li>\r\n	<li>To provide other goods and services by designated representatives or its business partners and/or us to you or parties designated by you and matters subordinates thereto.</li>\r\n	<li>To verify and process payment when you use the Services.</li>\r\n	<li>To verify and record your personal particulars including comparing it with information from other sources and using the information to communicate with you.</li>\r\n	<li>To conduct market research of the users of the Services including the number of users, the frequency of use, profile of users and using such analysis for our business plans, the enhancement of our products and services, targeted advertisements and conveying such information in broad aggregate terms to third parties who have or propose to have business dealings with PayWell Nepal.</li>\r\n	<li>To send you information, promotions and updates including marketing and advertising materials in relation to our goods and services and those of third party organizations selected by us.</li>\r\n</ol>\r\n\r\n<p>If we intend on using any Personal Data in any manner that is not consistent with this Policy, you will be informed of such anticipated use prior to or at the time at which the Personal Data is collected.</p>\r\n', '2020-03-12 15:04:05', 1, '2020-03-12 15:04:05', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `schedules`
 --
 
@@ -1172,6 +1200,58 @@ INSERT INTO `settings` (`id`, `slug`, `type`, `caption`, `is_editable`, `content
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `slider`
+--
+
+CREATE TABLE `slider` (
+  `id` int(11) NOT NULL,
+  `slide_order` int(11) NOT NULL,
+  `image` text NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `subtitle` varchar(200) NOT NULL,
+  `description` longtext NOT NULL,
+  `link` text NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `slider`
+--
+
+INSERT INTO `slider` (`id`, `slide_order`, `image`, `title`, `subtitle`, `description`, `link`, `created_on`) VALUES
+(7, 1, '1583914054X.jpg', 'Consectetur id aspe', 'Eos dolor dolor sap', 'Magnam cillum aliqui', 'https://www.redbus.in/', '2020-03-11 13:52:34'),
+(8, 2, '15839246792.jpg', 'Sunset in Dubai', 'Watch Cool Sunset in Dubai with your loved ones.', 'BaaaaBaaaaal Sunset Guys please come', 'http://smartbus.ritechsolution.com/', '2020-03-11 16:49:39');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `terms`
+--
+
+CREATE TABLE `terms` (
+  `id` int(11) NOT NULL,
+  `section` text DEFAULT NULL,
+  `content` longtext DEFAULT NULL,
+  `created_at` text NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `updated_by` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `terms`
+--
+
+INSERT INTO `terms` (`id`, `section`, `content`, `created_at`, `created_by`, `updated_at`, `updated_by`) VALUES
+(2, 'Terms of our company', '<p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip Ex Ea Commodo Consequat.<br />\r\n<br />\r\nSed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium, Totam Rem Aperiam, Eaque Ipsa Quae Ab Illo Inventore Veritatis Et Quasi Architecto Beatae Vitae Dicta Sunt Explicabo. Nemo Enim Ipsam Voluptatem Quia Voluptas Sit Aspernatur Aut Odit Aut Fugit, Sed Quia Consequuntur Magni Dolores Eos Qui Ratione Voluptatem Sequi Nesciunt. Neque Porro Quisquam Est, Qui Dolorem Ipsum Quia Dolor Sit Amet, Consectetur, Adipisci Velit, Sed Quia Non Numquam Eius Modi Tempora Incidunt Ut Labore Et Dolore Magnam Aliquam Quaerat Voluptatem.</p>\r\n\r\n<blockquote>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident, Similique Sunt In Culpa Qui Officia Deserunt.</blockquote>\r\n\r\n<p>Ut Enim Ad Minima Veniam, Quis Nostrum Exercitationem Ullam Corporis Suscipit Laboriosam, Nisi Ut Aliquid Ex Ea Commodi Consequatur? Quis Autem Vel Eum Iure Reprehenderit Qui In Ea Voluptate Velit Esse Quam Nihil Molestiae Consequatur, Vel Illum Qui Dolorem Eum Fugiat Quo Voluptas Nulla Pariatur</p>\r\n', '0000-00-00', 0, '2020-03-12 13:34:15', 1),
+(3, 'asdcasdc', '<p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip Ex Ea Commodo Consequat.<br />\r\n<br />\r\nSed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium, Totam Rem Aperiam, Eaque Ipsa Quae Ab Illo Inventore Veritatis Et Quasi Architecto Beatae Vitae Dicta Sunt Explicabo. Nemo Enim Ipsam Voluptatem Quia Voluptas Sit Aspernatur Aut Odit Aut Fugit, Sed Quia Consequuntur Magni Dolores Eos Qui Ratione Voluptatem Sequi Nesciunt. Neque Porro Quisquam Est, Qui Dolorem Ipsum Quia Dolor Sit Amet, Consectetur, Adipisci Velit, Sed Quia Non Numquam Eius Modi Tempora Incidunt Ut Labore Et Dolore Magnam Aliquam Quaerat Voluptatem.</p>\r\n\r\n<blockquote>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident, Similique Sunt In Culpa Qui Officia Deserunt.</blockquote>\r\n\r\n<p>Ut Enim Ad Minima Veniam, Quis Nostrum Exercitationem Ullam Corporis Suscipit Laboriosam, Nisi Ut Aliquid Ex Ea Commodi Consequatur? Quis Autem Vel Eum Iure Reprehenderit Qui In Ea Voluptate Velit Esse Quam Nihil Molestiae Consequatur, Vel Illum Qui Dolorem Eum Fugiat Quo Voluptas Nulla Pariatur</p>\r\n', '0000-00-00', 0, '0000-00-00 00:00:00', 0),
+(12, 'Qui maxime veniam a', '<p>New ,Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip Ex Ea Commodo Consequat.<br />\r\n<br />\r\nSed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium, Totam Rem Aperiam, Eaque Ipsa Quae Ab Illo Inventore Veritatis Et Quasi Architecto Beatae Vitae Dicta Sunt Explicabo. Nemo Enim Ipsam Voluptatem Quia Voluptas Sit Aspernatur Aut Odit Aut Fugit, Sed Quia Consequuntur Magni Dolores Eos Qui Ratione Voluptatem Sequi Nesciunt. Neque Porro Quisquam Est, Qui Dolorem Ipsum Quia Dolor Sit Amet, Consectetur, Adipisci Velit, Sed Quia Non Numquam Eius Modi Tempora Incidunt Ut Labore Et Dolore Magnam Aliquam Quaerat Voluptatem.</p>\r\n\r\n<blockquote>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident, Similique Sunt In Culpa Qui Officia Deserunt.</blockquote>\r\n\r\n<p>Ut Enim Ad Minima Veniam, Quis Nostrum Exercitationem Ullam Corporis Suscipit Laboriosam, Nisi Ut Aliquid Ex Ea Commodi Consequatur? Quis Autem Vel Eum Iure Reprehenderit Qui In Ea Voluptate Velit Esse Quam Nihil Molestiae Consequatur, Vel Illum Qui Dolorem Eum Fugiat Quo Voluptas Nulla Pariatur</p>\r\n', '2020-03-12 12:13:24', 1, '2020-03-12 12:13:24', 1),
+(13, 'Introduction', '<p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip Ex Ea Commodo Consequat.<br />\r\n<br />\r\nSed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium, Totam Rem Aperiam, Eaque Ipsa Quae Ab Illo Inventore Veritatis Et Quasi Architecto Beatae Vitae Dicta Sunt Explicabo. Nemo Enim Ipsam Voluptatem Quia Voluptas Sit Aspernatur Aut Odit Aut Fugit, Sed Quia Consequuntur Magni Dolores Eos Qui Ratione Voluptatem Sequi Nesciunt. Neque Porro Quisquam Est, Qui Dolorem Ipsum Quia Dolor Sit Amet, Consectetur, Adipisci Velit, Sed Quia Non Numquam Eius Modi Tempora Incidunt Ut Labore Et Dolore Magnam Aliquam Quaerat Voluptatem.</p>\r\n\r\n<blockquote>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident, Similique Sunt In Culpa Qui Officia Deserunt.</blockquote>\r\n\r\n<p>Ut Enim Ad Minima Veniam, Quis Nostrum Exercitationem Ullam Corporis Suscipit Laboriosam, Nisi Ut Aliquid Ex Ea Commodi Consequatur? Quis Autem Vel Eum Iure Reprehenderit Qui In Ea Voluptate Velit Esse Quam Nihil Molestiae Consequatur, Vel Illum Qui Dolorem Eum Fugiat Quo Voluptas Nulla Pariatur</p>\r\n', '2020-03-12 13:16:05', 1, '2020-03-12 13:16:05', 1),
+(14, 'Check check', '<p>Lorem Ipsum Dolor Sit Amet, Consectetur Adipiscing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore Magna Aliqua. Ut Enim Ad Minim Veniam, Quis Nostrud Exercitation Ullamco Laboris Nisi Ut Aliquip Ex Ea Commodo Consequat.<br />\r\n<br />\r\nSed Ut Perspiciatis Unde Omnis Iste Natus Error Sit Voluptatem Accusantium Doloremque Laudantium, Totam Rem Aperiam, Eaque Ipsa Quae Ab Illo Inventore Veritatis Et Quasi Architecto Beatae Vitae Dicta Sunt Explicabo. Nemo Enim Ipsam Voluptatem Quia Voluptas Sit Aspernatur Aut Odit Aut Fugit, Sed Quia Consequuntur Magni Dolores Eos Qui Ratione Voluptatem Sequi Nesciunt. Neque Porro Quisquam Est, Qui Dolorem Ipsum Quia Dolor Sit Amet, Consectetur, Adipisci Velit, Sed Quia Non Numquam Eius Modi Tempora Incidunt Ut Labore Et Dolore Magnam Aliquam Quaerat Voluptatem.</p>\r\n\r\n<blockquote>At Vero Eos Et Accusamus Et Iusto Odio Dignissimos Ducimus Qui Blanditiis Praesentium Voluptatum Deleniti Atque Corrupti Quos Dolores Et Quas Molestias Excepturi Sint Occaecati Cupiditate Non Provident, Similique Sunt In Culpa Qui Officia Deserunt.</blockquote>\r\n\r\n<p>Ut Enim Ad Minima Veniam, Quis Nostrum Exercitationem Ullam Corporis Suscipit Laboriosam, Nisi Ut Aliquid Ex Ea Commodi Consequatur? Quis Autem Vel Eum Iure Reprehenderit Qui In Ea Voluptate Velit Esse Quam Nihil Molestiae Consequatur, Vel Illum Qui Dolorem Eum Fugiat Quo Voluptas Nulla Pariatur</p>\r\n', '2020-03-12 13:22:00', 1, '2020-03-12 13:22:38', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `testimonials`
 --
 
@@ -1246,7 +1326,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `incorrect_login`, `name`, `role`, `image`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `email_verified`, `email_verification`, `status`, `phone`, `phone_is_validated`, `verification_id`, `is_verified`, `created_on`, `updated_on`, `created_by`, `updated_by`) VALUES
-(1, 0, 'Sam Administrator3', 1, '1583845417W.png', 'admin@gmail.com', 'CCMimSr-D7e7tZPa-5OM0gpJVUI6uKjl', '$2y$13$ROdchlSCANvovhoJiS/rs.h5RwfHUOfG3OR6ATLEAi35OFx20pgAy', 'a4Fkvr_WMwS1BaH27gPzOl_bfuho690x_1472543386', 'admin@gmail.com', 1, NULL, 10, '9818459687', 0, NULL, 0, '2019-06-02 00:00:00', NULL, 1, NULL),
+(1, 0, 'Sam Administrator', 1, '1583845417W.png', 'admin@gmail.com', 'CCMimSr-D7e7tZPa-5OM0gpJVUI6uKjl', '$2y$13$T1afttmB71.Isiwimsm0jeHW5/15GbDZPZrvtg.gFsXI08Xlccmpe', 'a4Fkvr_WMwS1BaH27gPzOl_bfuho690x_1472543386', 'admin@gmail.com', 1, NULL, 10, '9818459687', 0, NULL, 0, '2019-06-02 00:00:00', NULL, 1, NULL),
 (2, 0, 'Rup Pradhan', 5, '15504745024.jpg', 'client@gmail.com', 'CCMimSr-D7e7tZPa-5OM0gpJVUI6uKjq', '$2y$13$xCdL76J2wvJUj9.vnECW6OzGdR8v5.TSVObBJ4WbSL1IpMqCSeg8m', '1ZoByi-Kyn3kOTjS16lEp0hy9QqLrkP9_1561205962', 'client@gmail.com', 1, NULL, 10, '', 0, 77, 1, '2019-06-02 00:00:00', '2019-06-23 17:42:32', 1, 1),
 (5, 0, 'Dev Basnet', 3, '15504744593.jpg', 'vendor@gmail.com', 'CMdCAeAHMGqQ2-kYumQ8sW8lpTJ_JSAs', '$2y$13$xCdL76J2wvJUj9.vnECW6OzGdR8v5.TSVObBJ4WbSL1IpMqCSeg8m', 'PHL0_x3AkNZAKLJmMz9umuag9YdlqJmM_1561206794', 'vendor@gmail.com', 1, NULL, 10, '', 0, 76, 1, '0000-00-00 00:00:00', NULL, 1, NULL),
 (6, 0, 'Mat agent', 4, '1552110523r.jpg', 'agent@gmail.com', '', '$2y$13$xCdL76J2wvJUj9.vnECW6OzGdR8v5.TSVObBJ4WbSL1IpMqCSeg8m', 'a4Fkvr_WMwS1BaH27gPzO452fuho690x_1472543386', 'agent@gmail.com', 1, NULL, 10, NULL, 0, NULL, 0, '2019-06-10 04:11:06', NULL, 1, NULL),
@@ -1255,7 +1335,7 @@ INSERT INTO `user` (`id`, `incorrect_login`, `name`, `role`, `image`, `username`
 (9, 0, 'Ramirez And Warren Traders', 3, NULL, 'jyvi@mailinator.com', '_Max4tR7rHlHqrpGDr7FsTGaTgJykVKw', '$2y$13$zNpNwWwTaJmQEGeobbudXOWe71Ag8UO7FnrSLWJKC9JR.JjFleE9q', 'wYX4_kiZ0DvzZ_rg3nZENExergiWRmWE_1566111738', 'jyvi@mailinator.com', 0, NULL, 10, '', 0, 91, 1, '2019-08-18 12:47:18', NULL, 1, NULL),
 (10, 0, 'Gillespie Bowers Inc', 3, NULL, 'zizitiwus@mailinator.com', 'ltPkZ1CAVVzixA3kItR7TB0VqB-fQrY5', '$2y$13$65bi4dULnHDh97Te9KgkLOMFuO2yX72KkrBu79nKSSiRvIStQmCsa', '0rQ4IupMOvRtg92OsGwMZW5xzX_Bfnw1_1566111805', 'zizitiwus@mailinator.com', 0, NULL, 10, '', 0, 92, 1, '2019-08-18 12:48:25', NULL, 1, NULL),
 (13, 0, 'Bipin Joshi', 5, '15504938502.jpg', 'joshi@gmail.com', '1', '$2y$13$xCdL76J2wvJUj9.vnECW6OzGdR8v5.TSVObBJ4WbSL1IpMqCSeg8m', '', 'joshi@gmail.com', 1, NULL, 10, '12341234', 0, NULL, 0, '2019-06-02 00:00:00', NULL, 1, NULL),
-(37, 0, 'Yoel Limbu', 5, '1583845546n.jpg', 'check123.email123@gmail.com', 'HaNmQ681OJsfDNQVPiCVVsc6QWrgtefL', '$2y$13$5sGMrZEVPEk1vfODUUrIQOTPjPMLu8AQi34E/P4aqF60k6RMEU8/e', 'a4Fkvr_WMwS1BaH27gPzOl_bfuho690x_14725433867', 'check123.email123@gmail.com', 10, NULL, 10, '', 0, NULL, 0, '2020-03-10 16:56:29', NULL, NULL, NULL);
+(37, 0, 'Yoel Limbu', 5, '1583851073X.jpg', 'check123.email123@gmail.com', 'HaNmQ681OJsfDNQVPiCVVsc6QWrgtefL', '$2y$13$5sGMrZEVPEk1vfODUUrIQOTPjPMLu8AQi34E/P4aqF60k6RMEU8/e', 'a4Fkvr_WMwS1BaH27gPzOl_bfuho690x_14725433867', 'check123.email123@gmail.com', 10, NULL, 10, '', 0, NULL, 0, '2020-03-10 16:56:29', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1276,7 +1356,7 @@ CREATE TABLE `user_details` (
   `discount` float NOT NULL DEFAULT 0,
   `allowed_gateways` longtext COLLATE utf8_swedish_ci DEFAULT NULL,
   `contact_person_name` longtext COLLATE utf8_swedish_ci DEFAULT NULL,
-  `contact_person_phone` mediumint(9) DEFAULT NULL,
+  `contact_person_phone` bigint(20) DEFAULT NULL,
   `contact_person_email` longtext COLLATE utf8_swedish_ci DEFAULT NULL,
   `company_registration_number` varchar(64) COLLATE utf8_swedish_ci DEFAULT NULL,
   `pan_number` varchar(64) COLLATE utf8_swedish_ci DEFAULT NULL,
@@ -1292,7 +1372,7 @@ INSERT INTO `user_details` (`id`, `user_id`, `company`, `address`, `phone`, `cit
 (2, 2, '', 'Asdasd Asdfasdf Asdfa Sd12312312', '', NULL, NULL, NULL, 0, 0, NULL, '', NULL, '', NULL, NULL, 0),
 (4, 10, 'Gillespie Bowers Inc', 'Eiusmod sit eiusmod', '+1 (816) 329-9916', NULL, NULL, NULL, 0, 0, '[\"laxmi\",\"khalti\"]', 'Ethan Mooney', 54, 'harufin@mailinator.net', 'THOMPSON WADE PLC', '9', 1),
 (8, 1, 'Baba Bus', 'Hattiban', '5651651', '1659846', 'BA 1-27', NULL, 0, 0, '[\"laxmi\",\"kumari\",\"esewa\",\"khalti\"]', '121', 1234567, 'cashdcasc@evasdc.com', '4564', '789', 1),
-(13, 37, 'CodeCater', 'Kapan', '9818454474', '5656513', '6651', NULL, 0, 0, NULL, 'Ramayan', 8388607, 'jnerd48@gmail.com', NULL, NULL, 1);
+(13, 37, 'CodeCater', 'Kapan', '9818454474', '5656513', '6651', NULL, 0, 0, NULL, 'Ramayan2', 9818454474, 'jnerd48@gmail.com', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -2060,7 +2140,7 @@ ALTER TABLE `client_page_contents`
   ADD KEY `updated_by` (`updated_by`);
 
 --
--- Indexes for table `destination`
+-- Indexes for table `explore`
 --
 ALTER TABLE `explore`
   ADD PRIMARY KEY (`id`),
@@ -2137,6 +2217,12 @@ ALTER TABLE `permissions_old`
   ADD KEY `controller` (`controller`);
 
 --
+-- Indexes for table `privacy`
+--
+ALTER TABLE `privacy`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `schedules`
 --
 ALTER TABLE `schedules`
@@ -2188,6 +2274,18 @@ ALTER TABLE `session`
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`,`slug`),
   ADD UNIQUE KEY `slug` (`slug`);
+
+--
+-- Indexes for table `slider`
+--
+ALTER TABLE `slider`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `terms`
+--
+ALTER TABLE `terms`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `testimonials`
@@ -2392,7 +2490,7 @@ ALTER TABLE `auth`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `blog_categories`
@@ -2431,10 +2529,10 @@ ALTER TABLE `client_page_contents`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `destination`
+-- AUTO_INCREMENT for table `explore`
 --
 ALTER TABLE `explore`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -2452,7 +2550,7 @@ ALTER TABLE `locations`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `news`
@@ -2485,6 +2583,12 @@ ALTER TABLE `permissions_old`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
+-- AUTO_INCREMENT for table `privacy`
+--
+ALTER TABLE `privacy`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `schedules`
 --
 ALTER TABLE `schedules`
@@ -2513,6 +2617,18 @@ ALTER TABLE `sections`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `slider`
+--
+ALTER TABLE `slider`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `terms`
+--
+ALTER TABLE `terms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `testimonials`
@@ -2701,7 +2817,7 @@ ALTER TABLE `client_page_contents`
   ADD CONSTRAINT `client_r` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `destination`
+-- Constraints for table `explore`
 --
 ALTER TABLE `explore`
   ADD CONSTRAINT `fk_created_by` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,

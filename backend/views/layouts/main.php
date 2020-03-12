@@ -533,6 +533,11 @@ AppAsset::register($this);
                            <span class = "hide-menu">Terms & Conditions</span>
                         </a>
                      </li>
+                     <li class = "<?php echo (Yii::$app->controller->id == 'privacy' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?>">
+                        <a class = "waves-effect waves-dark" href = "<?php echo Yii::$app->request->baseUrl; ?>/privacy/" aria-expanded = "false">
+                           <span class = "hide-menu">Privacy</span>
+                        </a>
+                     </li>
 <!--                     <li class = "--><?php //echo (Yii::$app->controller->id == 'blog' && Yii::$app->controller->action->id == 'index') ? 'active' : '' ?><!--">-->
 <!--                        <a class = "waves-effect waves-dark" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/blog/" aria-expanded = "false">-->
 <!--                           <span class = "hide-menu">Blog</span>-->
