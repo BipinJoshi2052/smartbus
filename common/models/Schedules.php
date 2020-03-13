@@ -12,7 +12,7 @@ class Schedules extends \common\models\generated\Schedules {
 
     public function getUser() {
         return Parent::getUser()
-                     ->with('userDetails');
+                     ->with('user0');
     }
 
     public function getVehicle() {

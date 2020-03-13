@@ -232,7 +232,6 @@ $(document).ready(function ($) {
 
 // Select2 Ajax
    function getLocations(select, city) {
-
       var l = (city) ? 'cities' : 'places';
 
       select.select2({
@@ -294,7 +293,42 @@ $(document).ready(function ($) {
             return result.name || result.text;
          }*/
    }
+   $(function () {
+      $('.search-swap-locations').on("click", function () {
+         console.log('success');
+         var cid = $(this).data("id");
+         var modal = $('.modal-message');
+         $.ajax({
+            url: baseUrl + "/pos/swap",
+            type: 'post',
+            data: {
+               id: cid
+            },
+            success: function (data) {
+               console.log(data);
+               if (data === '') {
+                  typeAlert('Error', 'Sorry, Could not open Message', 'error');
+               } else {
+                  var a = JSON.parse(data);
+                  //message seen or new
+                  if ($('[data-for="new"]')) {
+                     $('[data-id="id' + a['id'] + '"]').html('<span data-for="seen" class="label label-danger">Seen</span>');
+                  } else {
+                     $('[data-id="id' + a['id'] + '"]').html('<span data-for="new" class="label label-danger">New</span>');
+                  }
 
+                  modal.find('.modal-dialog').html(a['result']);
+                  modal.modal('show');
+                  $('.refresh').removeClass('hidden')
+               }
+            },
+            error: function () {
+               typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+            }
+         });
+
+      });
+   });
    $(function () {
       $(".preloader").fadeOut();
    });

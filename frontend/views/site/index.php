@@ -198,33 +198,24 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
 
             </ul>
 
-            <form action = "#" class = "request-form ftco-animate bg-01 fadeInUp ftco-animated search-ticket">
-
-
+            <form action = "<?php echo Yii::$app->request->baseUrl ?>/pos/" method="get" class = "request-form ftco-animate bg-01 fadeInUp ftco-animated search-ticket">
                <div class = "tab-content tab-content-01" id = "pills-tabContent">
                   <div class = "tab-pane fade show active" id = "pills-home" role = "tabpanel" aria-labelledby = "pills-home-tab">
+                     <div class="search-panel">
 
-
-                     <div class = "input-group">
-                        <input class = "input-name form-control form-02" type = "text" id = "career_name" name = "career_name" placeholder = "Boearding Point">
-
-
-                        <div class = "">
-                           <span class = "swap" id = "inputGroupPrepend2"><i class = "fa fa-exchange" aria-hidden = "true"></i></span>
-                        </div>
+                        <select name="from" id="location[id]" class="inline-form-control required" placeholder="On" autocomplete="off" data-plugin="cities-ajax"></select>
+                        <a href="javascript:void(0);" class="btn btn-primary search-swap-locations" data-id="search-swap-locations" type="button" style="margin: 15px 0px 15px;">
+                          <i class = "fa fa-exchange" aria-hidden = "true"></i>
+                        </a>
+                        <select name="to" id="" class="inline-form-control required" placeholder="To" autocomplete="off" data-plugin="cities-ajax"></select>
+                        <span class="spacer"></span>
                      </div>
 
-                     <div class = "input-text form-group">
-                        <input class = "input-name form-control" type = "text" id = "career_name" name = "career_name" placeholder = "Droping Point">
-                     </div>
-
-                     <div class = "form-group ">
-
+                  <div class = "form-group ">
                         <input type = "text" class = "form-control form-02 fm-01" id = "departure-date" placeholder = "Journey Date">
                         <div class = "today">
                            <a href = "">today</a>
                            <a style = "border-right: 0px;" href = "">tomorrow</a>
-
                         </div>
                         <div class = "date-clean">
                            <a href = "">clear</a>

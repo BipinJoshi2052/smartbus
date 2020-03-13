@@ -1,5 +1,4 @@
 <?php
-
 use \common\components\Misc;
 
 $this->registerJsFile(Yii::$app->request->baseUrl . '/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js');

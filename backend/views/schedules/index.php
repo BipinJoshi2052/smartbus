@@ -1,3 +1,7 @@
+<?php //echo '<pre>';
+//print_r($all);
+//echo '</pre>';
+//die;?>
 <div class="container-fluid">
    <div class="row page-titles">
       <div class="col-md-6 align-self-center">
@@ -5,7 +9,7 @@
          <h6 class="text-muted m-0">All available schedules</h6>
       </div>
       <div class="col-md-6 align-self-center text-right">
-         <a href="<?= Yii::$app->request->baseUrl; ?>/schedules/form" class="btn btn-primary">
+         <a href="<?= Yii::$app->request->baseUrl; ?>/schedules/create" class="btn btn-primary">
             <i class="mdi mdi-plus m-r-5"></i>
             Add New Schedule
          </a>
@@ -26,7 +30,7 @@
                    <th>To</th>
                    <th>Departure</th>
                    <th>Bookings</th>
-                   <th></th>
+                   <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,7 +44,6 @@
                       <td><?= ucwords($a['location_to']) ?></td>
                       <td><?= $a['departure'] ?></td>
                       <td></td>
-
                       <td class="text-right">
                          <a class="m-r-10 repeat-schedule" data-identity="<?= \common\components\Misc::encrypt($a['id']); ?>" href="javascript:void();">Repeat</a>
                          <a class="m-r-10" href="<?= Yii::$app->request->baseUrl; ?>/schedules/view/<?= \common\components\Misc::encrypt($a['id']) ?>">View</a>

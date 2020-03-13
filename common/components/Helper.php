@@ -289,7 +289,7 @@ class Helper extends Component {
                           ->where(['id' => $id])
                           ->with('bookings')
                           ->with('scheduleRoutes')
-                          ->with('user')
+                          ->with('user0')
                           ->with('vehicle')
                           ->with('createdBy')
                           ->with('updatedBy');
@@ -300,6 +300,7 @@ class Helper extends Component {
         }
         $model = $model->asArray()
                        ->one();
+
         return self::processSchedule($model);
 
     }
@@ -661,9 +662,15 @@ class Helper extends Component {
     public static function getAll($model, $conditions = [], $active = true, $order = '') {
         $m = $model;
         $model = (Yii::$app->params['modelpath'] . ucwords($model));
+
         $rules = $model::attributeLabels();
         $data = $model::find();
-
+        if(key_exists('user_id', $rules)){
+            $data = $data->with('user0');
+        }
+        if (key_exists('vehicle_id', $rules)) {
+            $data = $data->with('vehicle');
+        }
         if (key_exists('verification_id', $rules)) {
             $data = $data->with('verification');
         }
@@ -672,6 +679,7 @@ class Helper extends Component {
         }
         if (key_exists('updated_by', $rules)) {
             $data = $data->with('updatedBy');
+
         }
         if (!empty($conditions)) {
             foreach ($conditions as $k => $c) {
@@ -685,11 +693,13 @@ class Helper extends Component {
         }
         if ($active && key_exists('is_active', $rules)) {
             $data = $data->andWhere(' is_active = 1 ');
+
         }
         //        if (!empty($order)) {
         //            $data = $data->orderBy($order);
         //        }
         return $data->orderBy(['id' => SORT_DESC])->asArray()->all();
+
     }
 
     public static function getAllActive($model) {
@@ -793,21 +803,8 @@ class Helper extends Component {
     public static function getVehicles() {
         $vehicles = Vehicles::find()
                             ->with('type0')
-                            ->where(['=', 'is_verified', '1']);
-        $permission = (isset(Yii::$app->params['permissions']['Vehicles']) && in_array('read', Yii::$app->params['permissions']['Vehicles']));
-
-        if (Yii::$app->user->identity->role == Yii::$app->params['role_num']['vendor']) {
-            $vehicles = $vehicles->andWhere(['=', 'user_id', Yii::$app->user->identity->getId()]);
-            $vehicles = $vehicles->all();
-        }
-        elseif ($permission) {
-            $vehicles = $vehicles->all();
-        }
-        else {
-            $vehicles = [];
-        }
-
-
+                            ->where(['=', 'is_verified', '1'])
+                            ->all();
         return $vehicles;
     }
 

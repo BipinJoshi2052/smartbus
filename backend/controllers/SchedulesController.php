@@ -50,9 +50,11 @@ class SchedulesController extends Controller {
         $schedules = [];
         if (Yii::$app->user->identity->role == Yii::$app->params['role_num']['vendor']) {
             $schedules = Helper::getAll('Schedules', [['=', 'user_id', Yii::$app->user->identity->id], ['>=', 'departure', date('Y-m-d H:i:s')]]);
+
         }
         else {
             $schedules = Helper::getAll('Schedules', [['>=', 'departure', date('Y-m-d H:i:s')]], true, 'departure ASC');
+
         }
         return $this->render('index', [
                 'all' => $schedules,
@@ -63,6 +65,7 @@ class SchedulesController extends Controller {
         $id = Misc::decrypt($id);
         if ($id > 0) {
             $schedule = Helper::getSchedule($id);
+
             return $this->render('view', [
                     'schedule' => $schedule,
                     'prices'   => $schedule['prices']]);

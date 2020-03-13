@@ -1,4 +1,5 @@
 <?php
+
 $this->title = Yii::$app->params['system_name'] . ' | POS';
 ?>
 <div class="container-fluid pos">
@@ -6,8 +7,7 @@ $this->title = Yii::$app->params['system_name'] . ' | POS';
       <div class="search-transport search-form">
          <form class="form-inline" action="<?php echo Yii::$app->request->baseUrl ?>/pos/" method="get">
             <div class="search-panel">
-               <a class="button" href="javascript:void(0);"> <i class="mdi mdi-chevron-left"></i></a>
-               <select name="from" id="" class="inline-form-control required" placeholder="On" autocomplete="off" data-plugin="cities-ajax"></select>
+               <select name="from" id="" class="inline-form-control required" autocomplete="off" data-plugin="cities-ajax"></select>
                <button class="btn search-swap-locations" id="search-swap-locations" type="button">
                   <i class="fa fa-arrows-h"></i>
                </button>
