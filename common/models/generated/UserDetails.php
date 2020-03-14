@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "user_details".
+ * This is the model class for table "{{%user_details}}".
  *
  * @property int $id
  * @property int $user_id
@@ -35,7 +35,7 @@ class UserDetails extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'user_details';
+        return '{{%user_details}}';
     }
 
     /**
@@ -100,8 +100,4 @@ class UserDetails extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
-//    public function getUserPresence($id)
-//    {
-//        return $this->hasOne(UserDetails::className(), ['user_id' => $id]);
-//    }
 }

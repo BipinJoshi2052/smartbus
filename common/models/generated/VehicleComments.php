@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "vehicle_comments".
+ * This is the model class for table "{{%vehicle_comments}}".
  *
  * @property int $id
  * @property int $vehicle_id
@@ -23,7 +23,7 @@ use Yii;
  * @property User $vendor
  * @property User $customer
  * @property Vehicles $vehicle
- * @property VerificationComments $verification
+ * @property VerificationActions $verification
  */
 class VehicleComments extends \yii\db\ActiveRecord
 {
@@ -32,7 +32,7 @@ class VehicleComments extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'vehicle_comments';
+        return '{{%vehicle_comments}}';
     }
 
     /**
@@ -49,7 +49,7 @@ class VehicleComments extends \yii\db\ActiveRecord
             [['vendor_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['vendor_id' => 'id']],
             [['customer_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['customer_id' => 'id']],
             [['vehicle_id'], 'exist', 'skipOnError' => true, 'targetClass' => Vehicles::className(), 'targetAttribute' => ['vehicle_id' => 'id']],
-            [['verification_id'], 'exist', 'skipOnError' => true, 'targetClass' => VerificationComments::className(), 'targetAttribute' => ['verification_id' => 'id']],
+            [['verification_id'], 'exist', 'skipOnError' => true, 'targetClass' => VerificationActions::className(), 'targetAttribute' => ['verification_id' => 'id']],
         ];
     }
 
@@ -103,6 +103,6 @@ class VehicleComments extends \yii\db\ActiveRecord
      */
     public function getVerification()
     {
-        return $this->hasOne(VerificationComments::className(), ['id' => 'verification_id']);
+        return $this->hasOne(VerificationActions::className(), ['id' => 'verification_id']);
     }
 }

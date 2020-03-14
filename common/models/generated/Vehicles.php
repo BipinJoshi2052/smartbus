@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "vehicles".
+ * This is the model class for table "{{%vehicles}}".
  *
  * @property int $id
  * @property int $type
@@ -37,8 +37,8 @@ use Yii;
  * @property VehicleTypes $type0
  * @property User $user
  * @property VerificationActions $verification
- * @property User $updatedBy
  * @property User $createdBy
+ * @property User $updatedBy
  */
 class Vehicles extends \yii\db\ActiveRecord
 {
@@ -47,7 +47,7 @@ class Vehicles extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'vehicles';
+        return '{{%vehicles}}';
     }
 
     /**
@@ -68,8 +68,8 @@ class Vehicles extends \yii\db\ActiveRecord
             [['type'], 'exist', 'skipOnError' => true, 'targetClass' => VehicleTypes::className(), 'targetAttribute' => ['type' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['verification_id'], 'exist', 'skipOnError' => true, 'targetClass' => VerificationActions::className(), 'targetAttribute' => ['verification_id' => 'id']],
-            [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
             [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
+            [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
         ];
     }
 
@@ -156,16 +156,16 @@ class Vehicles extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getUpdatedBy()
+    public function getCreatedBy()
     {
-        return $this->hasOne(User::className(), ['id' => 'updated_by']);
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getCreatedBy()
+    public function getUpdatedBy()
     {
-        return $this->hasOne(User::className(), ['id' => 'created_by']);
+        return $this->hasOne(User::className(), ['id' => 'updated_by']);
     }
 }

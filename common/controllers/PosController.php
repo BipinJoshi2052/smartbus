@@ -84,7 +84,7 @@ class PosController extends Controller {
         else {
             $post = [];
         }
-
+echo 'asd';
         if (isset($post['from']) && $post['from'] != '' && isset($post['to']) && $post['to'] != '') {
             if (isset($post[Yii::$app->request->csrfParam])) {
                 unset($post[Yii::$app->request->csrfParam]);
@@ -94,7 +94,10 @@ class PosController extends Controller {
                     CURLOPT_POSTFIELDS, ['post' => Misc::json_encode($post)])
                               ->post(Yii::$app->params['api_path'] . '/search/tickets');
 
-            //    print_r($schedules);
+            /*echo '<pre>';
+            print_r($schedules);
+            echo '</pre>';*/
+           print_r($schedules);
             if (!empty($schedules)) {
                 $f = $curl->setOption(
                         CURLOPT_POSTFIELDS, ['post' => Misc::json_encode($post)])
@@ -106,6 +109,7 @@ class PosController extends Controller {
             }
 
         }
+
         return $this->render('index', [
                 'schedules' => (isset($schedules) && $schedules != '') ? Misc::json_decode($schedules, true) : [],
                 'search'    => (!empty($post)) ? $post : [],

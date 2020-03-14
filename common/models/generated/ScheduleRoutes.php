@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "schedule_routes".
+ * This is the model class for table "{{%schedule_routes}}".
  *
  * @property int $id
  * @property int $order_index
@@ -26,7 +26,7 @@ class ScheduleRoutes extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'schedule_routes';
+        return '{{%schedule_routes}}';
     }
 
     /**

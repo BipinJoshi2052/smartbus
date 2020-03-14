@@ -27,9 +27,9 @@ return [
                                 ],
                                 'facebook' => [
                                         'class'          => 'yii\authclient\clients\Facebook',
-                                        //                                        'authUrl'        => 'https://www.facebook.com/dialog/oauth?display=popup',
-                                        'clientId'       => '2775532572493611',
-                                        'clientSecret'   => '4ce0a91d994ab89a7fa0412738797919',
+//                                                                                'authUrl'        => 'https://www.facebook.com/dialog/oauth?display=popup',
+                                        'clientId'       => '697105547494171',
+                                        'clientSecret'   => 'b95ea26a5d422b6a61d6b703ee4d8bf9',
                                         'attributeNames' => [
                                                 'name',
                                                 'email',

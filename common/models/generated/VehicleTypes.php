@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "vehicle_types".
+ * This is the model class for table "{{%vehicle_types}}".
  *
  * @property int $id
  * @property int $verification_id
@@ -20,7 +20,6 @@ use Yii;
  *
  * @property User $updatedBy
  * @property User $createdBy
- * @property VerificationActions $verification
  * @property Vehicles[] $vehicles
  */
 class VehicleTypes extends \yii\db\ActiveRecord
@@ -30,7 +29,7 @@ class VehicleTypes extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'vehicle_types';
+        return '{{%vehicle_types}}';
     }
 
     /**
@@ -46,7 +45,6 @@ class VehicleTypes extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 128],
             [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
             [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
-            [['verification_id'], 'exist', 'skipOnError' => true, 'targetClass' => VerificationActions::className(), 'targetAttribute' => ['verification_id' => 'id']],
         ];
     }
 
@@ -83,14 +81,6 @@ class VehicleTypes extends \yii\db\ActiveRecord
     public function getCreatedBy()
     {
         return $this->hasOne(User::className(), ['id' => 'created_by']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getVerification()
-    {
-        return $this->hasOne(VerificationActions::className(), ['id' => 'verification_id']);
     }
 
     /**

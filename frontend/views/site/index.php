@@ -202,7 +202,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                <div class = "tab-content tab-content-01" id = "pills-tabContent">
                   <div class = "tab-pane fade show active" id = "pills-home" role = "tabpanel" aria-labelledby = "pills-home-tab">
                      <div class="search-panel">
-
                         <select name="from" id="location[id]" class="inline-form-control required" placeholder="On" autocomplete="off" data-plugin="cities-ajax"></select>
                         <a href="javascript:void(0);" class="btn btn-primary search-swap-locations" data-id="search-swap-locations" type="button" style="margin: 15px 0px 15px;">
                           <i class = "fa fa-exchange" aria-hidden = "true"></i>
@@ -212,50 +211,39 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                      </div>
 
                   <div class = "form-group ">
-                        <input type = "text" class = "form-control form-02 fm-01" id = "departure-date" placeholder = "Journey Date">
+
+                     <div class = "input-text form-group ">
+                        <input class = "input-name form-control form-02 fm-01 has-Datepicker "  type='text' id="departure-date" value="">
+                        <!--                        <input type = "text" value=""  onclick="showdate()" class = "form-control form-02 fm-01"  placeholder = "Journey Date" >-->
                         <div class = "today">
-                           <a href = "">today</a>
-                           <a style = "border-right: 0px;" href = "">tomorrow</a>
+                           <button id='2' onClick="show(this.id)"> Today</button>
+                           <button id='1' onClick="show(this.id)">Tommorow</button>
+
                         </div>
                         <div class = "date-clean">
                            <a href = "">clear</a>
-
                         </div>
                         <input type = "text" class = "form-control" id = "return-date" placeholder = "Return Date">
-
                      </div>
-
                      <div class = "book-my-ticket">
                         <button type = "submit" class = "btn btn-pm">Search</button>
                      </div>
-
-
                   </div>
                   <div class = "tab-pane fade" id = "pills-profile" role = "tabpanel" aria-labelledby = "pills-profile-tab">...</div>
-
                </div>
-
             </form>
-
-
          </div>
       </div>
-
-
 </section>
 <section>
    <div class = "container">
-
       <div class = "section-title animated fadeInUp visible mb-23" data-animation = "fadeInUp" style = "padding-top: 17px;">
          <!-- Heading -->
          <h2 class = "title">How it works</h2>
       </div>
-
       <div class = " hw-01 text-center mb-5  " data-animation = "fadeInUp">
-
          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo assumenda, dolorum <br> necessitatibus eius earum voluptates sed!</p>
       </div>
-
       <div class = "how-it-works d-flex bus-work" data-animation = "fadeInUp">
          <div class = "step">
             <span class = "number"><span>01</span></span>
@@ -277,13 +265,9 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
             <span class = "number"><span>05</span></span>
             <span class = "caption">Done</span>
          </div>
-
       </div>
-
    </div>
 </section>
-
-
 <section id = "testimonials" class = "page-section light-bg">
    <div class = "section-title" data-animation = "fadeInUp">
       <!-- Heading -->
@@ -299,21 +283,13 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                        <div class = "explore-nepal">
                           <img src = "<?php echo (isset($e['image']) && $e['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $e['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "" title = "">
                           <div class = "overlay-explore">
-
                              <div class = "text-01">
-
                                 <a href = "<?php Yii::$app->request->baseUrl; ?>./destination/index/<?php echo \common\components\Misc::encrypt($e['id']); ?>"><?php echo $e['title'] ?></a>
                                 <p> <?php echo (isset($e['description'])) ? substr($e['description'], 0, 50) . '...' : '' ?></p>
-
-
                              </div>
                           </div>
-
                        </div>
-
                     </div>
-
-
                  <?php endforeach;
                  ?>
              <?php else : ?>
@@ -323,8 +299,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       </div>
    </div>
 </section><!-- testimonials -->
-
-
 <section>
    <div class = "container">
       <div class = "mx-auto pt-35 pb-10 text-center" data-animation = "fadeInUp">
@@ -341,19 +315,16 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                     <div class = "post-slide8">
                        <div class = "post-img">
                           <img src = "<?php echo (isset($n['image']) && $n['image'] != '') ? Yii::$app->request->baseUrl . '/common/assets/images/uploads/' . $n['image'] : Yii::$app->request->baseUrl . '/common/assets/images/no-image.png' ?>" alt = "" title = "">
-
                           <div class = "post-date">
                               <?php
                               $date = $n['created_on'];
                               $splitTimeStamp = explode(" ", $date);
                               $date = $splitTimeStamp[0];
                               $time = $splitTimeStamp[1];
-
                               $splitDate = explode("-", $date);
                               $year = $splitDate[0];
                               $month = $splitDate[1];
                               $day = $splitDate[2];
-
                               $dateObj = DateTime::createFromFormat('!m', $month);
                               $monthName = $dateObj->format('M');
                               $dayName = $dateObj->format('1');
@@ -376,9 +347,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
           <?php } ?>
       </div>
    </div>
-
 </section>
-
 <?= $this->render('../snippets/counter') ?>
 <section id = "testimonials" class = "page-section light-bg">
    <div class = "section-title" data-animation = "fadeInUp">
@@ -388,8 +357,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
    <div class = "container" data-animation = "fadeInUp">
       <div class = "testimonails">
          <div class = "owl-carousel navigation-1 dark-switch " data-pagination = "false" data-items = "3" data-autoplay = "true" data-navigation = "true">
-
-
              <?php if (!empty($testimonial) && count($testimonial) > 0):
                  foreach ($testimonial as $t) :
                      ?>
@@ -420,7 +387,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       </div>
    </div>
 </section>
-
 <section>
    <div class = "container">
       <div class = " mx-auto pt-35 pb-10 text-center" data-animation = "fadeInUp">
@@ -430,8 +396,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
          </div>
       </div>
       <section class = "blog-me  pb-100" id = "blog">
-
-
          <div class = "row" data-animation = "fadeInUp">
              <?php if (!empty($blog) && count($blog) > 0) {
                  foreach ($blog as $b) {
@@ -465,34 +429,22 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
              } else { ?>
                 <h3>No Blogs Found</h3>
              <?php } ?>
-
          </div>
-
       </section>
    </div>
 </section>
-
-
 <?= $this->render('../snippets/user_signup') ?>
-
 <section class = "faq-01 bk-01" style = " background-image: url(<?= Yii::$app->request->baseUrl; ?>/assets/slider/assets/nepal6.jpg);     background-position-y: center; background-size: cover;">
-
    <div class = " ">
-
       <div class = "row m-0">
-
          <div class = "col-sm-12 col-md-6 col-lg-6 pd-1" data-animation = "fadeInRight">
             <div class = "explore-01">
-
-
                <div class = "section-title text-left">
                   <!-- Heading -->
                   <h2 class = "title" style = "color: white;">Book Your Ticket</h2>
                </div>
-
                <span>We Make Your Travel Fun</span>
                <p>We Provie You The Best Service For Your Exploretion</p>
-
                <div class = "explore-btn">
                   <button type = "submit" class = "btn btn-1">BOOK NOW</button>
                </div>
@@ -513,7 +465,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                                 <!-- Tab -->
                                 <a data-toggle = "collapse" data-parent = "#accordion1" href = "#item<?php echo $f['id'] ?>">
                                    <i class = "icon-mobile9"></i>
-
                                     <?php echo (isset($f['title'])) ? $f['title'] : '' ?>
                                 </a>
                              </div>
@@ -530,25 +481,16 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
                 <?php else : ?>
                    <h3>No FAQ Found</h3>
                 <?php endif; ?>
-
-
             </div>
             <!--     <div class = "text-center margin-top-10">
                <a href = "<?php echo Yii::$app->request->baseUrl; ?>/site/faq" class = "btn btn-primary">Read More</a>
             </div> -->
          </div>
-
-
       </div>
-
-
    </div>
-
 </section>
 <!-- testimonials -->
 <?= $this->render('../snippets/vendor_signup') ?>
-
-
 <?php if (Yii::$app->params['map'] == true): ?>
    <section>
       <div class = "row">
@@ -577,10 +519,7 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
          </div>
       </div>
    </section>
-
 <?php endif; ?>
-
-
 <section id = "clients" class = "page-section">
    <div class = "container">
       <div class = "section-title">
@@ -648,8 +587,6 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       </div>
    </div>
 </section>
-
-
 <section id = "banks" class = "page-section">
    <div class = "container">
       <div class = "section-title">
@@ -757,4 +694,27 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/common/assets/vendor/pos/
       </div>
 
    </div>
+
+
+   <script>
+      var time = new Date().toLocaleDateString('en-GB', {
+         day : 'numeric',
+         month : 'short',
+         year : 'numeric'
+      });
+      function show(id) {
+         if (id == 1) {
+
+         value = new Date(Date.now() + 24 * 60 * 60 * 1000);
+            document.getElementById('departure-date').value=value.toLocaleDateString('en-GB', {
+               day : 'numeric',
+               month : 'short',
+               year : 'numeric'
+            })
+         }
+         if(id == 2) {
+            document.getElementById('departure-date').value=time;
+         }
+      }
+   </script>
 </section>

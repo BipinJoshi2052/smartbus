@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "schedules".
+ * This is the model class for table "{{%schedules}}".
  *
  * @property int $id
  * @property int $user_id
@@ -52,7 +52,7 @@ class Schedules extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'schedules';
+        return '{{%schedules}}';
     }
 
     /**
@@ -61,7 +61,7 @@ class Schedules extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'vehicle_id', 'seats', 'departure', 'arrival', 'operator_has_verified'], 'required'],
+            [['user_id', 'vehicle_id', 'seats', 'departure', 'arrival'], 'required'],
             [['user_id', 'vehicle_id', 'is_active', 'location_from_id', 'location_to_id', 'has_departed', 'operator_id', 'operator_has_verified', 'booking_closed', 'created_by', 'updated_by'], 'integer'],
             [['seats', 'prices', 'additional_note', 'cancellation_note', 'cancellation_rates', 'drivers_info'], 'string'],
             [['departure', 'arrival', 'created_on', 'updated_on'], 'safe'],

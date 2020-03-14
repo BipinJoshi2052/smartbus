@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "vehicle_rating_categories".
+ * This is the model class for table "{{%vehicle_rating_categories}}".
  *
  * @property int $id
  * @property string $category
@@ -22,7 +22,7 @@ class VehicleRatingCategories extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'vehicle_rating_categories';
+        return '{{%vehicle_rating_categories}}';
     }
 
     /**

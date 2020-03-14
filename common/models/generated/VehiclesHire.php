@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "vehicles_hire".
+ * This is the model class for table "{{%vehicles_hire}}".
  *
  * @property int $id
  * @property int $type type
@@ -32,7 +32,7 @@ class VehiclesHire extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'vehicles_hire';
+        return '{{%vehicles_hire}}';
     }
 
     /**

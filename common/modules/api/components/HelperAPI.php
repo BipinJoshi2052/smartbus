@@ -422,7 +422,7 @@ class HelperAPI extends Component {
 
     public
     static function getSchedules($parameters) {
-        $ownard = $return = [];
+        $onward = $return = [];
         if (isset($parameters['departure']) && $parameters['departure'] != '') {
             $parameters['departure'] = Misc::date_YmdHis($parameters['departure']);
         }
@@ -453,7 +453,7 @@ class HelperAPI extends Component {
         $o = $o->andWhere('prices != "" OR prices IS NOT NULL')
                ->asArray()
                ->all();
-
+     //   return $o->createCommand()->getRawSql();
         if (true === false && isset($parameters['return']) && $parameters['return'] != '') {
             $r = $q
                     ->where(['=', 'location_from', $parameters['to']])
@@ -462,16 +462,18 @@ class HelperAPI extends Component {
                     ->asArray()
                     ->all();
         }
+
+
         if (!empty ($o)) {
-            $ownard = self::formatSchedules($o);
-            //   $ownard = $o;
+            $onward = self::formatSchedules($o);
+            //   $onward = $o;
         }
         if (!empty ($r)) {
             $return = self::formatSchedules($r);
         }
 
         return [
-                'onward' => $ownard,
+                'onward' => $onward,
                 'return' => $return
         ];
     }

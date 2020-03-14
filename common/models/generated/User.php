@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "user".
+ * This is the model class for table "{{%user}}".
  *
  * @property int $id
  * @property int $incorrect_login
@@ -38,7 +38,6 @@ use Yii;
  * @property AcTaxes[] $acTaxes0
  * @property Amenities[] $amenities
  * @property Amenities[] $amenities0
- * @property Auth[] $auths
  * @property Blog[] $blogs
  * @property Blog[] $blogs0
  * @property BlogCategories[] $blogCategories
@@ -67,6 +66,17 @@ use Yii;
  * @property Schedules[] $schedules0
  * @property Schedules[] $schedules1
  * @property Schedules[] $schedules2
+ * @property VerificationActions $verification
+ * @property User $createdBy
+ * @property User[] $users
+ * @property User $updatedBy
+ * @property User[] $users0
+ * @property UserRoles $role0
+ * @property UserDetails $userDetails
+ * @property VehicleComments[] $vehicleComments
+ * @property Vehicles[] $vehicles
+ * @property Vehicles[] $vehicles0
+ * @property Vehicles[] $vehicles1
  * @property VerificationActions[] $verificationActions
  */
 class User extends \yii\db\ActiveRecord
@@ -74,13 +84,9 @@ class User extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
-    public function getRole0()
-    {
-        return $this->hasOne(UserRoles::className(), ['id' => 'role']);
-    }
     public static function tableName()
     {
-        return 'user';
+        return '{{%user}}';
     }
 
     /**
@@ -88,7 +94,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        /*return [
+        return [
             [['incorrect_login', 'name', 'username', 'auth_key', 'password_hash', 'email'], 'required'],
             [['incorrect_login', 'role', 'email_verified', 'status', 'phone_is_validated', 'verification_id', 'is_verified', 'created_by', 'updated_by'], 'integer'],
             [['image'], 'string'],
@@ -101,20 +107,10 @@ class User extends \yii\db\ActiveRecord
             [['auth_key'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
-        ];*/
-        return [
-                [['incorrect_login', 'role', 'email_verified', 'status', 'phone_is_validated', 'verification_id', 'is_verified', 'created_by', 'updated_by'], 'integer'],
-                [[ 'username', 'auth_key', 'password_hash', 'email'], 'required'],
-                [['image'], 'string'],
-                [['created_on', 'updated_on'], 'safe'],
-                [['name'], 'string', 'max' => 150],
-                [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
-                [['auth_key'], 'string', 'max' => 32],
-                [['email_verification', 'phone'], 'string', 'max' => 64],
-                [['username'], 'unique'],
-                [['auth_key'], 'unique'],
-                [['email'], 'unique'],
-                [['password_reset_token'], 'unique'],
+            [['verification_id'], 'exist', 'skipOnError' => true, 'targetClass' => VerificationActions::className(), 'targetAttribute' => ['verification_id' => 'id']],
+            [['created_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['created_by' => 'id']],
+            [['updated_by'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['updated_by' => 'id']],
+            [['role'], 'exist', 'skipOnError' => true, 'targetClass' => UserRoles::className(), 'targetAttribute' => ['role' => 'id']],
         ];
     }
 
@@ -218,14 +214,6 @@ class User extends \yii\db\ActiveRecord
     public function getAmenities0()
     {
         return $this->hasMany(Amenities::className(), ['updated_by' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAuths()
-    {
-        return $this->hasMany(Auth::className(), ['user_id' => 'id']);
     }
 
     /**
@@ -450,6 +438,94 @@ class User extends \yii\db\ActiveRecord
     public function getSchedules2()
     {
         return $this->hasMany(Schedules::className(), ['operator_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVerification()
+    {
+        return $this->hasOne(VerificationActions::className(), ['id' => 'verification_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getCreatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'created_by']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUsers()
+    {
+        return $this->hasMany(User::className(), ['created_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUpdatedBy()
+    {
+        return $this->hasOne(User::className(), ['id' => 'updated_by']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUsers0()
+    {
+        return $this->hasMany(User::className(), ['updated_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getRole0()
+    {
+        return $this->hasOne(UserRoles::className(), ['id' => 'role']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserDetails()
+    {
+        return $this->hasOne(UserDetails::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVehicleComments()
+    {
+        return $this->hasMany(VehicleComments::className(), ['vendor_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVehicles()
+    {
+        return $this->hasMany(Vehicles::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVehicles0()
+    {
+        return $this->hasMany(Vehicles::className(), ['created_by' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getVehicles1()
+    {
+        return $this->hasMany(Vehicles::className(), ['updated_by' => 'id']);
     }
 
     /**
