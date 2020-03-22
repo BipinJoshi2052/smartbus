@@ -82,6 +82,7 @@ class HelperCareers extends Component {
     public static function deleteVacancy($id) {
         $model = Vacancy::findOne($id);
         if ($model->delete()) {
+            Misc::delete_file($model->image, 'file');
             return json_encode(true);
         }
         return json_encode(false);

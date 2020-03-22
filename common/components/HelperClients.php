@@ -124,11 +124,10 @@ class HelperClients extends Component {
 
     public static function deleteClients($id) {
         $model = Clients::findOne($id);
-        echo '<pre>';
-        print_r($model);
-        echo '</pre>';
-
-        return $model->delete() ? json_encode(true) : json_encode(false);
+       if($model->delete()) {
+           Misc::delete_file($model->image, 'image');
+           json_encode(true);
+}  json_encode(false);
     }
 
     public static function deleteClientsPage($id) {

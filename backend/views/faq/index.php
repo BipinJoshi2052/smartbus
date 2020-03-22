@@ -4,7 +4,7 @@ use \common\components\Misc;
 
 $this->registerCssFile(Yii::$app->request->baseUrl . '/assets/plugins/datatables/datatables.min.css');
 $this->registerJsFile(Yii::$app->request->baseUrl . '/assets/plugins/datatables/datatables.min.js');
-
+$this->registerJsFile(Yii::$app->request->baseUrl . '/assets/plugins/ckeditor/vendor/ckeditor/ckeditor.js');
 
 $this->title = Yii::$app->params['system_name'] . ' | FAQ';
 ?>
@@ -40,18 +40,17 @@ $this->title = Yii::$app->params['system_name'] . ' | FAQ';
                         <input type="hidden" name="<?php echo Yii::$app->request->csrfParam; ?>" value="<?php echo Yii::$app->request->csrfToken; ?>"/>
                         <input type="hidden" name="post[id]" value="<?php echo(isset($editable['id']) ? $editable['id'] : 0) ?>">
                         <input type="hidden" name="post[table]" value="<?php echo(isset($editable['id']) ? $editable['id'] : 0) ?>">
-
                         <?php $counter = 0; ?>
                         <div class="form-group">
                             <?php $counter++; ?>
                             <label for="<?php echo $counter; ?>" class="control-label required">Title</label>
                             <input id="<?php echo $counter; ?>" value="<?php echo(isset($editable['title']) ? $editable['title'] : '') ?>" name="post[title]" type="text" class="form-control required">
                         </div>
-                        <div class="form-group">
-                            <?php $counter++; ?>
-                            <label for="<?php echo $counter; ?>" class="control-label required">Content</label>
-                            <input id="<?php echo $counter; ?>" value="<?php echo(isset($editable['content']) ? $editable['content'] : '') ?>" name="post[content]" type="text" class="form-control required">
-                        </div>
+                       <div class = "form-group">
+                           <?php $counter++; ?>
+                          <label for = "<?php echo $counter; ?>" class = "control-label ">Content</label>
+                          <textarea type="text" rows="5" id = "<?php echo $counter; ?>" name = "post[content]" class = "form-control ckeditor"><?php echo (isset($editable['content'])) ? $editable['content'] : '' ?></textarea>
+                       </div>
                         <div class = "form-group">
                             <?php $counter++; ?>
                             <label for = "<?php echo $counter; ?>" class = "control-label required">Visibility</label>

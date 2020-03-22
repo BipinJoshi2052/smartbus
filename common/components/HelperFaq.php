@@ -24,7 +24,7 @@ use Yii;
 class HelperFaq extends Component {
 
     public static function getAll() {
-        $faq = Faq::find()->all();
+        $faq = Faq::find()->orderBy(['id' => SORT_DESC])->all();
         return $faq;
     }
     public static function getOne($id) {

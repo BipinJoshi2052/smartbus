@@ -1,0 +1,48 @@
+<!------Frontend---> <!to be done--->
+ 
+
+a)Destination->
+		1)Single page---Titlechange
+		2)
+
+
+b)Footer->Book Now ma link rakhne
+	->icon ma link haru rakhne
+
+c)Facebook->messenger 
+
+d)Comments->Profile image size,
+
+
+
+<------Careers--->
+
+->application sent vaesi redirect garne
+
+
+
+<-----Contact us--->
+Conact ra email dynamic vaxaena
+
+
+<!-----Home----Backend--> <!to be done--->
+
+Applicants ma Total ko color change
+
+Careers ko requireent mani ck editor rakhne
+
+Applicants mani new ra seen rakhne
+Vacancies ko action ma delete ko button ko coloir danger rakhne/also in messages
+Amenities ma admin le garda sidhai verified huna paryo
+
+
+Verify action ma Comment ko thauma name rakhne
+
+News ko form ma image ko name input tag vitra aaunba paryo
+Faq mani ck editor rakhne
+
+
+
+
+Pages vanne section ma kam garne
+

@@ -204,6 +204,7 @@
    .title {
       margin-bottom: 0px;
       padding: 4px 0;
+
    }
 
    .rounded-1 {

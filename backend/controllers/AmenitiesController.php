@@ -3,6 +3,7 @@
 namespace backend\controllers;
 
 use common\components\Helper;
+use common\components\HelperUser;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
@@ -74,9 +75,11 @@ class AmenitiesController extends Controller {
      */
     public function actionIndex($id = '') {
         $id = Misc::decrypt($id);
+        $d = Yii::$app->user->id;
         return $this->render('index', [
                 'all'           => Helper::getAll('Amenities'),
                 'editable'      => Helper::getOne('Amenities', $id),
+                'history'=>HelperUser::getUserHistory($d),
 //                'is_authorized' => in_array('update', $this->permissions)
         ]);
     }
@@ -88,7 +91,7 @@ class AmenitiesController extends Controller {
                 if($updated['verification_status']>0) {
                     Misc::setFlash('success', 'Amenity updated');
                 }else{
-                Misc::setFlash('success', 'Amenity updated but will not show until it is verified');
+                Misc::setFlash('success', 'Amenity updated but will not show until it is verified, Unless you are the Admin');
                 }
             }
         }

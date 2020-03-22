@@ -21,7 +21,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
         </div>
        <p style="padding: 15px; font-size: larger">
            <?php if($count) {
-               echo '<span class="label label-light-success" style="margin-right: 15px;padding: 10px;">'.count($applicants). ' Total Applications</span>';
+               echo '<span class="label label-blue" style="margin-right: 15px;padding: 10px;">'.count($applicants). ' Total Applications</span>';
                echo '<span class="label label-success" style="margin-right: 15px;padding: 10px;">'.$count['count_unseen']. ' New Applications</span>';
                echo '<span class="label label-danger" style="margin-right: 15px;padding: 10px;">'.$count['count_seen']. ' Seen Applictions</span>';
            } ?>
@@ -35,11 +35,11 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
                 <table class = "table  table-striped applicants-post" data-plugin = "datatable">
                     <thead>
                     <tr>
-                        <th>S.N</th>
+                       <th>S.N.</th>
+                        <th>Date</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>City</th>
-                        <th>Expected Salary</th>
                         <th>Experience</th>
                         <th>Action</th>
                     </tr>
@@ -52,10 +52,10 @@ $this->title = Yii::$app->params['system_name'] . ' | Blog';
                     foreach ($applicants as $app) { ?>
                     <tr>
                         <td><?php echo $sn++ ?></td>
+                        <td><?php echo \common\components\Misc::date_DdmY($app['created_on']) ?></td>
                         <td><?php echo $app['name'] ?></td>
                         <td><?php echo $app['email'] ?></td>
                         <td><?php echo $app['city'] ?></td>
-                        <td><?php echo $app['expected_salary'] ?></td>
                        <td><?php echo $app['experience'] ?></td>
                         <td >
                           <a class = "btn btn-primary btn-sm" href = "<?php echo Yii::$app->request->baseUrl; ?>/careers/view/<?php echo \common\components\Misc::encrypt($app['id']); ?>" data-id = "<?php echo $app['id']; ?>" data-tab = "applicants">View</a>

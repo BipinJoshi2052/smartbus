@@ -10,6 +10,7 @@
 namespace common\components;
 
 use common\components\HelperUpload as Upload;
+use common\components\Misc;
 use common\components\Query;
 use common\models\Advertisement;
 use common\models\generated\BlogComments;
@@ -18,14 +19,17 @@ use phpDocumentor\Reflection\Types\Self_;
 use Yii;
 use yii\base\Component;
 use common\models\Blog;
-use common\components\Misc;
 
 
 class HelperAdd extends Component {
 
-
     public static function getAdd() {
         $add = Advertisement::find()->orderBy(['id'=>SORT_DESC])->all();
+        return $add;
+    }
+    public static function getRandomAdd() {
+
+       $add =Advertisement::find()->orderBy('RAND()')->limit('1')->where('is_active ='.'1')->all();
         return $add;
     }
 
@@ -175,6 +179,7 @@ class HelperAdd extends Component {
     public static function deleteAdd($id) {
         $model = Advertisement::findOne($id);
         if ($model->delete()) {
+            Misc::delete_file($model->image, 'image');
             return json_encode(true);
         }
         return json_encode(false);

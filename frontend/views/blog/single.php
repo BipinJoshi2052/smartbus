@@ -65,7 +65,7 @@ $this->title = 'Single Post';
 
                        <div class = "pull-left author-img">
 
-                          <img class = "img-circle" src = "<?php if(isset($comment['user']) && $comment['user']!=''){echo Yii::$app->request->baseUrl .'/common/assets/images/uploads/'.$comment['user']['image'];}else{echo Yii::$app->request->baseUrl . '/common/assets/images/uploads/no-image.png';} ?>" width = "80" height = "80" alt = "" title = "">
+                          <img style=" height:77px; object-fit: cover " class = "img-circle" src = "<?php if(isset($comment['user']) && $comment['user']!=''){echo Yii::$app->request->baseUrl .'/common/assets/images/uploads/'.$comment['user']['image'];}else{echo Yii::$app->request->baseUrl . '/common/assets/images/uploads/no-image.png';} ?>" width = "80" height = "80" alt = "" title = "">
                        </div>
                        <p><?php echo $comment['comment'] ?></p>
                        <div class = "post-meta">

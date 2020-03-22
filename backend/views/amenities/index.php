@@ -79,6 +79,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Amenities';
             </div>
          </div>
       </div>
+
       <div class="col-md-8 col-sm-12">
          <div class="card extended">
             <div class="card-header">

@@ -1,7 +1,13 @@
 <?php
-    $this->title = Yii::$app->params['system_name'] . ' | Sections';
+
+
+
+$this->title = Yii::$app->params['system_name'] . ' | Sections';
+$this->registerJsFile(Yii::$app->request->baseUrl . '/assets/plugins/ckeditor/vendor/ckeditor/ckeditor.js');
     //$this->registerJsFile(Yii::$app->request->baseUrl . '/assets/');
 ?>
+
+
 <div class = "container-fluid">
     <form enctype = "multipart/form-data" method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/sections/update/">
 
@@ -56,10 +62,11 @@
                             <div class = "form-group">
                                 <?php $counter++; ?>
                                 <label for = "<?php echo $counter; ?>" class = "control-label required">Page</label>
-                                <select id = "<?php echo $counter; ?>" name = "content[page]" type = "text" class = "form-control required">
+                                <select id = "<?php echo $counter; ?>" name = "content[page_id]" type = "text" class = "form-control required">
                                     <option value = "">Select Page</option>
-                                    <?php foreach (Yii::$app->params['pages'] as $key => $page): ?>
-                                        <option <?php echo (isset($section['page']) && $section['page'] == $key) ? 'selected = "selected"' : '' ?> value = "<?php echo $key; ?>"><?php echo ucwords($key) ?></option>
+                                 <?php foreach ($pages as $p =>$page): ?>
+
+                                        <option <?php echo (isset($section['page_id']) && $section['page_id'] == $page['id']) ? 'selected = "selected"' : '' ?> value = "<?php echo $page['id']; ?>"><?php echo ucwords($page['name']) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

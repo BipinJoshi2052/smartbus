@@ -32,7 +32,7 @@ $this->title = 'Single Post';
                         </div>
                         <div class = "post-meta">
                             <!-- Author  -->
-                            <span class = "author"><i class = "fa fa-user"></i><?php echo $details['title'] ?></span>
+                            <span class = "author"><i class = "fa fa-edit"></i><?php echo $details['title'] ?></span>
                             <!-- Meta Date -->
                             <span class = "time"><i class = "fa fa-calendar"></i> <?php echo $details['created_on'] ?></span>
                             <!-- blogComments -->

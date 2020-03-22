@@ -92,7 +92,7 @@ function toggleStatus() {
       var table = $(this).data("b");
       var txt = ($(this).html() === 'Active') ? 'Deactivated' : 'Activated';
 
-      if (id > 0 && table != '') {
+      if (id > 0 && table !== '') {
          $.ajax({
             url: baseUrl + "/site/toggle-status",
             type: 'post',
@@ -293,6 +293,7 @@ $(document).ready(function ($) {
             return result.name || result.text;
          }*/
    }
+
    $(function () {
       $('.search-swap-locations').on("click", function () {
          console.log('success');
@@ -462,7 +463,7 @@ $(document).ready(function ($) {
    $(function () {
       $('.data-table, [data-plugin="datatable"]').DataTable({
          "displayLength": 25,
-         "lengthMenu": [[25,50, 100, 200, 500, -1], [25,50, 100, 200, 500, "All"]],
+         "lengthMenu": [[25, 50, 100, 200, 500, -1], [25, 50, 100, 200, 500, "All"]],
          "aaSorting": [],
          "columnDefs": [
             {"orderable": false, "targets": [-1]}
@@ -581,9 +582,9 @@ $(document).ready(function ($) {
                         },
                         success: function (data) {
                            if (data === 'false') {
-                              typeAlert('Error', 'Sorry, Could not delete Message', 'error');
+                              typeAlert('Error', 'Sorry, Could not delete Blog', 'error');
                            } else {
-                              typeAlert('Success', 'Message Deleted.', 'success');
+                              typeAlert('Success', 'Blog Deleted.', 'success');
                               location.reload();
                            }
                         },
@@ -979,6 +980,49 @@ $(document).ready(function ($) {
 
       });
    }
+   if ($('.delete-page-sections').length) {
+      $('.delete-page-sections').on("click", function () {
+         var cid = $(this).data("id");
+         var table = $(this).data("table");
+         swal({
+                  title: "Delete Section ?",
+                  text: "Are you sure, you want to Delete this Section.",
+                  type: "warning",
+                  showCancelButton: true,
+                  confirmButtonClass: "btn-danger",
+                  confirmButtonText: "Yes, delete it",
+                  cancelButtonText: "Cancel",
+                  closeOnConfirm: false,
+                  closeOnCancel: true
+               },
+               function (isConfirm) {
+                  if (isConfirm) {
+                     var $this = $(this);
+                     var $id = $(this).attr('data-id');
+                     $.ajax({
+                        url: baseUrl + "/sections/delete",
+                        type: 'post',
+                        data: {
+                           id: cid
+                        },
+                        success: function (data) {
+                           if (data === 'true') {
+                              typeAlert('Success', 'Section Deleted.', 'success');
+                              location.reload();
+                           } else {
+                              console.log(response);
+                              typeAlert('Error', 'Sorry, Could not delete Section', 'error');
+                           }
+                        },
+                        error: function () {
+                           typeAlert('Error', 'Sorry, Server error. Please try again later ', 'error');
+                        }
+                     });
+                  }
+               });
+
+      });
+   }
 
 
    if ($('.delete-testimonial').length) {
@@ -1089,6 +1133,7 @@ $(document).ready(function ($) {
       });
    }
 
+
    if ($('.remove-image').length) {
       $('.remove-image').on("click", function () {
          var parent = $(this).parents('.custom-file');
@@ -1122,22 +1167,38 @@ $(document).ready(function ($) {
 
       });
    }
-
+   function removeLink(){
+      if ($('.remove-link').length) {
+         $('.remove-link').on("click", function (e) {
+            e.preventDefault();
+            $(this).parents('tr').remove();
+         });
+      }
+   }
+   removeLink();
    if ($('.add-social-media-item').length) {
       $('.add-social-media-item').on('click', function () {
-         var media = $(this).parents('.social-media-wrapper').find('.social-media-item').eq(0).clone();
-         media.find('select').selectedIndex = -1;
-         media.find('input').val = '';
-         $(this).parents('.social-media-wrapper').find('.social-media-container').append(media);
+
+
+         var table = $(this).parents('form').find('table tbody ');
+         var c = table.find('tr').length + 1;
+
+         var media = table.find('tr').eq(0).clone();
+
+         media.find('select option').removeAttr('selected');
+         media.find('select').attr('name', 'team[social][' + c + '][media]');
+         // media.find('input').val('');
+         media.find('input').attr('name', 'team[social][' + c + '][link]').val('');
+         // console.log(media.find('input').val());
+         table.prepend(media);removeLink();
          // console.log(media);
       });
    }
-
    //Select 2
    if ($('[data-plugin="select2"]').length) {
       $('[data-plugin="select2"]').select2();
    }
-   $(function (){
+   $(function () {
       $('.refresh').on("click", function () {
          location.reload();
       })
@@ -1146,7 +1207,7 @@ $(document).ready(function ($) {
    $(function () {
       $('.noti-mess').on("click", function () {
          var cid = $('.new-mess').data("id");
-         var unseen = cid-1;
+         var unseen = cid - 1;
          console.log(unseen);
          // $.ajax({
          //    url: baseUrl + "/messages/read-message",
@@ -1203,7 +1264,7 @@ $(document).ready(function ($) {
                   }
 
                   modal.find('.modal-dialog').html(a['result']);
-                 modal.modal('show');
+                  modal.modal('show');
                   $('.refresh').removeClass('hidden')
                }
             },

@@ -371,8 +371,18 @@ class Helper extends Component {
                 $model2->icon = $data['icon'];
                 $model2->verification_id = $model->id;
                 $model2->created_by = Yii::$app->user->identity->id;
+                $requested_by = Yii::$app->user->identity->id;
+                $requested_user = User::find()->where('id=' .$model->requested_by)->one();
+                if ($requested_user['role'] == 1) {
+                    $model2->is_verified=1;
+                    $model->verified_by=$requested_user['id'];
+                    $model->verification_status=1;
+                    $model->edited_status=1;
+                    $model->verified_on=date('yy/mm/dd');
+                }
                 if ($model2->save()) {
                     $model->table_id = $model2->id;
+
                     if ($model->save()) {
                         return $var = [
                                 'verification_status' => 0,
@@ -724,7 +734,6 @@ class Helper extends Component {
             $data = $data->where(['=', 'is_active', '1']);
         }
 
-
         return $data->asArray()
                     ->all();
     }
@@ -785,7 +794,8 @@ class Helper extends Component {
         $vendors = User::find()
                        ->with('userDetails')
                        ->where(['=', 'status', User::STATUS_ACTIVE])
-                       ->andWhere(['=', 'is_verified', '1']);
+                       ->andWhere(['=', 'is_verified', '1'])
+                        ->andWhere(['=','role','3']);
         $permission = (isset(Yii::$app->params['permissions']['Users']) && in_array('read', Yii::$app->params['permissions']['Users']));
 
         if (Yii::$app->user->identity->role == Yii::$app->params['role_num']['vendor']) {
@@ -795,7 +805,7 @@ class Helper extends Component {
             $vendors = $vendors->andWhere(['=', 'role', Yii::$app->params['role_num']['vendor']]);
         }
         //        echo $vendors->createCommand()->sql;
-        $vendors = $vendors->all();
+        $vendors = $vendors->asArray()->all();
 
         return $vendors;
     }
@@ -803,6 +813,7 @@ class Helper extends Component {
     public static function getVehicles() {
         $vehicles = Vehicles::find()
                             ->with('type0')
+                             ->with('user')
                             ->where(['=', 'is_verified', '1'])
                             ->all();
         return $vehicles;

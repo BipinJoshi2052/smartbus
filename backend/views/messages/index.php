@@ -25,7 +25,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
 
 <p style="padding: 15px; font-size: larger">
          <?php if($count) {
-            echo '<span class="label label-light-success" style="margin-right: 15px;padding: 10px;">'.count($messages). ' Total Messages</span>';
+            echo '<span class="label label-blue" style="margin-right: 15px;padding: 10px;">'.count($messages). ' Total Messages</span>';
             echo '<span class="label label-success" style="margin-right: 15px;padding: 10px;">'.$count['count_unseen']. ' New Messages</span>';
             echo '<span class="label label-danger" style="margin-right: 15px;padding: 10px;">'.$count['count_seen']. ' Seen messages</span>';
          } ?>
@@ -90,7 +90,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Messages';
                              ?><!--/blog/post/--><?php //echo \common\components\Misc::encrypt($message['id']);
                              ?><!--">Edit</a>-->
 
-                            <a href = "javascript:void(0);" class = "btn btn-default btn-sm delete-message" data-id = "<?= $message['id'] ?>" data-tab = "Messages">
+                            <a href = "javascript:void(0);" class = "btn btn-danger btn-sm delete-message" data-id = "<?= $message['id'] ?>" data-tab = "Messages">
                                Delete
                             </a></td>
                       </tr>

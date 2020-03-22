@@ -4,6 +4,7 @@
 namespace common\components;
 
 use common\components\HelperUpload as Upload;
+
 use common\components\Query;
 use common\models\BlogCategories;
 use common\models\generated\BlogComments;
@@ -139,6 +140,7 @@ class HelperBlog extends Component {
     public static function deleteBlog($id) {
         $model = Blog::findOne($id);
         if ($model->delete()) {
+            Misc::delete_file($model->image, 'image');
             return json_encode(true);
         }
         return json_encode(false);

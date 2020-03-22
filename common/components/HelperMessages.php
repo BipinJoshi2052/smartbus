@@ -79,6 +79,7 @@
         {
             $model = Messages::findOne($id);
             if ($model->delete()) {
+
                 return json_encode(TRUE);
             }
             return json_encode(FALSE);

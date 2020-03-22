@@ -61,7 +61,16 @@ $(document).ready(function ($) {
          $('.home-banner').carousel();
       }
    });
-
+   $(function () {
+      $('[data-plugin="datatable"]').DataTable({
+         "displayLength": 25,
+         "lengthMenu": [[25, 50, 100, 200, 500, -1], [25, 50, 100, 200, 500, "All"]],
+         "aaSorting": [],
+         "columnDefs": [
+            {"orderable": false, "targets": [-1]}
+         ]
+      });
+   });
   /* $(function () {
       $('#pic').on("change", function () {
          console.log('asdf');

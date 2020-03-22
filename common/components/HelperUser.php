@@ -15,6 +15,7 @@
 namespace common\components;
 
 use common\components\Email as Email;
+use common\models\Bookings;
 use common\models\UserDetails;
 use Yii;
 use yii\base\Component;
@@ -22,45 +23,63 @@ use common\components\Query;
 use common\components\Misc;
 use common\models\User as User;
 use yii\bootstrap\Html;
+use yii\helpers\ArrayHelper;
 use yii\helpers\BaseUrl;
 use yii\helpers\Url;
 use  yii\web\UrlManager;
 
 
-
-
 class HelperUser extends Component {
-    public static function resetPassword($email)
-    {
+    public static function resetPassword($email) {
         $contact = json_decode(Yii::$app->params['settings']['contact']);;
-        if(isset($contact[0]->{'facebook'})){
-            $fa= $contact[0]->{'facebook'};
+        if (isset($contact[0]->{'facebook'})) {
+            $fa = $contact[0]->{'facebook'};
         }
-        if(isset($contact[0]->{'twitter'})){
+        if (isset($contact[0]->{'twitter'})) {
             $tw = $contact[0]->{'twitter'};
         }
-        if(isset($contact[0]->{'linkedin'})){
-            $ln= $contact[0]->{'linkedin'};
+        if (isset($contact[0]->{'linkedin'})) {
+            $ln = $contact[0]->{'linkedin'};
         }
-        if(isset($contact[0]->{'google'})){
-            $gp= $contact[0]->{'google'};
+        if (isset($contact[0]->{'google'})) {
+            $gp = $contact[0]->{'google'};
         }
-        $ca =[$fa,$tw,$ln,$gp];
-        $subject= 'Reset Password';
-        $name= Yii::$app->params['system_name'];
-        $id= $email['password_reset_token'];
-        $userEmail =$email['username'];
+        $ca = [$fa, $tw, $ln, $gp];
+        $subject = 'Reset Password';
+        $name = Yii::$app->params['system_name'];
+        $id = $email['password_reset_token'];
+        $userEmail = $email['username'];
         $url = 'http://smartbus.ritechsolution.com/';
-        $body = 'Click on the link to reset your password '.$url.'site/reset-final/'.$id;
-       $message=Email::template2('Reset Password',$body,$ca);
-       if( Email::sendTo($userEmail,$name,$subject,$message)) {
-        return 1;
+        $body = 'Click on the link to reset your password ' . $url . 'site/reset-final/' . $id;
+        $message = Email::template2('Reset Password', $body, $ca);
+        if (Email::sendTo($userEmail, $name, $subject, $message)) {
+            return 1;
 
-       }
-       else
-           {
-           return 0;
-       }
+        }
+        else {
+            return 0;
+        }
+    }
+
+    public static function getUserHistory($id) {
+        $history = Bookings::find()
+                           ->with('boarding0')
+                           ->with('dropping0')
+                           ->where('booker_id =' . $id)
+                           ->andWhere('has_travelled = 1')
+                           ->asArray()
+                           ->all();
+        $k = [];
+
+        foreach ($history as $h) {
+
+            $k[$h['id']] = $h;
+            $k[$h['id']]['payment']=json_decode($h['payment'], true);
+            $k[$h['id']]['seats']=json_decode($h['seats'], true);
+        }
+
+
+        return $k;
     }
 
     public static function addUser($data) {
@@ -69,17 +88,17 @@ class HelperUser extends Component {
         //        echo '</pre>';
         //        die;
         $contact = json_decode(Yii::$app->params['settings']['contact']);
-        if(isset($contact[0]->{'facebook'})){
-            $fa= $contact[0]->{'facebook'};
+        if (isset($contact[0]->{'facebook'})) {
+            $fa = $contact[0]->{'facebook'};
         }
-        if(isset($contact[0]->{'twitter'})){
+        if (isset($contact[0]->{'twitter'})) {
             $tw = $contact[0]->{'twitter'};
         }
-        if(isset($contact[0]->{'linkedin'})){
-            $ln= $contact[0]->{'linkedin'};
+        if (isset($contact[0]->{'linkedin'})) {
+            $ln = $contact[0]->{'linkedin'};
         }
-        if(isset($contact[0]->{'google'})){
-            $gp= $contact[0]->{'google'};
+        if (isset($contact[0]->{'google'})) {
+            $gp = $contact[0]->{'google'};
         }
 
         $model = new User();
@@ -90,7 +109,7 @@ class HelperUser extends Component {
         //   isset($data['password']) ? $model->setPassword($data['password']) : $model->password_hash =Yii::$app->security->generateRandomString(12);
         $model->password_hash = Yii::$app->getSecurity()->generatePasswordHash(12);
         $model->generateAuthKey();
-        $model->generateEmailcode() ;
+        $model->generateEmailcode();
         $model->role = isset($data['role']) ? $data['role'] : 5;
         $model->email = isset($data['email']) ? $data['email'] : '';
         $model->phone = isset($data['phone']) ? $data['phone'] : '';
@@ -99,25 +118,23 @@ class HelperUser extends Component {
 
         //$model->profile_picture     = isset($data['profile_picture']) ? $data['profile_picture'] : '';
         $model->status = isset($data['status']) && $data['status'] == 1 ? 10 : 0;
-        $model->created_by = Yii::$app->user->identity->id;
         ////
         if ($model->save()) {
-            if(isset($data['email']) && $data['email'] != '') {
-                $email=$data['email'];
+            if (isset($data['email']) && $data['email'] != '') {
+                $email = $data['email'];
                 $receiver = Yii::$app->params['adminEmail'];
                 $name = 'Yoel';
                 $subject = 'Sign Up';
-                $url ='http://smartbus.ritechsolution.com';
-                   $ca =[$fa,$tw,$ln,$gp];
-                $id =$model->email_verification;
-                $body = 'Click on the link below to verify your email. Thanks '.
-                        $url.'/register/validate/'.$id;
-               // $message = Email::template('Sign up',$body);
-                $message = Email::template2('Signup', $body,$ca);
+                $url = 'http://smartbus.ritechsolution.com';
+                $ca = [$fa, $tw, $ln, $gp];
+                $id = $model->email_verification;
+                $body = 'Click on the link below to verify your email. Thanks ' .
+                        $url . '/register/validate/' . $id;
+                // $message = Email::template('Sign up',$body);
+                $message = Email::template2('Signup', $body, $ca);
 
-                if(Email::sendTo($email, $name, $subject, $message))
-                {
-                  return true;
+                if (Email::sendTo($email, $name, $subject, $message)) {
+                    return true;
                 }
 
             }
@@ -215,12 +232,13 @@ class HelperUser extends Component {
     }
 
     public static function getUserDetails() {
-        $model=UserDetails::find()->asArray()->all();
+        $model = UserDetails::find()->asArray()->all();
         return $model;
     }
+
     public static function getSingleUserDetails($id) {
 
-        $model=UserDetails::find()->where('user_id ='.$id)->with('user')->asArray()->one();
+        $model = UserDetails::find()->where('user_id =' . $id)->with('user')->asArray()->one();
 
         return $model;
     }

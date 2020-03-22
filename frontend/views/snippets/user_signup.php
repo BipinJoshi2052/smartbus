@@ -1,4 +1,4 @@
-<section id="user-signup" class="page-section no-pad bg-color">
+<section id="user-signup" class="call-action bg-color">
    <div class="container">
       <div class="row">
          <div class="col-md-12 top-pad-20 bottom-pad-20 text-center">

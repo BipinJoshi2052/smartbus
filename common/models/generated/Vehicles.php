@@ -2,6 +2,7 @@
 
 namespace common\models\generated;
 
+use common\models\UserDetails;
 use Yii;
 
 /**
@@ -143,6 +144,9 @@ class Vehicles extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+    public function getUserDetails() {
+        return $this->hasOne(UserDetails::className(), ['user_id' => 'id']);
     }
 
     /**

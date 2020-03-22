@@ -31,7 +31,29 @@ class VehiclesController extends Controller {
      * {@inheritdoc}
      */
     public function behaviors() {
+        return [
+                'access' => [
+                        'class' => AccessControl::className(),
 
+                        'rules' => [
+                                [
+                                        'actions' => ['login', 'error'],
+                                        'allow'   => true,
+                                ],
+                                [
+                                    //                            'actions' => ['logout', 'index'], // Enable for access
+                                    'allow' => true,
+                                    'roles' => ['@'],
+                                ],
+                        ],
+                ],
+                'verbs'  => [
+                        'class'   => VerbFilter::className(),
+                        'actions' => [
+                            //                    'logout' => ['post'],
+                        ],
+                ],
+        ];
     }
 
     /**
@@ -53,14 +75,15 @@ class VehiclesController extends Controller {
         if ($action->id == 'error') {
             $this->layout = 'error';
         }
-        elseif ($action->id == 'upload-seat-map') {
-            $this->enableCsrfValidation = false;
-        }
-        $this->permissions = Helper::checkAuthority(Yii::$app->controller->id, Yii::$app->controller->action->id);
+
+
         return parent::beforeAction($action);
     }
 
+
+
     public function actionIndex() {
+
         $vehicles = Helper::getVehicles();
         return $this->render('index', [
                 'all' => $vehicles,
@@ -68,7 +91,6 @@ class VehiclesController extends Controller {
     }
 
     public function actionCreate() {
-
         return $this->render('form', [
                 'vendors'       => Helper::getVendors(),
                 'types'         => Helper::getAllActive('VehicleTypes'),

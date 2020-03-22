@@ -41,7 +41,7 @@ class News extends \yii\db\ActiveRecord
     {
         return [
             [['category_id', 'is_active', 'created_by', 'updated_by'], 'integer'],
-            [['slug', 'title', 'post_content', 'created_by'], 'required'],
+            [['slug', 'title', 'post_content', 'image', 'created_by'], 'required'],
             [['subtitle', 'post_content', 'image'], 'string'],
             [['created_on', 'updated_on'], 'safe'],
             [['slug'], 'string', 'max' => 255],

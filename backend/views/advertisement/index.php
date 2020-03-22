@@ -75,7 +75,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Advertisement';
 
                          <td class = "text-right">
                             <a class = "btn btn-primary btn-sm" href = "<?php echo Yii::$app->request->baseUrl; ?>/advertisement/post/<?php echo \common\components\Misc::encrypt($post['id']); ?>">Edit</a>
-                            <a class = "btn btn-default btn-sm delete-add" href = "javascript:void(0);" data-id = "<?php echo $post['id'] ?>" data-tab = "Advertisement">Delete</a>
+                            <a class = "btn btn-danger btn-sm delete-add" href = "javascript:void(0);" data-id = "<?php echo $post['id'] ?>" data-tab = "Advertisement">Delete</a>
                          </td>
                       </tr>
                    <?php

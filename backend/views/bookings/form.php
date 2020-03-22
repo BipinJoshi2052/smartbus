@@ -6,7 +6,7 @@
     $counter = 0;
     $new = (empty($editable)) ? 1 : 0;
 ?>
-<form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/bookings/update/" enctype = "multipart/form-data">
+<form method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/bookings/book-ticket/" enctype = "multipart/form-data">
     <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
     <input type = "hidden" name = "schedule[id]" value = "<?php echo(isset($editable['id']) ? $editable['id'] : 0) ?>">
 

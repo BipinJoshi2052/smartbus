@@ -5,12 +5,14 @@ namespace backend\controllers;
 use common\components\Helper;
 use common\components\HelperSections;
 use common\components\Misc;
+use common\models\Pages;
 use common\models\Sections;
 use common\models\Settings;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
+use function Sodium\add;
 
 
 /**
@@ -56,7 +58,6 @@ class SectionsController extends Controller {
         if ($action->id == 'error') {
             $this->layout = 'error';
         }
-        $this->permissions = Helper::checkAuthority(Yii::$app->controller->id, Yii::$app->controller->action->id);
 
 
         return parent::beforeAction($action);
@@ -84,12 +85,8 @@ class SectionsController extends Controller {
         if ($page != '' && !key_exists($page, Yii::$app->params['pages'])) {
             return $this->redirect(Yii::$app->request->baseUrl . '/sections/pages/home');
         }
+        $sections = Sections::find()->with('page')->asArray()->all();
 
-        $s = Sections::find();
-        if ($page != '') {
-            $s->where(['like', 'page', $page]);
-        }
-        $sections = $s->all();
         return $this->render('index', [
                 'sections' => $sections,
                 'page'     => Yii::$app->params['pages'][$page],
@@ -98,16 +95,19 @@ class SectionsController extends Controller {
 
     public function actionSection($id = '') {
         $section = [];
+        $pages = Pages::find()->all();
         if ($id != '') {
             $id = Misc::decrypt($id);
             $section = Sections::findOne($id);
         }
         return $this->render('form', [
                 'section' => $section,
+                'pages' =>$pages
         ]);
     }
 
     public function actionUpdate() {
+
         $image = (isset($_FILES['image'])) ? $_FILES['image'] : [];
         if (isset($_POST['content'])) {
             $updated = HelperSections::set($_POST['content'], $image);
@@ -119,9 +119,10 @@ class SectionsController extends Controller {
     }
 
     public function actionUpdatePage() {
+
         $image = (isset($_FILES['image'])) ? $_FILES['image'] : [];
-        if (isset($_POST['page'])) {
-            $updated = HelperSections::setPage($_POST['page'], $image);
+        if (isset($_POST['page']) && $_POST['on_menu']) {
+            $updated = HelperSections::setPage($_POST, $image);
             if ($updated != false) {
                 Misc::setFlash('success', 'Page Updated.');
                 return $this->redirect(Yii::$app->request->baseUrl . '/sections/pages/' . $updated['name']);
@@ -163,9 +164,9 @@ class SectionsController extends Controller {
     }
 
     public function actionUpdateSocialMedia() {
-        if (isset($_POST['team']['social']) && isset($_POST['team']['id']) && $_POST['team']['id'] > 0) {
 
-            $social = json_encode($_POST['team']['social']);
+        if (isset($_POST['team']['social']) && isset($_POST['team']['id']) && $_POST['team']['id'] > 0) {
+            $social = json_encodejson_encode($_POST['team']['social']);
 
             $model = Settings::findOne($_POST['team']['id']);
             $model->content = $social;
@@ -177,11 +178,13 @@ class SectionsController extends Controller {
             }
         }
         else {
+
             $model = Settings::find()
                              ->where(['=', 'slug', 'social_media'])
                              ->one();
 
-            $model['content'] = '';
+            $model['content'] = json_encode($_POST['team']['social']);
+
             if ($model->save() == true) {
                 Misc::setFlash('success', 'Social media details updated.');
             }
@@ -191,5 +194,19 @@ class SectionsController extends Controller {
         }
         return $this->redirect(Yii::$app->request->baseUrl . 'sections/pages/contact');
     }
+    public function actionDelete()
+    {
+
+        if (Yii::$app->request->isAjax && isset($_POST['id']) && $_POST['id'] > 0) {
+            return HelperSections::deleteSections($_POST['id']);
+        }
+    }
+public function actionRemove()
+{
+    $m= Settings::find()->where(['slug'] == 'social_media')->one();
+    $content = json_decode($m['content']);
+
+
+}
 
 }

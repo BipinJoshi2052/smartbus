@@ -19,7 +19,12 @@
     class HelperTestimonails extends Component {
         public static function deleteTestimonial($id) {
             $model = Testimonials::findOne($id);
-            return $model->delete()?json_encode(true):json_encode(false);
+            if($model->delete())
+            {
+                Misc::delete_file($model->image, 'image');
+               return json_encode(true);
+            }
+            return    json_encode(false);
         }
         public static function set($data, $image) {
             $id = Misc::decrypt($data['id']);

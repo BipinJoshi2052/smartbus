@@ -60,7 +60,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Vacancy';
                                 <td class = "text-left">
 <!--                                    <a class = "btn btn-default btn-sm" href = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/blog/view/--><?php //echo \common\components\Misc::encrypt($post['id']); ?><!--" data-id = "--><?php //echo $post['id']; ?><!--" data-tab = "Blog">View</a>-->
                                     <a class = "btn btn-primary btn-sm" href = "<?php echo Yii::$app->request->baseUrl; ?>/careers/post/<?php echo \common\components\Misc::encrypt($post['id']); ?>">Edit</a>
-                                    <a class = "btn btn-default btn-sm delete-vacancy" href = "javascript:void(0);" data-id = "<?php echo $post['id']; ?>" data-tab = "vacancy">Delete</a>
+                                    <a class = "btn btn-danger btn-sm delete-vacancy" href = "javascript:void(0);" data-id = "<?php echo $post['id']; ?>" data-tab = "vacancy">Delete</a>
                                 </td>
                             </tr>
                         <?php

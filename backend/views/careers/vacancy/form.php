@@ -1,6 +1,7 @@
 <?php
 $this->title = Yii::$app->params['system_name'] . ' | Add new Vacancy';
 //$this->registerJsFile(Yii::$app->request->baseUrl . '/assets/');
+$this->registerJsFile(Yii::$app->request->baseUrl . '/assets/plugins/ckeditor/vendor/ckeditor/ckeditor.js');
 ?>
 <div class = "container-fluid">
     <form enctype = "multipart/form-data" method = "post" action = "<?php echo Yii::$app->request->baseUrl; ?>/careers/update/">
@@ -42,10 +43,7 @@ $this->title = Yii::$app->params['system_name'] . ' | Add new Vacancy';
                             <div class = "form-group">
                                 <?php $counter++; ?>
                                 <label for = "<?php echo $counter; ?>" class = "control-label ">Content</label>
-                                <textarea rows="5" id = "<?php echo $counter; ?>" name = "post[description]" class = "summernote"><?php echo (isset($editable['description'])) ? $editable['description'] : '' ?></textarea>
-                            </div>
-
-
+                                <textarea type="text" rows="5" id = "<?php echo $counter; ?>" name = "post[description]" class = "form-control ckeditor"><?php echo (isset($editable['description'])) ? $editable['description'] : '' ?></textarea>
 
                         </div>
                     </div>

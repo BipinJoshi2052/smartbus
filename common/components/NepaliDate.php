@@ -4,9 +4,7 @@ namespace common\components;
 use yii\base\Component;
 
 class NepaliDate extends Component {
-
     //List of month nepali
-
     private $nepali_length = [
             1975 => [31, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31],
             1976 => [31, 32, 31, 32, 31, 30, 30, 30, 29, 29, 30, 30],
@@ -131,7 +129,6 @@ class NepaliDate extends Component {
             2095 => [31, 31, 32, 31, 31, 31, 30, 29, 30, 30, 30, 30]
             //OH GOD!  I am tired.
     ];
-
     private $firstday_en = "1918-04-13";
     private $start_ne    = "1975";
     private $start_en    = "1918";

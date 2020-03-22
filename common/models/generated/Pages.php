@@ -5,14 +5,15 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "pages".
+ * This is the model class for table "{{%pages}}".
  *
  * @property int $id
  * @property string $name
  * @property string $label
  * @property string $image
- * @property int $on_menu
+ * @property string $on_menu
  * @property int $is_active
+ * @property int $page_status
  * @property string $created_on
  *
  * @property Sections[] $sections
@@ -24,7 +25,7 @@ class Pages extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'pages';
+        return '{{%pages}}';
     }
 
     /**
@@ -34,7 +35,8 @@ class Pages extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'label'], 'required'],
-            [['on_menu', 'is_active'], 'integer'],
+            [['on_menu'], 'string'],
+            [['is_active', 'page_status'], 'integer'],
             [['created_on'], 'safe'],
             [['name', 'label'], 'string', 'max' => 128],
             [['image'], 'string', 'max' => 64],
@@ -53,6 +55,7 @@ class Pages extends \yii\db\ActiveRecord
             'image' => 'Image',
             'on_menu' => 'On Menu',
             'is_active' => 'Is Active',
+            'page_status' => 'Page Status',
             'created_on' => 'Created On',
         ];
     }

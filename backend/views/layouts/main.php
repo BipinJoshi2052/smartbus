@@ -419,7 +419,7 @@ AppAsset::register($this);
 
                <li class = "nav-divider"></li>
                <li class = "nav-small-cap">Vehicle Management</li>
-               <li><a href = "<?php echo Yii::$app->request->baseUrl; ?>/vehicles/create"> <i class = "mdi mdi-plus"></i><span class = "hide-menu">New Vehicle</span></a></li>
+               <li><a href = "<?php echo Yii::$app->request->baseUrl; ?>/vehicles/"> <i class = "mdi mdi-plus"></i><span class = "hide-menu">New Vehicle</span></a></li>
                <li>
 
                   <a class = "has-arrow waves-effect waves-dark" href = "javascript:void(0);" aria-expanded = "false">

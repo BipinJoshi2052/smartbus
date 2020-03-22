@@ -1,5 +1,6 @@
 <?php
 $this->title = Yii::$app->params['system_name'] . ' | Sections';
+
 //$this->registerJsFile(Yii::$app->request->baseUrl . '/assets/');
 ?>
 <div class = "container-fluid">

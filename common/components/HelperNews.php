@@ -116,7 +116,12 @@ class HelperNews extends Component {
     }
     public static function deleteNews($id) {
         $model = News::findOne($id);
-        return $model->delete() ? json_encode(true) : json_encode(false);
+        if($model->delete())
+        {
+            Misc::delete_file($model->image, 'image');
+            return json_encode(true);
+        }
+        return    json_encode(false);
     }
 
     //News Category

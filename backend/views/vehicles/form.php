@@ -59,7 +59,8 @@ $is_authorized
                               <option value="">Select a Vendor</option>
                                <?php if (isset($vendors) && count($vendors) > 0):
                                    foreach ($vendors as $vendor) : ?>
-                                      <option <?= (!$new && isset($editable['id']) && $vendor['id'] == $editable->user_id) ? 'selected="selected"' : '' ?> value="<?= $vendor['id'] ?>"><?= ucwords($vendor->userDetails->company) ?></option>
+<!--                                      <option value = "">--><?//= $vendor['userDetails']['company']?><!--</option>-->
+                                      <option <?= (!$new && isset($editable['id']) && $vendor['id'] == $editable->user_id) ? 'selected="selected"' : '' ?> value="<?= $vendor['id'] ?>"><?= $vendor['userDetails']['company']?></option>
                                    <?php endforeach;
                                endif; ?>
                            </select>
@@ -113,6 +114,13 @@ $is_authorized
                             <?php $counter++; ?>
                            <label for="<?= $counter; ?>" class="control-label">Model</label>
                            <input id="<?= $counter; ?>" value="<?= (!$new && isset($editable['model']) ? $editable['model'] : '') ?>" name="vehicle[model]" class="form-control">
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-sm-6 ">
+                        <div class="form-group">
+                            <?php $counter++; ?>
+                           <label for="<?= $counter; ?>" class="control-label">Contact-info</label>
+                           <input id="<?= $counter; ?>" value="<?= (!$new && isset($editable['contact_info']) ? $editable['contact_info'] : '') ?>" name="vehicle[contact_info]" class="form-control">
                         </div>
                      </div>
                      <div class="col-lg-8 col-sm-6 ">

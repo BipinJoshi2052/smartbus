@@ -5,7 +5,7 @@ namespace common\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "sections".
+ * This is the model class for table "{{%sections}}".
  *
  * @property int $id
  * @property int $page_id
@@ -29,7 +29,7 @@ class Sections extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'sections';
+        return '{{%sections}}';
     }
 
     /**

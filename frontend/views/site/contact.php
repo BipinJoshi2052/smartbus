@@ -20,7 +20,15 @@ Yii::$app->session->getFlash('success');
                         <div class = "col-sm-4 col-md-4">
                             <i class = "fa fa-map-marker i-9x icons-circle text-color light-bg hover-black"></i>
                             <div class = "title">Address</div>
-                           <p>49 Archdale, 2B Charleston, New York City, USA </p> 
+                           <p> <?php
+                               $contacts = json_decode(Yii::$app->params['settings']['contact']);
+                               $c[]= explode(',',$contacts[0]->{'address'});
+                               foreach ($c as $con => $contact){
+                                   foreach ($contact as $co){?>
+                                      <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a>
+                                   <?php }
+
+                               } ?></p>
                         </div>
                         <div class = "col-sm-4 col-md-4">
                             <i class = "fa fa-microphone i-9x icons-circle text-color light-bg hover-black"></i>

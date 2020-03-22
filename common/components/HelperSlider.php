@@ -25,6 +25,7 @@
         public static function deleteSlider($id) {
             $model = Slider::findOne($id);
             if ($model->delete()) {
+                Misc::delete_file($model->image, 'image');
                 return json_encode(true);
             }
             return json_encode(false);

@@ -12,6 +12,7 @@ use Yii;
  * @property int $customer_id
  * @property int $is_active
  * @property int $is_verified
+ * @property int $edited_status
  * @property string $verification_comment
  * @property int $verified_by
  * @property string $verified_on
@@ -41,7 +42,7 @@ class BlogComments extends \yii\db\ActiveRecord
     {
         return [
             [['blog_id', 'comment'], 'required'],
-            [['blog_id', 'customer_id', 'is_active', 'is_verified', 'verified_by'], 'integer'],
+            [['blog_id', 'customer_id', 'is_active', 'is_verified', 'edited_status', 'verified_by'], 'integer'],
             [['verification_comment', 'comment'], 'string'],
             [['verified_on', 'created_on'], 'safe'],
             [['name', 'email', 'phone'], 'string', 'max' => 255],
@@ -61,6 +62,7 @@ class BlogComments extends \yii\db\ActiveRecord
             'customer_id' => 'Customer ID',
             'is_active' => 'Is Active',
             'is_verified' => 'Is Verified',
+            'edited_status' => 'Edited Status',
             'verification_comment' => 'Verification Comment',
             'verified_by' => 'Verified By',
             'verified_on' => 'Verified On',

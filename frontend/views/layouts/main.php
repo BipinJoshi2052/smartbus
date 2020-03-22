@@ -2,6 +2,7 @@
 /* @var $this \yii\web\View */
 
 /* @var $content string */
+
 use frontend\assets\AppAsset;
 use yii\helpers\Html;
 
@@ -21,7 +22,7 @@ AppAsset::register($this);
    <link rel = "shortcut icon" href = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/images/uploads/fav.png"/>
    <!-- General CSS -->
    <link href = "<?php echo Yii::$app->request->baseUrl; ?>/common/assets/css/general.css" rel = 'stylesheet' type = 'text/css'/>
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+   <link href = "https://fonts.googleapis.com/css?family=Roboto&display=swap" rel = "stylesheet">
 
    <!-- Fonts CSS -->
 
@@ -81,7 +82,7 @@ AppAsset::register($this);
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
    <script src = "https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
    <script src = "https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-<!--   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
+   <!--   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
    <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/plugins/jquery3/jquery.js"></script>
 
    <script>
@@ -168,7 +169,7 @@ AppAsset::register($this);
                          <li class = "nav-item dropdown">
 
                             <a class = "nav-link dropdown-toggle  pv-0 ln-22 wid-155" href = "#" id = "navbarMoreDropdown" role = "button" data-toggle = "dropdown" aria-haspopup = "true" aria-expanded = "false">
-                               <i class="fa fa-user-o" aria-hidden="true"></i>   <?php echo Yii::$app->user->identity->name; ?>
+                               <i class = "fa fa-user-o" aria-hidden = "true"></i> <?php echo Yii::$app->user->identity->name; ?>
                                <span class = "caret"></span>
                             </a>
                             <div class = "dropdown-menu dp-01" aria-labelledby = "navbarMoreDropdown">
@@ -206,21 +207,21 @@ AppAsset::register($this);
                </button>
                <div class = "container">
 
-                  <form action = "#" method = "post" novalidate = "novalidate">
+                  <form action = "<?php echo Yii::$app->request->baseUrl; ?>/site/search/" method = "get">
 
                      <div class = "row">
                         <h4 class = "book-you-ticket">Book You Ticket</h4>
                         <div class = "col-lg-12">
                            <div class = "row">
                               <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
-                                 <input type = "text" class = "form-control search-slt ticket-search-02" placeholder = "Enter the Ticket ID">
+                                 <input type = "text" name = "search[ticket_num]" class = "form-control search-slt ticket-search-02 required" placeholder = "Enter the Ticket ID">
                               </div>
                               <div class = "col-lg-5 col-md-5 col-sm-12 p-0">
-                                 <input type = "text" class = "form-control search-slt" placeholder = "Email or Phone number">
+                                 <input type = "text" name = "search[phone]" class = "form-control search-slt required" placeholder = "Enter Phone number">
                               </div>
 
                               <div class = "col-lg-2 col-md-2 col-sm-12 p-0">
-                                 <button type = "button" class = "btn btn-warning wrn-btn">Search</button>
+                                 <button type = "submit" class = "btn btn-warning wrn-btn">Search</button>
                               </div>
                            </div>
                         </div>
@@ -280,24 +281,24 @@ AppAsset::register($this);
                   </div>
                   <ul>
 
-                    <li><a href="<?php echo Yii::$app->request->baseUrl; ?>/"> Home </a></li>
-                    <li><a href = "<?= Yii::$app->request->baseUrl; ?>/site/about">About</a> </li>
-                    <li><a href="<?= Yii::$app->request->baseUrl; ?>/blog/""> Blog</a></li>
-                    <li><a href="<?= Yii::$app->request->baseUrl; ?>/news/""> News </a></li>
-                    <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/careers""> Carees</a> </li>
-                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/terms""> T & C</a> </li>
-                     <li><a href="<?= Yii::$app->request->baseUrl; ?>/site/privacy"">Privacy</a> </li>
+                     <li><a href = "<?php echo Yii::$app->request->baseUrl; ?>/"> Home </a></li>
+                     <li><a href = "<?= Yii::$app->request->baseUrl; ?>/site/about">About</a></li>
+                     <li><a href = "<?= Yii::$app->request->baseUrl; ?>/blog/"> Blog</a></li>
+                     <li><a href = "<?= Yii::$app->request->baseUrl; ?>/news/"> News </a></li>
+                     <li><a href = "<?= Yii::$app->request->baseUrl; ?>/site/careers"> Carees</a></li>
+                     <li><a href = "<?= Yii::$app->request->baseUrl; ?>/site/terms"> T & C</a></li>
+                     <li><a href = "<?= Yii::$app->request->baseUrl; ?>/site/privacy">Privacy</a></li>
                   </ul>
-                  <div class="explore-btn-01">
-                  <button type="submit" class="btn btn-1">BOOK NOW</button>
-               </div>
+                  <div class = "explore-btn-01">
+                     <a href = "<?= Yii::$app->request->baseUrl; ?>/site/booking" class = "btn btn-1">BOOK NOW</a>
+                  </div>
                   <!-- Text -->
-<!--                  <p>-->
-<!--                     --><?php
-//                     $about = json_decode(Yii::$app->params['settings']['about_us']);
-//                     print $about->{'about_us'};
-//                     ?>
-<!--                  </p> -->
+                  <!--                  <p>-->
+                  <!--                     --><?php
+                   //                     $about = json_decode(Yii::$app->params['settings']['about_us']);
+                   //                     print $about->{'about_us'};
+                   //                     ?>
+                  <!--                  </p> -->
 
                   <!--    <p>
                         <strong>Office:</strong> ecosanjal.com <br>No. 12, Ribon Building,
@@ -315,7 +316,7 @@ AppAsset::register($this);
                      <!-- Title -->
                      <h3 class = "title">Contact</h3>
                   </div>
-                  <p style="font-size: 15px;" >
+                  <p style = "font-size: 15px;">
 
                      <strong>Office:</strong>
                       <?php
@@ -324,17 +325,19 @@ AppAsset::register($this);
                       ?>
                   </p>
                   <!-- Phone -->
-                  <p style="font-size: 15px;">
+                  <p style = "font-size: 15px;">
                      <strong>Call Us:</strong>
                       <?php
                       $contacts = json_decode(Yii::$app->params['settings']['contact']);
-                      $c[]= explode(',',$contacts[0]->{'call_us'});
-                      foreach ($c as $con => $contact){
-                        foreach ($contact as $co){?>
-                          <a href="tel:<?php echo $co; ?>"><?php echo $co; ?></a> / 
-                        <?php }
+
+                      $c[] = explode(',', $contacts[0]->{'call_us'});
+                      foreach ($c as $con => $contact) {
+                          foreach ($contact as $co) {
+                              ?>
+                             <a href = "tel:<?php echo $co; ?>"><?php echo $co; ?></a> /
+                          <?php }
                       }
-//                      print $contact[0]->{'call_us'};
+                      //                      print $contact[0]->{'call_us'};
                       ?>
                   </p>
                </div>
@@ -344,24 +347,34 @@ AppAsset::register($this);
                      <h3 class = "title">Follow Us</h3>
                   </div>
                   <div class = "social-icon margin-top-20 gray-bg icons-circle i-3x">
-                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
-                     if(isset($contact[0]->{'facebook'})){echo $contact[0]->{'facebook'};} ?>">
+                     <a href = "<?php $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if (isset($contact[0]->{'facebook'})) {
+                         echo $contact[0]->{'facebook'};
+                     } ?>">
                         <i class = "fa fa-facebook"></i>
                      </a>
-                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
-                     if(isset($contact[0]->{'twitter'})){echo $contact[0]->{'twitter'};} ?>">
+                     <a href = "<?php $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if (isset($contact[0]->{'twitter'})) {
+                         echo $contact[0]->{'twitter'};
+                     } ?>">
                         <i class = "fa fa-twitter"></i>
                      </a>
-                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
-                     if(isset($contact[0]->{'pinterest'})){echo $contact[0]->{'pinterest'};} ?>">
+                     <a href = "<?php $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if (isset($contact[0]->{'pinterest'})) {
+                         echo $contact[0]->{'pinterest'};
+                     } ?>">
                         <i class = "fa fa-pinterest"></i>
                      </a>
-                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
-                     if(isset($contact[0]->{'google'})){echo $contact[0]->{'google'};} ?>">
+                     <a href = "<?php $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if (isset($contact[0]->{'google'})) {
+                         echo $contact[0]->{'google'};
+                     } ?>">
                         <i class = "fa fa-google"></i>
                      </a>
-                     <a href = "<?php  $contact = json_decode(Yii::$app->params['settings']['contact']);
-                     if(isset($contact[0]->{'linkedin'})){echo $contact[0]->{'linkedin'};} ?>">
+                     <a href = "<?php $contact = json_decode(Yii::$app->params['settings']['contact']);
+                     if (isset($contact[0]->{'linkedin'})) {
+                         echo $contact[0]->{'linkedin'};
+                     } ?>">
                         <i class = "fa fa-linkedin"></i>
                      </a>
                   </div>
@@ -369,14 +382,14 @@ AppAsset::register($this);
                   <!-- <div class = "contact-form">
                      <form role = "form" name = "contactform" id = "contactform" method = "post" action = "" class = "bv-form">
                         <button type = "submit" class = "bv-hidden-submit" style = "display: none; width: 0px; height: 0px;"></button>
-                      
+
                         <div class = "input-text form-group has-feedback">
                            <input type = "text" name = "contact_name" class = "input-name form-control" placeholder = "Full Name" data-bv-field = "contact_name">
                            <i class = "form-control-feedback bv-no-label" data-bv-icon-for = "contact_name" style = "display: none;" data-original-title = "" title = ""></i>
                            <small class = "help-block" data-bv-validator = "notEmpty" data-bv-for = "contact_name" data-bv-result = "NOT_VALIDATED" style = "display: none;">Please enter a value
                            </small>
                         </div>
-                        
+
                         <div class = "input-email form-group has-feedback">
                            <input type = "email" name = "contact_email" class = "input-email form-control" placeholder = "Email" data-bv-field = "contact_email">
                            <i class = "form-control-feedback bv-no-label" data-bv-icon-for = "contact_email" style = "display: none;" data-original-title = "" title = ""></i>
@@ -385,14 +398,14 @@ AppAsset::register($this);
                            <small class = "help-block" data-bv-validator = "emailAddress" data-bv-for = "contact_email" data-bv-result = "NOT_VALIDATED" style = "display: none;">Please enter a valid email address
                            </small>
                         </div>
-                       
+
                         <div class = "textarea-message form-group has-feedback">
                            <textarea name = "contact_message" class = "textarea-message form-control" placeholder = "Message" rows = "3" data-bv-field = "contact_message"></textarea>
                            <i class = "form-control-feedback bv-no-label" data-bv-icon-for = "contact_message" style = "display: none;" data-original-title = "" title = ""></i>
                            <small class = "help-block" data-bv-validator = "notEmpty" data-bv-for = "contact_message" data-bv-result = "NOT_VALIDATED" style = "display: none;">Please enter a value
                            </small>
                         </div>
-                        
+
                         <button class = "btn btn-default" type = "submit">Send Now
                            <i class = "icon-paper-plane"></i>
                         </button>
@@ -401,15 +414,14 @@ AppAsset::register($this);
                </div>
             </div>
 
-           
 
          </div>
 
-        
+
       </div>
       <!-- <div class="container" >
 
-    
+
       </div> -->
 
       <!-- footer-top -->
@@ -454,11 +466,42 @@ AppAsset::register($this);
 </div>
 <div class="fb-customerchat"
      attribution=setup_tool
-     page_id="112574783618737"
-     theme_color="#44bec7"
-     logged_in_greeting="Hello!!! How can I help?"
+     page_id="108626497307510"
+     theme_color="#e69f1c"
+     logged_in_greeting="Hello!!! bro?"
      logged_out_greeting="Hello!!! How can I help?">
 </div>
+<script>
+   var div = document.createElement('div');
+   div.className = 'fb-customerchat';
+   div.setAttribute('page_id', '108626497307510');
+   div.setAttribute('ref', 'b64:bWVzc2VuZ2Vy');
+   document.body.appendChild(div);
+   window.fbMessengerPlugins = window.fbMessengerPlugins || {
+      init: function () {
+         FB.init({
+            appId            : '1678638095724206',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v3.3'
+         });
+      }, callable: []
+   };
+   window.fbAsyncInit = window.fbAsyncInit || function () {
+      window.fbMessengerPlugins.callable.forEach(function (item) { item(); });
+      window.fbMessengerPlugins.init();
+   };
+   setTimeout(function () {
+      (function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) { return; }
+         js = d.createElement(s);
+         js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+   }, 0);
+</script>
 <!--   <button class="open-button" onclick="openForm()">Chat</button> -->
 
 <!-- <div class="chat-popup" id="myForm">
@@ -529,7 +572,7 @@ AppAsset::register($this);
                     </div>
                 </div>
 
-    <button type="submit" class="btn">Send</button> 
+    <button type="submit" class="btn">Send</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form> -->
 <!--<div id = "live-chat">-->
@@ -624,29 +667,6 @@ AppAsset::register($this);
 
 
 <script type = "text/javascript">
-   (function () {
-
-      $('#live-chat header').on('click', function () {
-
-         $('.chat').slideToggle(300, 'swing');
-         $('.chat-message-counter').fadeToggle(300, 'swing');
-
-      });
-
-      $('.chat-close').on('click', function (e) {
-
-         e.preventDefault();
-         $('#live-chat').fadeOut(300);
-
-      });
-
-   })();
-</script>
-
-
-</div>
-
-<script type = "text/javascript">
 
    function openForm() {
       document.getElementById("myForm").style.display = "block";
@@ -714,7 +734,7 @@ AppAsset::register($this);
                   </div>
                   <div class = "form-group">
                      <div class = "help-block">
-                        <a class = "pull-left" href = "<?=  Yii::$app->request->baseUrl; ?>/site/reset-password/">Forgot Password ?</a>
+                        <a class = "pull-left" href = "<?= Yii::$app->request->baseUrl; ?>/site/reset-password/">Forgot Password ?</a>
                         <button type = "submit" class = "btn btn-primary pull-right">Login</button>
                         <div class = "clearfix"></div>
                      </div>
@@ -723,16 +743,16 @@ AppAsset::register($this);
             </div>
 
             <div class = "sign-up text-center">
-               <form enctype = "multipart/form-data" method = "post" class = "register-form" id = "signup-form" action="<?php echo Yii::$app->request->baseUrl; ?>/register/insert/">
+               <form enctype = "multipart/form-data" method = "post" class = "register-form" id = "signup-form" action = "<?php echo Yii::$app->request->baseUrl; ?>/register/insert/">
                   <input type = "hidden" name = "<?php echo Yii::$app->request->csrfParam; ?>" value = "<?php echo Yii::$app->request->csrfToken; ?>"/>
-                  <input type="hidden" name="role" value="5">
+                  <input type = "hidden" name = "role" value = "5">
                   <p class = "title">Don't have an Account?</p>
                   <h6 class = "title"> Register Now.</h6>
                   <div id = "success"></div>
                   <input type = "email" placeholder = "Email *" name = "email" class = "form-control bg-white" data-bv-field = "email">
                   <i class = "form-control-feedback bv-no-label" data-bv-icon-for = "email" style = "display: none;" data-original-title = "" title = ""></i>
                   <input type = "text" placeholder = "Phone *" name = "phone" class = "form-control bg-white">
-<!--                  <input type = "password" class = "form-control bg-white" id = "password" name="password" placeholder = "Password *">-->
+                  <!--                  <input type = "password" class = "form-control bg-white" id = "password" name="password" placeholder = "Password *">-->
                   <div class = "clearfix"></div>
                   <div class = "buttons-box clearfix">
                      <button class = "btn full btn-black" id = "submit">Register Now</button>
@@ -752,72 +772,65 @@ AppAsset::register($this);
       </div><!-- modal-content -->
    </div><!-- modal-dialog -->
 </div><!-- modal -->
-<!-- jQuery -->
-<div id="fb-root"></div>
-<script>
-
-   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-      console.log('statusChangeCallback');
-      console.log(response);                   // The current login status of the person.
-      if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-         testAPI();
-      } else {                                 // Not logged into your webpage or we are unable to tell.
-         document.getElementById('status').innerHTML = 'Please log ' +
-               'into this webpage.';
-      }
-   }
-
-
-   function checkLoginState() {               // Called when a person is finished with the Login Button.
-      FB.getLoginStatus(function(response) {   // See the onlogin handler
-         statusChangeCallback(response);
-      });
-   }
-
-
-   window.fbAsyncInit = function() {
-      FB.init({
-         appId      : '697105547494171',
-         cookie     : true,                     // Enable cookies to allow the server to access the session.
-         xfbml      : true,                     // Parse social plugins on this webpage.
-         version    : 'v6.0'           // Use this Graph API version for this call.
-      });
-
-
-      FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-         statusChangeCallback(response);        // Returns the login status.
-      });
-   };
-
-
-   (function(d, s, id) {                      // Load the SDK asynchronously
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-
-   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-      console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
-         console.log('Successful login for: ' + response.name);
-         document.getElementById('status').innerHTML =
-               'Thanks for logging in, ' + response.name + '!';
-      });
-   }
-
-</script>
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-
-
-
-
-
-
-
+<!--jQuery-->
+<!--<div id="fb-root"></div>-->
+<!--<script>-->
+<!---->
+<!--   function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().-->
+<!--      console.log('statusChangeCallback');-->
+<!--      console.log(response);                   // The current login status of the person.-->
+<!--      if (response.status === 'connected') {   // Logged into your webpage and Facebook.-->
+<!--         testAPI();-->
+<!--      } else {                                 // Not logged into your webpage or we are unable to tell.-->
+<!--         document.getElementById('status').innerHTML = 'Please log ' +-->
+<!--               'into this webpage.';-->
+<!--      }-->
+<!--   }-->
+<!---->
+<!---->
+<!--   function checkLoginState() {               // Called when a person is finished with the Login Button.-->
+<!--      FB.getLoginStatus(function(response) {   // See the onlogin handler-->
+<!--         statusChangeCallback(response);-->
+<!--      });-->
+<!--   }-->
+<!---->
+<!---->
+<!--   window.fbAsyncInit = function() {-->
+<!--      FB.init({-->
+<!--         appId      : '697105547494171',-->
+<!--         cookie     : true,                     // Enable cookies to allow the server to access the session.-->
+<!--         xfbml      : true,                     // Parse social plugins on this webpage.-->
+<!--         version    : 'v6.0'           // Use this Graph API version for this call.-->
+<!--      });-->
+<!---->
+<!---->
+<!--      FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.-->
+<!--         statusChangeCallback(response);        // Returns the login status.-->
+<!--      });-->
+<!--   };-->
+<!---->
+<!---->
+<!--   (function(d, s, id) {                      // Load the SDK asynchronously-->
+<!--      var js, fjs = d.getElementsByTagName(s)[0];-->
+<!--      if (d.getElementById(id)) return;-->
+<!--      js = d.createElement(s); js.id = id;-->
+<!--      js.src = "https://connect.facebook.net/en_US/sdk.js";-->
+<!--      fjs.parentNode.insertBefore(js, fjs);-->
+<!--   }(document, 'script', 'facebook-jssdk'));-->
+<!---->
+<!---->
+<!--   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.-->
+<!--      console.log('Welcome!  Fetching your information.... ');-->
+<!--      FB.api('/me', function(response) {-->
+<!--         console.log('Successful login for: ' + response.name);-->
+<!--         document.getElementById('status').innerHTML =-->
+<!--               'Thanks for logging in, ' + response.name + '!';-->
+<!--      });-->
+<!--   }-->
+<!---->
+<!--</script>-->
+<!--<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">-->
+<!--</fb:login-button>-->
 
 
 <!-- Your customer chat code -->
@@ -892,7 +905,7 @@ if (Yii::$app->session->hasFlash('flash')): ?>
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!--    <script type = "text/javascript" src = "--><?php //echo Yii::$app->request->baseUrl; ?><!--/assets/plugins/typeahead/dist/bloodhound.min.js"></script>-->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Owl Carousel Slider -->
 
 <script type = "text/javascript" src = "<?php echo Yii::$app->request->baseUrl; ?>/assets/js/owl.carousel.min.js"></script><!-- Pretty Photo Popup -->

@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use common\components\Helper;
 use common\components\AuthHandler;
+use common\components\HelperAdd;
 use common\components\HelperBlog;
 use common\components\HelperCareers;
 use common\components\HelperClients;
@@ -17,6 +18,8 @@ use common\components\HelperTerms;
 use common\components\HelperTestimonails;
 use common\components\HelperUser;
 use common\components\Misc;
+use common\components\Query;
+use common\models\Bookings;
 use common\models\generated\Careers;
 use common\models\LoginForm;
 use common\models\LoginSocial;
@@ -106,10 +109,22 @@ class SiteController extends Controller {
                 'news'        => HelperNews::getSiteNews(),
                 'explore'     => HelperExplore::getSiteExplore(),
                 'clients'     => HelperClients::getClients(),
-                'slider'      =>HelperSlider::getSlider(),
+                'slider'      => HelperSlider::getSlider(),
         ]);
     }
-
+    public function actionIndex3() {
+        $page = 'home';
+        //        die;
+        return $this->render('index3', [
+                'blog'        => HelperBlog::getSiteBlog(),
+                'faq'         => HelperFaq::getSiteFaq(),
+                'testimonial' => HelperTestimonails::getTestimonial(),
+                'news'        => HelperNews::getSiteNews(),
+                'explore'     => HelperExplore::getSiteExplore(),
+                'clients'     => HelperClients::getClients(),
+                'slider'      => HelperSlider::getSlider(),
+        ]);
+    }
     public function actionPartner($id = '') {
         if ($id != '') {
             $id = Misc::decrypt($id);
@@ -136,7 +151,9 @@ class SiteController extends Controller {
 
     public function actionFaq() {
         $page = 'faq';
-        return $this->render('faq');
+        return $this->render('faq',[
+                'faq'=>HelperFaq::getAll(),
+        ]);
     }
 
     public function actionTerms() {
@@ -173,7 +190,19 @@ class SiteController extends Controller {
         return $this->render('contact');
     }
 
-
+    public function actionSearch() {
+        $booking[] = '';
+        $booking = Bookings::find()
+                ->with('schedule')
+                           ->where(['like', 'booking_code', $_GET['search']['ticket_num']])
+                           ->andWhere(['=', 'phone', $_GET['search']['phone']])
+                           ->asArray()
+                           ->all();
+        return $this->render('search', [
+                'details' => $booking,
+                'add'=>HelperAdd::getRandomAdd(),
+        ]);
+    }
     public function actionMessage() {
         Yii::$app->controller->enableCsrfValidation = false;
         if (Yii::$app->request->isAjax) {
@@ -278,7 +307,7 @@ class SiteController extends Controller {
         if ($post['email'] != '') {
             $model = User::findByEmail($post['email']);
             if ($model != '' && $model->username == $post['email']) {
-               $response= HelperUser::resetPassword($model);
+                $response = HelperUser::resetPassword($model);
             }
             else {
                 return $this->render('resetPassword', [
@@ -291,7 +320,7 @@ class SiteController extends Controller {
             return $this->render('resetPassword', [
                     'response' => $response,
                     'editable' => $post['email'],
-                ]);
+            ]);
         }
     }
 
@@ -303,13 +332,13 @@ class SiteController extends Controller {
                 $model = new LoginSocial();
                 $model->username = $user->username;
                 $model->login();
-                return $this->redirect(Yii::$app->request->baseUrl. '/dashboard/reset-by-email/');
+                return $this->redirect(Yii::$app->request->baseUrl . '/dashboard/reset-by-email/');
             }
             else {
                 echo 'sorry';
                 die;
             }
-            }
+        }
         else {
             return $this->redirect(Yii::$app->request->baseUrl);
         }
@@ -321,19 +350,4 @@ class SiteController extends Controller {
         return $this->render('review-vehicle');
     }
 
-    public function actionCareer() {
-        //        $model = new Careers();
-        //        if ($model->load(Yii::$app->request->post())) {
-        //            if ($user = $model->signup()) {
-        //                if (Yii::$app->getUser()
-        //                             ->login($user)) {
-        //                    return $this->goHome();
-        //                }
-        //            }
-        //        }
-        $response = 1;
-        return $this->render('careers', [
-                'response' => $response,
-        ]);
-    }
 }

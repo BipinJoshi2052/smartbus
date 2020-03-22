@@ -43,7 +43,8 @@ class DashboardController extends Controller {
     {
         $id=Yii::$app->user->identity->id;
         return $this->render('index',[
-                'details'=>HelperUser::getSingleUserDetails($id)
+                'details'=>HelperUser::getSingleUserDetails($id),
+                'history'=>HelperUser::getUserHistory($id),
         ]);
     }
     public function actionEdit()

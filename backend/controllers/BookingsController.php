@@ -107,9 +107,11 @@ class BookingsController extends Controller {
     }
 
     public function actionBookTicket() {
+
         //\Yii::$app->response->format = Response::FORMAT_JSON;
         if (Yii::$app->request->isAjax && Yii::$app->request->post('data')) {
             $data = Yii::$app->request->post('data');
+
             $data['token'] = Yii::$app->user->identity->getAuthKey();
 
             if (!empty($data)) {
@@ -122,8 +124,6 @@ class BookingsController extends Controller {
             }
         }
 
-
-        return;
     }
 
 
